@@ -65,6 +65,10 @@ Keep that split. It is the difference between an archive with sources and a mirr
 
 **Wayback coverage is uneven.** Some months of JoinDota were captured thoroughly and others barely at all. Fewer results for a given TI means the crawler visited less often, not that less was written.
 
+**Wayback results have no publication date, and this matters.** JoinDota's article pages carry no machine-readable date — no meta tag, no `<time>` element. The only date available is the Wayback *capture* timestamp, which is when the crawler visited, not when the piece was written. The first run of this script used it as the publication date and confidently dated a 2013 article about Alliance forming to August 2018.
+
+So `published` is now `null` for every Wayback item, and the capture date lives in `signals.captured` clearly labelled as such. The date window filters on capture date, which means **older articles that happened to be crawled during the window will appear in the results**. Read the piece before dating a claim from it.
+
 **All three are polite by design** — 1.2s between Reddit calls, 2s for archive.org, 3s for GosuGamers, plus a `robots.txt` check before fetching. Please leave those alone. Getting this project blocked would cost far more than the time saved.
 
 ## After a run

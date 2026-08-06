@@ -40,6 +40,22 @@ async function polite(url: string, timeoutMs = SNAPSHOT_TIMEOUT_MS): Promise<Res
   return fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(timeoutMs) });
 }
 
+const decodeEntities = (v: string): string =>
+  v
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&laquo;/g, '«')
+    .replace(/&raquo;/g, '»')
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCharCode(Number(code)));
+
+/** Strips the site's own furniture from a page title: "Story « News « Site.com". */
+const cleanTitle = (raw: string): string =>
+  decodeEntities(raw).split(/\s*[«»|]\s*/)[0]!.replace(/\s+/g, ' ').trim();
+
 /** Turns archived HTML into something readable, discarding chrome. */
 function extractText(html: string): { title: string | null; text: string } {
   const title =
@@ -64,7 +80,7 @@ function extractText(html: string): { title: string | null; text: string } {
     .replace(/\s+/g, ' ')
     .trim();
 
-  return { title: title ? title.replace(/\s+/g, ' ').trim() : null, text: body };
+  return { title: title ? cleanTitle(title) : null, text: decodeEntities(body) };
 }
 
 async function main(): Promise<void> {
@@ -114,10 +130,16 @@ async function main(): Promise<void> {
   console.log(`${captures.length} captures in range\n`);
 
   const items: ResearchItem[] = [];
+  const seenUrls = new Set<string>();
 
   for (const [i, row] of captures.entries()) {
     const [timestamp, original] = row;
     if (!timestamp || !original) continue;
+
+    // The same article appears under ?comment_page=2, &3 and so on.
+    const canonical = original.replace(/^https?:\/\//, '').split(/[?&]/)[0]!;
+    if (seenUrls.has(canonical)) continue;
+    seenUrls.add(canonical);
 
     const snapshotUrl = `https://web.archive.org/web/${timestamp}/${original}`;
     let response: Response;
@@ -142,11 +164,20 @@ async function main(): Promise<void> {
       source: sourceName,
       title: title ?? original,
       // Cite the original URL; record the snapshot actually read.
-      url: `https://${original.replace(/^https?:\/\//, '')}`,
-      published: `${timestamp.slice(0, 4)}-${timestamp.slice(4, 6)}-${timestamp.slice(6, 8)}`,
+      url: `https://${canonical}`,
+      // NOT the capture date. These pages carry no machine-readable
+      // publication date, and the Wayback timestamp is when the crawler
+      // visited — an article from 2013 crawled in 2018 would otherwise be
+      // labelled 2018. Unknown is the only honest value.
+      published: null,
       author: null,
       excerpt: excerpt(text),
-      signals: { snapshot: snapshotUrl, chars: text.length },
+      signals: {
+        snapshot: snapshotUrl,
+        captured: `${timestamp.slice(0, 4)}-${timestamp.slice(4, 6)}-${timestamp.slice(6, 8)}`,
+        captured_note: 'Date the archive crawled the page, NOT when it was published.',
+        chars: text.length,
+      },
       retrieved_at: new Date().toISOString(),
       cached_text_path: cachedPath,
     });
@@ -160,7 +191,12 @@ async function main(): Promise<void> {
     note: 'Recovered via the Wayback Machine. `url` is the original address; `signals.snapshot` is the capture actually read.',
   });
 
-  console.log(`\n${items.length} articles recovered`);
+  console.log(`\n${items.length} articles recovered (${seenUrls.size - items.length} skipped as duplicates or too thin)`);
+  console.log(
+    '\n  NOTE: these pages carry no publication date, so `published` is null for every item.\n' +
+      '  The date window filtered on CAPTURE date, so older articles that happened to be\n' +
+      '  crawled during the window are included. Check the article before dating a claim.',
+  );
   console.log(`metadata + excerpts: ${path}`);
   console.log(`full text (gitignored): data/raw/research/${key}/${sourceName}/`);
 }

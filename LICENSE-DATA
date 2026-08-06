@@ -1,0 +1,35 @@
+# Data license — CC-BY-SA 3.0
+
+Everything under `data/` in this repository is licensed under the
+**Creative Commons Attribution-ShareAlike 3.0 Unported** license.
+
+    Full legal code: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    Summary:         https://creativecommons.org/licenses/by-sa/3.0/
+
+## Why the data is licensed separately from the code
+
+Parts of this dataset are derived from Liquipedia, whose content is published
+under CC-BY-SA 3.0. That license's ShareAlike term carries forward into
+derivative works, so the derived data here is offered under the same terms.
+
+The software in this repository is a separate work and is MIT licensed. See
+LICENSE.
+
+## What this means for you
+
+You may copy, redistribute, adapt and build upon this data, including
+commercially, provided that you:
+
+1. **Attribute** this project and its upstream sources. See ATTRIBUTION.md for
+   the specific credits required.
+2. **ShareAlike** — distribute any adapted data under CC-BY-SA 3.0 or a
+   compatible license.
+
+## Scope note
+
+Individual facts — a match result, a tournament date, a final score — are not
+themselves subject to copyright in most jurisdictions. What this license covers
+is the compilation: the selection, arrangement, and written expression assembled
+here and by the sources credited in ATTRIBUTION.md.
+
+This file describes the project's licensing intent. It is not legal advice.

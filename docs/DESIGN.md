@@ -299,7 +299,7 @@ Build-time scripts, run by a human, output committed:
 - **Assets vendored.** Fonts, logos, hero icons, and map schematics live in the repo. No hotlinking to Steam's CDN, no hand-guessed URLs, no shared image standing in for four different teams. Where a logo cannot be sourced under acceptable terms, the fallback is a deliberate typographic mark, not another team's logo.
 - **Real type checking.** `@types/react` and `@types/react-dom` installed, `strict` enabled. The prototype's `lint` script passes while checking nothing, which is part of why breakage went unnoticed.
 - **Routing.** URLs per TI and per tab, so a specific page can be linked and shared.
-- **Licensing.** Add a LICENSE, and an attribution page crediting Liquipedia, OpenDota, and any period sources quoted. Note Valve's trademark. The footer currently claims "Free & Open-Source" with no license file present.
+- **Licensing.** Settled: split license. Code is MIT (`LICENSE`); everything under `data/` is CC-BY-SA 3.0 (`LICENSE-DATA`), because parts derive from Liquipedia and its ShareAlike term carries forward. Sources are credited in `ATTRIBUTION.md`, and Valve's trademark is noted there and in the README.
 
 ---
 

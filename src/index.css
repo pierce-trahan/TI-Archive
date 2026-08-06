@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+  .font-space-mono {
+    font-family: 'Space Mono', monospace;
+  }
+  .font-cinzel {
+    font-family: 'Syne', sans-serif;
+  }
+  .font-cinzel-dec {
+    font-family: 'Syne', sans-serif;
+  }
+  .font-mono-code {
+    font-family: 'Space Mono', monospace;
+  }
+  
+  /* Technical Grid Shell & Background */
+  .bg-tech-grid {
+    background-color: #0c0c0e;
+    background-image: radial-gradient(circle at 2px 2px, rgba(228, 228, 231, 0.1) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .bg-leather {
+    background-color: #0c0c0e;
+    background-image: radial-gradient(circle at 2px 2px, rgba(228, 228, 231, 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  /* Card Surface */
+  .bg-parchment-dark {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(228, 228, 231, 0.1);
+  }
+
+  /* Deep Inset Area */
+  .bg-parchment-deep {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(228, 228, 231, 0.08);
+  }
+
+  /* Borders */
+  .border-filigree {
+    border: 1px solid rgba(228, 228, 231, 0.12);
+  }
+
+  .border-filigree-gold {
+    border: 1px solid #ff4d00;
+    box-shadow: 0 0 15px rgba(255, 77, 0, 0.15);
+  }
+
+  /* Text & Glows */
+  .text-gold-gradient {
+    color: #e4e4e7;
+  }
+
+  .glow-gold {
+    color: #e4e4e7;
+    text-shadow: 0 0 10px rgba(228, 228, 231, 0.2);
+  }
+
+  .glow-gold-lg {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 77, 0, 0.3);
+  }
+
+  /* Action Buttons & Badges */
+  .wax-seal-shadow {
+    box-shadow: 0 0 10px rgba(255, 77, 0, 0.2);
+  }
+
+  /* Meta Label */
+  .meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ff4d00;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  /* Custom Tag Pill Classes */
+  .tag-prohibit {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(255, 51, 51, 0.4);
+    color: #ff4d4d;
+    background: rgba(255, 51, 51, 0.05);
+  }
+
+  .tag-select {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(51, 255, 153, 0.4);
+    color: #33ff99;
+    background: rgba(51, 255, 153, 0.05);
+  }
+}
+
+/* Technical Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(228, 228, 231, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4d00;
+}
+

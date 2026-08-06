@@ -1,0 +1,6 @@
+{
+  "name": "The International Compendium Archive",
+  "description": "An interactive Lore Grimoire and digital scrapbook documenting every Dota 2 International (TI1 to TI13+), featuring roster shuffles, macro & micro moments, video overlays, caster soundboards, and an Aegis Hall of Fame.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

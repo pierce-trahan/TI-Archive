@@ -1,0 +1,215 @@
+{
+  "_note": "Placements and prize money. Prize amounts are DERIVED: Liquipedia stores a multiplier per slot and transcludes the pool total from a subpage. Both inputs are recorded here so every figure can be rechecked. Ranks come from slot order and the number of teams sharing a slot.",
+  "_attribution": "Roster, qualification and placement data from Liquipedia, licensed CC-BY-SA 3.0.",
+  "_source": {
+    "type": "url",
+    "url": "https://liquipedia.net/dota2/The_International/2018"
+  },
+  "event": "ti08",
+  "prize_pool": {
+    "total_usd": 25532177,
+    "source_page": "The International/2018/prizepool",
+    "raw": "25,532,177"
+  },
+  "prize_formula": "round(prize_pool.total_usd * prize_multiplier)",
+  "placements": [
+    {
+      "placement": "1st",
+      "rank_from": 1,
+      "rank_to": 1,
+      "prize_share_displayed": "44%",
+      "prize_multiplier": 0.44,
+      "prize_usd": 11234158,
+      "teams": [
+        {
+          "tag": "og",
+          "team_name": "OG",
+          "last_opponent_tag": "lgd",
+          "last_series_score": "3-2"
+        }
+      ]
+    },
+    {
+      "placement": "2nd",
+      "rank_from": 2,
+      "rank_to": 2,
+      "prize_share_displayed": "16%",
+      "prize_multiplier": 0.16,
+      "prize_usd": 4085148,
+      "teams": [
+        {
+          "tag": "lgd",
+          "team_name": "PSG.LGD",
+          "last_opponent_tag": "og",
+          "last_series_score": "2-3"
+        }
+      ]
+    },
+    {
+      "placement": "3rd",
+      "rank_from": 3,
+      "rank_to": 3,
+      "prize_share_displayed": "10.5%",
+      "prize_multiplier": 0.105,
+      "prize_usd": 2680879,
+      "teams": [
+        {
+          "tag": "eg",
+          "team_name": "Evil Geniuses",
+          "last_opponent_tag": "lgd",
+          "last_series_score": "0-2"
+        }
+      ]
+    },
+    {
+      "placement": "4th",
+      "rank_from": 4,
+      "rank_to": 4,
+      "prize_share_displayed": "7%",
+      "prize_multiplier": 0.07,
+      "prize_usd": 1787252,
+      "teams": [
+        {
+          "tag": "tl",
+          "team_name": "Team Liquid",
+          "last_opponent_tag": "eg",
+          "last_series_score": "0-2"
+        }
+      ]
+    },
+    {
+      "placement": "5th–6th",
+      "rank_from": 5,
+      "rank_to": 6,
+      "prize_share_displayed": "4.5%",
+      "prize_multiplier": 0.045,
+      "prize_usd": 1148948,
+      "teams": [
+        {
+          "tag": "vp",
+          "team_name": "Virtus.pro",
+          "last_opponent_tag": "eg",
+          "last_series_score": "0-2"
+        },
+        {
+          "tag": "secret",
+          "team_name": "Team Secret",
+          "last_opponent_tag": "tl",
+          "last_series_score": "0-2"
+        }
+      ]
+    },
+    {
+      "placement": "7th–8th",
+      "rank_from": 7,
+      "rank_to": 8,
+      "prize_share_displayed": "2.5%",
+      "prize_multiplier": 0.02500112761207746,
+      "prize_usd": 638333,
+      "teams": [
+        {
+          "tag": "optic",
+          "team_name": "OpTic Gaming",
+          "last_opponent_tag": "vp",
+          "last_series_score": "1-2"
+        },
+        {
+          "tag": "vgj.s",
+          "team_name": "VGJ.Storm",
+          "last_opponent_tag": "secret",
+          "last_series_score": "0-2"
+        }
+      ]
+    },
+    {
+      "placement": "9th–12th",
+      "rank_from": 9,
+      "rank_to": 12,
+      "prize_share_displayed": "1.5%",
+      "prize_multiplier": 0.015,
+      "prize_usd": 382983,
+      "teams": [
+        {
+          "tag": "serenity",
+          "team_name": "Team Serenity",
+          "last_opponent_tag": "optic",
+          "last_series_score": "0-2"
+        },
+        {
+          "tag": "mineski",
+          "team_name": "Mineski",
+          "last_opponent_tag": "vp",
+          "last_series_score": "0-2"
+        },
+        {
+          "tag": "winstrike",
+          "team_name": "Winstrike Team",
+          "last_opponent_tag": "vgj.s",
+          "last_series_score": "0-2"
+        },
+        {
+          "tag": "vg",
+          "team_name": "Vici Gaming",
+          "last_opponent_tag": "secret",
+          "last_series_score": "1-2"
+        }
+      ]
+    },
+    {
+      "placement": "13th–16th",
+      "rank_from": 13,
+      "rank_to": 16,
+      "prize_share_displayed": "0.5%",
+      "prize_multiplier": 0.005,
+      "prize_usd": 127661,
+      "teams": [
+        {
+          "tag": "fnc",
+          "team_name": "Fnatic",
+          "last_opponent_tag": "serenity",
+          "last_series_score": "0-1"
+        },
+        {
+          "tag": "tnc",
+          "team_name": "TNC Predator",
+          "last_opponent_tag": "mineski",
+          "last_series_score": "0-1"
+        },
+        {
+          "tag": "newbee",
+          "team_name": "Newbee",
+          "last_opponent_tag": "winstrike",
+          "last_series_score": "0-1"
+        },
+        {
+          "tag": "vgj.t",
+          "team_name": "VGJ.Thunder",
+          "last_opponent_tag": "vg",
+          "last_series_score": "0-1"
+        }
+      ]
+    },
+    {
+      "placement": "17th–18th",
+      "rank_from": 17,
+      "rank_to": 18,
+      "prize_share_displayed": "0.25%",
+      "prize_multiplier": 0.0025,
+      "prize_usd": 63830,
+      "teams": [
+        {
+          "tag": "ig",
+          "team_name": "Invictus Gaming",
+          "last_opponent_tag": null,
+          "last_series_score": null
+        },
+        {
+          "tag": "pain gaming",
+          "team_name": "paiN Gaming",
+          "last_opponent_tag": null,
+          "last_series_score": null
+        }
+      ]
+    }
+  ]
+}

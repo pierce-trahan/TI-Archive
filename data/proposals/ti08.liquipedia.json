@@ -1,15 +1,20 @@
 {
   "_generated_by": "scripts/ingest-liquipedia.ts",
-  "_generated_at": "2026-08-06T19:19:09.942Z",
+  "_generated_at": "2026-08-06T22:05:41.102Z",
   "_status": "PROPOSAL — not authoritative. Join to account_ids and confirm before use.",
   "_attribution": "Roster, qualification and placement data from Liquipedia, licensed CC-BY-SA 3.0.",
   "_source": {
     "type": "url",
     "url": "https://liquipedia.net/dota2/The_International/2018",
-    "retrieved_at": "2026-08-06T19:19:09.942Z"
+    "retrieved_at": "2026-08-06T22:05:41.102Z"
   },
   "event": "ti08",
   "team_count": 18,
+  "prize_pool": {
+    "total_usd": 25532177,
+    "source_page": "The International/2018/prizepool",
+    "raw": "25,532,177"
+  },
   "teams": [
     {
       "team_name": "Virtus.pro",

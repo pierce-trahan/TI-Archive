@@ -84,6 +84,29 @@ async function fetchWikitext(title: string, cacheDir: string): Promise<string> {
   return page.revisions[0].slots.main['*'];
 }
 
+/**
+ * The prize pool total is transcluded from a subpage (`{{:.../prizepool}}`)
+ * rather than written inline, so the per-slot `{{#expr:}}` formulas reference
+ * a variable this page never states. Fetch the subpage and we have the real
+ * input; without it the formulas are unevaluable and the amounts stay unknown.
+ */
+async function fetchPrizePool(
+  wikitext: string,
+  cacheDir: string,
+): Promise<{ total_usd: number; source_page: string; raw: string } | null> {
+  const match = /prizepoolusd\s*=\s*\{\{:([^}]+)\}\}/.exec(wikitext);
+  if (!match?.[1]) return null;
+
+  const page = match[1].trim();
+  const raw = (await fetchWikitext(page, cacheDir)).trim();
+
+  // Expect a bare formatted number such as "25,532,177".
+  const total = Number(raw.replace(/,/g, ''));
+  if (!Number.isFinite(total) || total <= 0) return null;
+
+  return { total_usd: total, source_page: page, raw };
+}
+
 function parseParticipants(wikitext: string): ProposedTeam[] {
   const blocks = findTemplates(wikitext, 'TeamParticipants');
   const teams: ProposedTeam[] = [];
@@ -184,6 +207,7 @@ async function main(): Promise<void> {
 
   const teams = parseParticipants(wikitext);
   const placements = parsePrizePool(wikitext);
+  const prizePool = await fetchPrizePool(wikitext, cacheDir);
 
   await mkdir(outDir, { recursive: true });
   const outPath = `${outDir}/${key}.liquipedia.json`;
@@ -198,6 +222,7 @@ async function main(): Promise<void> {
         _source: { type: 'url', url: event.source_url, retrieved_at: new Date().toISOString() },
         event: key,
         team_count: teams.length,
+        prize_pool: prizePool,
         teams,
         placements,
       },
@@ -214,7 +239,12 @@ async function main(): Promise<void> {
 
   console.log(`teams without exactly 5 players: ${badRosters.length}`);
   console.log(`teams without a qualification path: ${noQual.length}`);
-  console.log(`prize slots parsed: ${placements.length}\n`);
+  console.log(`prize slots parsed: ${placements.length}`);
+  console.log(
+    prizePool
+      ? `prize pool total: $${prizePool.total_usd.toLocaleString('en-US')} (from ${prizePool.source_page})\n`
+      : 'prize pool total: NOT FOUND — per-slot amounts cannot be computed\n',
+  );
 
   for (const team of teams) {
     const roster = team.players

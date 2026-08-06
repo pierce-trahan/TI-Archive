@@ -1,0 +1,20 @@
+{
+  "_note": "Confirmed rosters as fielded at this event, with positions. A roster belongs to the event, not to the player. Entries appear here only once a human has confirmed them; the generated scaffold at data/entities/players.ti08.scaffold.json is the queue of what still needs confirming.",
+  "event": "ti08",
+  "rosters": [
+    {
+      "team_id": 5026801,
+      "team_name": "OpTic Gaming",
+      "source": { "type": "owner-confirmation", "date": "2026-08-06" },
+      "players": [
+        { "position": 1, "role": "Carry", "handle": "Pajkatt", "account_id": null, "captain": false },
+        { "position": 2, "role": "Mid", "handle": "CCnC", "account_id": 221666230, "captain": false },
+        { "position": 3, "role": "Offlane", "handle": "33", "account_id": 86698277, "captain": false },
+        { "position": 4, "role": "Soft Support", "handle": "zai", "account_id": null, "captain": false },
+        { "position": 5, "role": "Hard Support", "handle": "ppd", "account_id": null, "captain": true }
+      ],
+      "unmapped_account_ids": [73562326, 87285329, 86727555],
+      "note": "The roster and positions are confirmed. Three of the five account_ids are not yet tied to a specific player and are deliberately left null rather than inferred."
+    }
+  ]
+}

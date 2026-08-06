@@ -1,0 +1,43 @@
+{
+  "_note": "Team identity over time. OpenDota returns whatever a team_id is called NOW, which silently rewrites history — team 39 comes back as 'Shopify Rebellion' for a 2018 event. `names` records what a team was called AS OF a given event, and is the only thing the UI may display. `opendota_current_name` is stored so a future ingest can detect drift, never for display.",
+  "_source_types": {
+    "owner-confirmation": "Confirmed directly by the project owner, who watched these events live. A first-class source for this project.",
+    "url": "Cite the page. Liquipedia preferred."
+  },
+  "teams": [
+    {
+      "team_id": 39,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Evil Geniuses",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": "Shopify Rebellion"
+    },
+    {
+      "team_id": 350190,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Fnatic",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": "Ascent Esports"
+    },
+    {
+      "team_id": 5026801,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "OpTic Gaming",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": null,
+      "note": "OpenDota returns an empty string for this team_id."
+    }
+  ]
+}

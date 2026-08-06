@@ -18,10 +18,13 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { fetchHeroes } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
 import { loadEvent, phaseFor } from './lib/events.ts';
+import { describeSource, loadEntities } from './lib/entities.ts';
 
 interface TeamAppearance {
   team_id: number | null;
+  /** The name as of this event once confirmed; otherwise whatever OpenDota calls it now. */
   team_name: string | null;
+  team_name_verified: boolean;
   matches: number;
 }
 
@@ -70,6 +73,7 @@ async function main(): Promise<void> {
   const eventPhases = new Set((process.argv[3] ?? 'group,main').split(','));
 
   const event = await loadEvent(key);
+  const entities = await loadEntities();
   const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
   const outDir = new URL(`../data/entities`, import.meta.url).pathname;
 
@@ -111,11 +115,18 @@ async function main(): Promise<void> {
 
       let entry = players.get(player.account_id);
       if (!entry) {
+        // A human-confirmed handle for this event wins outright. OpenDota's
+        // name is only a hint, and is a *current* handle — see CCnC/Quinn.
+        const confirmed = entities.playerHandleAt(player.account_id, key);
         entry = {
           account_id: player.account_id,
-          nickname: player.name ?? null,
-          nickname_source: player.name ? 'opendota:players[].name' : null,
-          verified: false,
+          nickname: confirmed?.handle ?? player.name ?? null,
+          nickname_source: confirmed
+            ? describeSource(confirmed.source)
+            : player.name
+              ? 'opendota:players[].name'
+              : null,
+          verified: confirmed != null,
           real_name: null,
           nationality: null,
           matches: 0,
@@ -127,19 +138,28 @@ async function main(): Promise<void> {
       }
 
       // If a later match supplies a name the first one lacked, take it — still a hint.
-      if (!entry.nickname && player.name) {
+      if (!entry.verified && !entry.nickname && player.name) {
         entry.nickname = player.name;
         entry.nickname_source = 'opendota:players[].name';
       }
 
       entry.matches++;
 
+      // A confirmed name for this event beats whatever the API calls the org today.
+      const confirmedTeam = entities.teamNameAt(teamId ?? null, key);
+      const nameForEvent = confirmedTeam?.name ?? teamNameForMatch;
+
       const seenTeam = entry.teams.find((t) => t.team_id === (teamId ?? null));
       if (seenTeam) {
         seenTeam.matches++;
-        if (!seenTeam.team_name && teamNameForMatch) seenTeam.team_name = teamNameForMatch;
+        if (!seenTeam.team_name && nameForEvent) seenTeam.team_name = nameForEvent;
       } else {
-        entry.teams.push({ team_id: teamId ?? null, team_name: teamNameForMatch, matches: 1 });
+        entry.teams.push({
+          team_id: teamId ?? null,
+          team_name: nameForEvent,
+          team_name_verified: confirmedTeam != null,
+          matches: 1,
+        });
       }
 
       const hero = heroName.get(player.hero_id);
@@ -196,19 +216,28 @@ async function main(): Promise<void> {
     byTeam.set(team, [...(byTeam.get(team) ?? []), p]);
   }
 
-  console.log(`teams seen: ${byTeam.size}`);
-  console.log(`players seen: ${scaffold.length}`);
-  console.log(`players with no name in OpenDota: ${needsName.length}`);
+  const verifiedPlayers = scaffold.filter((p) => p.verified).length;
+  const verifiedTeams = new Set(
+    scaffold.filter((p) => p.teams[0]?.team_name_verified).map((p) => p.teams[0]?.team_id),
+  ).size;
+
+  console.log(`teams seen: ${byTeam.size}  (${verifiedTeams} confirmed, ${byTeam.size - verifiedTeams} outstanding)`);
+  console.log(
+    `players seen: ${scaffold.length}  (${verifiedPlayers} confirmed, ${scaffold.length - verifiedPlayers} outstanding)`,
+  );
+  console.log(`players with no name from any source: ${needsName.length}`);
   if (anonymous) console.log(`player-slots with no account_id (private profile): ${anonymous}`);
 
-  console.log('\nroster scaffold:');
+  console.log('\nroster scaffold   [✓ confirmed · ? unconfirmed hint · — no name at all]');
   for (const [team, roster] of [...byTeam.entries()].sort()) {
-    const flag = roster.length === 5 ? ' ' : '!';
-    console.log(`${flag} ${team}  (${roster.length} players)`);
+    const sizeFlag = roster.length === 5 ? ' ' : '!';
+    const teamMark = roster[0]?.teams[0]?.team_name_verified ? '✓' : '?';
+    console.log(`${sizeFlag} ${teamMark} ${team}  (${roster.length} players)`);
     for (const p of roster) {
-      const label = p.nickname ?? '— NO NAME —';
+      const mark = p.verified ? '✓' : p.nickname ? '?' : '—';
+      const label = p.nickname ?? 'NO NAME';
       console.log(
-        `      ${String(p.account_id).padEnd(11)} ${label.padEnd(18)} ${p.matches} matches`,
+        `      ${mark} ${String(p.account_id).padEnd(11)} ${label.padEnd(18)} ${p.matches} matches`,
       );
     }
   }

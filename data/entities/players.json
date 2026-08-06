@@ -1,0 +1,36 @@
+{
+  "_note": "Player identity over time, keyed on account_id — the only stable key OpenDota exposes. `handles` records the handle a player used AS OF an event, which is the only thing the UI may display for that event. OpenDota's `name` is a CURRENT handle and is stored only as `opendota_current_name`, for drift detection.",
+  "_source_types": {
+    "owner-confirmation": "Confirmed directly by the project owner, who watched these events live. A first-class source for this project.",
+    "url": "Cite the page. Liquipedia preferred."
+  },
+  "players": [
+    {
+      "account_id": 221666230,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "CCnC",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": "Quinn",
+      "real_name": null,
+      "nationality": null,
+      "note": "Changed handle to Quinn after TI8. This is the worked example of why OpenDota's name field cannot be trusted for a historical roster: an automated fill would have labelled a 2018 lineup with a handle he had not yet adopted."
+    },
+    {
+      "account_id": 86698277,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "33",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": "33",
+      "real_name": null,
+      "nationality": null
+    }
+  ]
+}

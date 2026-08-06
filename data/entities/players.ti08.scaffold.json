@@ -1,6 +1,6 @@
 {
   "_generated_by": "scripts/build-player-map.ts",
-  "_generated_at": "2026-08-06T19:03:05.296Z",
+  "_generated_at": "2026-08-06T19:12:25.774Z",
   "_instructions": "Every entry is unverified. Confirm each against Liquipedia, set real_name and nationality, replace nickname_source with the Liquipedia URL, then set verified:true. Entries with nickname:null have no pro name in OpenDota and must be identified by account_id — never from personanames_seen, which are current Steam handles.",
   "_liquipedia": "https://liquipedia.net/dota2/The_International/2018",
   "event": "ti08",
@@ -8,177 +8,169 @@
   "missing_nickname_count": 46,
   "players": [
     {
-      "account_id": 221666230,
-      "nickname": "Quinn",
+      "account_id": 111620041,
+      "nickname": "SumaiL-",
       "nickname_source": "opendota:players[].name",
       "verified": false,
       "real_name": null,
       "nationality": null,
-      "matches": 24,
+      "matches": 27,
       "teams": [
         {
-          "team_id": 5026801,
-          "team_name": "",
-          "matches": 24
+          "team_id": 39,
+          "team_name": "Evil Geniuses",
+          "team_name_verified": true,
+          "matches": 27
         }
       ],
       "heroes_played": [
         "Alchemist",
-        "Clinkz",
-        "Dragon Knight",
-        "Huskar",
+        "Gyrocopter",
         "Invoker",
-        "Leshrac",
-        "Lina",
-        "Medusa",
+        "Kunkka",
         "Mirana",
-        "Monkey King",
+        "Necrophos",
         "Storm Spirit",
         "Templar Assassin",
+        "Timbersaw",
         "Tiny",
-        "Venomancer"
+        "Ursa",
+        "Zeus"
       ],
       "personanames_seen": [
-        "Antediluvian"
+        "Miracle-"
       ]
     },
     {
-      "account_id": 73562326,
-      "nickname": null,
-      "nickname_source": null,
+      "account_id": 86745912,
+      "nickname": "天鸽",
+      "nickname_source": "opendota:players[].name",
       "verified": false,
       "real_name": null,
       "nationality": null,
-      "matches": 24,
+      "matches": 27,
       "teams": [
         {
-          "team_id": 5026801,
-          "team_name": "",
-          "matches": 24
-        }
-      ],
-      "heroes_played": [
-        "Brewmaster",
-        "Chen",
-        "Earth Spirit",
-        "Earthshaker",
-        "Elder Titan",
-        "Io",
-        "Nature's Prophet",
-        "Nyx Assassin",
-        "Tiny",
-        "Undying",
-        "Vengeful Spirit",
-        "Windranger",
-        "Winter Wyvern"
-      ],
-      "personanames_seen": [
-        "Chao P"
-      ]
-    },
-    {
-      "account_id": 87285329,
-      "nickname": null,
-      "nickname_source": null,
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 24,
-      "teams": [
-        {
-          "team_id": 5026801,
-          "team_name": "",
-          "matches": 24
+          "team_id": 39,
+          "team_name": "Evil Geniuses",
+          "team_name_verified": true,
+          "matches": 27
         }
       ],
       "heroes_played": [
         "Bloodseeker",
         "Clinkz",
         "Drow Ranger",
-        "Huskar",
-        "Juggernaut",
+        "Gyrocopter",
         "Mirana",
-        "Monkey King",
-        "Morphling",
         "Necrophos",
         "Phantom Lancer",
+        "Phoenix",
         "Spectre",
-        "Terrorblade",
+        "Templar Assassin",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Ye Xiu"
+      ]
+    },
+    {
+      "account_id": 94155156,
+      "nickname": "Fly",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Evil Geniuses",
+          "team_name_verified": true,
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Crystal Maiden",
+        "Lich",
+        "Phoenix",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
+      ]
+    },
+    {
+      "account_id": 41231571,
+      "nickname": "s4",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Evil Geniuses",
+          "team_name_verified": true,
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Bristleback",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Necrophos",
+        "Pugna",
+        "Tiny",
         "Ursa",
         "Venomancer",
         "Weaver",
         "Wraith King"
       ],
       "personanames_seen": [
-        "Chama"
+        "Carl"
       ]
     },
     {
-      "account_id": 86698277,
-      "nickname": "33",
+      "account_id": 25907144,
+      "nickname": "Cr1t-",
       "nickname_source": "opendota:players[].name",
       "verified": false,
       "real_name": null,
       "nationality": null,
-      "matches": 24,
+      "matches": 27,
       "teams": [
         {
-          "team_id": 5026801,
-          "team_name": "",
-          "matches": 24
+          "team_id": 39,
+          "team_name": "Evil Geniuses",
+          "team_name_verified": true,
+          "matches": 27
         }
       ],
       "heroes_played": [
-        "Batrider",
-        "Brewmaster",
-        "Broodmother",
-        "Centaur Warrunner",
-        "Clinkz",
-        "Doom",
-        "Dragon Knight",
-        "Enchantress",
-        "Enigma",
-        "Mirana",
-        "Nature's Prophet",
-        "Necrophos",
-        "Phoenix",
-        "Tiny",
-        "Ursa"
-      ],
-      "personanames_seen": [
-        "not human (животное)"
-      ]
-    },
-    {
-      "account_id": 86727555,
-      "nickname": null,
-      "nickname_source": null,
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 24,
-      "teams": [
-        {
-          "team_id": 5026801,
-          "team_name": "",
-          "matches": 24
-        }
-      ],
-      "heroes_played": [
-        "Abaddon",
-        "Bane",
+        "Chen",
         "Crystal Maiden",
-        "Jakiro",
-        "Lion",
-        "Ogre Magi",
-        "Silencer",
-        "Treant Protector",
-        "Undying",
-        "Vengeful Spirit",
-        "Winter Wyvern"
+        "Dark Willow",
+        "Earth Spirit",
+        "Io",
+        "Kunkka",
+        "Nyx Assassin",
+        "Pudge",
+        "Pugna",
+        "Rubick",
+        "Spirit Breaker",
+        "Tusk",
+        "Vengeful Spirit"
       ],
       "personanames_seen": [
-        "ABOVE THE CLOUDS"
+        "o_o"
       ]
     },
     {
@@ -192,7 +184,8 @@
       "teams": [
         {
           "team_id": 350190,
-          "team_name": "Ascent Esports",
+          "team_name": "Fnatic",
+          "team_name_verified": true,
           "matches": 17
         }
       ],
@@ -224,7 +217,8 @@
       "teams": [
         {
           "team_id": 350190,
-          "team_name": "Ascent Esports",
+          "team_name": "Fnatic",
+          "team_name_verified": true,
           "matches": 17
         }
       ],
@@ -254,7 +248,8 @@
       "teams": [
         {
           "team_id": 350190,
-          "team_name": "Ascent Esports",
+          "team_name": "Fnatic",
+          "team_name_verified": true,
           "matches": 17
         }
       ],
@@ -282,7 +277,8 @@
       "teams": [
         {
           "team_id": 350190,
-          "team_name": "Ascent Esports",
+          "team_name": "Fnatic",
+          "team_name_verified": true,
           "matches": 17
         }
       ],
@@ -311,7 +307,8 @@
       "teams": [
         {
           "team_id": 350190,
-          "team_name": "Ascent Esports",
+          "team_name": "Fnatic",
+          "team_name_verified": true,
           "matches": 17
         }
       ],
@@ -342,6 +339,7 @@
         {
           "team_id": 5,
           "team_name": "Invictus Gaming",
+          "team_name_verified": false,
           "matches": 18
         }
       ],
@@ -375,6 +373,7 @@
         {
           "team_id": 5,
           "team_name": "Invictus Gaming",
+          "team_name_verified": false,
           "matches": 18
         }
       ],
@@ -408,6 +407,7 @@
         {
           "team_id": 5,
           "team_name": "Invictus Gaming",
+          "team_name_verified": false,
           "matches": 18
         }
       ],
@@ -442,6 +442,7 @@
         {
           "team_id": 5,
           "team_name": "Invictus Gaming",
+          "team_name_verified": false,
           "matches": 18
         }
       ],
@@ -474,6 +475,7 @@
         {
           "team_id": 5,
           "team_name": "Invictus Gaming",
+          "team_name_verified": false,
           "matches": 18
         }
       ],
@@ -504,6 +506,7 @@
         {
           "team_id": 15,
           "team_name": "LGD Gaming",
+          "team_name_verified": false,
           "matches": 30
         }
       ],
@@ -537,6 +540,7 @@
         {
           "team_id": 15,
           "team_name": "LGD Gaming",
+          "team_name_verified": false,
           "matches": 30
         }
       ],
@@ -571,6 +575,7 @@
         {
           "team_id": 15,
           "team_name": "LGD Gaming",
+          "team_name_verified": false,
           "matches": 30
         }
       ],
@@ -605,6 +610,7 @@
         {
           "team_id": 15,
           "team_name": "LGD Gaming",
+          "team_name_verified": false,
           "matches": 30
         }
       ],
@@ -640,6 +646,7 @@
         {
           "team_id": 15,
           "team_name": "LGD Gaming",
+          "team_name_verified": false,
           "matches": 30
         }
       ],
@@ -676,6 +683,7 @@
         {
           "team_id": 543897,
           "team_name": "Mineski",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -706,6 +714,7 @@
         {
           "team_id": 543897,
           "team_name": "Mineski",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -739,6 +748,7 @@
         {
           "team_id": 543897,
           "team_name": "Mineski",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -771,6 +781,7 @@
         {
           "team_id": 543897,
           "team_name": "Mineski",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -798,6 +809,7 @@
         {
           "team_id": 543897,
           "team_name": "Mineski",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -830,6 +842,7 @@
         {
           "team_id": 1375614,
           "team_name": "Newbee",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -860,6 +873,7 @@
         {
           "team_id": 1375614,
           "team_name": "Newbee",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -894,6 +908,7 @@
         {
           "team_id": 1375614,
           "team_name": "Newbee",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -923,6 +938,7 @@
         {
           "team_id": 1375614,
           "team_name": "Newbee",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -952,6 +968,7 @@
         {
           "team_id": 1375614,
           "team_name": "Newbee",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -982,6 +999,7 @@
         {
           "team_id": 2586976,
           "team_name": "OG",
+          "team_name_verified": false,
           "matches": 29
         }
       ],
@@ -1014,6 +1032,7 @@
         {
           "team_id": 2586976,
           "team_name": "OG",
+          "team_name_verified": false,
           "matches": 29
         }
       ],
@@ -1048,6 +1067,7 @@
         {
           "team_id": 2586976,
           "team_name": "OG",
+          "team_name_verified": false,
           "matches": 29
         }
       ],
@@ -1080,6 +1100,7 @@
         {
           "team_id": 2586976,
           "team_name": "OG",
+          "team_name_verified": false,
           "matches": 29
         }
       ],
@@ -1118,6 +1139,7 @@
         {
           "team_id": 2586976,
           "team_name": "OG",
+          "team_name_verified": false,
           "matches": 29
         }
       ],
@@ -1137,6 +1159,185 @@
       ]
     },
     {
+      "account_id": 221666230,
+      "nickname": "CCnC",
+      "nickname_source": "owner-confirmation:2026-08-06",
+      "verified": true,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "OpTic Gaming",
+          "team_name_verified": true,
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Invoker",
+        "Leshrac",
+        "Lina",
+        "Medusa",
+        "Mirana",
+        "Monkey King",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tiny",
+        "Venomancer"
+      ],
+      "personanames_seen": [
+        "Antediluvian"
+      ]
+    },
+    {
+      "account_id": 73562326,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "OpTic Gaming",
+          "team_name_verified": true,
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Brewmaster",
+        "Chen",
+        "Earth Spirit",
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Nature's Prophet",
+        "Nyx Assassin",
+        "Tiny",
+        "Undying",
+        "Vengeful Spirit",
+        "Windranger",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "Chao P"
+      ]
+    },
+    {
+      "account_id": 87285329,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "OpTic Gaming",
+          "team_name_verified": true,
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Drow Ranger",
+        "Huskar",
+        "Juggernaut",
+        "Mirana",
+        "Monkey King",
+        "Morphling",
+        "Necrophos",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Chama"
+      ]
+    },
+    {
+      "account_id": 86698277,
+      "nickname": "33",
+      "nickname_source": "owner-confirmation:2026-08-06",
+      "verified": true,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "OpTic Gaming",
+          "team_name_verified": true,
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Batrider",
+        "Brewmaster",
+        "Broodmother",
+        "Centaur Warrunner",
+        "Clinkz",
+        "Doom",
+        "Dragon Knight",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Phoenix",
+        "Tiny",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "not human (животное)"
+      ]
+    },
+    {
+      "account_id": 86727555,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "OpTic Gaming",
+          "team_name_verified": true,
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Abaddon",
+        "Bane",
+        "Crystal Maiden",
+        "Jakiro",
+        "Lion",
+        "Ogre Magi",
+        "Silencer",
+        "Treant Protector",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "ABOVE THE CLOUDS"
+      ]
+    },
+    {
       "account_id": 94004717,
       "nickname": null,
       "nickname_source": null,
@@ -1148,6 +1349,7 @@
         {
           "team_id": 67,
           "team_name": "paiN Gaming",
+          "team_name_verified": false,
           "matches": 16
         }
       ],
@@ -1179,6 +1381,7 @@
         {
           "team_id": 67,
           "team_name": "paiN Gaming",
+          "team_name_verified": false,
           "matches": 16
         }
       ],
@@ -1211,6 +1414,7 @@
         {
           "team_id": 67,
           "team_name": "paiN Gaming",
+          "team_name_verified": false,
           "matches": 16
         }
       ],
@@ -1242,6 +1446,7 @@
         {
           "team_id": 67,
           "team_name": "paiN Gaming",
+          "team_name_verified": false,
           "matches": 16
         }
       ],
@@ -1271,6 +1476,7 @@
         {
           "team_id": 67,
           "team_name": "paiN Gaming",
+          "team_name_verified": false,
           "matches": 16
         }
       ],
@@ -1289,167 +1495,6 @@
       ]
     },
     {
-      "account_id": 111620041,
-      "nickname": "SumaiL-",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 27,
-      "teams": [
-        {
-          "team_id": 39,
-          "team_name": "Shopify Rebellion",
-          "matches": 27
-        }
-      ],
-      "heroes_played": [
-        "Alchemist",
-        "Gyrocopter",
-        "Invoker",
-        "Kunkka",
-        "Mirana",
-        "Necrophos",
-        "Storm Spirit",
-        "Templar Assassin",
-        "Timbersaw",
-        "Tiny",
-        "Ursa",
-        "Zeus"
-      ],
-      "personanames_seen": [
-        "Miracle-"
-      ]
-    },
-    {
-      "account_id": 86745912,
-      "nickname": "天鸽",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 27,
-      "teams": [
-        {
-          "team_id": 39,
-          "team_name": "Shopify Rebellion",
-          "matches": 27
-        }
-      ],
-      "heroes_played": [
-        "Bloodseeker",
-        "Clinkz",
-        "Drow Ranger",
-        "Gyrocopter",
-        "Mirana",
-        "Necrophos",
-        "Phantom Lancer",
-        "Phoenix",
-        "Spectre",
-        "Templar Assassin",
-        "Ursa",
-        "Weaver",
-        "Wraith King"
-      ],
-      "personanames_seen": [
-        "Ye Xiu"
-      ]
-    },
-    {
-      "account_id": 94155156,
-      "nickname": "Fly",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 27,
-      "teams": [
-        {
-          "team_id": 39,
-          "team_name": "Shopify Rebellion",
-          "matches": 27
-        }
-      ],
-      "heroes_played": [
-        "Clinkz",
-        "Crystal Maiden",
-        "Lich",
-        "Phoenix",
-        "Silencer",
-        "Undying",
-        "Vengeful Spirit"
-      ],
-      "personanames_seen": [
-        "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
-      ]
-    },
-    {
-      "account_id": 41231571,
-      "nickname": "s4",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 27,
-      "teams": [
-        {
-          "team_id": 39,
-          "team_name": "Shopify Rebellion",
-          "matches": 27
-        }
-      ],
-      "heroes_played": [
-        "Bristleback",
-        "Enchantress",
-        "Enigma",
-        "Mirana",
-        "Necrophos",
-        "Pugna",
-        "Tiny",
-        "Ursa",
-        "Venomancer",
-        "Weaver",
-        "Wraith King"
-      ],
-      "personanames_seen": [
-        "Carl"
-      ]
-    },
-    {
-      "account_id": 25907144,
-      "nickname": "Cr1t-",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 27,
-      "teams": [
-        {
-          "team_id": 39,
-          "team_name": "Shopify Rebellion",
-          "matches": 27
-        }
-      ],
-      "heroes_played": [
-        "Chen",
-        "Crystal Maiden",
-        "Dark Willow",
-        "Earth Spirit",
-        "Io",
-        "Kunkka",
-        "Nyx Assassin",
-        "Pudge",
-        "Pugna",
-        "Rubick",
-        "Spirit Breaker",
-        "Tusk",
-        "Vengeful Spirit"
-      ],
-      "personanames_seen": [
-        "o_o"
-      ]
-    },
-    {
       "account_id": 82262664,
       "nickname": "kky",
       "nickname_source": "opendota:players[].name",
@@ -1461,6 +1506,7 @@
         {
           "team_id": 2163,
           "team_name": "Team Liquid",
+          "team_name_verified": false,
           "matches": 24
         }
       ],
@@ -1496,6 +1542,7 @@
         {
           "team_id": 2163,
           "team_name": "Team Liquid",
+          "team_name_verified": false,
           "matches": 24
         }
       ],
@@ -1530,6 +1577,7 @@
         {
           "team_id": 2163,
           "team_name": "Team Liquid",
+          "team_name_verified": false,
           "matches": 24
         }
       ],
@@ -1568,6 +1616,7 @@
         {
           "team_id": 2163,
           "team_name": "Team Liquid",
+          "team_name_verified": false,
           "matches": 24
         }
       ],
@@ -1596,6 +1645,7 @@
         {
           "team_id": 2163,
           "team_name": "Team Liquid",
+          "team_name_verified": false,
           "matches": 24
         }
       ],
@@ -1629,6 +1679,7 @@
         {
           "team_id": 1838315,
           "team_name": "Team Secret",
+          "team_name_verified": false,
           "matches": 26
         }
       ],
@@ -1662,6 +1713,7 @@
         {
           "team_id": 1838315,
           "team_name": "Team Secret",
+          "team_name_verified": false,
           "matches": 26
         }
       ],
@@ -1694,6 +1746,7 @@
         {
           "team_id": 1838315,
           "team_name": "Team Secret",
+          "team_name_verified": false,
           "matches": 26
         }
       ],
@@ -1730,6 +1783,7 @@
         {
           "team_id": 1838315,
           "team_name": "Team Secret",
+          "team_name_verified": false,
           "matches": 26
         }
       ],
@@ -1768,6 +1822,7 @@
         {
           "team_id": 1838315,
           "team_name": "Team Secret",
+          "team_name_verified": false,
           "matches": 26
         }
       ],
@@ -1808,6 +1863,7 @@
         {
           "team_id": 5066616,
           "team_name": "Team Serenity",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -1836,6 +1892,7 @@
         {
           "team_id": 5066616,
           "team_name": "Team Serenity",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -1866,6 +1923,7 @@
         {
           "team_id": 5066616,
           "team_name": "Team Serenity",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -1896,6 +1954,7 @@
         {
           "team_id": 5066616,
           "team_name": "Team Serenity",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -1925,6 +1984,7 @@
         {
           "team_id": 5066616,
           "team_name": "Team Serenity",
+          "team_name_verified": false,
           "matches": 19
         }
       ],
@@ -1954,6 +2014,7 @@
         {
           "team_id": 2108395,
           "team_name": "TNC Predator",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -1985,6 +2046,7 @@
         {
           "team_id": 2108395,
           "team_name": "TNC Predator",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2014,6 +2076,7 @@
         {
           "team_id": 2108395,
           "team_name": "TNC Predator",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2044,6 +2107,7 @@
         {
           "team_id": 2108395,
           "team_name": "TNC Predator",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2073,6 +2137,7 @@
         {
           "team_id": 2108395,
           "team_name": "TNC Predator",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2100,6 +2165,7 @@
         {
           "team_id": 5228654,
           "team_name": "VGJ Storm",
+          "team_name_verified": false,
           "matches": 22
         }
       ],
@@ -2131,6 +2197,7 @@
         {
           "team_id": 5228654,
           "team_name": "VGJ Storm",
+          "team_name_verified": false,
           "matches": 22
         }
       ],
@@ -2165,6 +2232,7 @@
         {
           "team_id": 5228654,
           "team_name": "VGJ Storm",
+          "team_name_verified": false,
           "matches": 22
         }
       ],
@@ -2197,6 +2265,7 @@
         {
           "team_id": 5228654,
           "team_name": "VGJ Storm",
+          "team_name_verified": false,
           "matches": 22
         }
       ],
@@ -2226,6 +2295,7 @@
         {
           "team_id": 5228654,
           "team_name": "VGJ Storm",
+          "team_name_verified": false,
           "matches": 22
         }
       ],
@@ -2256,6 +2326,7 @@
         {
           "team_id": 5027210,
           "team_name": "VGJ Thunder",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2285,6 +2356,7 @@
         {
           "team_id": 5027210,
           "team_name": "VGJ Thunder",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2317,6 +2389,7 @@
         {
           "team_id": 5027210,
           "team_name": "VGJ Thunder",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2347,6 +2420,7 @@
         {
           "team_id": 5027210,
           "team_name": "VGJ Thunder",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2377,6 +2451,7 @@
         {
           "team_id": 5027210,
           "team_name": "VGJ Thunder",
+          "team_name_verified": false,
           "matches": 17
         }
       ],
@@ -2406,6 +2481,7 @@
         {
           "team_id": 726228,
           "team_name": "Vici Gaming",
+          "team_name_verified": false,
           "matches": 20
         }
       ],
@@ -2436,6 +2512,7 @@
         {
           "team_id": 726228,
           "team_name": "Vici Gaming",
+          "team_name_verified": false,
           "matches": 20
         }
       ],
@@ -2466,6 +2543,7 @@
         {
           "team_id": 726228,
           "team_name": "Vici Gaming",
+          "team_name_verified": false,
           "matches": 20
         }
       ],
@@ -2494,6 +2572,7 @@
         {
           "team_id": 726228,
           "team_name": "Vici Gaming",
+          "team_name_verified": false,
           "matches": 20
         }
       ],
@@ -2523,6 +2602,7 @@
         {
           "team_id": 726228,
           "team_name": "Vici Gaming",
+          "team_name_verified": false,
           "matches": 20
         }
       ],
@@ -2555,6 +2635,7 @@
         {
           "team_id": 1883502,
           "team_name": "Virtus.pro",
+          "team_name_verified": false,
           "matches": 25
         }
       ],
@@ -2584,6 +2665,7 @@
         {
           "team_id": 1883502,
           "team_name": "Virtus.pro",
+          "team_name_verified": false,
           "matches": 25
         }
       ],
@@ -2618,6 +2700,7 @@
         {
           "team_id": 1883502,
           "team_name": "Virtus.pro",
+          "team_name_verified": false,
           "matches": 25
         }
       ],
@@ -2654,6 +2737,7 @@
         {
           "team_id": 1883502,
           "team_name": "Virtus.pro",
+          "team_name_verified": false,
           "matches": 25
         }
       ],
@@ -2690,6 +2774,7 @@
         {
           "team_id": 1883502,
           "team_name": "Virtus.pro",
+          "team_name_verified": false,
           "matches": 25
         }
       ],
@@ -2722,6 +2807,7 @@
         {
           "team_id": 5229127,
           "team_name": "Winstrike",
+          "team_name_verified": false,
           "matches": 21
         }
       ],
@@ -2752,6 +2838,7 @@
         {
           "team_id": 5229127,
           "team_name": "Winstrike",
+          "team_name_verified": false,
           "matches": 21
         }
       ],
@@ -2783,6 +2870,7 @@
         {
           "team_id": 5229127,
           "team_name": "Winstrike",
+          "team_name_verified": false,
           "matches": 21
         }
       ],
@@ -2815,6 +2903,7 @@
         {
           "team_id": 5229127,
           "team_name": "Winstrike",
+          "team_name_verified": false,
           "matches": 21
         }
       ],
@@ -2849,6 +2938,7 @@
         {
           "team_id": 5229127,
           "team_name": "Winstrike",
+          "team_name_verified": false,
           "matches": 21
         }
       ],

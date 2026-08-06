@@ -130,6 +130,24 @@ export async function fetchMatchDetail(
   return { match: data, cached };
 }
 
+export interface ProPlayer {
+  account_id: number;
+  name: string | null;
+  personaname: string | null;
+}
+
+/**
+ * Only *currently active* pros appear here — retired players are absent, which
+ * is why this cannot close the identity gap on its own. Useful as an extra
+ * source of join hints, never as a display name.
+ */
+export async function fetchProPlayers(cacheDir: string): Promise<ProPlayer[]> {
+  const { data } = await fetchJsonCached<ProPlayer[]>(`${BASE}/proPlayers`, {
+    cachePath: `${cacheDir}/proPlayers.json`,
+  });
+  return data;
+}
+
 export async function fetchHeroes(cacheDir: string): Promise<Hero[]> {
   const { data } = await fetchJsonCached<Hero[]>(`${BASE}/heroes`, {
     cachePath: `${cacheDir}/heroes.json`,

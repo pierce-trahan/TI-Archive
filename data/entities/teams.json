@@ -17,6 +17,18 @@
       "opendota_current_name": "Shopify Rebellion"
     },
     {
+      "team_id": 15,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "PSG.LGD",
+          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+        }
+      ],
+      "opendota_current_name": "LGD Gaming",
+      "note": "Team names must reflect what the team was called at the event. Liquipedia's TI8 page agrees: PSG.LGD."
+    },
+    {
       "team_id": 350190,
       "names": [
         {

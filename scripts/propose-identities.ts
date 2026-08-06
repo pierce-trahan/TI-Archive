@@ -44,6 +44,7 @@ interface ScaffoldPlayer {
   verified: boolean;
   matches: number;
   heroes_played: string[];
+  join_hints: string[];
   median_gpm: number | null;
   modal_lane_role: number | null;
   teams: { team_id: number | null; team_name: string | null; team_name_verified: boolean }[];
@@ -123,18 +124,26 @@ function joinRoster(lp: LiquipediaTeam, accounts: ScaffoldPlayer[]): ProposedIde
   const remainingAccounts = [...accounts];
   const remainingPlayers = [...lp.players];
 
-  // Tier 1: normalised handle match.
+  // Tier 1: normalised match against ANY identity string observed for the
+  // account — the pro name, the Steam persona, or either as reported by
+  // proPlayers. Hints are join keys only; the handle we display still comes
+  // from Liquipedia, which is the one source that knows the event-time value.
   for (const player of [...remainingPlayers]) {
-    const hit = remainingAccounts.find(
-      (a) => a.nickname && normalise(a.nickname) === normalise(player.handle),
-    );
+    let matchedHint: string | null = null;
+    const hit = remainingAccounts.find((a) => {
+      const hint = [a.nickname, ...(a.join_hints ?? [])]
+        .filter((h): h is string => Boolean(h))
+        .find((h) => normalise(h) === normalise(player.handle));
+      if (hint) matchedHint = hint;
+      return Boolean(hint);
+    });
     if (!hit) continue;
     out.push({
       account_id: hit.account_id,
       handle: player.handle,
       role: player.role,
       confidence: 'matched',
-      evidence: `OpenDota name "${hit.nickname}" normalises to "${normalise(player.handle)}"`,
+      evidence: `identity string "${matchedHint}" normalises to "${normalise(player.handle)}"`,
     });
     remainingAccounts.splice(remainingAccounts.indexOf(hit), 1);
     remainingPlayers.splice(remainingPlayers.indexOf(player), 1);

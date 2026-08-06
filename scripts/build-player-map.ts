@@ -15,7 +15,7 @@
  */
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
-import { fetchHeroes } from './lib/opendota.ts';
+import { fetchHeroes, fetchProPlayers } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
 import { loadEvent, phaseFor } from './lib/events.ts';
 import { describeSource, loadEntities } from './lib/entities.ts';
@@ -42,6 +42,12 @@ interface PlayerScaffold {
   heroes_played: string[];
   /** Recorded as evidence of drift, never for display. */
   personanames_seen: string[];
+  /**
+   * Every identity string ever observed for this account, from any source.
+   * These exist ONLY to join against Liquipedia handles. They are current-day
+   * values and must never be displayed as the handle used at an event.
+   */
+  join_hints: string[];
   /** Farm-priority evidence, used to propose which position an account played. */
   median_gpm: number | null;
   modal_lane_role: number | null;
@@ -83,6 +89,12 @@ async function main(): Promise<void> {
   const outDir = new URL(`../data/entities`, import.meta.url).pathname;
 
   const heroes = await fetchHeroes(cacheDir);
+  // proPlayers covers active pros only, but where it does have a row it often
+  // carries an identity string the match records lack (e.g. account 34505203
+  // is "mc" in matches but "MinD_ContRoL" here).
+  const proPlayers = new Map(
+    (await fetchProPlayers(cacheDir)).map((p) => [p.account_id, p]),
+  );
   const heroName = new Map(heroes.map((h) => [h.id, h.localized_name]));
 
   const all = await readMatches(cacheDir);
@@ -138,6 +150,7 @@ async function main(): Promise<void> {
           teams: [],
           heroes_played: [],
           personanames_seen: [],
+          join_hints: [],
           median_gpm: null,
           modal_lane_role: null,
           _gpm: [],
@@ -180,6 +193,11 @@ async function main(): Promise<void> {
 
       if (player.personaname && !entry.personanames_seen.includes(player.personaname)) {
         entry.personanames_seen.push(player.personaname);
+      }
+
+      const pro = proPlayers.get(player.account_id);
+      for (const hint of [player.name, player.personaname, pro?.name, pro?.personaname]) {
+        if (hint && !entry.join_hints.includes(hint)) entry.join_hints.push(hint);
       }
     }
   }

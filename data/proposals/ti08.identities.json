@@ -1,13 +1,13 @@
 {
   "_generated_by": "scripts/propose-identities.ts",
-  "_generated_at": "2026-08-06T19:22:56.996Z",
+  "_generated_at": "2026-08-06T19:29:22.289Z",
   "_status": "PROPOSAL. \"matched\" and \"deduced\" are defensible but unconfirmed; \"ambiguous\" needs a human. Promote into data/entities/ only after review.",
   "_attribution": "Roster, qualification and placement data from Liquipedia, licensed CC-BY-SA 3.0.",
   "event": "ti08",
   "summary": {
-    "matched": 34,
-    "deduced": 2,
-    "inferred": 49,
+    "matched": 43,
+    "deduced": 4,
+    "inferred": 43,
     "ambiguous": 0
   },
   "teams": [
@@ -27,21 +27,21 @@
           "handle": "RAMZES666",
           "role": "1",
           "confidence": "matched",
-          "evidence": "OpenDota name \"RAMZES666\" normalises to \"ramzes666\""
+          "evidence": "identity string \"RAMZES666\" normalises to \"ramzes666\""
         },
         {
           "account_id": 106573901,
           "handle": "No[o]ne",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"No[o]ne-\" normalises to \"noone\""
+          "evidence": "identity string \"No[o]ne-\" normalises to \"noone\""
         },
         {
           "account_id": 134556694,
           "handle": "Solo",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Solo\" normalises to \"solo\""
+          "evidence": "identity string \"Solo\" normalises to \"solo\""
         },
         {
           "account_id": 92423451,
@@ -75,49 +75,85 @@
           "handle": "Miracle-",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Miracle-\" normalises to \"miracle\""
+          "evidence": "identity string \"Miracle-\" normalises to \"miracle\""
+        },
+        {
+          "account_id": 34505203,
+          "handle": "MinD_ContRoL",
+          "role": "3",
+          "confidence": "matched",
+          "evidence": "identity string \"MinD_ContRoL\" normalises to \"mindcontrol\""
         },
         {
           "account_id": 101356886,
           "handle": "GH",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"GH\" normalises to \"gh\""
+          "evidence": "identity string \"GH\" normalises to \"gh\""
         },
         {
           "account_id": 72312627,
           "handle": "MATUMBAMAN",
           "role": "1",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 1 of 3 unmatched (median 521 GPM, modal lane_role 2). Top heroes: Bloodseeker, Broodmother, Gyrocopter, Lifestealer, Nature's Prophet"
-        },
-        {
-          "account_id": 34505203,
-          "handle": "MinD_ContRoL",
-          "role": "3",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 2 of 3 unmatched (median 466 GPM, modal lane_role 3). Top heroes: Batrider, Bloodseeker, Brewmaster, Clinkz, Drow Ranger"
+          "evidence": "Farm-priority rank 1 of 2 unmatched (median 521 GPM, modal lane_role 2). Top heroes: Bloodseeker, Broodmother, Gyrocopter, Lifestealer, Nature's Prophet"
         },
         {
           "account_id": 82262664,
           "handle": "KuroKy",
           "role": "5",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 3 of 3 unmatched (median 284 GPM, modal lane_role 1). Top heroes: Bane, Chen, Clinkz, Crystal Maiden, Lich"
+          "evidence": "Farm-priority rank 2 of 2 unmatched (median 284 GPM, modal lane_role 1). Top heroes: Bane, Chen, Clinkz, Crystal Maiden, Lich"
         }
       ]
     },
     {
       "team_name": "PSG.LGD",
-      "team_id": null,
-      "team_match": "unmatched",
+      "team_id": 15,
+      "team_match": "confirmed name",
       "coach": "QQQ",
       "qualification": {
         "method": "invite",
         "via": "Dota Pro Circuit",
         "placement": "3"
       },
-      "players": []
+      "players": [
+        {
+          "account_id": 101695162,
+          "handle": "fy",
+          "role": "4",
+          "confidence": "matched",
+          "evidence": "identity string \"fy\" normalises to \"fy\""
+        },
+        {
+          "account_id": 94296097,
+          "handle": "xNova",
+          "role": "5",
+          "confidence": "matched",
+          "evidence": "identity string \"xNova\" normalises to \"xnova\""
+        },
+        {
+          "account_id": 125581247,
+          "handle": "Ame",
+          "role": "1",
+          "confidence": "inferred",
+          "evidence": "Farm-priority rank 1 of 3 unmatched (median 617 GPM, modal lane_role 1). Top heroes: Bloodseeker, Clinkz, Drow Ranger, Faceless Void, Gyrocopter"
+        },
+        {
+          "account_id": 106863163,
+          "handle": "Somnus丶M",
+          "role": "2",
+          "confidence": "inferred",
+          "evidence": "Farm-priority rank 2 of 3 unmatched (median 599 GPM, modal lane_role 2). Top heroes: Alchemist, Bloodseeker, Clinkz, Huskar, Kunkka"
+        },
+        {
+          "account_id": 94738847,
+          "handle": "Chalice",
+          "role": "3",
+          "confidence": "inferred",
+          "evidence": "Farm-priority rank 3 of 3 unmatched (median 480 GPM, modal lane_role 3). Top heroes: Bane, Batrider, Brewmaster, Enchantress, Lycan"
+        }
+      ]
     },
     {
       "team_name": "Team Secret",
@@ -135,21 +171,21 @@
           "handle": "Ace",
           "role": "1",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Ace ♠\" normalises to \"ace\""
+          "evidence": "identity string \"Ace ♠\" normalises to \"ace\""
         },
         {
           "account_id": 116585378,
           "handle": "MidOne",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"MidOne\" normalises to \"midone\""
+          "evidence": "identity string \"MidOne\" normalises to \"midone\""
         },
         {
           "account_id": 87278757,
           "handle": "Puppey",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Puppey\" normalises to \"puppey\""
+          "evidence": "identity string \"Puppey\" normalises to \"puppey\""
         },
         {
           "account_id": 86799300,
@@ -182,36 +218,36 @@
           "account_id": 89871557,
           "handle": "Mushi",
           "role": "1",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 1 of 5 unmatched (median 524 GPM, modal lane_role 1). Top heroes: Bloodseeker, Gyrocopter, Mirana, Monkey King, Necrophos"
+          "confidence": "matched",
+          "evidence": "identity string \"mushi\" normalises to \"mushi\""
         },
         {
           "account_id": 113457795,
           "handle": "Moonn",
           "role": "2",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 2 of 5 unmatched (median 522 GPM, modal lane_role 2). Top heroes: Alchemist, Bloodseeker, Clinkz, Dragon Knight, Huskar"
+          "evidence": "Farm-priority rank 1 of 4 unmatched (median 522 GPM, modal lane_role 2). Top heroes: Alchemist, Bloodseeker, Clinkz, Dragon Knight, Huskar"
         },
         {
           "account_id": 84772440,
           "handle": "iceiceice",
           "role": "3",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 3 of 5 unmatched (median 408 GPM, modal lane_role 3). Top heroes: Brewmaster, Broodmother, Clockwerk, Necrophos, Pangolier"
+          "evidence": "Farm-priority rank 2 of 4 unmatched (median 408 GPM, modal lane_role 3). Top heroes: Brewmaster, Broodmother, Clockwerk, Necrophos, Pangolier"
         },
         {
           "account_id": 100471531,
           "handle": "Jabz",
           "role": "4",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 4 of 5 unmatched (median 311 GPM, modal lane_role 3). Top heroes: Dark Willow, Earthshaker, Enchantress, Io, Mirana"
+          "evidence": "Farm-priority rank 3 of 4 unmatched (median 311 GPM, modal lane_role 3). Top heroes: Dark Willow, Earthshaker, Enchantress, Io, Mirana"
         },
         {
           "account_id": 91443418,
           "handle": "ninjaboogie",
           "role": "5",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 5 of 5 unmatched (median 249 GPM, modal lane_role 1). Top heroes: Bounty Hunter, Crystal Maiden, Shadow Shaman, Silencer, Undying"
+          "evidence": "Farm-priority rank 4 of 4 unmatched (median 249 GPM, modal lane_role 1). Top heroes: Bounty Hunter, Crystal Maiden, Shadow Shaman, Silencer, Undying"
         }
       ]
     },
@@ -231,7 +267,7 @@
           "handle": "Ori",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Ori\" normalises to \"ori\""
+          "evidence": "identity string \"Ori\" normalises to \"ori\""
         },
         {
           "account_id": 137193239,
@@ -279,7 +315,7 @@
           "handle": "Kaka",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"kaka\" normalises to \"kaka\""
+          "evidence": "identity string \"kaka\" normalises to \"kaka\""
         },
         {
           "account_id": 117281554,
@@ -327,7 +363,7 @@
           "handle": "Yang",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Yang\" normalises to \"yang\""
+          "evidence": "identity string \"Yang\" normalises to \"yang\""
         },
         {
           "account_id": 108382060,
@@ -375,35 +411,35 @@
           "handle": "Topson",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Topson\" normalises to \"topson\""
+          "evidence": "identity string \"Topson\" normalises to \"topson\""
         },
         {
           "account_id": 88271237,
           "handle": "Ceb",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Ceb\" normalises to \"ceb\""
+          "evidence": "identity string \"Ceb\" normalises to \"ceb\""
+        },
+        {
+          "account_id": 26771994,
+          "handle": "JerAx",
+          "role": "4",
+          "confidence": "matched",
+          "evidence": "identity string \"JerAx\" normalises to \"jerax\""
         },
         {
           "account_id": 311360822,
           "handle": "ana",
           "role": "1",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 1 of 3 unmatched (median 577 GPM, modal lane_role 1). Top heroes: Bloodseeker, Centaur Warrunner, Drow Ranger, Ember Spirit, Gyrocopter"
-        },
-        {
-          "account_id": 26771994,
-          "handle": "JerAx",
-          "role": "4",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 2 of 3 unmatched (median 333 GPM, modal lane_role 3). Top heroes: Dark Willow, Earthshaker, Io, Lich, Lina"
+          "evidence": "Farm-priority rank 1 of 2 unmatched (median 577 GPM, modal lane_role 1). Top heroes: Bloodseeker, Centaur Warrunner, Drow Ranger, Ember Spirit, Gyrocopter"
         },
         {
           "account_id": 19672354,
           "handle": "N0tail",
           "role": "5",
           "confidence": "inferred",
-          "evidence": "Farm-priority rank 3 of 3 unmatched (median 293 GPM, modal lane_role 1). Top heroes: Bane, Chen, Disruptor, Enchantress, Nature's Prophet"
+          "evidence": "Farm-priority rank 2 of 2 unmatched (median 293 GPM, modal lane_role 1). Top heroes: Bane, Chen, Disruptor, Enchantress, Nature's Prophet"
         }
       ]
     },
@@ -471,21 +507,21 @@
           "handle": "XinQ",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"XinQ\" normalises to \"xinq\""
+          "evidence": "identity string \"XinQ\" normalises to \"xinq\""
         },
         {
           "account_id": 138543123,
           "handle": "Pyw",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Pyw\" normalises to \"pyw\""
+          "evidence": "identity string \"Pyw\" normalises to \"pyw\""
         },
         {
           "account_id": 117731777,
           "handle": "XCJ",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"XCJ\" normalises to \"xcj\""
+          "evidence": "identity string \"XCJ\" normalises to \"xcj\""
         },
         {
           "account_id": 168028715,
@@ -519,14 +555,14 @@
           "handle": "Xxs",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Xxs\" normalises to \"xxs\""
+          "evidence": "identity string \"Xxs\" normalises to \"xxs\""
         },
         {
           "account_id": 207829314,
           "handle": "BoBoKa",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"BoBoKa\" normalises to \"boboka\""
+          "evidence": "identity string \"BoBoKa\" normalises to \"boboka\""
         },
         {
           "account_id": 130416036,
@@ -563,39 +599,39 @@
       },
       "players": [
         {
+          "account_id": 43276219,
+          "handle": "EternaLEnVy",
+          "role": "1",
+          "confidence": "matched",
+          "evidence": "identity string \"EternaLEnVy\" normalises to \"eternalenvy\""
+        },
+        {
           "account_id": 154715080,
           "handle": "Abed",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Abed\" normalises to \"abed\""
+          "evidence": "identity string \"Abed\" normalises to \"abed\""
         },
         {
           "account_id": 102099826,
           "handle": "DJ",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"DJ\" normalises to \"dj\""
-        },
-        {
-          "account_id": 43276219,
-          "handle": "EternaLEnVy",
-          "role": "1",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 1 of 3 unmatched (median 485 GPM, modal lane_role 1). Top heroes: Bristleback, Drow Ranger, Gyrocopter, Lone Druid, Mirana"
-        },
-        {
-          "account_id": 87276347,
-          "handle": "Universe",
-          "role": "3",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 2 of 3 unmatched (median 466 GPM, modal lane_role 3). Top heroes: Doom, Enchantress, Enigma, Legion Commander, Mirana"
+          "evidence": "identity string \"DJ\" normalises to \"dj\""
         },
         {
           "account_id": 6922000,
           "handle": "pieliedie",
           "role": "5",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 3 of 3 unmatched (median 275 GPM, modal lane_role 3). Top heroes: Bane, Crystal Maiden, Shadow Demon, Silencer, Treant Protector"
+          "confidence": "matched",
+          "evidence": "identity string \"pieliedie\" normalises to \"pieliedie\""
+        },
+        {
+          "account_id": 87276347,
+          "handle": "Universe",
+          "role": "3",
+          "confidence": "deduced",
+          "evidence": "Last unmatched player on a 5-man roster where the other 4 matched"
         }
       ]
     },
@@ -615,28 +651,28 @@
           "handle": "Raven",
           "role": "1",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Raven\" normalises to \"raven\""
+          "evidence": "identity string \"Raven\" normalises to \"raven\""
         },
         {
           "account_id": 164532005,
           "handle": "Armel",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Armel\" normalises to \"armel\""
+          "evidence": "identity string \"Armel\" normalises to \"armel\""
         },
         {
           "account_id": 155494381,
           "handle": "Tims",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"TIMS\" normalises to \"tims\""
+          "evidence": "identity string \"TIMS\" normalises to \"tims\""
         },
         {
           "account_id": 184950344,
           "handle": "Kuku",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Kuku^\" normalises to \"kuku\""
+          "evidence": "identity string \"Kuku^\" normalises to \"kuku\""
         },
         {
           "account_id": 187619311,
@@ -663,14 +699,14 @@
           "handle": "Resolut1on",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Resolut1on\" normalises to \"resolut1on\""
+          "evidence": "identity string \"Resolut1on\" normalises to \"resolut1on\""
         },
         {
           "account_id": 10366616,
           "handle": "Sneyking",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Sneyking\" normalises to \"sneyking\""
+          "evidence": "identity string \"Sneyking\" normalises to \"sneyking\""
         },
         {
           "account_id": 108452107,
@@ -711,28 +747,28 @@
           "handle": "SumaiL",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"SumaiL-\" normalises to \"sumail\""
+          "evidence": "identity string \"SumaiL-\" normalises to \"sumail\""
         },
         {
           "account_id": 41231571,
           "handle": "s4",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"s4\" normalises to \"s4\""
+          "evidence": "identity string \"s4\" normalises to \"s4\""
         },
         {
           "account_id": 25907144,
           "handle": "Cr1t-",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Cr1t-\" normalises to \"cr1t\""
+          "evidence": "identity string \"Cr1t-\" normalises to \"cr1t\""
         },
         {
           "account_id": 94155156,
           "handle": "Fly",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Fly\" normalises to \"fly\""
+          "evidence": "identity string \"Fly\" normalises to \"fly\""
         },
         {
           "account_id": 86745912,
@@ -759,14 +795,14 @@
           "handle": "CCnC",
           "role": "2",
           "confidence": "matched",
-          "evidence": "OpenDota name \"CCnC\" normalises to \"ccnc\""
+          "evidence": "identity string \"CCnC\" normalises to \"ccnc\""
         },
         {
           "account_id": 86698277,
           "handle": "33",
           "role": "3",
           "confidence": "matched",
-          "evidence": "OpenDota name \"33\" normalises to \"33\""
+          "evidence": "identity string \"33\" normalises to \"33\""
         },
         {
           "account_id": 87285329,
@@ -803,39 +839,39 @@
       },
       "players": [
         {
+          "account_id": 86700461,
+          "handle": "w33",
+          "role": "2",
+          "confidence": "matched",
+          "evidence": "identity string \"w33\" normalises to \"w33\""
+        },
+        {
+          "account_id": 117956848,
+          "handle": "tavo",
+          "role": "3",
+          "confidence": "matched",
+          "evidence": "identity string \"tavo\" normalises to \"tavo\""
+        },
+        {
           "account_id": 84853828,
           "handle": "Kingrd",
           "role": "4",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Kingrd\" normalises to \"kingrd\""
+          "evidence": "identity string \"Kingrd\" normalises to \"kingrd\""
         },
         {
           "account_id": 116525052,
           "handle": "Duster",
           "role": "5",
           "confidence": "matched",
-          "evidence": "OpenDota name \"Duster\" normalises to \"duster\""
+          "evidence": "identity string \"Duster\" normalises to \"duster\""
         },
         {
           "account_id": 94004717,
           "handle": "hFn",
           "role": "1",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 1 of 3 unmatched (median 610 GPM, modal lane_role 1). Top heroes: Anti-Mage, Clinkz, Faceless Void, Gyrocopter, Lycan"
-        },
-        {
-          "account_id": 86700461,
-          "handle": "w33",
-          "role": "2",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 2 of 3 unmatched (median 549 GPM, modal lane_role 2). Top heroes: Alchemist, Ember Spirit, Invoker, Lina, Storm Spirit"
-        },
-        {
-          "account_id": 117956848,
-          "handle": "tavo",
-          "role": "3",
-          "confidence": "inferred",
-          "evidence": "Farm-priority rank 3 of 3 unmatched (median 429 GPM, modal lane_role 3). Top heroes: Brewmaster, Enigma, Magnus, Nature's Prophet, Necrophos"
+          "confidence": "deduced",
+          "evidence": "Last unmatched player on a 5-man roster where the other 4 matched"
         }
       ]
     }

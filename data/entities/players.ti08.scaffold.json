@@ -1,6 +1,6 @@
 {
   "_generated_by": "scripts/build-player-map.ts",
-  "_generated_at": "2026-08-06T19:22:17.198Z",
+  "_generated_at": "2026-08-06T19:29:21.695Z",
   "_instructions": "Every entry is unverified. Confirm each against Liquipedia, set real_name and nationality, replace nickname_source with the Liquipedia URL, then set verified:true. Entries with nickname:null have no pro name in OpenDota and must be identified by account_id — never from personanames_seen, which are current Steam handles.",
   "_liquipedia": "https://liquipedia.net/dota2/The_International/2018",
   "event": "ti08",
@@ -38,6 +38,10 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "Miracle-"
+      ],
+      "join_hints": [
+        "SumaiL-",
         "Miracle-"
       ],
       "median_gpm": 563,
@@ -79,6 +83,10 @@
       "personanames_seen": [
         "Ye Xiu"
       ],
+      "join_hints": [
+        "天鸽",
+        "Ye Xiu"
+      ],
       "median_gpm": 541,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -110,6 +118,10 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
+      ],
+      "join_hints": [
+        "Fly",
         "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
       ],
       "median_gpm": 306,
@@ -147,6 +159,10 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "Carl"
+      ],
+      "join_hints": [
+        "s4",
         "Carl"
       ],
       "median_gpm": 477,
@@ -188,6 +204,10 @@
       "personanames_seen": [
         "o_o"
       ],
+      "join_hints": [
+        "Cr1t-",
+        "o_o"
+      ],
       "median_gpm": 288,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -225,6 +245,9 @@
       "personanames_seen": [
         "EternaLEnVy"
       ],
+      "join_hints": [
+        "EternaLEnVy"
+      ],
       "median_gpm": 485,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -260,6 +283,10 @@
       "personanames_seen": [
         "hamilton"
       ],
+      "join_hints": [
+        "Abed",
+        "hamilton"
+      ],
       "median_gpm": 516,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -291,6 +318,10 @@
         "Windranger"
       ],
       "personanames_seen": [
+        "HAHAHAHAHA"
+      ],
+      "join_hints": [
+        "DJ",
         "HAHAHAHAHA"
       ],
       "median_gpm": 329,
@@ -327,6 +358,9 @@
       "personanames_seen": [
         "pieliedie"
       ],
+      "join_hints": [
+        "pieliedie"
+      ],
       "median_gpm": 275,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -360,6 +394,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "z"
+      ],
+      "join_hints": [
         "z"
       ],
       "median_gpm": 466,
@@ -400,6 +437,9 @@
       "personanames_seen": [
         "o"
       ],
+      "join_hints": [
+        "o"
+      ],
       "median_gpm": 291,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -436,6 +476,10 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "¿"
+      ],
+      "join_hints": [
+        "Xxs",
         "¿"
       ],
       "median_gpm": 538,
@@ -477,6 +521,10 @@
       "personanames_seen": [
         ":d"
       ],
+      "join_hints": [
+        "Ava阿发",
+        ":d"
+      ],
       "median_gpm": 370,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -514,6 +562,10 @@
       "personanames_seen": [
         "打不死我的一直在打我"
       ],
+      "join_hints": [
+        "BoBoKa",
+        "打不死我的一直在打我"
+      ],
       "median_gpm": 292,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -549,205 +601,11 @@
       "personanames_seen": [
         "高手"
       ],
+      "join_hints": [
+        "高手"
+      ],
       "median_gpm": 466,
       "modal_lane_role": 1,
-      "_gpm": [],
-      "_lanes": []
-    },
-    {
-      "account_id": 125581247,
-      "nickname": null,
-      "nickname_source": null,
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 30,
-      "teams": [
-        {
-          "team_id": 15,
-          "team_name": "LGD Gaming",
-          "team_name_verified": false,
-          "matches": 30
-        }
-      ],
-      "heroes_played": [
-        "Bloodseeker",
-        "Clinkz",
-        "Drow Ranger",
-        "Faceless Void",
-        "Gyrocopter",
-        "Luna",
-        "Morphling",
-        "Phantom Lancer",
-        "Spectre",
-        "Terrorblade",
-        "Ursa",
-        "Weaver"
-      ],
-      "personanames_seen": [
-        "睪九"
-      ],
-      "median_gpm": 617,
-      "modal_lane_role": 1,
-      "_gpm": [],
-      "_lanes": []
-    },
-    {
-      "account_id": 106863163,
-      "nickname": null,
-      "nickname_source": null,
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 30,
-      "teams": [
-        {
-          "team_id": 15,
-          "team_name": "LGD Gaming",
-          "team_name_verified": false,
-          "matches": 30
-        }
-      ],
-      "heroes_played": [
-        "Alchemist",
-        "Bloodseeker",
-        "Clinkz",
-        "Huskar",
-        "Kunkka",
-        "Leshrac",
-        "Lina",
-        "Mirana",
-        "Necrophos",
-        "Queen of Pain",
-        "Storm Spirit",
-        "Tiny",
-        "Zeus"
-      ],
-      "personanames_seen": [
-        "天地一刀斩"
-      ],
-      "median_gpm": 599,
-      "modal_lane_role": 2,
-      "_gpm": [],
-      "_lanes": []
-    },
-    {
-      "account_id": 94296097,
-      "nickname": "xNova",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 30,
-      "teams": [
-        {
-          "team_id": 15,
-          "team_name": "LGD Gaming",
-          "team_name_verified": false,
-          "matches": 30
-        }
-      ],
-      "heroes_played": [
-        "Bane",
-        "Crystal Maiden",
-        "Disruptor",
-        "Enchantress",
-        "Lion",
-        "Ogre Magi",
-        "Phoenix",
-        "Silencer",
-        "Undying",
-        "Vengeful Spirit",
-        "Warlock",
-        "Winter Wyvern",
-        "Witch Doctor"
-      ],
-      "personanames_seen": [
-        "lavie"
-      ],
-      "median_gpm": 280,
-      "modal_lane_role": 1,
-      "_gpm": [],
-      "_lanes": []
-    },
-    {
-      "account_id": 101695162,
-      "nickname": "fy",
-      "nickname_source": "opendota:players[].name",
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 30,
-      "teams": [
-        {
-          "team_id": 15,
-          "team_name": "LGD Gaming",
-          "team_name_verified": false,
-          "matches": 30
-        }
-      ],
-      "heroes_played": [
-        "Clockwerk",
-        "Dark Willow",
-        "Doom",
-        "Earthshaker",
-        "Elder Titan",
-        "Io",
-        "Nature's Prophet",
-        "Phoenix",
-        "Pudge",
-        "Tusk",
-        "Vengeful Spirit",
-        "Windranger",
-        "Winter Wyvern",
-        "Wraith King"
-      ],
-      "personanames_seen": [
-        "其疾如风"
-      ],
-      "median_gpm": 349,
-      "modal_lane_role": 3,
-      "_gpm": [],
-      "_lanes": []
-    },
-    {
-      "account_id": 94738847,
-      "nickname": null,
-      "nickname_source": null,
-      "verified": false,
-      "real_name": null,
-      "nationality": null,
-      "matches": 30,
-      "teams": [
-        {
-          "team_id": 15,
-          "team_name": "LGD Gaming",
-          "team_name_verified": false,
-          "matches": 30
-        }
-      ],
-      "heroes_played": [
-        "Bane",
-        "Batrider",
-        "Brewmaster",
-        "Enchantress",
-        "Lycan",
-        "Mirana",
-        "Nature's Prophet",
-        "Necrophos",
-        "Pugna",
-        "Sand King",
-        "Tiny",
-        "Ursa",
-        "Venomancer",
-        "Weaver",
-        "Wraith King"
-      ],
-      "personanames_seen": [
-        "nailong"
-      ],
-      "median_gpm": 480,
-      "modal_lane_role": 3,
       "_gpm": [],
       "_lanes": []
     },
@@ -779,6 +637,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "keyboard cat"
+      ],
+      "join_hints": [
         "keyboard cat"
       ],
       "median_gpm": 408,
@@ -819,6 +680,10 @@
       "personanames_seen": [
         "x"
       ],
+      "join_hints": [
+        "J",
+        "x"
+      ],
       "median_gpm": 311,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -856,6 +721,9 @@
       "personanames_seen": [
         "mushi"
       ],
+      "join_hints": [
+        "mushi"
+      ],
       "median_gpm": 524,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -886,6 +754,9 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "yuki"
+      ],
+      "join_hints": [
         "yuki"
       ],
       "median_gpm": 249,
@@ -925,6 +796,10 @@
       "personanames_seen": [
         "哎呀"
       ],
+      "join_hints": [
+        "MooN",
+        "哎呀"
+      ],
       "median_gpm": 522,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -958,6 +833,9 @@
         "Weaver"
       ],
       "personanames_seen": [
+        "No sup"
+      ],
+      "join_hints": [
         "No sup"
       ],
       "median_gpm": 543,
@@ -999,6 +877,9 @@
       "personanames_seen": [
         "烈烈风中丶"
       ],
+      "join_hints": [
+        "烈烈风中丶"
+      ],
       "median_gpm": 534,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -1033,6 +914,9 @@
       "personanames_seen": [
         "Koopa"
       ],
+      "join_hints": [
+        "Koopa"
+      ],
       "median_gpm": 275,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -1065,6 +949,10 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "香菜粉丝"
+      ],
+      "join_hints": [
+        "kaka",
         "香菜粉丝"
       ],
       "median_gpm": 309,
@@ -1102,6 +990,9 @@
       "personanames_seen": [
         "trast lain"
       ],
+      "join_hints": [
+        "trast lain"
+      ],
       "median_gpm": 438,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -1137,6 +1028,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "OiOi.oldandrusty"
+      ],
+      "join_hints": [
         "OiOi.oldandrusty"
       ],
       "median_gpm": 293,
@@ -1178,6 +1072,9 @@
       "personanames_seen": [
         "minioncheer"
       ],
+      "join_hints": [
+        "minioncheer"
+      ],
       "median_gpm": 577,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1213,6 +1110,9 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "JerAx"
+      ],
+      "join_hints": [
         "JerAx"
       ],
       "median_gpm": 333,
@@ -1258,6 +1158,10 @@
       "personanames_seen": [
         "献身"
       ],
+      "join_hints": [
+        "Ceb",
+        "献身"
+      ],
       "median_gpm": 432,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -1291,6 +1195,10 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "TOPSON"
+      ],
+      "join_hints": [
+        "Topson",
         "TOPSON"
       ],
       "median_gpm": 500,
@@ -1333,6 +1241,10 @@
       "personanames_seen": [
         "Antediluvian"
       ],
+      "join_hints": [
+        "Quinn",
+        "Antediluvian"
+      ],
       "median_gpm": 568,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -1370,6 +1282,9 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "Chao P"
+      ],
+      "join_hints": [
         "Chao P"
       ],
       "median_gpm": 299,
@@ -1414,6 +1329,9 @@
       "personanames_seen": [
         "Chama"
       ],
+      "join_hints": [
+        "Chama"
+      ],
       "median_gpm": 513,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1455,6 +1373,10 @@
       "personanames_seen": [
         "not human (животное)"
       ],
+      "join_hints": [
+        "33",
+        "not human (животное)"
+      ],
       "median_gpm": 441,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -1492,6 +1414,9 @@
       "personanames_seen": [
         "ABOVE THE CLOUDS"
       ],
+      "join_hints": [
+        "ABOVE THE CLOUDS"
+      ],
       "median_gpm": 237,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1526,6 +1451,9 @@
         "Weaver"
       ],
       "personanames_seen": [
+        "pro321"
+      ],
+      "join_hints": [
         "pro321"
       ],
       "median_gpm": 610,
@@ -1565,6 +1493,10 @@
       "personanames_seen": [
         "Kingao"
       ],
+      "join_hints": [
+        "Kingrd",
+        "Kingao"
+      ],
       "median_gpm": 281,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -1601,6 +1533,10 @@
       "personanames_seen": [
         "duster"
       ],
+      "join_hints": [
+        "Duster",
+        "duster"
+      ],
       "median_gpm": 243,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1633,6 +1569,9 @@
         "Ursa"
       ],
       "personanames_seen": [
+        "w33"
+      ],
+      "join_hints": [
         "w33"
       ],
       "median_gpm": 549,
@@ -1669,7 +1608,224 @@
       "personanames_seen": [
         "tavo"
       ],
+      "join_hints": [
+        "tavo"
+      ],
       "median_gpm": 429,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
+    },
+    {
+      "account_id": 125581247,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "PSG.LGD",
+          "team_name_verified": true,
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Drow Ranger",
+        "Faceless Void",
+        "Gyrocopter",
+        "Luna",
+        "Morphling",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "睪九"
+      ],
+      "join_hints": [
+        "睪九"
+      ],
+      "median_gpm": 617,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
+    },
+    {
+      "account_id": 106863163,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "PSG.LGD",
+          "team_name_verified": true,
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Huskar",
+        "Kunkka",
+        "Leshrac",
+        "Lina",
+        "Mirana",
+        "Necrophos",
+        "Queen of Pain",
+        "Storm Spirit",
+        "Tiny",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "天地一刀斩"
+      ],
+      "join_hints": [
+        "天地一刀斩"
+      ],
+      "median_gpm": 599,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
+    },
+    {
+      "account_id": 94296097,
+      "nickname": "xNova",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "PSG.LGD",
+          "team_name_verified": true,
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Disruptor",
+        "Enchantress",
+        "Lion",
+        "Ogre Magi",
+        "Phoenix",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit",
+        "Warlock",
+        "Winter Wyvern",
+        "Witch Doctor"
+      ],
+      "personanames_seen": [
+        "lavie"
+      ],
+      "join_hints": [
+        "xNova",
+        "lavie"
+      ],
+      "median_gpm": 280,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
+    },
+    {
+      "account_id": 101695162,
+      "nickname": "fy",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "PSG.LGD",
+          "team_name_verified": true,
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Clockwerk",
+        "Dark Willow",
+        "Doom",
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Nature's Prophet",
+        "Phoenix",
+        "Pudge",
+        "Tusk",
+        "Vengeful Spirit",
+        "Windranger",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "其疾如风"
+      ],
+      "join_hints": [
+        "fy",
+        "其疾如风"
+      ],
+      "median_gpm": 349,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
+    },
+    {
+      "account_id": 94738847,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "PSG.LGD",
+          "team_name_verified": true,
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Batrider",
+        "Brewmaster",
+        "Enchantress",
+        "Lycan",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Pugna",
+        "Sand King",
+        "Tiny",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "nailong"
+      ],
+      "join_hints": [
+        "nailong"
+      ],
+      "median_gpm": 480,
       "modal_lane_role": 3,
       "_gpm": [],
       "_lanes": []
@@ -1709,6 +1865,10 @@
       "personanames_seen": [
         "an najm"
       ],
+      "join_hints": [
+        "kky",
+        "an najm"
+      ],
       "median_gpm": 284,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1746,6 +1906,10 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "MinD_ContRoL"
+      ],
+      "join_hints": [
+        "mc",
         "MinD_ContRoL"
       ],
       "median_gpm": 466,
@@ -1791,6 +1955,10 @@
       "personanames_seen": [
         "SawagedBlind"
       ],
+      "join_hints": [
+        "Miracle-",
+        "SawagedBlind"
+      ],
       "median_gpm": 615,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -1822,6 +1990,10 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "gh"
+      ],
+      "join_hints": [
+        "GH",
         "gh"
       ],
       "median_gpm": 303,
@@ -1862,6 +2034,9 @@
       "personanames_seen": [
         "kimchi"
       ],
+      "join_hints": [
+        "kimchi"
+      ],
       "median_gpm": 521,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -1900,6 +2075,9 @@
       "personanames_seen": [
         "Puppey"
       ],
+      "join_hints": [
+        "Puppey"
+      ],
       "median_gpm": 285,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -1935,6 +2113,9 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "jack"
+      ],
+      "join_hints": [
         "jack"
       ],
       "median_gpm": 305,
@@ -1978,6 +2159,10 @@
       "personanames_seen": [
         "oRb WaLk )"
       ],
+      "join_hints": [
+        "Ace ♠",
+        "oRb WaLk )"
+      ],
       "median_gpm": 472,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2019,6 +2204,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง"
+      ],
+      "join_hints": [
         "ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง"
       ],
       "median_gpm": 472,
@@ -2066,6 +2254,10 @@
       "personanames_seen": [
         "GAYLAPSE"
       ],
+      "join_hints": [
+        "MidOne",
+        "GAYLAPSE"
+      ],
       "median_gpm": 503,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -2097,6 +2289,10 @@
         "Weaver"
       ],
       "personanames_seen": [
+        "999"
+      ],
+      "join_hints": [
+        "flyfly",
         "999"
       ],
       "median_gpm": 471,
@@ -2134,6 +2330,10 @@
       "personanames_seen": [
         "吾道不孤"
       ],
+      "join_hints": [
+        "XCJ",
+        "吾道不孤"
+      ],
       "median_gpm": 231,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2167,6 +2367,10 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "烟弹漏油"
+      ],
+      "join_hints": [
+        "XinQ",
         "烟弹漏油"
       ],
       "median_gpm": 470,
@@ -2203,6 +2407,9 @@
       "personanames_seen": [
         "Z"
       ],
+      "join_hints": [
+        "Z"
+      ],
       "median_gpm": 469,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -2235,6 +2442,10 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "Neil"
+      ],
+      "join_hints": [
+        "Pyw",
         "Neil"
       ],
       "median_gpm": 266,
@@ -2273,6 +2484,10 @@
       "personanames_seen": [
         "PMA Tryhard"
       ],
+      "join_hints": [
+        "Kuku^",
+        "PMA Tryhard"
+      ],
       "median_gpm": 290,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -2305,6 +2520,10 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "Kimber2k11"
+      ],
+      "join_hints": [
+        "TIMS",
         "Kimber2k11"
       ],
       "median_gpm": 291,
@@ -2342,6 +2561,10 @@
       "personanames_seen": [
         "ljcute"
       ],
+      "join_hints": [
+        "Armel",
+        "ljcute"
+      ],
       "median_gpm": 534,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -2376,6 +2599,10 @@
       "personanames_seen": [
         "is not enough"
       ],
+      "join_hints": [
+        "Raven",
+        "is not enough"
+      ],
       "median_gpm": 533,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2406,6 +2633,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "MEDISINA"
+      ],
+      "join_hints": [
         "MEDISINA"
       ],
       "median_gpm": 448,
@@ -2442,6 +2672,9 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "X"
+      ],
+      "join_hints": [
         "X"
       ],
       "median_gpm": 302,
@@ -2483,6 +2716,10 @@
       "personanames_seen": [
         "The One"
       ],
+      "join_hints": [
+        "Resolut1on",
+        "The One"
+      ],
       "median_gpm": 607,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2520,6 +2757,9 @@
       "personanames_seen": [
         "Sneyking"
       ],
+      "join_hints": [
+        "Sneyking"
+      ],
       "median_gpm": 492,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -2552,6 +2792,9 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "12"
+      ],
+      "join_hints": [
         "12"
       ],
       "median_gpm": 561,
@@ -2589,6 +2832,9 @@
       "personanames_seen": [
         "LoA"
       ],
+      "join_hints": [
+        "LoA"
+      ],
       "median_gpm": 300,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2621,6 +2867,9 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "田园脆鸡堡"
+      ],
+      "join_hints": [
         "田园脆鸡堡"
       ],
       "median_gpm": 309,
@@ -2660,6 +2909,9 @@
       "personanames_seen": [
         "box box"
       ],
+      "join_hints": [
+        "box box"
+      ],
       "median_gpm": 482,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -2693,6 +2945,10 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "3"
+      ],
+      "join_hints": [
+        "Yang",
         "3"
       ],
       "median_gpm": 390,
@@ -2730,6 +2986,9 @@
       "personanames_seen": [
         "0.0"
       ],
+      "join_hints": [
+        "0.0"
+      ],
       "median_gpm": 556,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2762,6 +3021,9 @@
         "Windranger"
       ],
       "personanames_seen": [
+        "田曦薇"
+      ],
+      "join_hints": [
         "田曦薇"
       ],
       "median_gpm": 260,
@@ -2799,6 +3061,9 @@
       "personanames_seen": [
         "无限"
       ],
+      "join_hints": [
+        "无限"
+      ],
       "median_gpm": 485,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -2834,6 +3099,9 @@
       "personanames_seen": [
         "疯鱼"
       ],
+      "join_hints": [
+        "疯鱼"
+      ],
       "median_gpm": 299,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -2865,6 +3133,9 @@
         "Warlock"
       ],
       "personanames_seen": [
+        "l"
+      ],
+      "join_hints": [
         "l"
       ],
       "median_gpm": 236,
@@ -2899,6 +3170,10 @@
         "Tiny"
       ],
       "personanames_seen": [
+        "..."
+      ],
+      "join_hints": [
+        "Ori",
         "..."
       ],
       "median_gpm": 501,
@@ -2938,6 +3213,9 @@
       "personanames_seen": [
         "oldeLeVeN"
       ],
+      "join_hints": [
+        "oldeLeVeN"
+      ],
       "median_gpm": 381,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -2970,6 +3248,9 @@
         "Vengeful Spirit"
       ],
       "personanames_seen": [
+        "Solo"
+      ],
+      "join_hints": [
         "Solo"
       ],
       "median_gpm": 289,
@@ -3009,6 +3290,10 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "делаем выводы"
+      ],
+      "join_hints": [
+        "RAMZES666",
         "делаем выводы"
       ],
       "median_gpm": 558,
@@ -3052,6 +3337,10 @@
       "personanames_seen": [
         "Have fun"
       ],
+      "join_hints": [
+        "No[o]ne-",
+        "Have fun"
+      ],
       "median_gpm": 557,
       "modal_lane_role": 2,
       "_gpm": [],
@@ -3093,6 +3382,9 @@
       "personanames_seen": [
         "izdu"
       ],
+      "join_hints": [
+        "izdu"
+      ],
       "median_gpm": 447,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -3130,6 +3422,9 @@
       "personanames_seen": [
         "Shi Heng Yi"
       ],
+      "join_hints": [
+        "Shi Heng Yi"
+      ],
       "median_gpm": 283,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -3163,6 +3458,9 @@
         "Winter Wyvern"
       ],
       "personanames_seen": [
+        "game"
+      ],
+      "join_hints": [
         "game"
       ],
       "median_gpm": 285,
@@ -3201,6 +3499,9 @@
       "personanames_seen": [
         "AWF.lft.coach"
       ],
+      "join_hints": [
+        "AWF.lft.coach"
+      ],
       "median_gpm": 233,
       "modal_lane_role": 1,
       "_gpm": [],
@@ -3236,6 +3537,9 @@
         "Zeus"
       ],
       "personanames_seen": [
+        "ПЕРПЛ СПРАЙТ"
+      ],
+      "join_hints": [
         "ПЕРПЛ СПРАЙТ"
       ],
       "median_gpm": 540,
@@ -3277,6 +3581,9 @@
       "personanames_seen": [
         "DyX_aHKopuD}|{A"
       ],
+      "join_hints": [
+        "DyX_aHKopuD}|{A"
+      ],
       "median_gpm": 399,
       "modal_lane_role": 3,
       "_gpm": [],
@@ -3313,6 +3620,9 @@
         "Wraith King"
       ],
       "personanames_seen": [
+        "polako"
+      ],
+      "join_hints": [
         "polako"
       ],
       "median_gpm": 477,

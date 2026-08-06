@@ -1,0 +1,230 @@
+/**
+ * Build the account_id -> player scaffold for one event.
+ *
+ *   npm run build:playermap -- ti08
+ *
+ * Why this exists: OpenDota's pro-player `name` field is null for a large share
+ * of players, and `personaname` is a live Steam handle that drifts and is often
+ * a joke. `account_id` is the only stable key. See docs/DATA-NOTES.md.
+ *
+ * This script does NOT decide who anyone is. It collects the evidence — which
+ * account played for which team, on which heroes, how often — and records
+ * OpenDota's name as a *hint* with its provenance attached. Every entry lands
+ * with `verified: false`. A human confirms each one against Liquipedia and flips
+ * it, and the verify step refuses to publish anything still unverified.
+ */
+
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { fetchHeroes } from './lib/opendota.ts';
+import type { MatchDetail } from './lib/opendota.ts';
+import { loadEvent, phaseFor } from './lib/events.ts';
+
+interface TeamAppearance {
+  team_id: number | null;
+  team_name: string | null;
+  matches: number;
+}
+
+interface PlayerScaffold {
+  account_id: number;
+  /** Hint only until verified. Null when OpenDota has no pro name for them. */
+  nickname: string | null;
+  /** Where `nickname` came from. Replace with a Liquipedia URL on verification. */
+  nickname_source: string | null;
+  verified: boolean;
+  real_name: null;
+  nationality: null;
+  matches: number;
+  teams: TeamAppearance[];
+  heroes_played: string[];
+  /** Recorded as evidence of drift, never for display. */
+  personanames_seen: string[];
+}
+
+async function readMatches(cacheDir: string): Promise<MatchDetail[]> {
+  let files: string[];
+  try {
+    files = await readdir(`${cacheDir}/matches`);
+  } catch {
+    throw new Error(`No cached matches at ${cacheDir}/matches — run ingest:matches first.`);
+  }
+
+  const matches: MatchDetail[] = [];
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const raw = await readFile(`${cacheDir}/matches/${file}`, 'utf8');
+    matches.push(JSON.parse(raw) as MatchDetail);
+  }
+  return matches;
+}
+
+async function main(): Promise<void> {
+  const key = process.argv[2];
+  if (!key) {
+    console.error('usage: npm run build:playermap -- <event-key>   (e.g. ti08)');
+    process.exit(1);
+  }
+
+  // Which phases count as "at the event". Qualifiers involve dozens of teams
+  // that never attended, so they are excluded from the roster scaffold.
+  const eventPhases = new Set((process.argv[3] ?? 'group,main').split(','));
+
+  const event = await loadEvent(key);
+  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
+  const outDir = new URL(`../data/entities`, import.meta.url).pathname;
+
+  const heroes = await fetchHeroes(cacheDir);
+  const heroName = new Map(heroes.map((h) => [h.id, h.localized_name]));
+
+  const all = await readMatches(cacheDir);
+  const matches = all.filter((m) => {
+    const phase = phaseFor(event, m.start_time);
+    return phase !== null && eventPhases.has(phase);
+  });
+
+  console.log(`${event.name}`);
+  console.log(`phases counted as "at the event": ${[...eventPhases].join(', ')}`);
+  console.log(`matches in scope: ${matches.length} of ${all.length} cached\n`);
+
+  const players = new Map<number, PlayerScaffold>();
+  const teamNames = new Map<number, string>();
+  let anonymous = 0;
+
+  for (const match of matches) {
+    for (const [id, team] of [
+      [match.radiant_team_id, match.radiant_team],
+      [match.dire_team_id, match.dire_team],
+    ] as const) {
+      if (id != null && team?.name) teamNames.set(id, team.name);
+    }
+
+    for (const player of match.players) {
+      if (player.account_id == null) {
+        anonymous++;
+        continue;
+      }
+
+      // player_slot < 128 is Radiant.
+      const isRadiant = player.player_slot < 128;
+      const teamId = isRadiant ? match.radiant_team_id : match.dire_team_id;
+      const teamNameForMatch = (isRadiant ? match.radiant_team : match.dire_team)?.name ?? null;
+
+      let entry = players.get(player.account_id);
+      if (!entry) {
+        entry = {
+          account_id: player.account_id,
+          nickname: player.name ?? null,
+          nickname_source: player.name ? 'opendota:players[].name' : null,
+          verified: false,
+          real_name: null,
+          nationality: null,
+          matches: 0,
+          teams: [],
+          heroes_played: [],
+          personanames_seen: [],
+        };
+        players.set(player.account_id, entry);
+      }
+
+      // If a later match supplies a name the first one lacked, take it — still a hint.
+      if (!entry.nickname && player.name) {
+        entry.nickname = player.name;
+        entry.nickname_source = 'opendota:players[].name';
+      }
+
+      entry.matches++;
+
+      const seenTeam = entry.teams.find((t) => t.team_id === (teamId ?? null));
+      if (seenTeam) {
+        seenTeam.matches++;
+        if (!seenTeam.team_name && teamNameForMatch) seenTeam.team_name = teamNameForMatch;
+      } else {
+        entry.teams.push({ team_id: teamId ?? null, team_name: teamNameForMatch, matches: 1 });
+      }
+
+      const hero = heroName.get(player.hero_id);
+      if (hero && !entry.heroes_played.includes(hero)) entry.heroes_played.push(hero);
+
+      if (player.personaname && !entry.personanames_seen.includes(player.personaname)) {
+        entry.personanames_seen.push(player.personaname);
+      }
+    }
+  }
+
+  const scaffold = [...players.values()].sort((a, b) => {
+    const teamA = a.teams[0]?.team_name ?? 'zzz';
+    const teamB = b.teams[0]?.team_name ?? 'zzz';
+    return teamA.localeCompare(teamB) || b.matches - a.matches;
+  });
+
+  for (const p of scaffold) {
+    p.teams.sort((x, y) => y.matches - x.matches);
+    p.heroes_played.sort();
+  }
+
+  const needsName = scaffold.filter((p) => !p.nickname);
+
+  await mkdir(outDir, { recursive: true });
+  const outPath = `${outDir}/players.${key}.scaffold.json`;
+  await writeFile(
+    outPath,
+    JSON.stringify(
+      {
+        _generated_by: 'scripts/build-player-map.ts',
+        _generated_at: new Date().toISOString(),
+        _instructions:
+          'Every entry is unverified. Confirm each against Liquipedia, set real_name and ' +
+          'nationality, replace nickname_source with the Liquipedia URL, then set verified:true. ' +
+          'Entries with nickname:null have no pro name in OpenDota and must be identified by ' +
+          'account_id — never from personanames_seen, which are current Steam handles.',
+        _liquipedia: event.source_url,
+        event: key,
+        player_count: scaffold.length,
+        missing_nickname_count: needsName.length,
+        players: scaffold,
+      },
+      null,
+      2,
+    ),
+    'utf8',
+  );
+
+  // ---- Report, grouped by team, because that is the unit of verification. ----
+  const byTeam = new Map<string, PlayerScaffold[]>();
+  for (const p of scaffold) {
+    const team = p.teams[0]?.team_name ?? '(no team recorded)';
+    byTeam.set(team, [...(byTeam.get(team) ?? []), p]);
+  }
+
+  console.log(`teams seen: ${byTeam.size}`);
+  console.log(`players seen: ${scaffold.length}`);
+  console.log(`players with no name in OpenDota: ${needsName.length}`);
+  if (anonymous) console.log(`player-slots with no account_id (private profile): ${anonymous}`);
+
+  console.log('\nroster scaffold:');
+  for (const [team, roster] of [...byTeam.entries()].sort()) {
+    const flag = roster.length === 5 ? ' ' : '!';
+    console.log(`${flag} ${team}  (${roster.length} players)`);
+    for (const p of roster) {
+      const label = p.nickname ?? '— NO NAME —';
+      console.log(
+        `      ${String(p.account_id).padEnd(11)} ${label.padEnd(18)} ${p.matches} matches`,
+      );
+    }
+  }
+
+  const oddRosters = [...byTeam.entries()].filter(([, r]) => r.length !== 5);
+  if (oddRosters.length) {
+    console.log(
+      `\n  NOTE: ${oddRosters.length} teams do not have exactly 5 players. ` +
+        `Stand-ins and mid-event substitutions are real and must be represented, not smoothed over.`,
+    );
+  }
+
+  console.log(`\nwrote ${outPath}`);
+}
+
+main().catch((error: unknown) => {
+  console.error(`\nFAILED: ${(error as Error).message}`);
+  process.exit(1);
+});

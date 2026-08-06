@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Raw API response cache — regenerable, large, not a source of truth
+data/raw/

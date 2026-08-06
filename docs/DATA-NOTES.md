@@ -6,6 +6,14 @@ Last verified: 2026-08-06, against TI8 (`leagueid 9870`).
 
 ---
 
+## Gotcha: Node's `fetch` ignores `HTTPS_PROXY`
+
+Worth knowing before you debug a phantom 403. In a sandboxed environment that routes egress through a proxy, `curl` works and Node's global `fetch` does not — curl reads `HTTPS_PROXY`, undici's default dispatcher does not. Every request goes direct and is refused, and the failure surfaces as `403 Forbidden` from the destination host, which looks exactly like the host blocking you.
+
+Setting `process.env.NODE_USE_ENV_PROXY` inside the script is too late: Node initialises its dispatcher before user code runs.
+
+`scripts/lib/http.ts` handles it by installing an explicit `undici` `ProxyAgent` when `HTTPS_PROXY` is set. On a normal machine the variable is unset and the code path is a no-op, so the scripts behave identically either way.
+
 ## OpenDota
 
 No API key required. Free tier is rate-limited — batch politely and cache to disk; a full TI is ~400 detail requests.

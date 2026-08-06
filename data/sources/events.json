@@ -1,0 +1,38 @@
+{
+  "_note": "Event ingest configuration. `phases` bucket matches by LOCAL date at the venue — see docs/DATA-NOTES.md for why UTC bucketing splits the final day of every TI. Phase boundaries marked verified:false were inferred from the match distribution and must be confirmed against the source URL before any stat derived from them is published.",
+  "events": {
+    "ti08": {
+      "ti": 8,
+      "year": 2018,
+      "name": "The International 2018",
+      "leagueid": 9870,
+      "venue": "Rogers Arena, Vancouver, Canada",
+      "venue_timezone": "America/Vancouver",
+      "source_url": "https://liquipedia.net/dota2/The_International/2018",
+      "phases": [
+        {
+          "id": "qualifiers",
+          "label": "Regional Qualifiers",
+          "from": "2018-06-01",
+          "to": "2018-07-31",
+          "verified": false,
+          "note": "Played online across regions, so venue-local bucketing is arbitrary here; only the boundary against the August event matters."
+        },
+        {
+          "id": "group",
+          "label": "Group Stage",
+          "from": "2018-08-15",
+          "to": "2018-08-19",
+          "verified": false
+        },
+        {
+          "id": "main",
+          "label": "Main Event",
+          "from": "2018-08-20",
+          "to": "2018-08-25",
+          "verified": false
+        }
+      ]
+    }
+  }
+}

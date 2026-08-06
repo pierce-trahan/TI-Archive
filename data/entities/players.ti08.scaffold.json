@@ -1,6 +1,6 @@
 {
   "_generated_by": "scripts/build-player-map.ts",
-  "_generated_at": "2026-08-06T19:12:25.774Z",
+  "_generated_at": "2026-08-06T19:22:17.198Z",
   "_instructions": "Every entry is unverified. Confirm each against Liquipedia, set real_name and nationality, replace nickname_source with the Liquipedia URL, then set verified:true. Entries with nickname:null have no pro name in OpenDota and must be identified by account_id — never from personanames_seen, which are current Steam handles.",
   "_liquipedia": "https://liquipedia.net/dota2/The_International/2018",
   "event": "ti08",
@@ -39,7 +39,11 @@
       ],
       "personanames_seen": [
         "Miracle-"
-      ]
+      ],
+      "median_gpm": 563,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86745912,
@@ -74,7 +78,11 @@
       ],
       "personanames_seen": [
         "Ye Xiu"
-      ]
+      ],
+      "median_gpm": 541,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 94155156,
@@ -103,7 +111,11 @@
       ],
       "personanames_seen": [
         "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
-      ]
+      ],
+      "median_gpm": 306,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 41231571,
@@ -136,7 +148,11 @@
       ],
       "personanames_seen": [
         "Carl"
-      ]
+      ],
+      "median_gpm": 477,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 25907144,
@@ -171,7 +187,11 @@
       ],
       "personanames_seen": [
         "o_o"
-      ]
+      ],
+      "median_gpm": 288,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 43276219,
@@ -204,7 +224,11 @@
       ],
       "personanames_seen": [
         "EternaLEnVy"
-      ]
+      ],
+      "median_gpm": 485,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 154715080,
@@ -235,7 +259,11 @@
       ],
       "personanames_seen": [
         "hamilton"
-      ]
+      ],
+      "median_gpm": 516,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 102099826,
@@ -264,7 +292,11 @@
       ],
       "personanames_seen": [
         "HAHAHAHAHA"
-      ]
+      ],
+      "median_gpm": 329,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 6922000,
@@ -294,7 +326,11 @@
       ],
       "personanames_seen": [
         "pieliedie"
-      ]
+      ],
+      "median_gpm": 275,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 87276347,
@@ -325,7 +361,11 @@
       ],
       "personanames_seen": [
         "z"
-      ]
+      ],
+      "median_gpm": 466,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 140153524,
@@ -359,7 +399,11 @@
       ],
       "personanames_seen": [
         "o"
-      ]
+      ],
+      "median_gpm": 291,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 129958758,
@@ -393,7 +437,11 @@
       ],
       "personanames_seen": [
         "¿"
-      ]
+      ],
+      "median_gpm": 538,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 156662698,
@@ -428,7 +476,11 @@
       ],
       "personanames_seen": [
         ":d"
-      ]
+      ],
+      "median_gpm": 370,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 207829314,
@@ -461,7 +513,11 @@
       ],
       "personanames_seen": [
         "打不死我的一直在打我"
-      ]
+      ],
+      "median_gpm": 292,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 130416036,
@@ -492,7 +548,11 @@
       ],
       "personanames_seen": [
         "高手"
-      ]
+      ],
+      "median_gpm": 466,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 125581247,
@@ -526,7 +586,11 @@
       ],
       "personanames_seen": [
         "睪九"
-      ]
+      ],
+      "median_gpm": 617,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 106863163,
@@ -561,7 +625,11 @@
       ],
       "personanames_seen": [
         "天地一刀斩"
-      ]
+      ],
+      "median_gpm": 599,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 94296097,
@@ -596,7 +664,11 @@
       ],
       "personanames_seen": [
         "lavie"
-      ]
+      ],
+      "median_gpm": 280,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 101695162,
@@ -632,7 +704,11 @@
       ],
       "personanames_seen": [
         "其疾如风"
-      ]
+      ],
+      "median_gpm": 349,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 94738847,
@@ -669,7 +745,11 @@
       ],
       "personanames_seen": [
         "nailong"
-      ]
+      ],
+      "median_gpm": 480,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 84772440,
@@ -700,7 +780,11 @@
       ],
       "personanames_seen": [
         "keyboard cat"
-      ]
+      ],
+      "median_gpm": 408,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 100471531,
@@ -734,7 +818,11 @@
       ],
       "personanames_seen": [
         "x"
-      ]
+      ],
+      "median_gpm": 311,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 89871557,
@@ -767,7 +855,11 @@
       ],
       "personanames_seen": [
         "mushi"
-      ]
+      ],
+      "median_gpm": 524,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 91443418,
@@ -795,7 +887,11 @@
       ],
       "personanames_seen": [
         "yuki"
-      ]
+      ],
+      "median_gpm": 249,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 113457795,
@@ -828,7 +924,11 @@
       ],
       "personanames_seen": [
         "哎呀"
-      ]
+      ],
+      "median_gpm": 522,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 117281554,
@@ -859,7 +959,11 @@
       ],
       "personanames_seen": [
         "No sup"
-      ]
+      ],
+      "median_gpm": 543,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 149486894,
@@ -894,7 +998,11 @@
       ],
       "personanames_seen": [
         "烈烈风中丶"
-      ]
+      ],
+      "median_gpm": 534,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 82327674,
@@ -924,7 +1032,11 @@
       ],
       "personanames_seen": [
         "Koopa"
-      ]
+      ],
+      "median_gpm": 275,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 139876032,
@@ -954,7 +1066,11 @@
       ],
       "personanames_seen": [
         "香菜粉丝"
-      ]
+      ],
+      "median_gpm": 309,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 87012746,
@@ -985,7 +1101,11 @@
       ],
       "personanames_seen": [
         "trast lain"
-      ]
+      ],
+      "median_gpm": 438,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 19672354,
@@ -1018,7 +1138,11 @@
       ],
       "personanames_seen": [
         "OiOi.oldandrusty"
-      ]
+      ],
+      "median_gpm": 293,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 311360822,
@@ -1053,7 +1177,11 @@
       ],
       "personanames_seen": [
         "minioncheer"
-      ]
+      ],
+      "median_gpm": 577,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 26771994,
@@ -1086,7 +1214,11 @@
       ],
       "personanames_seen": [
         "JerAx"
-      ]
+      ],
+      "median_gpm": 333,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 88271237,
@@ -1125,7 +1257,11 @@
       ],
       "personanames_seen": [
         "献身"
-      ]
+      ],
+      "median_gpm": 432,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 94054712,
@@ -1156,7 +1292,11 @@
       ],
       "personanames_seen": [
         "TOPSON"
-      ]
+      ],
+      "median_gpm": 500,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 221666230,
@@ -1192,7 +1332,11 @@
       ],
       "personanames_seen": [
         "Antediluvian"
-      ]
+      ],
+      "median_gpm": 568,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 73562326,
@@ -1227,7 +1371,11 @@
       ],
       "personanames_seen": [
         "Chao P"
-      ]
+      ],
+      "median_gpm": 299,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 87285329,
@@ -1265,7 +1413,11 @@
       ],
       "personanames_seen": [
         "Chama"
-      ]
+      ],
+      "median_gpm": 513,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86698277,
@@ -1302,7 +1454,11 @@
       ],
       "personanames_seen": [
         "not human (животное)"
-      ]
+      ],
+      "median_gpm": 441,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86727555,
@@ -1335,7 +1491,11 @@
       ],
       "personanames_seen": [
         "ABOVE THE CLOUDS"
-      ]
+      ],
+      "median_gpm": 237,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 94004717,
@@ -1367,7 +1527,11 @@
       ],
       "personanames_seen": [
         "pro321"
-      ]
+      ],
+      "median_gpm": 610,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 84853828,
@@ -1400,7 +1564,11 @@
       ],
       "personanames_seen": [
         "Kingao"
-      ]
+      ],
+      "median_gpm": 281,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 116525052,
@@ -1432,7 +1600,11 @@
       ],
       "personanames_seen": [
         "duster"
-      ]
+      ],
+      "median_gpm": 243,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86700461,
@@ -1462,7 +1634,11 @@
       ],
       "personanames_seen": [
         "w33"
-      ]
+      ],
+      "median_gpm": 549,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 117956848,
@@ -1492,7 +1668,11 @@
       ],
       "personanames_seen": [
         "tavo"
-      ]
+      ],
+      "median_gpm": 429,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 82262664,
@@ -1528,7 +1708,11 @@
       ],
       "personanames_seen": [
         "an najm"
-      ]
+      ],
+      "median_gpm": 284,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 34505203,
@@ -1563,7 +1747,11 @@
       ],
       "personanames_seen": [
         "MinD_ContRoL"
-      ]
+      ],
+      "median_gpm": 466,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 105248644,
@@ -1602,7 +1790,11 @@
       ],
       "personanames_seen": [
         "SawagedBlind"
-      ]
+      ],
+      "median_gpm": 615,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 101356886,
@@ -1631,7 +1823,11 @@
       ],
       "personanames_seen": [
         "gh"
-      ]
+      ],
+      "median_gpm": 303,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 72312627,
@@ -1665,7 +1861,11 @@
       ],
       "personanames_seen": [
         "kimchi"
-      ]
+      ],
+      "median_gpm": 521,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 87278757,
@@ -1699,7 +1899,11 @@
       ],
       "personanames_seen": [
         "Puppey"
-      ]
+      ],
+      "median_gpm": 285,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 89117038,
@@ -1732,7 +1936,11 @@
       ],
       "personanames_seen": [
         "jack"
-      ]
+      ],
+      "median_gpm": 305,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 97590558,
@@ -1769,7 +1977,11 @@
       ],
       "personanames_seen": [
         "oRb WaLk )"
-      ]
+      ],
+      "median_gpm": 472,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86799300,
@@ -1808,7 +2020,11 @@
       ],
       "personanames_seen": [
         "ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง"
-      ]
+      ],
+      "median_gpm": 472,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 116585378,
@@ -1849,7 +2065,11 @@
       ],
       "personanames_seen": [
         "GAYLAPSE"
-      ]
+      ],
+      "median_gpm": 503,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 168028715,
@@ -1878,7 +2098,11 @@
       ],
       "personanames_seen": [
         "999"
-      ]
+      ],
+      "median_gpm": 471,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 117731777,
@@ -1909,7 +2133,11 @@
       ],
       "personanames_seen": [
         "吾道不孤"
-      ]
+      ],
+      "median_gpm": 231,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 157475523,
@@ -1940,7 +2168,11 @@
       ],
       "personanames_seen": [
         "烟弹漏油"
-      ]
+      ],
+      "median_gpm": 470,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 124936122,
@@ -1970,7 +2202,11 @@
       ],
       "personanames_seen": [
         "Z"
-      ]
+      ],
+      "median_gpm": 469,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 138543123,
@@ -2000,7 +2236,11 @@
       ],
       "personanames_seen": [
         "Neil"
-      ]
+      ],
+      "median_gpm": 266,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 184950344,
@@ -2032,7 +2272,11 @@
       ],
       "personanames_seen": [
         "PMA Tryhard"
-      ]
+      ],
+      "median_gpm": 290,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 155494381,
@@ -2062,7 +2306,11 @@
       ],
       "personanames_seen": [
         "Kimber2k11"
-      ]
+      ],
+      "median_gpm": 291,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 164532005,
@@ -2093,7 +2341,11 @@
       ],
       "personanames_seen": [
         "ljcute"
-      ]
+      ],
+      "median_gpm": 534,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 132309493,
@@ -2123,7 +2375,11 @@
       ],
       "personanames_seen": [
         "is not enough"
-      ]
+      ],
+      "median_gpm": 533,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 187619311,
@@ -2151,7 +2407,11 @@
       ],
       "personanames_seen": [
         "MEDISINA"
-      ]
+      ],
+      "median_gpm": 448,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86726887,
@@ -2183,7 +2443,11 @@
       ],
       "personanames_seen": [
         "X"
-      ]
+      ],
+      "median_gpm": 302,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 86725175,
@@ -2218,7 +2482,11 @@
       ],
       "personanames_seen": [
         "The One"
-      ]
+      ],
+      "median_gpm": 607,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 10366616,
@@ -2251,7 +2519,11 @@
       ],
       "personanames_seen": [
         "Sneyking"
-      ]
+      ],
+      "median_gpm": 492,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 108452107,
@@ -2281,7 +2553,11 @@
       ],
       "personanames_seen": [
         "12"
-      ]
+      ],
+      "median_gpm": 561,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 47434686,
@@ -2312,7 +2588,11 @@
       ],
       "personanames_seen": [
         "LoA"
-      ]
+      ],
+      "median_gpm": 300,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 182331313,
@@ -2342,7 +2622,11 @@
       ],
       "personanames_seen": [
         "田园脆鸡堡"
-      ]
+      ],
+      "median_gpm": 309,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 137272985,
@@ -2375,7 +2659,11 @@
       ],
       "personanames_seen": [
         "box box"
-      ]
+      ],
+      "median_gpm": 482,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 139937922,
@@ -2406,7 +2694,11 @@
       ],
       "personanames_seen": [
         "3"
-      ]
+      ],
+      "median_gpm": 390,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 108382060,
@@ -2437,7 +2729,11 @@
       ],
       "personanames_seen": [
         "0.0"
-      ]
+      ],
+      "median_gpm": 556,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 114239371,
@@ -2467,7 +2763,11 @@
       ],
       "personanames_seen": [
         "田曦薇"
-      ]
+      ],
+      "median_gpm": 260,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 137193239,
@@ -2498,7 +2798,11 @@
       ],
       "personanames_seen": [
         "无限"
-      ]
+      ],
+      "median_gpm": 485,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 89423756,
@@ -2529,7 +2833,11 @@
       ],
       "personanames_seen": [
         "疯鱼"
-      ]
+      ],
+      "median_gpm": 299,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 113800818,
@@ -2558,7 +2866,11 @@
       ],
       "personanames_seen": [
         "l"
-      ]
+      ],
+      "median_gpm": 236,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 107803494,
@@ -2588,7 +2900,11 @@
       ],
       "personanames_seen": [
         "..."
-      ]
+      ],
+      "median_gpm": 501,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 134276083,
@@ -2621,7 +2937,11 @@
       ],
       "personanames_seen": [
         "oldeLeVeN"
-      ]
+      ],
+      "median_gpm": 381,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 134556694,
@@ -2651,7 +2971,11 @@
       ],
       "personanames_seen": [
         "Solo"
-      ]
+      ],
+      "median_gpm": 289,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 132851371,
@@ -2686,7 +3010,11 @@
       ],
       "personanames_seen": [
         "делаем выводы"
-      ]
+      ],
+      "median_gpm": 558,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 106573901,
@@ -2723,7 +3051,11 @@
       ],
       "personanames_seen": [
         "Have fun"
-      ]
+      ],
+      "median_gpm": 557,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 92423451,
@@ -2760,7 +3092,11 @@
       ],
       "personanames_seen": [
         "izdu"
-      ]
+      ],
+      "median_gpm": 447,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 159020918,
@@ -2793,7 +3129,11 @@
       ],
       "personanames_seen": [
         "Shi Heng Yi"
-      ]
+      ],
+      "median_gpm": 283,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 93552791,
@@ -2824,7 +3164,11 @@
       ],
       "personanames_seen": [
         "game"
-      ]
+      ],
+      "median_gpm": 285,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 91064780,
@@ -2856,7 +3200,11 @@
       ],
       "personanames_seen": [
         "AWF.lft.coach"
-      ]
+      ],
+      "median_gpm": 233,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 250114507,
@@ -2889,7 +3237,11 @@
       ],
       "personanames_seen": [
         "ПЕРПЛ СПРАЙТ"
-      ]
+      ],
+      "median_gpm": 540,
+      "modal_lane_role": 2,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 130801103,
@@ -2924,7 +3276,11 @@
       ],
       "personanames_seen": [
         "DyX_aHKopuD}|{A"
-      ]
+      ],
+      "median_gpm": 399,
+      "modal_lane_role": 3,
+      "_gpm": [],
+      "_lanes": []
     },
     {
       "account_id": 89269794,
@@ -2958,7 +3314,11 @@
       ],
       "personanames_seen": [
         "polako"
-      ]
+      ],
+      "median_gpm": 477,
+      "modal_lane_role": 1,
+      "_gpm": [],
+      "_lanes": []
     }
   ]
 }

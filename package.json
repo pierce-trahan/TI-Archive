@@ -12,7 +12,9 @@
     "lint": "tsc --noEmit",
     "ingest:matches": "tsx scripts/ingest-matches.ts",
     "build:playermap": "tsx scripts/build-player-map.ts",
-    "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.json"
+    "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.json",
+    "ingest:liquipedia": "tsx scripts/ingest-liquipedia.ts",
+    "propose:identities": "tsx scripts/propose-identities.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

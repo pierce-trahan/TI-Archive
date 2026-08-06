@@ -1,0 +1,818 @@
+{
+  "_generated_by": "scripts/ingest-liquipedia.ts",
+  "_generated_at": "2026-08-06T19:19:09.942Z",
+  "_status": "PROPOSAL — not authoritative. Join to account_ids and confirm before use.",
+  "_attribution": "Roster, qualification and placement data from Liquipedia, licensed CC-BY-SA 3.0.",
+  "_source": {
+    "type": "url",
+    "url": "https://liquipedia.net/dota2/The_International/2018",
+    "retrieved_at": "2026-08-06T19:19:09.942Z"
+  },
+  "event": "ti08",
+  "team_count": 18,
+  "teams": [
+    {
+      "team_name": "Virtus.pro",
+      "players": [
+        {
+          "handle": "RAMZES666",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "No[o]ne",
+          "page": "Noone",
+          "role": "2"
+        },
+        {
+          "handle": "9pasha",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "RodjER",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Solo",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Artstyle",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "Team Liquid",
+      "players": [
+        {
+          "handle": "MATUMBAMAN",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Miracle-",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "MinD_ContRoL",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "GH",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "KuroKy",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Heen",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "2"
+      }
+    },
+    {
+      "team_name": "PSG.LGD",
+      "players": [
+        {
+          "handle": "Ame",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Somnus丶M",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Chalice",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "fy",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "xNova",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "QQQ",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "3"
+      }
+    },
+    {
+      "team_name": "Team Secret",
+      "players": [
+        {
+          "handle": "Ace",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "MidOne",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Fata",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "YapzOr",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Puppey",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "SunBhie",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "4"
+      }
+    },
+    {
+      "team_name": "Mineski",
+      "players": [
+        {
+          "handle": "Mushi",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Moonn",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "iceiceice",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Jabz",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "ninjaboogie",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "71",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "5"
+      }
+    },
+    {
+      "team_name": "Vici Gaming",
+      "players": [
+        {
+          "handle": "Paparazi灬",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Ori",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "eLeVeN",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "LaNm",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Fenrir",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Mikasa",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "6"
+      }
+    },
+    {
+      "team_name": "Newbee",
+      "players": [
+        {
+          "handle": "Moogy",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Sccc",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "kpii",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Kaka",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Faith",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "SanSheng",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "7"
+      }
+    },
+    {
+      "team_name": "VGJ.Thunder",
+      "players": [
+        {
+          "handle": "Sylar",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Freeze",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Yang",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Fade",
+          "page": "Fade (player)",
+          "role": "4"
+        },
+        {
+          "handle": "ddc",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "rOtK",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "8"
+      }
+    },
+    {
+      "team_name": "OG",
+      "players": [
+        {
+          "handle": "ana",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Topson",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Ceb",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "JerAx",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "N0tail",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "ppasarel",
+      "qualification": {
+        "method": "qual",
+        "via": "Europe",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "Winstrike Team",
+      "players": [
+        {
+          "handle": "Silent",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Iceberg",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "nongrata",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Nofear",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "ALWAYSWANNAFLY",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Sh4dowehhh",
+      "qualification": {
+        "method": "qual",
+        "via": "CIS",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "Team Serenity",
+      "players": [
+        {
+          "handle": "zhizhizhi",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Zyd",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "XinQ",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Pyw",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "XCJ",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": null,
+      "qualification": {
+        "method": "qual",
+        "via": "China",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "Invictus Gaming",
+      "players": [
+        {
+          "handle": "Agressif",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Xxs",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Srf",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "BoBoKa",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Q",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "BurNIng",
+      "qualification": {
+        "method": "qual",
+        "via": "China",
+        "placement": "2"
+      }
+    },
+    {
+      "team_name": "Fnatic",
+      "players": [
+        {
+          "handle": "EternaLEnVy",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Abed",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Universe",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "DJ",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "pieliedie",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Aui_2000",
+      "qualification": {
+        "method": "qual",
+        "via": "Southeast Asia",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "TNC Predator",
+      "players": [
+        {
+          "handle": "Raven",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Armel",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Sam_H",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Tims",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Kuku",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "1437",
+      "qualification": {
+        "method": "qual",
+        "via": "Southeast Asia",
+        "placement": "2"
+      }
+    },
+    {
+      "team_name": "VGJ.Storm",
+      "players": [
+        {
+          "handle": "YS",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "Resolut1on",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "Sneyking",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "MSS",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "SVG",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "Illidan",
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "1"
+      }
+    },
+    {
+      "team_name": "Evil Geniuses",
+      "players": [
+        {
+          "handle": "Arteezy",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "SumaiL",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "s4",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Cr1t-",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Fly",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "BuLba",
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "2"
+      }
+    },
+    {
+      "team_name": "OpTic Gaming",
+      "players": [
+        {
+          "handle": "Pajkatt",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "CCnC",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "33",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "zai",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "ppd",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": null,
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "3"
+      }
+    },
+    {
+      "team_name": "paiN Gaming",
+      "players": [
+        {
+          "handle": "hFn",
+          "page": null,
+          "role": "1"
+        },
+        {
+          "handle": "w33",
+          "page": null,
+          "role": "2"
+        },
+        {
+          "handle": "tavo",
+          "page": null,
+          "role": "3"
+        },
+        {
+          "handle": "Kingrd",
+          "page": null,
+          "role": "4"
+        },
+        {
+          "handle": "Duster",
+          "page": null,
+          "role": "5"
+        }
+      ],
+      "coach": "MISERY",
+      "qualification": {
+        "method": "qual",
+        "via": "South America",
+        "placement": "1"
+      }
+    }
+  ],
+  "placements": [
+    {
+      "slot": 1,
+      "prize_share": "44%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .44 round 0}}}}",
+      "teams": [
+        {
+          "tag": "og",
+          "last_vs": "lgd",
+          "last_score": "3-2"
+        }
+      ]
+    },
+    {
+      "slot": 2,
+      "prize_share": "16%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .16 round 0}}}}",
+      "teams": [
+        {
+          "tag": "lgd",
+          "last_vs": "og",
+          "last_score": "2-3"
+        }
+      ]
+    },
+    {
+      "slot": 3,
+      "prize_share": "10.5%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .105 round 0}}}}",
+      "teams": [
+        {
+          "tag": "eg",
+          "last_vs": "lgd",
+          "last_score": "0-2"
+        }
+      ]
+    },
+    {
+      "slot": 4,
+      "prize_share": "7%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .07 round 0}}}}",
+      "teams": [
+        {
+          "tag": "tl",
+          "last_vs": "eg",
+          "last_score": "0-2"
+        }
+      ]
+    },
+    {
+      "slot": 5,
+      "prize_share": "4.5%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .045 round 0}}}}",
+      "teams": [
+        {
+          "tag": "vp",
+          "last_vs": "eg",
+          "last_score": "0-2"
+        },
+        {
+          "tag": "secret",
+          "last_vs": "tl",
+          "last_score": "0-2"
+        }
+      ]
+    },
+    {
+      "slot": 6,
+      "prize_share": "2.5%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .02500112761207746 round 0}}}}",
+      "teams": [
+        {
+          "tag": "optic",
+          "last_vs": "vp",
+          "last_score": "1-2"
+        },
+        {
+          "tag": "vgj.s",
+          "last_vs": "secret",
+          "last_score": "0-2"
+        }
+      ]
+    },
+    {
+      "slot": 7,
+      "prize_share": "1.5%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .015 round 0}}}}",
+      "teams": [
+        {
+          "tag": "serenity",
+          "last_vs": "optic",
+          "last_score": "0-2"
+        },
+        {
+          "tag": "mineski",
+          "last_vs": "vp",
+          "last_score": "0-2"
+        },
+        {
+          "tag": "winstrike",
+          "last_vs": "vgj.s",
+          "last_score": "0-2"
+        },
+        {
+          "tag": "vg",
+          "last_vs": "secret",
+          "last_score": "1-2"
+        }
+      ]
+    },
+    {
+      "slot": 8,
+      "prize_share": "0.5%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .005 round 0}}}}",
+      "teams": [
+        {
+          "tag": "fnc",
+          "last_vs": "serenity",
+          "last_score": "0-1"
+        },
+        {
+          "tag": "tnc",
+          "last_vs": "mineski",
+          "last_score": "0-1"
+        },
+        {
+          "tag": "newbee",
+          "last_vs": "winstrike",
+          "last_score": "0-1"
+        },
+        {
+          "tag": "vgj.t",
+          "last_vs": "vg",
+          "last_score": "0-1"
+        }
+      ]
+    },
+    {
+      "slot": 9,
+      "prize_share": "0.25%",
+      "prize_usd_expression": "{{formatnum:{{#expr:{{#var:prizepool_main_event}} * .0025 round 0}}}}",
+      "teams": [
+        {
+          "tag": "ig",
+          "last_vs": null,
+          "last_score": null
+        },
+        {
+          "tag": "pain gaming",
+          "last_vs": null,
+          "last_score": null
+        }
+      ]
+    }
+  ]
+}

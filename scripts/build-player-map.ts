@@ -42,6 +42,11 @@ interface PlayerScaffold {
   heroes_played: string[];
   /** Recorded as evidence of drift, never for display. */
   personanames_seen: string[];
+  /** Farm-priority evidence, used to propose which position an account played. */
+  median_gpm: number | null;
+  modal_lane_role: number | null;
+  _gpm: number[];
+  _lanes: number[];
 }
 
 async function readMatches(cacheDir: string): Promise<MatchDetail[]> {
@@ -133,9 +138,17 @@ async function main(): Promise<void> {
           teams: [],
           heroes_played: [],
           personanames_seen: [],
+          median_gpm: null,
+          modal_lane_role: null,
+          _gpm: [],
+          _lanes: [],
         };
         players.set(player.account_id, entry);
       }
+
+      if (typeof player.gold_per_min === 'number') entry._gpm.push(player.gold_per_min);
+      const lane = (player as { lane_role?: number | null }).lane_role;
+      if (typeof lane === 'number') entry._lanes.push(lane);
 
       // If a later match supplies a name the first one lacked, take it — still a hint.
       if (!entry.verified && !entry.nickname && player.name) {
@@ -180,6 +193,19 @@ async function main(): Promise<void> {
   for (const p of scaffold) {
     p.teams.sort((x, y) => y.matches - x.matches);
     p.heroes_played.sort();
+
+    if (p._gpm.length) {
+      const sorted = [...p._gpm].sort((a, b) => a - b);
+      p.median_gpm = sorted[Math.floor(sorted.length / 2)] ?? null;
+    }
+    if (p._lanes.length) {
+      const tally = new Map<number, number>();
+      for (const lane of p._lanes) tally.set(lane, (tally.get(lane) ?? 0) + 1);
+      p.modal_lane_role = [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+    }
+    // Samples were only needed to compute the two summaries above.
+    p._gpm = [];
+    p._lanes = [];
   }
 
   const needsName = scaffold.filter((p) => !p.nickname);

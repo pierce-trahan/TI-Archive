@@ -69,6 +69,12 @@ Keep that split. It is the difference between an archive with sources and a mirr
 
 So `published` is now `null` for every Wayback item, and the capture date lives in `signals.captured` clearly labelled as such. The date window filters on capture date, which means **older articles that happened to be crawled during the window will appear in the results**. Read the piece before dating a claim from it.
 
+JoinDota bylines read "posted by <author>", sometimes followed by a relative age. The **author is recovered for every article** — real staff bylines like Malystryx.GDS and Nahaz — which is a genuine win for citation.
+
+The relative age is kept verbatim in `signals.age_at_capture` and never converted to a date: "3 years ago" spans a twelve-month window, and turning it into a specific day would manufacture precision the source never had.
+
+**But be clear about how little that helps.** Only 1 of 79 TI8 articles carried a relative age at all. The rest have no date signal of any kind, so a 2013 article crawled in 2018 is still indistinguishable from a 2018 one without reading it. The staleness warning at the end of a run catches the rare labelled case and nothing else. Treat every undated Wayback item as undated.
+
 **All three are polite by design** — 1.2s between Reddit calls, 2s for archive.org, 3s for GosuGamers, plus a `robots.txt` check before fetching. Please leave those alone. Getting this project blocked would cost far more than the time saved.
 
 ## After a run

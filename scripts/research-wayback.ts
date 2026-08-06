@@ -56,6 +56,34 @@ const decodeEntities = (v: string): string =>
 const cleanTitle = (raw: string): string =>
   decodeEntities(raw).split(/\s*[«»|]\s*/)[0]!.replace(/\s+/g, ' ').trim();
 
+/**
+ * joinDOTA bylines render as "posted by <author> , <relative age>", e.g.
+ * "posted by raiko_ , 3 years ago". The author is exact and worth keeping.
+ *
+ * The relative age is recorded verbatim and NEVER converted to a date:
+ * "3 years ago" spans a twelve-month window, and turning it into a specific
+ * day would manufacture precision that was never there. As a raw string it
+ * still does the job that matters — it tells a reader at a glance that an
+ * article crawled during our window is actually years older.
+ */
+function extractByline(text: string): { author: string | null; ageAtCapture: string | null } {
+  const match = /posted by\s+([^,]{1,40}?)\s*,\s*(.{0,30})/i.exec(text);
+  if (!match) return { author: null, ageAtCapture: null };
+
+  const author = match[1]?.trim() || null;
+  const age = /^((?:about\s+)?\d+\s+(?:second|minute|hour|day|week|month|year)s?\s+ago)/i.exec(
+    match[2] ?? '',
+  )?.[1];
+
+  return { author, ageAtCapture: age ?? null };
+}
+
+/** Drops the leading navigation so an excerpt starts at the article. */
+function articleBody(text: string): string {
+  const byline = /posted by\s+[^,]{1,40},\s*(?:(?:about\s+)?\d+\s+\w+\s+ago\s*)?/i.exec(text);
+  return byline ? text.slice(byline.index + byline[0].length).trim() : text;
+}
+
 /** Turns archived HTML into something readable, discarding chrome. */
 function extractText(html: string): { title: string | null; text: string } {
   const title =
@@ -155,6 +183,7 @@ async function main(): Promise<void> {
     }
 
     const { title, text } = extractText(await response.text());
+    const { author, ageAtCapture } = extractByline(text);
     // Index and tag pages survive as captures but carry no article.
     if (text.length < 600) continue;
 
@@ -170,10 +199,12 @@ async function main(): Promise<void> {
       // visited — an article from 2013 crawled in 2018 would otherwise be
       // labelled 2018. Unknown is the only honest value.
       published: null,
-      author: null,
-      excerpt: excerpt(text),
+      author,
+      // Start the excerpt at the article, not at the site's navigation.
+      excerpt: excerpt(articleBody(text)),
       signals: {
         snapshot: snapshotUrl,
+        age_at_capture: ageAtCapture,
         captured: `${timestamp.slice(0, 4)}-${timestamp.slice(4, 6)}-${timestamp.slice(6, 8)}`,
         captured_note: 'Date the archive crawled the page, NOT when it was published.',
         chars: text.length,
@@ -192,11 +223,21 @@ async function main(): Promise<void> {
   });
 
   console.log(`\n${items.length} articles recovered (${seenUrls.size - items.length} skipped as duplicates or too thin)`);
+  const withAge = items.filter((i) => i.signals?.age_at_capture).length;
+  const stale = items.filter((i) => /year/.test(String(i.signals?.age_at_capture ?? '')));
+
   console.log(
     '\n  NOTE: these pages carry no publication date, so `published` is null for every item.\n' +
       '  The date window filtered on CAPTURE date, so older articles that happened to be\n' +
       '  crawled during the window are included. Check the article before dating a claim.',
   );
+  console.log(`  ${withAge}/${items.length} carry a relative age from their byline.`);
+  if (stale.length) {
+    console.log(`  ${stale.length} are years old at capture and almost certainly predate the event:`);
+    for (const i of stale.slice(0, 8)) {
+      console.log(`      ${String(i.signals?.age_at_capture).padEnd(14)} ${i.title.slice(0, 58)}`);
+    }
+  }
   console.log(`metadata + excerpts: ${path}`);
   console.log(`full text (gitignored): data/raw/research/${key}/${sourceName}/`);
 }

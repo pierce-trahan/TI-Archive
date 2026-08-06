@@ -1,0 +1,562 @@
+{
+  "_generated_by": "scripts/compute-stats.ts",
+  "_generated_at": "2026-08-06T22:11:10.738Z",
+  "_note": "Generated. Do not hand-edit. Every rate carries its sample size; objective statistics exclude unparsed matches rather than counting them as zero.",
+  "event": "ti08",
+  "phases": [
+    "group",
+    "main"
+  ],
+  "matches": {
+    "total": 195,
+    "parsed": 190,
+    "unparsed": 5,
+    "with_draft_data": 195
+  },
+  "duration": {
+    "mean_seconds": 2374.3,
+    "median_seconds": 2261,
+    "longest": {
+      "match_id": 4063266100,
+      "seconds": 4912
+    },
+    "shortest": {
+      "match_id": 4065268827,
+      "seconds": 1019
+    },
+    "sample": 195
+  },
+  "kills_per_game": {
+    "value": 56.7,
+    "sample": 195
+  },
+  "roshan_kills_per_game": {
+    "value": 2.1,
+    "sample": 190,
+    "excluded": {
+      "count": 5,
+      "reason": "replay not parsed by OpenDota; objective data unavailable"
+    }
+  },
+  "first_blood_seconds": {
+    "value": 102.8,
+    "sample": 188,
+    "excluded": {
+      "count": 2,
+      "reason": "no first-blood event recorded in the parsed objectives"
+    }
+  },
+  "heroes": {
+    "distinct_picked": 110,
+    "most_picked": [
+      {
+        "hero": "Vengeful Spirit",
+        "picked": 89,
+        "won": 48,
+        "banned": 35,
+        "win_rate": 0.5393258426966292
+      },
+      {
+        "hero": "Tiny",
+        "picked": 78,
+        "won": 32,
+        "banned": 95,
+        "win_rate": 0.41025641025641024
+      },
+      {
+        "hero": "Mirana",
+        "picked": 74,
+        "won": 40,
+        "banned": 66,
+        "win_rate": 0.5405405405405406
+      },
+      {
+        "hero": "Wraith King",
+        "picked": 66,
+        "won": 34,
+        "banned": 63,
+        "win_rate": 0.5151515151515151
+      },
+      {
+        "hero": "Dark Willow",
+        "picked": 66,
+        "won": 37,
+        "banned": 34,
+        "win_rate": 0.5606060606060606
+      },
+      {
+        "hero": "Weaver",
+        "picked": 62,
+        "won": 36,
+        "banned": 117,
+        "win_rate": 0.5806451612903226
+      },
+      {
+        "hero": "Silencer",
+        "picked": 58,
+        "won": 29,
+        "banned": 107,
+        "win_rate": 0.5
+      },
+      {
+        "hero": "Necrophos",
+        "picked": 57,
+        "won": 25,
+        "banned": 114,
+        "win_rate": 0.43859649122807015
+      },
+      {
+        "hero": "Winter Wyvern",
+        "picked": 55,
+        "won": 29,
+        "banned": 30,
+        "win_rate": 0.5272727272727272
+      },
+      {
+        "hero": "Crystal Maiden",
+        "picked": 52,
+        "won": 26,
+        "banned": 40,
+        "win_rate": 0.5
+      },
+      {
+        "hero": "Ursa",
+        "picked": 51,
+        "won": 22,
+        "banned": 50,
+        "win_rate": 0.43137254901960786
+      },
+      {
+        "hero": "Clinkz",
+        "picked": 51,
+        "won": 25,
+        "banned": 54,
+        "win_rate": 0.49019607843137253
+      },
+      {
+        "hero": "Earthshaker",
+        "picked": 49,
+        "won": 29,
+        "banned": 24,
+        "win_rate": 0.5918367346938775
+      },
+      {
+        "hero": "Lina",
+        "picked": 41,
+        "won": 23,
+        "banned": 27,
+        "win_rate": 0.5609756097560976
+      },
+      {
+        "hero": "Phantom Lancer",
+        "picked": 39,
+        "won": 21,
+        "banned": 63,
+        "win_rate": 0.5384615384615384
+      }
+    ],
+    "most_banned": [
+      {
+        "hero": "Enchantress",
+        "picked": 34,
+        "won": 19,
+        "banned": 150,
+        "win_rate": 0.5588235294117647
+      },
+      {
+        "hero": "Io",
+        "picked": 33,
+        "won": 13,
+        "banned": 140,
+        "win_rate": 0.3939393939393939
+      },
+      {
+        "hero": "Weaver",
+        "picked": 62,
+        "won": 36,
+        "banned": 117,
+        "win_rate": 0.5806451612903226
+      },
+      {
+        "hero": "Necrophos",
+        "picked": 57,
+        "won": 25,
+        "banned": 114,
+        "win_rate": 0.43859649122807015
+      },
+      {
+        "hero": "Silencer",
+        "picked": 58,
+        "won": 29,
+        "banned": 107,
+        "win_rate": 0.5
+      },
+      {
+        "hero": "Tiny",
+        "picked": 78,
+        "won": 32,
+        "banned": 95,
+        "win_rate": 0.41025641025641024
+      },
+      {
+        "hero": "Broodmother",
+        "picked": 18,
+        "won": 12,
+        "banned": 91,
+        "win_rate": 0.6666666666666666
+      },
+      {
+        "hero": "Pugna",
+        "picked": 27,
+        "won": 14,
+        "banned": 78,
+        "win_rate": 0.5185185185185185
+      },
+      {
+        "hero": "Mirana",
+        "picked": 74,
+        "won": 40,
+        "banned": 66,
+        "win_rate": 0.5405405405405406
+      },
+      {
+        "hero": "Huskar",
+        "picked": 17,
+        "won": 5,
+        "banned": 65,
+        "win_rate": 0.29411764705882354
+      },
+      {
+        "hero": "Drow Ranger",
+        "picked": 29,
+        "won": 20,
+        "banned": 65,
+        "win_rate": 0.6896551724137931
+      },
+      {
+        "hero": "Wraith King",
+        "picked": 66,
+        "won": 34,
+        "banned": 63,
+        "win_rate": 0.5151515151515151
+      },
+      {
+        "hero": "Phantom Lancer",
+        "picked": 39,
+        "won": 21,
+        "banned": 63,
+        "win_rate": 0.5384615384615384
+      },
+      {
+        "hero": "Chen",
+        "picked": 26,
+        "won": 14,
+        "banned": 61,
+        "win_rate": 0.5384615384615384
+      },
+      {
+        "hero": "Clinkz",
+        "picked": 51,
+        "won": 25,
+        "banned": 54,
+        "win_rate": 0.49019607843137253
+      }
+    ],
+    "win_rate_threshold_games": 5,
+    "strongest": [
+      {
+        "hero": "Venomancer",
+        "picked": 13,
+        "won": 9,
+        "banned": 10,
+        "win_rate": 0.6923076923076923
+      },
+      {
+        "hero": "Drow Ranger",
+        "picked": 29,
+        "won": 20,
+        "banned": 65,
+        "win_rate": 0.6896551724137931
+      },
+      {
+        "hero": "Broodmother",
+        "picked": 18,
+        "won": 12,
+        "banned": 91,
+        "win_rate": 0.6666666666666666
+      },
+      {
+        "hero": "Invoker",
+        "picked": 24,
+        "won": 16,
+        "banned": 29,
+        "win_rate": 0.6666666666666666
+      },
+      {
+        "hero": "Arc Warden",
+        "picked": 9,
+        "won": 6,
+        "banned": 24,
+        "win_rate": 0.6666666666666666
+      },
+      {
+        "hero": "Nyx Assassin",
+        "picked": 20,
+        "won": 13,
+        "banned": 26,
+        "win_rate": 0.65
+      },
+      {
+        "hero": "Batrider",
+        "picked": 11,
+        "won": 7,
+        "banned": 15,
+        "win_rate": 0.6363636363636364
+      },
+      {
+        "hero": "Faceless Void",
+        "picked": 8,
+        "won": 5,
+        "banned": 13,
+        "win_rate": 0.625
+      },
+      {
+        "hero": "Kunkka",
+        "picked": 16,
+        "won": 10,
+        "banned": 16,
+        "win_rate": 0.625
+      },
+      {
+        "hero": "Brewmaster",
+        "picked": 13,
+        "won": 8,
+        "banned": 8,
+        "win_rate": 0.6153846153846154
+      }
+    ],
+    "weakest": [
+      {
+        "hero": "Disruptor",
+        "picked": 5,
+        "won": 0,
+        "banned": 0,
+        "win_rate": 0
+      },
+      {
+        "hero": "Magnus",
+        "picked": 6,
+        "won": 1,
+        "banned": 3,
+        "win_rate": 0.16666666666666666
+      },
+      {
+        "hero": "Monkey King",
+        "picked": 10,
+        "won": 2,
+        "banned": 8,
+        "win_rate": 0.2
+      },
+      {
+        "hero": "Windranger",
+        "picked": 20,
+        "won": 4,
+        "banned": 3,
+        "win_rate": 0.2
+      },
+      {
+        "hero": "Rubick",
+        "picked": 14,
+        "won": 3,
+        "banned": 4,
+        "win_rate": 0.21428571428571427
+      },
+      {
+        "hero": "Centaur Warrunner",
+        "picked": 8,
+        "won": 2,
+        "banned": 4,
+        "win_rate": 0.25
+      },
+      {
+        "hero": "Elder Titan",
+        "picked": 11,
+        "won": 3,
+        "banned": 9,
+        "win_rate": 0.2727272727272727
+      },
+      {
+        "hero": "Underlord",
+        "picked": 7,
+        "won": 2,
+        "banned": 1,
+        "win_rate": 0.2857142857142857
+      },
+      {
+        "hero": "Huskar",
+        "picked": 17,
+        "won": 5,
+        "banned": 65,
+        "win_rate": 0.29411764705882354
+      },
+      {
+        "hero": "Morphling",
+        "picked": 10,
+        "won": 3,
+        "banned": 15,
+        "win_rate": 0.3
+      }
+    ],
+    "suppressed_below_threshold": 35,
+    "unpicked": null,
+    "unpicked_unavailable_reason": "Requires the hero pool as of this event's patch. OpenDota /api/heroes returns today's pool, so computing against it would report heroes that did not exist yet as \"never picked\". Not shipped until the per-patch roster is sourced."
+  },
+  "players": {
+    "min_games": 5,
+    "counted": 90,
+    "top_gpm": [
+      {
+        "account_id": 105248644,
+        "handle": "Miracle-",
+        "games": 24,
+        "avg_gpm": 625.9,
+        "avg_xpm": 630
+      },
+      {
+        "account_id": 111620041,
+        "handle": "SumaiL",
+        "games": 27,
+        "avg_gpm": 619.4,
+        "avg_xpm": 610.2
+      },
+      {
+        "account_id": 125581247,
+        "handle": "Ame",
+        "games": 30,
+        "avg_gpm": 605.5,
+        "avg_xpm": 620.1
+      },
+      {
+        "account_id": 106863163,
+        "handle": "Somnus丶M",
+        "games": 30,
+        "avg_gpm": 605,
+        "avg_xpm": 639.3
+      },
+      {
+        "account_id": 86725175,
+        "handle": "Resolut1on",
+        "games": 22,
+        "avg_gpm": 600.2,
+        "avg_xpm": 612.1
+      },
+      {
+        "account_id": 129958758,
+        "handle": "Xxs",
+        "games": 18,
+        "avg_gpm": 574.2,
+        "avg_xpm": 558.7
+      },
+      {
+        "account_id": 113457795,
+        "handle": "Moonn",
+        "games": 19,
+        "avg_gpm": 568.1,
+        "avg_xpm": 557.2
+      },
+      {
+        "account_id": 311360822,
+        "handle": "ana",
+        "games": 29,
+        "avg_gpm": 565.2,
+        "avg_xpm": 563.9
+      },
+      {
+        "account_id": 149486894,
+        "handle": "Sccc",
+        "games": 19,
+        "avg_gpm": 564.8,
+        "avg_xpm": 587.4
+      },
+      {
+        "account_id": 221666230,
+        "handle": "CCnC",
+        "games": 24,
+        "avg_gpm": 564.2,
+        "avg_xpm": 552.1
+      }
+    ],
+    "top_xpm": [
+      {
+        "account_id": 106863163,
+        "handle": "Somnus丶M",
+        "games": 30,
+        "avg_gpm": 605,
+        "avg_xpm": 639.3
+      },
+      {
+        "account_id": 105248644,
+        "handle": "Miracle-",
+        "games": 24,
+        "avg_gpm": 625.9,
+        "avg_xpm": 630
+      },
+      {
+        "account_id": 125581247,
+        "handle": "Ame",
+        "games": 30,
+        "avg_gpm": 605.5,
+        "avg_xpm": 620.1
+      },
+      {
+        "account_id": 86725175,
+        "handle": "Resolut1on",
+        "games": 22,
+        "avg_gpm": 600.2,
+        "avg_xpm": 612.1
+      },
+      {
+        "account_id": 111620041,
+        "handle": "SumaiL",
+        "games": 27,
+        "avg_gpm": 619.4,
+        "avg_xpm": 610.2
+      },
+      {
+        "account_id": 132851371,
+        "handle": "RAMZES666",
+        "games": 25,
+        "avg_gpm": 558.4,
+        "avg_xpm": 605
+      },
+      {
+        "account_id": 94004717,
+        "handle": "hFn",
+        "games": 16,
+        "avg_gpm": 546.1,
+        "avg_xpm": 601.6
+      },
+      {
+        "account_id": 106573901,
+        "handle": "No[o]ne",
+        "games": 25,
+        "avg_gpm": 559.6,
+        "avg_xpm": 598.6
+      },
+      {
+        "account_id": 117281554,
+        "handle": "Moogy",
+        "games": 19,
+        "avg_gpm": 539.7,
+        "avg_xpm": 592.2
+      },
+      {
+        "account_id": 149486894,
+        "handle": "Sccc",
+        "games": 19,
+        "avg_gpm": 564.8,
+        "avg_xpm": 587.4
+      }
+    ]
+  }
+}

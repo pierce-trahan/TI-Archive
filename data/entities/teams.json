@@ -6,15 +6,18 @@
   },
   "teams": [
     {
-      "team_id": 39,
+      "team_id": 5,
       "names": [
         {
           "event": "ti08",
-          "name": "Evil Geniuses",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "name": "Invictus Gaming",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
         }
       ],
-      "opendota_current_name": "Shopify Rebellion"
+      "real_name": null
     },
     {
       "team_id": 15,
@@ -22,11 +25,56 @@
         {
           "event": "ti08",
           "name": "PSG.LGD",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
         }
       ],
       "opendota_current_name": "LGD Gaming",
       "note": "Team names must reflect what the team was called at the event. Liquipedia's TI8 page agrees: PSG.LGD."
+    },
+    {
+      "team_id": 39,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Evil Geniuses",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "opendota_current_name": "Shopify Rebellion"
+    },
+    {
+      "team_id": 67,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "paiN Gaming",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 2163,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Team Liquid",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
     },
     {
       "team_id": 350190,
@@ -34,10 +82,111 @@
         {
           "event": "ti08",
           "name": "Fnatic",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
         }
       ],
       "opendota_current_name": "Ascent Esports"
+    },
+    {
+      "team_id": 543897,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Mineski",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 726228,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Vici Gaming",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 1375614,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Newbee",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 1838315,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Team Secret",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 1883502,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Virtus.pro",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 2108395,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "TNC Predator",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 2586976,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "OG",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
     },
     {
       "team_id": 5026801,
@@ -45,11 +194,70 @@
         {
           "event": "ti08",
           "name": "OpTic Gaming",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
         }
       ],
       "opendota_current_name": null,
       "note": "OpenDota returns an empty string for this team_id."
+    },
+    {
+      "team_id": 5027210,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "VGJ.Thunder",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 5066616,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Team Serenity",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 5228654,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "VGJ.Storm",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
+    },
+    {
+      "team_id": 5229127,
+      "names": [
+        {
+          "event": "ti08",
+          "name": "Winstrike Team",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null
     }
   ]
 }

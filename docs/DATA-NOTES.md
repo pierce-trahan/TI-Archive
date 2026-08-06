@@ -77,6 +77,14 @@ The same mechanism applies to players: `name` is a *current* pro handle, so a pl
 
 **Therefore:** team and player names as of a given event come from Liquipedia, not OpenDota. OpenDota supplies the stable IDs and the match facts. This is what `names_over_time` on the team and player entities in `docs/DESIGN.md` §8.2 is for, and it is not optional.
 
+### Position is not a per-event constant
+
+Liquipedia lists one role per player per event, and it is right to — but it is a *default*, not a fixed assignment. Confirmed for TI8: Team Liquid drafted around MATUMBAMAN and Miracle- swapping safe lane and mid between games, which is part of what made that core so hard to draft against.
+
+This shows up in the data as a signal that looks like an error and is not: OpenDota reports MATUMBAMAN's modal `lane_role` as 2 (mid) against a pos 1 listing. That is the flexibility, correctly recorded.
+
+Consequences: a per-match position must be computed from match data rather than assumed from the roster; the UI must not present a listed position as though the player never played anything else; and `role_flexibility` on a roster in `data/events/<event>.rosters.json` records the confirmed cases.
+
 ### Player identity is the hard problem
 
 Across the full TI8 event (group stage + main event, 195 matches, 18 teams, 90 players), **46 of 90 players — 51% — have a null `name` field.** In the grand final specifically it was 6 of 10.

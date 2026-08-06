@@ -1,20 +1,1012 @@
 {
-  "_note": "Confirmed rosters as fielded at this event, with positions. A roster belongs to the event, not to the player. Entries appear here only once a human has confirmed them; the generated scaffold at data/entities/players.ti08.scaffold.json is the queue of what still needs confirming.",
+  "_note": "Rosters as fielded at this event. `position` is the DEFAULT role from Liquipedia, not a per-game constant: some teams deliberately swapped roles between games, and where that is confirmed it is recorded in `role_flexibility`. `established_by` records how each account_id was tied to a handle — see scripts/propose-identities.ts for what each tier means.",
   "event": "ti08",
   "rosters": [
     {
+      "team_id": 1883502,
+      "team_name": "Virtus.pro",
+      "coach": "Artstyle",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "RAMZES666",
+          "account_id": 132851371,
+          "established_by": "matched"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "No[o]ne",
+          "account_id": 106573901,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "9pasha",
+          "account_id": 92423451,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "RodjER",
+          "account_id": 159020918,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Solo",
+          "account_id": 134556694,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 2163,
+      "team_name": "Team Liquid",
+      "role_flexibility": {
+        "positions": [
+          1,
+          2
+        ],
+        "handles": [
+          "MATUMBAMAN",
+          "Miracle-"
+        ],
+        "note": "MATUMBAMAN and Miracle- were both capable of playing safe lane and mid, and Liquid drafted around swapping them between games. Their listed positions are the default, not a fixed assignment — expect games where each played the other's role. This flexibility is part of what made the pairing so hard to draft against, and it is why OpenDota reports MATUMBAMAN's modal lane_role as 2 (mid) despite a pos 1 listing.",
+        "source": {
+          "type": "owner-confirmation",
+          "date": "2026-08-06"
+        }
+      },
+      "coach": "Heen",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "2"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "MATUMBAMAN",
+          "account_id": 72312627,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Miracle-",
+          "account_id": 105248644,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "MinD_ContRoL",
+          "account_id": 34505203,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "GH",
+          "account_id": 101356886,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "KuroKy",
+          "account_id": 82262664,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 15,
+      "team_name": "PSG.LGD",
+      "coach": "QQQ",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "3"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Ame",
+          "account_id": 125581247,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Somnus丶M",
+          "account_id": 106863163,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Chalice",
+          "account_id": 94738847,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "fy",
+          "account_id": 101695162,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "xNova",
+          "account_id": 94296097,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 1838315,
+      "team_name": "Team Secret",
+      "coach": "SunBhie",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "4"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Ace",
+          "account_id": 97590558,
+          "established_by": "matched"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "MidOne",
+          "account_id": 116585378,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Fata",
+          "account_id": 86799300,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "YapzOr",
+          "account_id": 89117038,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Puppey",
+          "account_id": 87278757,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 543897,
+      "team_name": "Mineski",
+      "coach": "71",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "5"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Mushi",
+          "account_id": 89871557,
+          "established_by": "matched"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Moonn",
+          "account_id": 113457795,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "iceiceice",
+          "account_id": 84772440,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Jabz",
+          "account_id": 100471531,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "ninjaboogie",
+          "account_id": 91443418,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 726228,
+      "team_name": "Vici Gaming",
+      "coach": "Mikasa",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "6"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Paparazi灬",
+          "account_id": 137193239,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Ori",
+          "account_id": 107803494,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "eLeVeN",
+          "account_id": 134276083,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "LaNm",
+          "account_id": 89423756,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Fenrir",
+          "account_id": 113800818,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 1375614,
+      "team_name": "Newbee",
+      "coach": "SanSheng",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "7"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Moogy",
+          "account_id": 117281554,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Sccc",
+          "account_id": 149486894,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "kpii",
+          "account_id": 87012746,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Kaka",
+          "account_id": 139876032,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Faith",
+          "account_id": 82327674,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 5027210,
+      "team_name": "VGJ.Thunder",
+      "coach": "rOtK",
+      "qualification": {
+        "method": "invite",
+        "via": "Dota Pro Circuit",
+        "placement": "8"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Sylar",
+          "account_id": 108382060,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Freeze",
+          "account_id": 137272985,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Yang",
+          "account_id": 139937922,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Fade",
+          "account_id": 182331313,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "ddc",
+          "account_id": 114239371,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 2586976,
+      "team_name": "OG",
+      "coach": "ppasarel",
+      "qualification": {
+        "method": "qual",
+        "via": "Europe",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "ana",
+          "account_id": 311360822,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Topson",
+          "account_id": 94054712,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Ceb",
+          "account_id": 88271237,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "JerAx",
+          "account_id": 26771994,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "N0tail",
+          "account_id": 19672354,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 5229127,
+      "team_name": "Winstrike Team",
+      "coach": "Sh4dowehhh",
+      "qualification": {
+        "method": "qual",
+        "via": "CIS",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Silent",
+          "account_id": 250114507,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Iceberg",
+          "account_id": 89269794,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "nongrata",
+          "account_id": 130801103,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Nofear",
+          "account_id": 93552791,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "ALWAYSWANNAFLY",
+          "account_id": 91064780,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 5066616,
+      "team_name": "Team Serenity",
+      "coach": null,
+      "qualification": {
+        "method": "qual",
+        "via": "China",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "zhizhizhi",
+          "account_id": 168028715,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Zyd",
+          "account_id": 124936122,
+          "established_by": "inferred"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "XinQ",
+          "account_id": 157475523,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Pyw",
+          "account_id": 138543123,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "XCJ",
+          "account_id": 117731777,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 5,
+      "team_name": "Invictus Gaming",
+      "coach": "BurNIng",
+      "qualification": {
+        "method": "qual",
+        "via": "China",
+        "placement": "2"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Agressif",
+          "account_id": 130416036,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Xxs",
+          "account_id": 129958758,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Srf",
+          "account_id": 156662698,
+          "established_by": "inferred"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "BoBoKa",
+          "account_id": 207829314,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Q",
+          "account_id": 140153524,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 350190,
+      "team_name": "Fnatic",
+      "coach": "Aui_2000",
+      "qualification": {
+        "method": "qual",
+        "via": "Southeast Asia",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "EternaLEnVy",
+          "account_id": 43276219,
+          "established_by": "matched"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Abed",
+          "account_id": 154715080,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Universe",
+          "account_id": 87276347,
+          "established_by": "deduced"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "DJ",
+          "account_id": 102099826,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "pieliedie",
+          "account_id": 6922000,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 2108395,
+      "team_name": "TNC Predator",
+      "coach": "1437",
+      "qualification": {
+        "method": "qual",
+        "via": "Southeast Asia",
+        "placement": "2"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Raven",
+          "account_id": 132309493,
+          "established_by": "matched"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Armel",
+          "account_id": 164532005,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Sam_H",
+          "account_id": 187619311,
+          "established_by": "deduced"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Tims",
+          "account_id": 155494381,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Kuku",
+          "account_id": 184950344,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
+      "team_id": 5228654,
+      "team_name": "VGJ.Storm",
+      "coach": "Illidan",
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "YS",
+          "account_id": 108452107,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "Resolut1on",
+          "account_id": 86725175,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "Sneyking",
+          "account_id": 10366616,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "MSS",
+          "account_id": 86726887,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "SVG",
+          "account_id": 47434686,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 39,
+      "team_name": "Evil Geniuses",
+      "coach": "BuLba",
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "2"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Arteezy",
+          "account_id": 86745912,
+          "established_by": "deduced"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "SumaiL",
+          "account_id": 111620041,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "s4",
+          "account_id": 41231571,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Cr1t-",
+          "account_id": 25907144,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Fly",
+          "account_id": 94155156,
+          "established_by": "matched"
+        }
+      ]
+    },
+    {
       "team_id": 5026801,
       "team_name": "OpTic Gaming",
-      "source": { "type": "owner-confirmation", "date": "2026-08-06" },
+      "coach": null,
+      "qualification": {
+        "method": "qual",
+        "via": "North America",
+        "placement": "3"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
       "players": [
-        { "position": 1, "role": "Carry", "handle": "Pajkatt", "account_id": null, "captain": false },
-        { "position": 2, "role": "Mid", "handle": "CCnC", "account_id": 221666230, "captain": false },
-        { "position": 3, "role": "Offlane", "handle": "33", "account_id": 86698277, "captain": false },
-        { "position": 4, "role": "Soft Support", "handle": "zai", "account_id": null, "captain": false },
-        { "position": 5, "role": "Hard Support", "handle": "ppd", "account_id": null, "captain": true }
-      ],
-      "unmapped_account_ids": [73562326, 87285329, 86727555],
-      "note": "The roster and positions are confirmed. Three of the five account_ids are not yet tied to a specific player and are deliberately left null rather than inferred."
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "Pajkatt",
+          "account_id": 87285329,
+          "established_by": "inferred"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "CCnC",
+          "account_id": 221666230,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "33",
+          "account_id": 86698277,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "zai",
+          "account_id": 73562326,
+          "established_by": "inferred"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "ppd",
+          "account_id": 86727555,
+          "established_by": "inferred"
+        }
+      ]
+    },
+    {
+      "team_id": 67,
+      "team_name": "paiN Gaming",
+      "coach": "MISERY",
+      "qualification": {
+        "method": "qual",
+        "via": "South America",
+        "placement": "1"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://liquipedia.net/dota2/The_International/2018"
+      },
+      "identity_review": {
+        "reviewed_by": "owner",
+        "date": "2026-08-06"
+      },
+      "players": [
+        {
+          "position": 1,
+          "role": "Carry",
+          "handle": "hFn",
+          "account_id": 94004717,
+          "established_by": "deduced"
+        },
+        {
+          "position": 2,
+          "role": "Mid",
+          "handle": "w33",
+          "account_id": 86700461,
+          "established_by": "matched"
+        },
+        {
+          "position": 3,
+          "role": "Offlane",
+          "handle": "tavo",
+          "account_id": 117956848,
+          "established_by": "matched"
+        },
+        {
+          "position": 4,
+          "role": "Soft Support",
+          "handle": "Kingrd",
+          "account_id": 84853828,
+          "established_by": "matched"
+        },
+        {
+          "position": 5,
+          "role": "Hard Support",
+          "handle": "Duster",
+          "account_id": 116525052,
+          "established_by": "matched"
+        }
+      ]
     }
-  ]
+  ],
+  "_attribution": "Roster, qualification and placement data from Liquipedia, licensed CC-BY-SA 3.0."
 }

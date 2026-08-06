@@ -15,7 +15,8 @@
     "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.json",
     "ingest:liquipedia": "tsx scripts/ingest-liquipedia.ts",
     "propose:identities": "tsx scripts/propose-identities.ts",
-    "review:identities": "tsx scripts/review-identities.ts"
+    "review:identities": "tsx scripts/review-identities.ts",
+    "promote:identities": "tsx scripts/promote-identities.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

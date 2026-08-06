@@ -6,12 +6,1321 @@
   },
   "players": [
     {
+      "account_id": 6922000,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "pieliedie",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 10366616,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Sneyking",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 19672354,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "N0tail",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 25907144,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Cr1t-",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 26771994,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "JerAx",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 34505203,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "MinD_ContRoL",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 41231571,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "s4",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 43276219,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "EternaLEnVy",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 47434686,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "SVG",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 72312627,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "MATUMBAMAN",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 73562326,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "zai",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 82262664,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "KuroKy",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 82327674,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Faith",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 84772440,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "iceiceice",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 84853828,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Kingrd",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86698277,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "33",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "opendota_current_name": "33",
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86700461,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "w33",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86725175,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Resolut1on",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86726887,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "MSS",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86727555,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "ppd",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86745912,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Arteezy",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 86799300,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Fata",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 87012746,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "kpii",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 87276347,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Universe",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 87278757,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Puppey",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 87285329,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Pajkatt",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 88271237,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Ceb",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 89117038,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "YapzOr",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 89269794,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Iceberg",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 89423756,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "LaNm",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 89871557,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Mushi",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 91064780,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "ALWAYSWANNAFLY",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 91443418,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "ninjaboogie",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 92423451,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "9pasha",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 93552791,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Nofear",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 94004717,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "hFn",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 94054712,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Topson",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 94155156,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Fly",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 94296097,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "xNova",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 94738847,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Chalice",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 97590558,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Ace",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 100471531,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Jabz",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 101356886,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "GH",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 101695162,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "fy",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 102099826,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "DJ",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 105248644,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Miracle-",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 106573901,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "No[o]ne",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 106863163,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Somnus丶M",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 107803494,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Ori",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 108382060,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Sylar",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 108452107,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "YS",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 111620041,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "SumaiL",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 113457795,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Moonn",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 113800818,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Fenrir",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 114239371,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "ddc",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 116525052,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Duster",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 116585378,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "MidOne",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 117281554,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Moogy",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 117731777,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "XCJ",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 117956848,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "tavo",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 124936122,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Zyd",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 125581247,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Ame",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 129958758,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Xxs",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 130416036,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Agressif",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 130801103,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "nongrata",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 132309493,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Raven",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 132851371,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "RAMZES666",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 134276083,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "eLeVeN",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 134556694,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Solo",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 137193239,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Paparazi灬",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 137272985,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Freeze",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 138543123,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Pyw",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 139876032,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Kaka",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 139937922,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Yang",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 140153524,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Q",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 149486894,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Sccc",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 154715080,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Abed",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 155494381,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Tims",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 156662698,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Srf",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 157475523,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "XinQ",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 159020918,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "RodjER",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 164532005,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Armel",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 168028715,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "zhizhizhi",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 182331313,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Fade",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 184950344,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Kuku",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 187619311,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "Sam_H",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 207829314,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "BoBoKa",
+          "source": {
+            "type": "url",
+            "url": "https://liquipedia.net/dota2/The_International/2018"
+          }
+        }
+      ],
+      "real_name": null,
+      "nationality": null
+    },
+    {
       "account_id": 221666230,
       "handles": [
         {
           "event": "ti08",
           "handle": "CCnC",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
         }
       ],
       "opendota_current_name": "Quinn",
@@ -20,15 +1329,32 @@
       "note": "Changed handle to Quinn after TI8. This is the worked example of why OpenDota's name field cannot be trusted for a historical roster: an automated fill would have labelled a 2018 lineup with a handle he had not yet adopted."
     },
     {
-      "account_id": 86698277,
+      "account_id": 250114507,
       "handles": [
         {
           "event": "ti08",
-          "handle": "33",
-          "source": { "type": "owner-confirmation", "date": "2026-08-06" }
+          "handle": "Silent",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
         }
       ],
-      "opendota_current_name": "33",
+      "real_name": null,
+      "nationality": null
+    },
+    {
+      "account_id": 311360822,
+      "handles": [
+        {
+          "event": "ti08",
+          "handle": "ana",
+          "source": {
+            "type": "owner-confirmation",
+            "date": "2026-08-06"
+          }
+        }
+      ],
       "real_name": null,
       "nationality": null
     }

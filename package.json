@@ -19,7 +19,10 @@
     "promote:identities": "tsx scripts/promote-identities.ts",
     "build:placements": "tsx scripts/build-placements.ts",
     "compute:stats": "tsx scripts/compute-stats.ts",
-    "ingest:heroes": "tsx scripts/ingest-hero-pool.ts"
+    "ingest:heroes": "tsx scripts/ingest-hero-pool.ts",
+    "research:reddit": "tsx --env-file-if-exists=.env scripts/research-reddit.ts",
+    "research:wayback": "tsx scripts/research-wayback.ts",
+    "research:gosugamers": "tsx scripts/research-gosugamers.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

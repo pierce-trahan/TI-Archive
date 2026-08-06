@@ -41,6 +41,23 @@ npm run propose:identities -- ti08  # join the two, label confidence, queue the 
 Raw API responses cache to `data/raw/` (gitignored), so re-runs cost nothing and
 never re-request a source.
 
+### Research sources
+
+The narrative needs period reporting and community reaction. Three of those
+sources can only be reached from a personal machine — Reddit blocks automated
+crawlers by policy, GosuGamers refuses datacenter IPs, and JoinDota shut down in
+2022 and survives only in the Wayback Machine.
+
+```bash
+npm run research:reddit      -- ti08   # needs your own Reddit app; see .env.example
+npm run research:wayback     -- ti08   # JoinDota, via archive.org
+npm run research:gosugamers  -- ti08
+```
+
+Full text caches locally to `data/raw/research/` and is **not** committed; only
+metadata and short excerpts for citation are. See
+[docs/RESEARCH.md](docs/RESEARCH.md) for setup and what to expect.
+
 ## Licensing
 
 This repository is licensed in two parts:

@@ -18,7 +18,8 @@
     "review:identities": "tsx scripts/review-identities.ts",
     "promote:identities": "tsx scripts/promote-identities.ts",
     "build:placements": "tsx scripts/build-placements.ts",
-    "compute:stats": "tsx scripts/compute-stats.ts"
+    "compute:stats": "tsx scripts/compute-stats.ts",
+    "ingest:heroes": "tsx scripts/ingest-hero-pool.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

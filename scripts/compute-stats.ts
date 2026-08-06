@@ -22,7 +22,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { fetchHeroes, isParsed } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
-import { loadEvent, phaseFor } from './lib/events.ts';
+import { loadEvent, localDate, phaseFor } from './lib/events.ts';
 
 /** Minimum games before a hero win rate is reported at all. */
 const MIN_GAMES_FOR_WINRATE = 5;
@@ -74,11 +74,37 @@ async function main(): Promise<void> {
   const heroes = await fetchHeroes(cacheDir);
   const heroName = new Map(heroes.map((h) => [h.id, h.localized_name]));
 
+  // Hero pool AS OF this event, from sourced release dates. Without this the
+  // unpicked list would include heroes that did not exist yet.
+  const heroPoolFile = JSON.parse(
+    await readFile(new URL('../data/entities/heroes.json', import.meta.url), 'utf8'),
+  ) as { _source: { url: string }; heroes: { name: string; released: string | null }[] };
+
   const all = await readMatches(cacheDir);
   const matches = all.filter((m) => {
     const phase = phaseFor(event, m.start_time);
     return phase !== null && phases.has(phase);
   });
+
+  // The event's first day, in venue-local time — the cutoff for "did this hero
+  // exist yet". A hero released mid-event is excluded, which is the correct
+  // reading of what the field could have drafted on day one.
+  const eventStart = matches
+    .map((m) => localDate(m.start_time, event.venue_timezone))
+    .sort()[0]!;
+
+  // Join by NAME: Liquipedia's id column is its own, not OpenDota's hero_id.
+  const norm = (v: string) => v.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const idByName = new Map(heroes.map((h) => [norm(h.localized_name), h.id]));
+
+  const heroPool = heroPoolFile.heroes
+    .filter((h) => h.released != null && h.released <= eventStart)
+    .map((h) => ({ ...h, id: idByName.get(norm(h.name)) ?? null }));
+
+  // A release-table name that matches no OpenDota hero cannot be checked
+  // against the draft, so it is reported rather than silently dropped.
+  const unjoinableHeroes = heroPool.filter((h) => h.id == null).map((h) => h.name);
+  const poolIds = new Set(heroPool.map((h) => h.id).filter((id): id is number => id != null));
 
   const parsed = matches.filter(isParsed);
   const unparsedNote = {
@@ -130,6 +156,14 @@ async function main(): Promise<void> {
   }));
 
   const rated = heroRows.filter((h) => h.win_rate != null);
+
+  // Heroes that existed but never appeared in a pick.
+  const unpicked = heroPool.filter((h) => h.id != null && !picks.has(h.id));
+  // A hero picked at the event but absent from the pool means the release date
+  // or the cutoff is wrong. Report it rather than silently dropping it.
+  const outsidePool = [...picks.keys()]
+    .filter((id) => !poolIds.has(id))
+    .map((id) => heroName.get(id) ?? `hero_${id}`);
 
   // ---- Players ----
   const players = new Map<number, { gpm: number[]; xpm: number[] }>();
@@ -215,11 +249,22 @@ async function main(): Promise<void> {
       strongest: [...rated].sort((a, b) => b.win_rate! - a.win_rate!).slice(0, 10),
       weakest: [...rated].sort((a, b) => a.win_rate! - b.win_rate!).slice(0, 10),
       suppressed_below_threshold: heroRows.length - rated.length,
-      unpicked: null,
-      unpicked_unavailable_reason:
-        'Requires the hero pool as of this event\'s patch. OpenDota /api/heroes returns ' +
-        'today\'s pool, so computing against it would report heroes that did not exist ' +
-        'yet as "never picked". Not shipped until the per-patch roster is sourced.',
+      pool: {
+        size: heroPool.length,
+        as_of: eventStart,
+        source: heroPoolFile._source.url,
+        note:
+          'Heroes released on or before the event\'s first day. Computed from sourced ' +
+          'release dates, not from today\'s hero list.',
+      },
+      unpicked: unpicked.map((h) => ({
+        hero: h.name,
+        banned: bans.get(h.id!) ?? 0,
+        released: h.released,
+      })),
+      never_touched: unpicked.filter((h) => !bans.get(h.id!)).map((h) => h.name),
+      picked_outside_pool: outsidePool,
+      unjoinable_release_names: unjoinableHeroes,
     },
 
     players: {
@@ -267,7 +312,18 @@ async function main(): Promise<void> {
     console.log(`      ${(p.handle ?? `account ${p.account_id}`).padEnd(16)} ${p.avg_gpm} gpm over ${p.games} games`);
   }
 
-  console.log(`\n  unpicked heroes: NOT SHIPPED — ${stats.heroes.unpicked_unavailable_reason}`);
+  console.log(
+    `\n  hero pool as of ${eventStart}: ${heroPool.length} heroes; ${stats.heroes.unpicked.length} never picked`,
+  );
+  for (const h of stats.heroes.unpicked) {
+    console.log(`      ${h.hero.padEnd(20)} ${h.banned ? `banned ${h.banned}x` : 'never picked or banned'}`);
+  }
+  if (outsidePool.length) {
+    console.log(`\n  WARNING: picked but not in pool: ${outsidePool.join(', ')}`);
+  }
+  if (unjoinableHeroes.length) {
+    console.log(`  WARNING: release-table names with no OpenDota match: ${unjoinableHeroes.join(', ')}`);
+  }
   console.log(`\nwrote ${outDir}/stats.json`);
 }
 

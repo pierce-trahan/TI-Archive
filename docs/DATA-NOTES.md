@@ -99,7 +99,13 @@ Across the full TI8 event (group stage + main event, 195 matches, 18 teams, 90 p
 
 `/api/heroes` returns `id` → `localized_name`. It returned **127 heroes** on the date above — that is *today's* hero pool, not the pool at any past event.
 
-**Trap for the "unpicked heroes" stat:** computing it against the current pool would report heroes that did not yet exist as "never picked at TI8." The hero roster must be resolved per patch, from that patch's notes, before that stat is computed. Until that's done, the stat is not shipped.
+**Trap for the "unpicked heroes" stat:** computing it against the current pool would report heroes that did not yet exist as "never picked at TI8."
+
+**Resolved.** Liquipedia's `Heroes by release` page carries a release date per hero, so the pool as of any event is a sourced fact. `scripts/ingest-hero-pool.ts` writes it to `data/entities/heroes.json`, and the pool at an event is every hero released on or before the event's first day. TI8: 115 heroes, of which 110 were picked.
+
+That page is generated from LiquipediaDB, so its wikitext contains only the query — the data exists only in the rendered output. `action=parse` is therefore the right endpoint, and it is part of their API with a documented limit of 1 request per 30 seconds. Automated access to rendered pages *outside* the API remains off-limits.
+
+**Their ID column is not OpenDota's `hero_id`.** Liquipedia lists Crystal Maiden as 3; OpenDota uses 5. Joining on it silently corrupts the result — the first run reported Tiny as both the second-most-picked hero and never picked. Join by name, and keep the cross-checks that catch it: a hero picked but absent from the pool, and a release-table name matching no OpenDota hero.
 
 ### TI1–TI3 have no league entry
 

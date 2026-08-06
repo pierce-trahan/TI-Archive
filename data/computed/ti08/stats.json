@@ -1,6 +1,6 @@
 {
   "_generated_by": "scripts/compute-stats.ts",
-  "_generated_at": "2026-08-06T22:11:10.738Z",
+  "_generated_at": "2026-08-06T22:24:59.064Z",
   "_note": "Generated. Do not hand-edit. Every rate carries its sample size; objective statistics exclude unparsed matches rather than counting them as zero.",
   "event": "ti08",
   "phases": [
@@ -408,8 +408,47 @@
       }
     ],
     "suppressed_below_threshold": 35,
-    "unpicked": null,
-    "unpicked_unavailable_reason": "Requires the hero pool as of this event's patch. OpenDota /api/heroes returns today's pool, so computing against it would report heroes that did not exist yet as \"never picked\". Not shipped until the per-patch roster is sourced."
+    "pool": {
+      "size": 115,
+      "as_of": "2018-08-15",
+      "source": "https://liquipedia.net/dota2/Heroes_by_release",
+      "note": "Heroes released on or before the event's first day. Computed from sourced release dates, not from today's hero list."
+    },
+    "unpicked": [
+      {
+        "hero": "Dark Seer",
+        "banned": 0,
+        "released": "2011-04-30"
+      },
+      {
+        "hero": "Dazzle",
+        "banned": 0,
+        "released": "2010-11-01"
+      },
+      {
+        "hero": "Slardar",
+        "banned": 0,
+        "released": "2011-01-18"
+      },
+      {
+        "hero": "Slark",
+        "banned": 0,
+        "released": "2012-11-15"
+      },
+      {
+        "hero": "Techies",
+        "banned": 1,
+        "released": "2014-09-04"
+      }
+    ],
+    "never_touched": [
+      "Dark Seer",
+      "Dazzle",
+      "Slardar",
+      "Slark"
+    ],
+    "picked_outside_pool": [],
+    "unjoinable_release_names": []
   },
   "players": {
     "min_games": 5,

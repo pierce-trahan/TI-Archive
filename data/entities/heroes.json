@@ -1,0 +1,901 @@
+{
+  "_note": "Hero release dates. `released` is the date the hero entered Dota 2 and determines whether a hero could have been picked at a given event — never assume today's hero pool applied to a past tournament. NOTE: `liquipedia_id` is NOT OpenDota's hero_id (their table has Crystal Maiden as 3, OpenDota uses 5). Join by name.",
+  "_attribution": "Hero release data from Liquipedia, licensed CC-BY-SA 3.0.",
+  "_source": {
+    "type": "url",
+    "url": "https://liquipedia.net/dota2/Heroes_by_release",
+    "retrieved_at": "2026-08-06T22:24:56.279Z"
+  },
+  "hero_count": 127,
+  "heroes": [
+    {
+      "liquipedia_id": 102,
+      "name": "Abaddon",
+      "released": "2013-07-12",
+      "dota_allstars_released": "2005-11-04",
+      "version_created": "6.20"
+    },
+    {
+      "liquipedia_id": 60,
+      "name": "Alchemist",
+      "released": "2011-11-18",
+      "dota_allstars_released": "2006-08-25",
+      "version_created": "6.36"
+    },
+    {
+      "liquipedia_id": 43,
+      "name": "Ancient Apparition",
+      "released": "2011-06-17",
+      "dota_allstars_released": "2009-12-23",
+      "version_created": "6.65"
+    },
+    {
+      "liquipedia_id": 1,
+      "name": "Anti-Mage",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 111,
+      "name": "Arc Warden",
+      "released": "2015-12-16",
+      "dota_allstars_released": "2012-09-29",
+      "version_created": "6.75"
+    },
+    {
+      "liquipedia_id": 2,
+      "name": "Axe",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 70,
+      "name": "Bane",
+      "released": "2012-03-01",
+      "dota_allstars_released": "2004-10-15",
+      "version_created": "5.75"
+    },
+    {
+      "liquipedia_id": 56,
+      "name": "Batrider",
+      "released": "2011-10-27",
+      "dota_allstars_released": "2009-06-10",
+      "version_created": "6.60"
+    },
+    {
+      "liquipedia_id": 35,
+      "name": "Beastmaster",
+      "released": "2011-05-20",
+      "dota_allstars_released": "2006-04-11",
+      "version_created": "6.30"
+    },
+    {
+      "liquipedia_id": 47,
+      "name": "Bloodseeker",
+      "released": "2011-10-06",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 64,
+      "name": "Bounty Hunter",
+      "released": "2011-12-21",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta2"
+    },
+    {
+      "liquipedia_id": 74,
+      "name": "Brewmaster",
+      "released": "2012-04-19",
+      "dota_allstars_released": "2004-04-30",
+      "version_created": "5.10"
+    },
+    {
+      "liquipedia_id": 99,
+      "name": "Bristleback",
+      "released": "2013-03-28",
+      "dota_allstars_released": "2005-05-04",
+      "version_created": "6.07"
+    },
+    {
+      "liquipedia_id": 53,
+      "name": "Broodmother",
+      "released": "2011-10-20",
+      "dota_allstars_released": "2004-09-18",
+      "version_created": "5.62"
+    },
+    {
+      "liquipedia_id": 93,
+      "name": "Centaur Warrunner",
+      "released": "2012-10-25",
+      "dota_allstars_released": "2004-06-06",
+      "version_created": "5.53"
+    },
+    {
+      "liquipedia_id": 79,
+      "name": "Chaos Knight",
+      "released": "2012-06-11",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 50,
+      "name": "Chen",
+      "released": "2011-07-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 68,
+      "name": "Clinkz",
+      "released": "2012-01-26",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 31,
+      "name": "Clockwerk",
+      "released": "2011-04-20",
+      "dota_allstars_released": "2008-07-10",
+      "version_created": "6.53"
+    },
+    {
+      "liquipedia_id": 3,
+      "name": "Crystal Maiden",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 33,
+      "name": "Dark Seer",
+      "released": "2011-04-30",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 114,
+      "name": "Dark Willow",
+      "released": "2017-10-31",
+      "dota_allstars_released": null,
+      "version_created": "7.07"
+    },
+    {
+      "liquipedia_id": 121,
+      "name": "Dawnbreaker",
+      "released": "2021-04-09",
+      "dota_allstars_released": null,
+      "version_created": "7.29"
+    },
+    {
+      "liquipedia_id": 4,
+      "name": "Dazzle",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 62,
+      "name": "Death Prophet",
+      "released": "2011-12-08",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 85,
+      "name": "Disruptor",
+      "released": "2012-07-05",
+      "dota_allstars_released": "2007-07-26",
+      "version_created": "6.68"
+    },
+    {
+      "liquipedia_id": 45,
+      "name": "Doom",
+      "released": "2011-06-24",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 58,
+      "name": "Dragon Knight",
+      "released": "2011-11-03",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 5,
+      "name": "Drow Ranger",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 104,
+      "name": "Earth Spirit",
+      "released": "2013-11-14",
+      "dota_allstars_released": "2013-05-30",
+      "version_created": "6.78"
+    },
+    {
+      "liquipedia_id": 6,
+      "name": "Earthshaker",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 101,
+      "name": "Elder Titan",
+      "released": "2013-05-02",
+      "dota_allstars_released": "2009-06-10",
+      "version_created": "6.60"
+    },
+    {
+      "liquipedia_id": 103,
+      "name": "Ember Spirit",
+      "released": "2013-11-14",
+      "dota_allstars_released": "2011-12-24",
+      "version_created": "6.73"
+    },
+    {
+      "liquipedia_id": 37,
+      "name": "Enchantress",
+      "released": "2011-05-26",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 26,
+      "name": "Enigma",
+      "released": "2011-02-12",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 27,
+      "name": "Faceless Void",
+      "released": "2011-02-19",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 116,
+      "name": "Grimstroke",
+      "released": "2018-08-24",
+      "dota_allstars_released": null,
+      "version_created": "7.19"
+    },
+    {
+      "liquipedia_id": 78,
+      "name": "Gyrocopter",
+      "released": "2012-06-11",
+      "dota_allstars_released": "2010-07-26",
+      "version_created": "6.68"
+    },
+    {
+      "liquipedia_id": 120,
+      "name": "Hoodwink",
+      "released": "2020-12-17",
+      "dota_allstars_released": null,
+      "version_created": "7.28"
+    },
+    {
+      "liquipedia_id": 54,
+      "name": "Huskar",
+      "released": "2011-10-27",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 67,
+      "name": "Invoker",
+      "released": "2012-01-19",
+      "dota_allstars_released": "2005-06-06",
+      "version_created": "6.10"
+    },
+    {
+      "liquipedia_id": 83,
+      "name": "Io",
+      "released": "2012-06-28",
+      "dota_allstars_released": "2010-07-24",
+      "version_created": "6.68"
+    },
+    {
+      "liquipedia_id": 55,
+      "name": "Jakiro",
+      "released": "2011-10-27",
+      "dota_allstars_released": "2006-04-11",
+      "version_created": "6.30"
+    },
+    {
+      "liquipedia_id": 46,
+      "name": "Juggernaut",
+      "released": "2011-09-30",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta2"
+    },
+    {
+      "liquipedia_id": 89,
+      "name": "Keeper of the Light",
+      "released": "2012-07-26",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "5.76"
+    },
+    {
+      "liquipedia_id": 126,
+      "name": "Kez",
+      "released": "2024-11-07",
+      "dota_allstars_released": null,
+      "version_created": "7.37d"
+    },
+    {
+      "liquipedia_id": 49,
+      "name": "Kunkka",
+      "released": "2011-10-06",
+      "dota_allstars_released": "2008-10-07",
+      "version_created": "6.55"
+    },
+    {
+      "liquipedia_id": 127,
+      "name": "Largo",
+      "released": "2025-12-15",
+      "dota_allstars_released": null,
+      "version_created": "7.40"
+    },
+    {
+      "liquipedia_id": 105,
+      "name": "Legion Commander",
+      "released": "2013-12-12",
+      "dota_allstars_released": "2011-12-24",
+      "version_created": "6.73"
+    },
+    {
+      "liquipedia_id": 38,
+      "name": "Leshrac",
+      "released": "2011-05-26",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta2"
+    },
+    {
+      "liquipedia_id": 7,
+      "name": "Lich",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 61,
+      "name": "Lifestealer",
+      "released": "2011-12-02",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta2"
+    },
+    {
+      "liquipedia_id": 8,
+      "name": "Lina",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 9,
+      "name": "Lion",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 73,
+      "name": "Lone Druid",
+      "released": "2012-03-28",
+      "dota_allstars_released": "2004-09-18",
+      "version_created": "5.62"
+    },
+    {
+      "liquipedia_id": 82,
+      "name": "Luna",
+      "released": "2012-06-28",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 72,
+      "name": "Lycan",
+      "released": "2012-03-22",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 92,
+      "name": "Magnus",
+      "released": "2012-10-04",
+      "dota_allstars_released": "2004-02-23",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 122,
+      "name": "Marci",
+      "released": "2021-10-28",
+      "dota_allstars_released": null,
+      "version_created": "7.30e"
+    },
+    {
+      "liquipedia_id": 117,
+      "name": "Mars",
+      "released": "2019-03-05",
+      "dota_allstars_released": null,
+      "version_created": "7.21d"
+    },
+    {
+      "liquipedia_id": 96,
+      "name": "Medusa",
+      "released": "2013-01-10",
+      "dota_allstars_released": "2004-03-23",
+      "version_created": "3.0b"
+    },
+    {
+      "liquipedia_id": 91,
+      "name": "Meepo",
+      "released": "2012-09-21",
+      "dota_allstars_released": "2007-01-02",
+      "version_created": "6.39"
+    },
+    {
+      "liquipedia_id": 10,
+      "name": "Mirana",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2006-10-27",
+      "version_created": "6.38"
+    },
+    {
+      "liquipedia_id": 113,
+      "name": "Monkey King",
+      "released": "2016-12-12",
+      "dota_allstars_released": null,
+      "version_created": "7.00"
+    },
+    {
+      "liquipedia_id": 11,
+      "name": "Morphling",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-04-23",
+      "version_created": "4.10"
+    },
+    {
+      "liquipedia_id": 124,
+      "name": "Muerta",
+      "released": "2023-03-06",
+      "dota_allstars_released": null,
+      "version_created": "7.32e"
+    },
+    {
+      "liquipedia_id": 87,
+      "name": "Naga Siren",
+      "released": "2012-07-19",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta2"
+    },
+    {
+      "liquipedia_id": 32,
+      "name": "Nature's Prophet",
+      "released": "2011-04-20",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 12,
+      "name": "Necrophos",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 42,
+      "name": "Night Stalker",
+      "released": "2011-06-11",
+      "dota_allstars_released": "2004-04-30",
+      "version_created": "5.10"
+    },
+    {
+      "liquipedia_id": 88,
+      "name": "Nyx Assassin",
+      "released": "2012-07-26",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 77,
+      "name": "Ogre Magi",
+      "released": "2012-05-24",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "5.76"
+    },
+    {
+      "liquipedia_id": 57,
+      "name": "Omniknight",
+      "released": "2011-11-03",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 109,
+      "name": "Oracle",
+      "released": "2015-02-12",
+      "dota_allstars_released": "2013-05-30",
+      "version_created": "6.78"
+    },
+    {
+      "liquipedia_id": 69,
+      "name": "Outworld Destroyer",
+      "released": "2012-02-16",
+      "dota_allstars_released": "2006-04-11",
+      "version_created": "6.30"
+    },
+    {
+      "liquipedia_id": 115,
+      "name": "Pangolier",
+      "released": "2017-10-31",
+      "dota_allstars_released": null,
+      "version_created": "7.07"
+    },
+    {
+      "liquipedia_id": 80,
+      "name": "Phantom Assassin",
+      "released": "2012-06-11",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 75,
+      "name": "Phantom Lancer",
+      "released": "2012-05-03",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 106,
+      "name": "Phoenix",
+      "released": "2014-01-29",
+      "dota_allstars_released": "2010-12-24",
+      "version_created": "6.70"
+    },
+    {
+      "liquipedia_id": 123,
+      "name": "Primal Beast",
+      "released": "2022-02-23",
+      "dota_allstars_released": null,
+      "version_created": "7.31"
+    },
+    {
+      "liquipedia_id": 13,
+      "name": "Puck",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2007-08-24",
+      "version_created": "6.47"
+    },
+    {
+      "liquipedia_id": 14,
+      "name": "Pudge",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-04-30",
+      "version_created": "5.10"
+    },
+    {
+      "liquipedia_id": 36,
+      "name": "Pugna",
+      "released": "2011-05-20",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "5.62"
+    },
+    {
+      "liquipedia_id": 51,
+      "name": "Queen of Pain",
+      "released": "2011-10-20",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 15,
+      "name": "Razor",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 48,
+      "name": "Riki",
+      "released": "2011-10-13",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 131,
+      "name": "Ringmaster",
+      "released": "2024-08-22",
+      "dota_allstars_released": null,
+      "version_created": "7.37b"
+    },
+    {
+      "liquipedia_id": 81,
+      "name": "Rubick",
+      "released": "2012-06-20",
+      "dota_allstars_released": "2011-04-27",
+      "version_created": "6.72"
+    },
+    {
+      "liquipedia_id": 16,
+      "name": "Sand King",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "5.76"
+    },
+    {
+      "liquipedia_id": 71,
+      "name": "Shadow Demon",
+      "released": "2012-03-15",
+      "dota_allstars_released": "2010-07-26",
+      "version_created": "6.68"
+    },
+    {
+      "liquipedia_id": 39,
+      "name": "Shadow Fiend",
+      "released": "2011-05-26",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 17,
+      "name": "Shadow Shaman",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 65,
+      "name": "Silencer",
+      "released": "2012-01-12",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 100,
+      "name": "Skywrath Mage",
+      "released": "2013-04-19",
+      "dota_allstars_released": "2011-12-24",
+      "version_created": "6.73"
+    },
+    {
+      "liquipedia_id": 25,
+      "name": "Slardar",
+      "released": "2011-01-18",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 94,
+      "name": "Slark",
+      "released": "2012-11-15",
+      "dota_allstars_released": "2009-12-23",
+      "version_created": "6.65"
+    },
+    {
+      "liquipedia_id": 118,
+      "name": "Snapfire",
+      "released": "2019-11-26",
+      "dota_allstars_released": null,
+      "version_created": "7.23"
+    },
+    {
+      "liquipedia_id": 34,
+      "name": "Sniper",
+      "released": "2011-04-30",
+      "dota_allstars_released": "2004-03-01",
+      "version_created": "2.60"
+    },
+    {
+      "liquipedia_id": 44,
+      "name": "Spectre",
+      "released": "2011-06-17",
+      "dota_allstars_released": "2006-02-24",
+      "version_created": "6.28"
+    },
+    {
+      "liquipedia_id": 66,
+      "name": "Spirit Breaker",
+      "released": "2012-01-12",
+      "dota_allstars_released": "2005-05-04",
+      "version_created": "6.07"
+    },
+    {
+      "liquipedia_id": 18,
+      "name": "Storm Spirit",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 19,
+      "name": "Sven",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 108,
+      "name": "Techies",
+      "released": "2014-09-04",
+      "dota_allstars_released": "2004-04-08",
+      "version_created": "4.0beta10"
+    },
+    {
+      "liquipedia_id": 86,
+      "name": "Templar Assassin",
+      "released": "2012-07-12",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 107,
+      "name": "Terrorblade",
+      "released": "2014-01-29",
+      "dota_allstars_released": "2004-02-20",
+      "version_created": "2.00"
+    },
+    {
+      "liquipedia_id": 20,
+      "name": "Tidehunter",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-10-11",
+      "version_created": "5.74"
+    },
+    {
+      "liquipedia_id": 95,
+      "name": "Timbersaw",
+      "released": "2012-12-13",
+      "dota_allstars_released": "2011-12-24",
+      "version_created": "6.73"
+    },
+    {
+      "liquipedia_id": 40,
+      "name": "Tinker",
+      "released": "2011-06-02",
+      "dota_allstars_released": "2004-10-22",
+      "version_created": "5.76"
+    },
+    {
+      "liquipedia_id": 28,
+      "name": "Tiny",
+      "released": "2011-02-19",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 76,
+      "name": "Treant Protector",
+      "released": "2012-05-17",
+      "dota_allstars_released": "2004-09-23",
+      "version_created": "5.65"
+    },
+    {
+      "liquipedia_id": 97,
+      "name": "Troll Warlord",
+      "released": "2013-01-24",
+      "dota_allstars_released": "2004-05-06",
+      "version_created": "5.40"
+    },
+    {
+      "liquipedia_id": 98,
+      "name": "Tusk",
+      "released": "2013-02-14",
+      "dota_allstars_released": "2010-12-24",
+      "version_created": "6.70"
+    },
+    {
+      "liquipedia_id": 112,
+      "name": "Underlord",
+      "released": "2016-08-23",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 84,
+      "name": "Undying",
+      "released": "2012-07-05",
+      "dota_allstars_released": "2007-06-10",
+      "version_created": "6.44"
+    },
+    {
+      "liquipedia_id": 63,
+      "name": "Ursa",
+      "released": "2011-12-16",
+      "dota_allstars_released": "2004-10-15",
+      "version_created": "5.75"
+    },
+    {
+      "liquipedia_id": 21,
+      "name": "Vengeful Spirit",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 30,
+      "name": "Venomancer",
+      "released": "2011-04-09",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 29,
+      "name": "Viper",
+      "released": "2011-02-19",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 90,
+      "name": "Visage",
+      "released": "2012-07-26",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 119,
+      "name": "Void Spirit",
+      "released": "2019-11-26",
+      "dota_allstars_released": null,
+      "version_created": "7.23"
+    },
+    {
+      "liquipedia_id": 59,
+      "name": "Warlock",
+      "released": "2011-11-11",
+      "dota_allstars_released": "2006-08-25",
+      "version_created": "6.36"
+    },
+    {
+      "liquipedia_id": 41,
+      "name": "Weaver",
+      "released": "2011-06-10",
+      "dota_allstars_released": "2005-03-01",
+      "version_created": "6.00"
+    },
+    {
+      "liquipedia_id": 22,
+      "name": "Windranger",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2008-10-07",
+      "version_created": "6.55"
+    },
+    {
+      "liquipedia_id": 110,
+      "name": "Winter Wyvern",
+      "released": "2015-02-12",
+      "dota_allstars_released": "2012-09-29",
+      "version_created": "6.75"
+    },
+    {
+      "liquipedia_id": 23,
+      "name": "Witch Doctor",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2006-02-24",
+      "version_created": "6.28"
+    },
+    {
+      "liquipedia_id": 52,
+      "name": "Wraith King",
+      "released": "2011-10-20",
+      "dota_allstars_released": "2004-02-03",
+      "version_created": "0.60"
+    },
+    {
+      "liquipedia_id": 24,
+      "name": "Zeus",
+      "released": "2010-11-01",
+      "dota_allstars_released": "2004-02-08",
+      "version_created": "4.0beta2"
+    }
+  ]
+}

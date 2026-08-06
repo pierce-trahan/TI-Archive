@@ -36,6 +36,16 @@ Three things to know:
 
    This is a feature for the "Road to TI" tab — the qualifier matches are right there.
 
+   Bucketed by **venue-local** date, the full ingest gives:
+
+   | Phase | Local dates | Matches | Unparsed |
+   | --- | --- | --- | --- |
+   | Regional qualifiers | Jun 18–25 | 206 | 0 |
+   | Group stage | Aug 15–18 | 148 | 3 |
+   | Main event | Aug 20–25 | 47 | 2 |
+
+   No match fell outside a phase window. Note the group stage is 148 here against 146 under UTC bucketing, and the main event ends on the 25th rather than the 26th — that difference *is* the timezone correction working.
+
 2. **`radiant_team_name` / `dire_team_name` are frequently `null`** — including for every main-event match at TI8, the grand final among them. Team identity must come from the match detail endpoint, not the list.
 
 3. **Timestamps are UTC and events are not.** The TI8 grand final's last two games land on `2018-08-26` UTC despite being the evening of Aug 25 in Vancouver. Phase and "day of the event" boundaries must be computed in the venue's local timezone, or the last day of every TI will be split in two.
@@ -49,9 +59,27 @@ Verified on the TI8 grand final game 4 (`4080778303`):
 - `picks_bans` has all 22 entries with `order`, `is_pick`, `team`, `hero_id` — **full draft order is available**, which covers the "draft masterstrokes" content in the design.
 - Per-player: `gold_per_min`, `xp_per_min`, `kills`/`deaths`/`assists`, `hero_id`, `account_id`.
 
+### OpenDota returns *present-tense* identity for a past event
+
+The single most dangerous property of this source for a history project. Teams and players are keyed by ID, and the API returns whatever that ID is called **now** — silently rewriting 2018 as though it were today.
+
+From the TI8 roster scaffold:
+
+| team_id | name returned | roster evidence | almost certainly |
+| --- | --- | --- | --- |
+| 39 | `Shopify Rebellion` | SumaiL, Arteezy, Fly, s4, Cr1t- | Evil Geniuses |
+| 350190 | `Ascent Esports` | Abed, DJ | Fnatic |
+| 5026801 | `''` (empty) | 33, plus four unnamed | unidentified — needs the bracket |
+
+An archive that printed those names would state that Shopify Rebellion played at TI8. They did not; the org that held that team ID did.
+
+The same mechanism applies to players: `name` is a *current* pro handle, so a player who has since changed handles will be labelled with the wrong one for the year in question. Handles observed with trailing punctuation or decoration (`SumaiL-`, `No[o]ne-`, `Ace ♠`, `Ava阿发`, `kky`, `mc`) are further evidence that this field is a live display string, not a historical record.
+
+**Therefore:** team and player names as of a given event come from Liquipedia, not OpenDota. OpenDota supplies the stable IDs and the match facts. This is what `names_over_time` on the team and player entities in `docs/DESIGN.md` §8.2 is for, and it is not optional.
+
 ### Player identity is the hard problem
 
-In the TI8 grand final, **6 of 10 players had a null `name` field.** `name` is OpenDota's pro-player name and its coverage is partial.
+Across the full TI8 event (group stage + main event, 195 matches, 18 teams, 90 players), **46 of 90 players — 51% — have a null `name` field.** In the grand final specifically it was 6 of 10.
 
 `personaname` is **not** a usable fallback. It is the current Steam persona, so it drifts over time and is often a joke or a non-Latin handle. Observed in that one match: `睪九`, `天地一刀斩`, `nailong`, `minioncheer`, `OiOi.oldandrusty`.
 

@@ -1,0 +1,2874 @@
+{
+  "_generated_by": "scripts/build-player-map.ts",
+  "_generated_at": "2026-08-06T19:03:05.296Z",
+  "_instructions": "Every entry is unverified. Confirm each against Liquipedia, set real_name and nationality, replace nickname_source with the Liquipedia URL, then set verified:true. Entries with nickname:null have no pro name in OpenDota and must be identified by account_id — never from personanames_seen, which are current Steam handles.",
+  "_liquipedia": "https://liquipedia.net/dota2/The_International/2018",
+  "event": "ti08",
+  "player_count": 90,
+  "missing_nickname_count": 46,
+  "players": [
+    {
+      "account_id": 221666230,
+      "nickname": "Quinn",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Invoker",
+        "Leshrac",
+        "Lina",
+        "Medusa",
+        "Mirana",
+        "Monkey King",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tiny",
+        "Venomancer"
+      ],
+      "personanames_seen": [
+        "Antediluvian"
+      ]
+    },
+    {
+      "account_id": 73562326,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Brewmaster",
+        "Chen",
+        "Earth Spirit",
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Nature's Prophet",
+        "Nyx Assassin",
+        "Tiny",
+        "Undying",
+        "Vengeful Spirit",
+        "Windranger",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "Chao P"
+      ]
+    },
+    {
+      "account_id": 87285329,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Drow Ranger",
+        "Huskar",
+        "Juggernaut",
+        "Mirana",
+        "Monkey King",
+        "Morphling",
+        "Necrophos",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Chama"
+      ]
+    },
+    {
+      "account_id": 86698277,
+      "nickname": "33",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Batrider",
+        "Brewmaster",
+        "Broodmother",
+        "Centaur Warrunner",
+        "Clinkz",
+        "Doom",
+        "Dragon Knight",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Phoenix",
+        "Tiny",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "not human (животное)"
+      ]
+    },
+    {
+      "account_id": 86727555,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 5026801,
+          "team_name": "",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Abaddon",
+        "Bane",
+        "Crystal Maiden",
+        "Jakiro",
+        "Lion",
+        "Ogre Magi",
+        "Silencer",
+        "Treant Protector",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "ABOVE THE CLOUDS"
+      ]
+    },
+    {
+      "account_id": 43276219,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 350190,
+          "team_name": "Ascent Esports",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Bristleback",
+        "Drow Ranger",
+        "Gyrocopter",
+        "Lone Druid",
+        "Mirana",
+        "Necrophos",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "EternaLEnVy"
+      ]
+    },
+    {
+      "account_id": 154715080,
+      "nickname": "Abed",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 350190,
+          "team_name": "Ascent Esports",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Broodmother",
+        "Clinkz",
+        "Huskar",
+        "Meepo",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Timbersaw",
+        "Tiny",
+        "Visage"
+      ],
+      "personanames_seen": [
+        "hamilton"
+      ]
+    },
+    {
+      "account_id": 102099826,
+      "nickname": "DJ",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 350190,
+          "team_name": "Ascent Esports",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earth Spirit",
+        "Io",
+        "Keeper of the Light",
+        "Phoenix",
+        "Vengeful Spirit",
+        "Windranger"
+      ],
+      "personanames_seen": [
+        "HAHAHAHAHA"
+      ]
+    },
+    {
+      "account_id": 6922000,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 350190,
+          "team_name": "Ascent Esports",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Shadow Demon",
+        "Silencer",
+        "Treant Protector",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "pieliedie"
+      ]
+    },
+    {
+      "account_id": 87276347,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 350190,
+          "team_name": "Ascent Esports",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Doom",
+        "Enchantress",
+        "Enigma",
+        "Legion Commander",
+        "Mirana",
+        "Pugna",
+        "Weaver",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "z"
+      ]
+    },
+    {
+      "account_id": 140153524,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 18,
+      "teams": [
+        {
+          "team_id": 5,
+          "team_name": "Invictus Gaming",
+          "matches": 18
+        }
+      ],
+      "heroes_played": [
+        "Ancient Apparition",
+        "Crystal Maiden",
+        "Leshrac",
+        "Phoenix",
+        "Rubick",
+        "Shadow Demon",
+        "Shadow Shaman",
+        "Silencer",
+        "Tusk",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "o"
+      ]
+    },
+    {
+      "account_id": 129958758,
+      "nickname": "Xxs",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 18,
+      "teams": [
+        {
+          "team_id": 5,
+          "team_name": "Invictus Gaming",
+          "matches": 18
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Invoker",
+        "Lina",
+        "Medusa",
+        "Necrophos",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "¿"
+      ]
+    },
+    {
+      "account_id": 156662698,
+      "nickname": "Ava阿发",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 18,
+      "teams": [
+        {
+          "team_id": 5,
+          "team_name": "Invictus Gaming",
+          "matches": 18
+        }
+      ],
+      "heroes_played": [
+        "Axe",
+        "Batrider",
+        "Beastmaster",
+        "Doom",
+        "Enchantress",
+        "Enigma",
+        "Legion Commander",
+        "Mirana",
+        "Tiny",
+        "Ursa",
+        "Visage",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        ":d"
+      ]
+    },
+    {
+      "account_id": 207829314,
+      "nickname": "BoBoKa",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 18,
+      "teams": [
+        {
+          "team_id": 5,
+          "team_name": "Invictus Gaming",
+          "matches": 18
+        }
+      ],
+      "heroes_played": [
+        "Clockwerk",
+        "Dark Willow",
+        "Earth Spirit",
+        "Earthshaker",
+        "Io",
+        "Nyx Assassin",
+        "Pugna",
+        "Rubick",
+        "Silencer",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "打不死我的一直在打我"
+      ]
+    },
+    {
+      "account_id": 130416036,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 18,
+      "teams": [
+        {
+          "team_id": 5,
+          "team_name": "Invictus Gaming",
+          "matches": 18
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Gyrocopter",
+        "Lifestealer",
+        "Mirana",
+        "Necrophos",
+        "Spectre",
+        "Tiny",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "高手"
+      ]
+    },
+    {
+      "account_id": 125581247,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "LGD Gaming",
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Drow Ranger",
+        "Faceless Void",
+        "Gyrocopter",
+        "Luna",
+        "Morphling",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "睪九"
+      ]
+    },
+    {
+      "account_id": 106863163,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "LGD Gaming",
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Huskar",
+        "Kunkka",
+        "Leshrac",
+        "Lina",
+        "Mirana",
+        "Necrophos",
+        "Queen of Pain",
+        "Storm Spirit",
+        "Tiny",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "天地一刀斩"
+      ]
+    },
+    {
+      "account_id": 94296097,
+      "nickname": "xNova",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "LGD Gaming",
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Disruptor",
+        "Enchantress",
+        "Lion",
+        "Ogre Magi",
+        "Phoenix",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit",
+        "Warlock",
+        "Winter Wyvern",
+        "Witch Doctor"
+      ],
+      "personanames_seen": [
+        "lavie"
+      ]
+    },
+    {
+      "account_id": 101695162,
+      "nickname": "fy",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "LGD Gaming",
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Clockwerk",
+        "Dark Willow",
+        "Doom",
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Nature's Prophet",
+        "Phoenix",
+        "Pudge",
+        "Tusk",
+        "Vengeful Spirit",
+        "Windranger",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "其疾如风"
+      ]
+    },
+    {
+      "account_id": 94738847,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 30,
+      "teams": [
+        {
+          "team_id": 15,
+          "team_name": "LGD Gaming",
+          "matches": 30
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Batrider",
+        "Brewmaster",
+        "Enchantress",
+        "Lycan",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Pugna",
+        "Sand King",
+        "Tiny",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "nailong"
+      ]
+    },
+    {
+      "account_id": 84772440,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 543897,
+          "team_name": "Mineski",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Brewmaster",
+        "Broodmother",
+        "Clockwerk",
+        "Necrophos",
+        "Pangolier",
+        "Phoenix",
+        "Tidehunter",
+        "Timbersaw",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "keyboard cat"
+      ]
+    },
+    {
+      "account_id": 100471531,
+      "nickname": "J",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 543897,
+          "team_name": "Mineski",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earthshaker",
+        "Enchantress",
+        "Io",
+        "Mirana",
+        "Puck",
+        "Pugna",
+        "Silencer",
+        "Sniper",
+        "Vengeful Spirit",
+        "Weaver",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "x"
+      ]
+    },
+    {
+      "account_id": 89871557,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 543897,
+          "team_name": "Mineski",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Gyrocopter",
+        "Mirana",
+        "Monkey King",
+        "Necrophos",
+        "Phantom Assassin",
+        "Spectre",
+        "Tiny",
+        "Troll Warlord",
+        "Ursa",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "mushi"
+      ]
+    },
+    {
+      "account_id": 91443418,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 543897,
+          "team_name": "Mineski",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bounty Hunter",
+        "Crystal Maiden",
+        "Shadow Shaman",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "yuki"
+      ]
+    },
+    {
+      "account_id": 113457795,
+      "nickname": "MooN",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 543897,
+          "team_name": "Mineski",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Lina",
+        "Mirana",
+        "Shadow Fiend",
+        "Storm Spirit",
+        "Tinker",
+        "Tiny"
+      ],
+      "personanames_seen": [
+        "哎呀"
+      ]
+    },
+    {
+      "account_id": 117281554,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 1375614,
+          "team_name": "Newbee",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Faceless Void",
+        "Gyrocopter",
+        "Lycan",
+        "Mirana",
+        "Phantom Lancer",
+        "Spectre",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "No sup"
+      ]
+    },
+    {
+      "account_id": 149486894,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 1375614,
+          "team_name": "Newbee",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Dragon Knight",
+        "Ember Spirit",
+        "Invoker",
+        "Kunkka",
+        "Lina",
+        "Medusa",
+        "Mirana",
+        "Necrophos",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Visage",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "烈烈风中丶"
+      ]
+    },
+    {
+      "account_id": 82327674,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 1375614,
+          "team_name": "Newbee",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Shadow Demon",
+        "Shadow Shaman",
+        "Silencer",
+        "Vengeful Spirit",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Koopa"
+      ]
+    },
+    {
+      "account_id": 139876032,
+      "nickname": "kaka",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 1375614,
+          "team_name": "Newbee",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earthshaker",
+        "Lion",
+        "Nyx Assassin",
+        "Phoenix",
+        "Rubick",
+        "Ursa",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "香菜粉丝"
+      ]
+    },
+    {
+      "account_id": 87012746,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 1375614,
+          "team_name": "Newbee",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Dragon Knight",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Nyx Assassin",
+        "Pangolier",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "trast lain"
+      ]
+    },
+    {
+      "account_id": 19672354,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 29,
+      "teams": [
+        {
+          "team_id": 2586976,
+          "team_name": "OG",
+          "matches": 29
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Chen",
+        "Disruptor",
+        "Enchantress",
+        "Nature's Prophet",
+        "Oracle",
+        "Shadow Shaman",
+        "Silencer",
+        "Warlock",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "OiOi.oldandrusty"
+      ]
+    },
+    {
+      "account_id": 311360822,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 29,
+      "teams": [
+        {
+          "team_id": 2586976,
+          "team_name": "OG",
+          "matches": 29
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Centaur Warrunner",
+        "Drow Ranger",
+        "Ember Spirit",
+        "Gyrocopter",
+        "Lycan",
+        "Monkey King",
+        "Morphling",
+        "Phantom Lancer",
+        "Spectre",
+        "Tiny",
+        "Troll Warlord",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "minioncheer"
+      ]
+    },
+    {
+      "account_id": 26771994,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 29,
+      "teams": [
+        {
+          "team_id": 2586976,
+          "team_name": "OG",
+          "matches": 29
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earthshaker",
+        "Io",
+        "Lich",
+        "Lina",
+        "Rubick",
+        "Shadow Shaman",
+        "Tiny",
+        "Tusk",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "JerAx"
+      ]
+    },
+    {
+      "account_id": 88271237,
+      "nickname": "Ceb",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 29,
+      "teams": [
+        {
+          "team_id": 2586976,
+          "team_name": "OG",
+          "matches": 29
+        }
+      ],
+      "heroes_played": [
+        "Axe",
+        "Centaur Warrunner",
+        "Dragon Knight",
+        "Earthshaker",
+        "Enchantress",
+        "Enigma",
+        "Magnus",
+        "Mirana",
+        "Nature's Prophet",
+        "Pugna",
+        "Treant Protector",
+        "Underlord",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Windranger",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "献身"
+      ]
+    },
+    {
+      "account_id": 94054712,
+      "nickname": "Topson",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 29,
+      "teams": [
+        {
+          "team_id": 2586976,
+          "team_name": "OG",
+          "matches": 29
+        }
+      ],
+      "heroes_played": [
+        "Arc Warden",
+        "Invoker",
+        "Lina",
+        "Monkey King",
+        "Morphling",
+        "Pugna",
+        "Skywrath Mage",
+        "Tiny",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "TOPSON"
+      ]
+    },
+    {
+      "account_id": 94004717,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 16,
+      "teams": [
+        {
+          "team_id": 67,
+          "team_name": "paiN Gaming",
+          "matches": 16
+        }
+      ],
+      "heroes_played": [
+        "Anti-Mage",
+        "Clinkz",
+        "Faceless Void",
+        "Gyrocopter",
+        "Lycan",
+        "Phantom Lancer",
+        "Razor",
+        "Spectre",
+        "Terrorblade",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "pro321"
+      ]
+    },
+    {
+      "account_id": 84853828,
+      "nickname": "Kingrd",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 16,
+      "teams": [
+        {
+          "team_id": 67,
+          "team_name": "paiN Gaming",
+          "matches": 16
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Clockwerk",
+        "Crystal Maiden",
+        "Dark Willow",
+        "Earthshaker",
+        "Io",
+        "Nyx Assassin",
+        "Pugna",
+        "Rubick",
+        "Tusk",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "Kingao"
+      ]
+    },
+    {
+      "account_id": 116525052,
+      "nickname": "Duster",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 16,
+      "teams": [
+        {
+          "team_id": 67,
+          "team_name": "paiN Gaming",
+          "matches": 16
+        }
+      ],
+      "heroes_played": [
+        "Ancient Apparition",
+        "Chen",
+        "Crystal Maiden",
+        "Jakiro",
+        "Lion",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern",
+        "Witch Doctor"
+      ],
+      "personanames_seen": [
+        "duster"
+      ]
+    },
+    {
+      "account_id": 86700461,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 16,
+      "teams": [
+        {
+          "team_id": 67,
+          "team_name": "paiN Gaming",
+          "matches": 16
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Ember Spirit",
+        "Invoker",
+        "Lina",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tiny",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "w33"
+      ]
+    },
+    {
+      "account_id": 117956848,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 16,
+      "teams": [
+        {
+          "team_id": 67,
+          "team_name": "paiN Gaming",
+          "matches": 16
+        }
+      ],
+      "heroes_played": [
+        "Brewmaster",
+        "Enigma",
+        "Magnus",
+        "Nature's Prophet",
+        "Necrophos",
+        "Pangolier",
+        "Tiny",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "tavo"
+      ]
+    },
+    {
+      "account_id": 111620041,
+      "nickname": "SumaiL-",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Shopify Rebellion",
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Gyrocopter",
+        "Invoker",
+        "Kunkka",
+        "Mirana",
+        "Necrophos",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Timbersaw",
+        "Tiny",
+        "Ursa",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "Miracle-"
+      ]
+    },
+    {
+      "account_id": 86745912,
+      "nickname": "天鸽",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Shopify Rebellion",
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Clinkz",
+        "Drow Ranger",
+        "Gyrocopter",
+        "Mirana",
+        "Necrophos",
+        "Phantom Lancer",
+        "Phoenix",
+        "Spectre",
+        "Templar Assassin",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Ye Xiu"
+      ]
+    },
+    {
+      "account_id": 94155156,
+      "nickname": "Fly",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Shopify Rebellion",
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Crystal Maiden",
+        "Lich",
+        "Phoenix",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "⸂⸂⸜(രᴗര๑)⸝⸃⸃"
+      ]
+    },
+    {
+      "account_id": 41231571,
+      "nickname": "s4",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Shopify Rebellion",
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Bristleback",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Necrophos",
+        "Pugna",
+        "Tiny",
+        "Ursa",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Carl"
+      ]
+    },
+    {
+      "account_id": 25907144,
+      "nickname": "Cr1t-",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 27,
+      "teams": [
+        {
+          "team_id": 39,
+          "team_name": "Shopify Rebellion",
+          "matches": 27
+        }
+      ],
+      "heroes_played": [
+        "Chen",
+        "Crystal Maiden",
+        "Dark Willow",
+        "Earth Spirit",
+        "Io",
+        "Kunkka",
+        "Nyx Assassin",
+        "Pudge",
+        "Pugna",
+        "Rubick",
+        "Spirit Breaker",
+        "Tusk",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "o_o"
+      ]
+    },
+    {
+      "account_id": 82262664,
+      "nickname": "kky",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 2163,
+          "team_name": "Team Liquid",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Chen",
+        "Clinkz",
+        "Crystal Maiden",
+        "Lich",
+        "Nature's Prophet",
+        "Ogre Magi",
+        "Phoenix",
+        "Shadow Shaman",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "an najm"
+      ]
+    },
+    {
+      "account_id": 34505203,
+      "nickname": "mc",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 2163,
+          "team_name": "Team Liquid",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Batrider",
+        "Bloodseeker",
+        "Brewmaster",
+        "Clinkz",
+        "Drow Ranger",
+        "Enchantress",
+        "Mirana",
+        "Nature's Prophet",
+        "Omniknight",
+        "Pugna",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "MinD_ContRoL"
+      ]
+    },
+    {
+      "account_id": 105248644,
+      "nickname": "Miracle-",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 2163,
+          "team_name": "Team Liquid",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Chaos Knight",
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Invoker",
+        "Kunkka",
+        "Lina",
+        "Mirana",
+        "Phantom Lancer",
+        "Riki",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "SawagedBlind"
+      ]
+    },
+    {
+      "account_id": 101356886,
+      "nickname": "GH",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 2163,
+          "team_name": "Team Liquid",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earth Spirit",
+        "Earthshaker",
+        "Io",
+        "Keeper of the Light",
+        "Nyx Assassin",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "gh"
+      ]
+    },
+    {
+      "account_id": 72312627,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 24,
+      "teams": [
+        {
+          "team_id": 2163,
+          "team_name": "Team Liquid",
+          "matches": 24
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Broodmother",
+        "Gyrocopter",
+        "Lifestealer",
+        "Nature's Prophet",
+        "Necrophos",
+        "Pugna",
+        "Ursa",
+        "Venomancer",
+        "Viper",
+        "Visage",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "kimchi"
+      ]
+    },
+    {
+      "account_id": 87278757,
+      "nickname": "Puppey",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 26,
+      "teams": [
+        {
+          "team_id": 1838315,
+          "team_name": "Team Secret",
+          "matches": 26
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Chen",
+        "Crystal Maiden",
+        "Nature's Prophet",
+        "Ogre Magi",
+        "Oracle",
+        "Phoenix",
+        "Shadow Shaman",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "Puppey"
+      ]
+    },
+    {
+      "account_id": 89117038,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 26,
+      "teams": [
+        {
+          "team_id": 1838315,
+          "team_name": "Team Secret",
+          "matches": 26
+        }
+      ],
+      "heroes_played": [
+        "Crystal Maiden",
+        "Dark Willow",
+        "Earth Spirit",
+        "Earthshaker",
+        "Elder Titan",
+        "Enigma",
+        "Io",
+        "Lina",
+        "Nyx Assassin",
+        "Rubick",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "jack"
+      ]
+    },
+    {
+      "account_id": 97590558,
+      "nickname": "Ace ♠",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 26,
+      "teams": [
+        {
+          "team_id": 1838315,
+          "team_name": "Team Secret",
+          "matches": 26
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Arc Warden",
+        "Bloodseeker",
+        "Clinkz",
+        "Dragon Knight",
+        "Meepo",
+        "Necrophos",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Tiny",
+        "Vengeful Spirit",
+        "Venomancer",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "oRb WaLk )"
+      ]
+    },
+    {
+      "account_id": 86799300,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 26,
+      "teams": [
+        {
+          "team_id": 1838315,
+          "team_name": "Team Secret",
+          "matches": 26
+        }
+      ],
+      "heroes_played": [
+        "Abaddon",
+        "Batrider",
+        "Bloodseeker",
+        "Clinkz",
+        "Dragon Knight",
+        "Gyrocopter",
+        "Legion Commander",
+        "Lina",
+        "Mirana",
+        "Necrophos",
+        "Puck",
+        "Pugna",
+        "Queen of Pain",
+        "Tiny",
+        "Ursa",
+        "Vengeful Spirit",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง ʕง•ᴥ•ʔง"
+      ]
+    },
+    {
+      "account_id": 116585378,
+      "nickname": "MidOne",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 26,
+      "teams": [
+        {
+          "team_id": 1838315,
+          "team_name": "Team Secret",
+          "matches": 26
+        }
+      ],
+      "heroes_played": [
+        "Arc Warden",
+        "Bloodseeker",
+        "Bristleback",
+        "Clinkz",
+        "Dragon Knight",
+        "Drow Ranger",
+        "Ember Spirit",
+        "Invoker",
+        "Kunkka",
+        "Monkey King",
+        "Morphling",
+        "Necrophos",
+        "Shadow Fiend",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tinker",
+        "Troll Warlord",
+        "Viper",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "GAYLAPSE"
+      ]
+    },
+    {
+      "account_id": 168028715,
+      "nickname": "flyfly",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 5066616,
+          "team_name": "Team Serenity",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Gyrocopter",
+        "Phantom Assassin",
+        "Phantom Lancer",
+        "Spectre",
+        "Ursa",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "999"
+      ]
+    },
+    {
+      "account_id": 117731777,
+      "nickname": "XCJ",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 5066616,
+          "team_name": "Team Serenity",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Lich",
+        "Ogre Magi",
+        "Phoenix",
+        "Rubick",
+        "Silencer",
+        "Undying",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "吾道不孤"
+      ]
+    },
+    {
+      "account_id": 157475523,
+      "nickname": "XinQ",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 5066616,
+          "team_name": "Team Serenity",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Faceless Void",
+        "Mirana",
+        "Necrophos",
+        "Riki",
+        "Storm Spirit",
+        "Tiny",
+        "Ursa",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "烟弹漏油"
+      ]
+    },
+    {
+      "account_id": 124936122,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 5066616,
+          "team_name": "Team Serenity",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Death Prophet",
+        "Ember Spirit",
+        "Huskar",
+        "Lina",
+        "Storm Spirit",
+        "Tiny",
+        "Windranger"
+      ],
+      "personanames_seen": [
+        "Z"
+      ]
+    },
+    {
+      "account_id": 138543123,
+      "nickname": "Pyw",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 19,
+      "teams": [
+        {
+          "team_id": 5066616,
+          "team_name": "Team Serenity",
+          "matches": 19
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earthshaker",
+        "Elder Titan",
+        "Nyx Assassin",
+        "Tiny",
+        "Ursa",
+        "Vengeful Spirit",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Neil"
+      ]
+    },
+    {
+      "account_id": 184950344,
+      "nickname": "Kuku^",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 2108395,
+          "team_name": "TNC Predator",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Bounty Hunter",
+        "Crystal Maiden",
+        "Lion",
+        "Nature's Prophet",
+        "Shadow Demon",
+        "Silencer",
+        "Treant Protector",
+        "Undying",
+        "Vengeful Spirit",
+        "Windranger"
+      ],
+      "personanames_seen": [
+        "PMA Tryhard"
+      ]
+    },
+    {
+      "account_id": 155494381,
+      "nickname": "TIMS",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 2108395,
+          "team_name": "TNC Predator",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Crystal Maiden",
+        "Dark Willow",
+        "Earth Spirit",
+        "Io",
+        "Naga Siren",
+        "Nyx Assassin",
+        "Tusk",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "Kimber2k11"
+      ]
+    },
+    {
+      "account_id": 164532005,
+      "nickname": "Armel",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 2108395,
+          "team_name": "TNC Predator",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Dragon Knight",
+        "Huskar",
+        "Lina",
+        "Mirana",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Timbersaw",
+        "Tiny",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "ljcute"
+      ]
+    },
+    {
+      "account_id": 132309493,
+      "nickname": "Raven",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 2108395,
+          "team_name": "TNC Predator",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Broodmother",
+        "Clinkz",
+        "Drow Ranger",
+        "Huskar",
+        "Phantom Lancer",
+        "Timbersaw",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "is not enough"
+      ]
+    },
+    {
+      "account_id": 187619311,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 2108395,
+          "team_name": "TNC Predator",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Enchantress",
+        "Mirana",
+        "Nature's Prophet",
+        "Pugna",
+        "Underlord",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "MEDISINA"
+      ]
+    },
+    {
+      "account_id": 86726887,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 22,
+      "teams": [
+        {
+          "team_id": 5228654,
+          "team_name": "VGJ Storm",
+          "matches": 22
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earth Spirit",
+        "Earthshaker",
+        "Io",
+        "Keeper of the Light",
+        "Nyx Assassin",
+        "Phoenix",
+        "Sven",
+        "Tiny",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "X"
+      ]
+    },
+    {
+      "account_id": 86725175,
+      "nickname": "Resolut1on",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 22,
+      "teams": [
+        {
+          "team_id": 5228654,
+          "team_name": "VGJ Storm",
+          "matches": 22
+        }
+      ],
+      "heroes_played": [
+        "Arc Warden",
+        "Broodmother",
+        "Dragon Knight",
+        "Drow Ranger",
+        "Faceless Void",
+        "Gyrocopter",
+        "Medusa",
+        "Mirana",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Ursa",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "The One"
+      ]
+    },
+    {
+      "account_id": 10366616,
+      "nickname": "Sneyking",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 22,
+      "teams": [
+        {
+          "team_id": 5228654,
+          "team_name": "VGJ Storm",
+          "matches": 22
+        }
+      ],
+      "heroes_played": [
+        "Centaur Warrunner",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Tiny",
+        "Underlord",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "Sneyking"
+      ]
+    },
+    {
+      "account_id": 108452107,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 22,
+      "teams": [
+        {
+          "team_id": 5228654,
+          "team_name": "VGJ Storm",
+          "matches": 22
+        }
+      ],
+      "heroes_played": [
+        "Dragon Knight",
+        "Mirana",
+        "Necrophos",
+        "Shadow Fiend",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Venomancer",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "12"
+      ]
+    },
+    {
+      "account_id": 47434686,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 22,
+      "teams": [
+        {
+          "team_id": 5228654,
+          "team_name": "VGJ Storm",
+          "matches": 22
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Chen",
+        "Crystal Maiden",
+        "Jakiro",
+        "Lion",
+        "Ogre Magi",
+        "Phoenix",
+        "Silencer",
+        "Undying"
+      ],
+      "personanames_seen": [
+        "LoA"
+      ]
+    },
+    {
+      "account_id": 182331313,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 5027210,
+          "team_name": "VGJ Thunder",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Dark Willow",
+        "Earthshaker",
+        "Io",
+        "Phoenix",
+        "Silencer",
+        "Windranger",
+        "Winter Wyvern",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "田园脆鸡堡"
+      ]
+    },
+    {
+      "account_id": 137272985,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 5027210,
+          "team_name": "VGJ Thunder",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Huskar",
+        "Lina",
+        "Mirana",
+        "Monkey King",
+        "Necrophos",
+        "Storm Spirit",
+        "Tiny",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "box box"
+      ]
+    },
+    {
+      "account_id": 139937922,
+      "nickname": "Yang",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 5027210,
+          "team_name": "VGJ Thunder",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Brewmaster",
+        "Broodmother",
+        "Legion Commander",
+        "Magnus",
+        "Necrophos",
+        "Tiny",
+        "Underlord",
+        "Windranger",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "3"
+      ]
+    },
+    {
+      "account_id": 108382060,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 5027210,
+          "team_name": "VGJ Thunder",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Juggernaut",
+        "Leshrac",
+        "Luna",
+        "Lycan",
+        "Terrorblade",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "0.0"
+      ]
+    },
+    {
+      "account_id": 114239371,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 17,
+      "teams": [
+        {
+          "team_id": 5027210,
+          "team_name": "VGJ Thunder",
+          "matches": 17
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Lion",
+        "Ogre Magi",
+        "Pugna",
+        "Rubick",
+        "Silencer",
+        "Vengeful Spirit",
+        "Windranger"
+      ],
+      "personanames_seen": [
+        "田曦薇"
+      ]
+    },
+    {
+      "account_id": 137193239,
+      "nickname": "无限",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 20,
+      "teams": [
+        {
+          "team_id": 726228,
+          "team_name": "Vici Gaming",
+          "matches": 20
+        }
+      ],
+      "heroes_played": [
+        "Arc Warden",
+        "Clinkz",
+        "Faceless Void",
+        "Gyrocopter",
+        "Phantom Lancer",
+        "Spectre",
+        "Terrorblade",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "无限"
+      ]
+    },
+    {
+      "account_id": 89423756,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 20,
+      "teams": [
+        {
+          "team_id": 726228,
+          "team_name": "Vici Gaming",
+          "matches": 20
+        }
+      ],
+      "heroes_played": [
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Kunkka",
+        "Shadow Shaman",
+        "Tiny",
+        "Ursa",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "疯鱼"
+      ]
+    },
+    {
+      "account_id": 113800818,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 20,
+      "teams": [
+        {
+          "team_id": 726228,
+          "team_name": "Vici Gaming",
+          "matches": 20
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Crystal Maiden",
+        "Oracle",
+        "Shadow Demon",
+        "Silencer",
+        "Vengeful Spirit",
+        "Warlock"
+      ],
+      "personanames_seen": [
+        "l"
+      ]
+    },
+    {
+      "account_id": 107803494,
+      "nickname": "Ori",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 20,
+      "teams": [
+        {
+          "team_id": 726228,
+          "team_name": "Vici Gaming",
+          "matches": 20
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Dragon Knight",
+        "Huskar",
+        "Kunkka",
+        "Lina",
+        "Necrophos",
+        "Templar Assassin",
+        "Tiny"
+      ],
+      "personanames_seen": [
+        "..."
+      ]
+    },
+    {
+      "account_id": 134276083,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 20,
+      "teams": [
+        {
+          "team_id": 726228,
+          "team_name": "Vici Gaming",
+          "matches": 20
+        }
+      ],
+      "heroes_played": [
+        "Batrider",
+        "Broodmother",
+        "Legion Commander",
+        "Magnus",
+        "Mirana",
+        "Nature's Prophet",
+        "Necrophos",
+        "Pangolier",
+        "Pugna",
+        "Underlord",
+        "Ursa"
+      ],
+      "personanames_seen": [
+        "oldeLeVeN"
+      ]
+    },
+    {
+      "account_id": 134556694,
+      "nickname": "Solo",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 25,
+      "teams": [
+        {
+          "team_id": 1883502,
+          "team_name": "Virtus.pro",
+          "matches": 25
+        }
+      ],
+      "heroes_played": [
+        "Bane",
+        "Chen",
+        "Crystal Maiden",
+        "Disruptor",
+        "Nature's Prophet",
+        "Oracle",
+        "Silencer",
+        "Vengeful Spirit"
+      ],
+      "personanames_seen": [
+        "Solo"
+      ]
+    },
+    {
+      "account_id": 132851371,
+      "nickname": "RAMZES666",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 25,
+      "teams": [
+        {
+          "team_id": 1883502,
+          "team_name": "Virtus.pro",
+          "matches": 25
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Broodmother",
+        "Clinkz",
+        "Faceless Void",
+        "Gyrocopter",
+        "Necrophos",
+        "Phantom Lancer",
+        "Spectre",
+        "Sven",
+        "Ursa",
+        "Visage",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "делаем выводы"
+      ]
+    },
+    {
+      "account_id": 106573901,
+      "nickname": "No[o]ne-",
+      "nickname_source": "opendota:players[].name",
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 25,
+      "teams": [
+        {
+          "team_id": 1883502,
+          "team_name": "Virtus.pro",
+          "matches": 25
+        }
+      ],
+      "heroes_played": [
+        "Alchemist",
+        "Bloodseeker",
+        "Clinkz",
+        "Dragon Knight",
+        "Earthshaker",
+        "Gyrocopter",
+        "Invoker",
+        "Phantom Lancer",
+        "Pugna",
+        "Shadow Fiend",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tiny",
+        "Ursa",
+        "Weaver"
+      ],
+      "personanames_seen": [
+        "Have fun"
+      ]
+    },
+    {
+      "account_id": 92423451,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 25,
+      "teams": [
+        {
+          "team_id": 1883502,
+          "team_name": "Virtus.pro",
+          "matches": 25
+        }
+      ],
+      "heroes_played": [
+        "Bloodseeker",
+        "Doom",
+        "Dragon Knight",
+        "Enchantress",
+        "Enigma",
+        "Mirana",
+        "Pangolier",
+        "Phoenix",
+        "Pugna",
+        "Shadow Demon",
+        "Tiny",
+        "Weaver",
+        "Windranger",
+        "Winter Wyvern",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "izdu"
+      ]
+    },
+    {
+      "account_id": 159020918,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 25,
+      "teams": [
+        {
+          "team_id": 1883502,
+          "team_name": "Virtus.pro",
+          "matches": 25
+        }
+      ],
+      "heroes_played": [
+        "Chen",
+        "Clockwerk",
+        "Dark Willow",
+        "Earth Spirit",
+        "Earthshaker",
+        "Elder Titan",
+        "Io",
+        "Kunkka",
+        "Treant Protector",
+        "Windranger",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "Shi Heng Yi"
+      ]
+    },
+    {
+      "account_id": 93552791,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 21,
+      "teams": [
+        {
+          "team_id": 5229127,
+          "team_name": "Winstrike",
+          "matches": 21
+        }
+      ],
+      "heroes_played": [
+        "Chen",
+        "Dark Willow",
+        "Earthshaker",
+        "Nature's Prophet",
+        "Treant Protector",
+        "Tusk",
+        "Vengeful Spirit",
+        "Windranger",
+        "Winter Wyvern"
+      ],
+      "personanames_seen": [
+        "game"
+      ]
+    },
+    {
+      "account_id": 91064780,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 21,
+      "teams": [
+        {
+          "team_id": 5229127,
+          "team_name": "Winstrike",
+          "matches": 21
+        }
+      ],
+      "heroes_played": [
+        "Crystal Maiden",
+        "Disruptor",
+        "Lich",
+        "Ogre Magi",
+        "Silencer",
+        "Treant Protector",
+        "Undying",
+        "Vengeful Spirit",
+        "Winter Wyvern",
+        "Witch Doctor"
+      ],
+      "personanames_seen": [
+        "AWF.lft.coach"
+      ]
+    },
+    {
+      "account_id": 250114507,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 21,
+      "teams": [
+        {
+          "team_id": 5229127,
+          "team_name": "Winstrike",
+          "matches": 21
+        }
+      ],
+      "heroes_played": [
+        "Death Prophet",
+        "Invoker",
+        "Lina",
+        "Mirana",
+        "Necrophos",
+        "Outworld Destroyer",
+        "Shadow Fiend",
+        "Storm Spirit",
+        "Templar Assassin",
+        "Tiny",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "ПЕРПЛ СПРАЙТ"
+      ]
+    },
+    {
+      "account_id": 130801103,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 21,
+      "teams": [
+        {
+          "team_id": 5229127,
+          "team_name": "Winstrike",
+          "matches": 21
+        }
+      ],
+      "heroes_played": [
+        "Axe",
+        "Centaur Warrunner",
+        "Clockwerk",
+        "Earthshaker",
+        "Enchantress",
+        "Mirana",
+        "Necrophos",
+        "Night Stalker",
+        "Pugna",
+        "Vengeful Spirit",
+        "Weaver",
+        "Wraith King",
+        "Zeus"
+      ],
+      "personanames_seen": [
+        "DyX_aHKopuD}|{A"
+      ]
+    },
+    {
+      "account_id": 89269794,
+      "nickname": null,
+      "nickname_source": null,
+      "verified": false,
+      "real_name": null,
+      "nationality": null,
+      "matches": 21,
+      "teams": [
+        {
+          "team_id": 5229127,
+          "team_name": "Winstrike",
+          "matches": 21
+        }
+      ],
+      "heroes_played": [
+        "Clinkz",
+        "Dragon Knight",
+        "Drow Ranger",
+        "Gyrocopter",
+        "Lycan",
+        "Mirana",
+        "Phantom Lancer",
+        "Spectre",
+        "Troll Warlord",
+        "Ursa",
+        "Weaver",
+        "Wraith King"
+      ],
+      "personanames_seen": [
+        "polako"
+      ]
+    }
+  ]
+}

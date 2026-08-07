@@ -1,0 +1,641 @@
+{
+  "_generated_by": "scripts/ingest-player-ids.ts",
+  "_generated_at": "2026-08-07T11:42:39.593Z",
+  "_note": "account_id read directly from each Liquipedia player page (infobox playerid, or the datdota/dotabuff link). A direct sourced join, not an inference.",
+  "_attribution": "Player account IDs from Liquipedia, licensed CC-BY-SA 3.0.",
+  "event": "ti08",
+  "resolved": 90,
+  "total": 90,
+  "players": [
+    {
+      "handle": "RAMZES666",
+      "page": "RAMZES666",
+      "redirected_to": null,
+      "account_id": 132851371,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "No[o]ne",
+      "page": "Noone",
+      "redirected_to": null,
+      "account_id": 106573901,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "9pasha",
+      "page": "9pasha",
+      "redirected_to": null,
+      "account_id": 92423451,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "RodjER",
+      "page": "RodjER",
+      "redirected_to": null,
+      "account_id": 159020918,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Solo",
+      "page": "Solo",
+      "redirected_to": null,
+      "account_id": 134556694,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "MATUMBAMAN",
+      "page": "MATUMBAMAN",
+      "redirected_to": null,
+      "account_id": 72312627,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Miracle-",
+      "page": "Miracle-",
+      "redirected_to": null,
+      "account_id": 105248644,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "MinD_ContRoL",
+      "page": "MinD_ContRoL",
+      "redirected_to": null,
+      "account_id": 34505203,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "GH",
+      "page": "GH",
+      "redirected_to": null,
+      "account_id": 101356886,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "KuroKy",
+      "page": "KuroKy",
+      "redirected_to": null,
+      "account_id": 82262664,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Ame",
+      "page": "Ame",
+      "redirected_to": null,
+      "account_id": 898754153,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Somnus丶M",
+      "page": "Somnus丶M",
+      "redirected_to": "Somnus",
+      "account_id": 106863163,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Chalice",
+      "page": "Chalice",
+      "redirected_to": null,
+      "account_id": 94738847,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "fy",
+      "page": "fy",
+      "redirected_to": null,
+      "account_id": 101695162,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "xNova",
+      "page": "xNova",
+      "redirected_to": null,
+      "account_id": 94296097,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Ace",
+      "page": "Ace",
+      "redirected_to": null,
+      "account_id": 97590558,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "MidOne",
+      "page": "MidOne",
+      "redirected_to": null,
+      "account_id": 116585378,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Fata",
+      "page": "Fata",
+      "redirected_to": null,
+      "account_id": 86799300,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "YapzOr",
+      "page": "YapzOr",
+      "redirected_to": null,
+      "account_id": 89117038,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Puppey",
+      "page": "Puppey",
+      "redirected_to": null,
+      "account_id": 87278757,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Mushi",
+      "page": "Mushi",
+      "redirected_to": null,
+      "account_id": 89871557,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Moonn",
+      "page": "Moonn",
+      "redirected_to": "Moon (Kam Boon Seng)",
+      "account_id": 113457795,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "iceiceice",
+      "page": "iceiceice",
+      "redirected_to": null,
+      "account_id": 84772440,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Jabz",
+      "page": "Jabz",
+      "redirected_to": null,
+      "account_id": 100471531,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "ninjaboogie",
+      "page": "ninjaboogie",
+      "redirected_to": null,
+      "account_id": 91443418,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Paparazi灬",
+      "page": "Paparazi灬",
+      "redirected_to": null,
+      "account_id": 137193239,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Ori",
+      "page": "Ori",
+      "redirected_to": null,
+      "account_id": 107803494,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "eLeVeN",
+      "page": "eLeVeN",
+      "redirected_to": "Old eLeVeN",
+      "account_id": 134276083,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "LaNm",
+      "page": "LaNm",
+      "redirected_to": null,
+      "account_id": 89423756,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Fenrir",
+      "page": "Fenrir",
+      "redirected_to": null,
+      "account_id": 113800818,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Moogy",
+      "page": "Moogy",
+      "redirected_to": null,
+      "account_id": 117281554,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Sccc",
+      "page": "Sccc",
+      "redirected_to": null,
+      "account_id": 149486894,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "kpii",
+      "page": "kpii",
+      "redirected_to": null,
+      "account_id": 87012746,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Kaka",
+      "page": "Kaka",
+      "redirected_to": null,
+      "account_id": 139876032,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Faith",
+      "page": "Faith",
+      "redirected_to": null,
+      "account_id": 82327674,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Sylar",
+      "page": "Sylar",
+      "redirected_to": null,
+      "account_id": 108382060,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Freeze",
+      "page": "Freeze",
+      "redirected_to": "Kamma",
+      "account_id": 137272985,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Yang",
+      "page": "Yang",
+      "redirected_to": null,
+      "account_id": 139937922,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Fade",
+      "page": "Fade (player)",
+      "redirected_to": "Frisk",
+      "account_id": 371374667,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "ddc",
+      "page": "ddc",
+      "redirected_to": null,
+      "account_id": 114239371,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "ana",
+      "page": "ana",
+      "redirected_to": null,
+      "account_id": 311360822,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Topson",
+      "page": "Topson",
+      "redirected_to": null,
+      "account_id": 94054712,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Ceb",
+      "page": "Ceb",
+      "redirected_to": null,
+      "account_id": 88271237,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "JerAx",
+      "page": "JerAx",
+      "redirected_to": null,
+      "account_id": 26771994,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "N0tail",
+      "page": "N0tail",
+      "redirected_to": null,
+      "account_id": 19672354,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Silent",
+      "page": "Silent",
+      "redirected_to": null,
+      "account_id": 89269794,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Iceberg",
+      "page": "Iceberg",
+      "redirected_to": null,
+      "account_id": 250114507,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "nongrata",
+      "page": "nongrata",
+      "redirected_to": null,
+      "account_id": 130801103,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Nofear",
+      "page": "Nofear",
+      "redirected_to": "NoFear",
+      "account_id": 93552791,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "ALWAYSWANNAFLY",
+      "page": "ALWAYSWANNAFLY",
+      "redirected_to": null,
+      "account_id": 91064780,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "zhizhizhi",
+      "page": "zhizhizhi",
+      "redirected_to": "Flyfly",
+      "account_id": 168028715,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Zyd",
+      "page": "Zyd",
+      "redirected_to": null,
+      "account_id": 124936122,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "XinQ",
+      "page": "XinQ",
+      "redirected_to": null,
+      "account_id": 157475523,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Pyw",
+      "page": "Pyw",
+      "redirected_to": null,
+      "account_id": 138543123,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "XCJ",
+      "page": "XCJ",
+      "redirected_to": null,
+      "account_id": 117731777,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Agressif",
+      "page": "Agressif",
+      "redirected_to": null,
+      "account_id": 130416036,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Xxs",
+      "page": "Xxs",
+      "redirected_to": null,
+      "account_id": 129958758,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Srf",
+      "page": "Srf",
+      "redirected_to": null,
+      "account_id": 156662698,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "BoBoKa",
+      "page": "BoBoKa",
+      "redirected_to": null,
+      "account_id": 207829314,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Q",
+      "page": "Q",
+      "redirected_to": null,
+      "account_id": 140153524,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "EternaLEnVy",
+      "page": "EternaLEnVy",
+      "redirected_to": null,
+      "account_id": 43276219,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Abed",
+      "page": "Abed",
+      "redirected_to": null,
+      "account_id": 154715080,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Universe",
+      "page": "Universe",
+      "redirected_to": null,
+      "account_id": 87276347,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "DJ",
+      "page": "DJ",
+      "redirected_to": null,
+      "account_id": 102099826,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "pieliedie",
+      "page": "pieliedie",
+      "redirected_to": null,
+      "account_id": 6922000,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Raven",
+      "page": "Raven",
+      "redirected_to": null,
+      "account_id": 132309493,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Armel",
+      "page": "Armel",
+      "redirected_to": null,
+      "account_id": 164532005,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Sam_H",
+      "page": "Sam_H",
+      "redirected_to": null,
+      "account_id": 187619311,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Tims",
+      "page": "Tims",
+      "redirected_to": "TIMS",
+      "account_id": 155494381,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Kuku",
+      "page": "Kuku",
+      "redirected_to": null,
+      "account_id": 184950344,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "YS",
+      "page": "YS",
+      "redirected_to": "YawaR",
+      "account_id": 108452107,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Resolut1on",
+      "page": "Resolut1on",
+      "redirected_to": null,
+      "account_id": 86725175,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Sneyking",
+      "page": "Sneyking",
+      "redirected_to": null,
+      "account_id": 10366616,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "MSS",
+      "page": "MSS",
+      "redirected_to": null,
+      "account_id": 86726887,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "SVG",
+      "page": "SVG",
+      "redirected_to": null,
+      "account_id": 47434686,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Arteezy",
+      "page": "Arteezy",
+      "redirected_to": null,
+      "account_id": 86745912,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "SumaiL",
+      "page": "SumaiL",
+      "redirected_to": null,
+      "account_id": 111620041,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "s4",
+      "page": "s4",
+      "redirected_to": null,
+      "account_id": 41231571,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Cr1t-",
+      "page": "Cr1t-",
+      "redirected_to": null,
+      "account_id": 25907144,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Fly",
+      "page": "Fly",
+      "redirected_to": null,
+      "account_id": 94155156,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Pajkatt",
+      "page": "Pajkatt",
+      "redirected_to": null,
+      "account_id": 87285329,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "CCnC",
+      "page": "CCnC",
+      "redirected_to": "Quinn",
+      "account_id": 221666230,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "33",
+      "page": "33",
+      "redirected_to": null,
+      "account_id": 86698277,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "zai",
+      "page": "zai",
+      "redirected_to": null,
+      "account_id": 73562326,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "ppd",
+      "page": "ppd",
+      "redirected_to": null,
+      "account_id": 86727555,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "hFn",
+      "page": "hFn",
+      "redirected_to": null,
+      "account_id": 94004717,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "w33",
+      "page": "w33",
+      "redirected_to": null,
+      "account_id": 86700461,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "tavo",
+      "page": "tavo",
+      "redirected_to": null,
+      "account_id": 117956848,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Kingrd",
+      "page": "Kingrd",
+      "redirected_to": null,
+      "account_id": 84853828,
+      "found_in": "playerid"
+    },
+    {
+      "handle": "Duster",
+      "page": "Duster",
+      "redirected_to": null,
+      "account_id": 116525052,
+      "found_in": "playerid"
+    }
+  ]
+}

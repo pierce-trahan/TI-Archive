@@ -89,6 +89,16 @@ TI8 cross-check (`data/sources/datdota/ti08.players.csv`): **90 of 90 accounts c
 
 Consequence for provenance: the 43 farm-priority inferences at TI8 are no longer bare guesses. An independent source agrees with 41 of them and corrected 2, and each confirmed roster row now carries a datdota cross-check stamp.
 
+### Liquipedia's player-id is present-tense too
+
+Noxville's tip: a Liquipedia player page carries the 32-bit Steam ID (= OpenDota account_id) in the infobox `playerid` field, plus the datdota and dotabuff links. Following the page redirect resolves handle changes on its own — CCnC's page redirects to Quinn, whose page holds 221666230. `scripts/ingest-player-ids.ts` reads it, and it resolved **90/90** account_ids for TI8 directly.
+
+It looked like this could replace the inference tier with a direct sourced lookup. It cannot, and the reason is the whole project in miniature.
+
+Cross-checking those 90 against the datdota-validated roster: 88 agree, 2 don't — Ame and Fade. Both our accounts appear in the TI8 match data; **both Liquipedia-listed accounts do not.** Ame and Fade each moved to a newer account after 2018, and Liquipedia's `playerid` is the player's *current primary* account, not the one they played a given event on. Same present-tense trap as OpenDota's names, one layer down: a field that is authoritative for "who is this player now" is wrong for "which account played this match in 2018".
+
+So the authoritative per-event account is the one in the match data, cross-checked against datdota's per-tournament figures. Liquipedia's `playerid` is a third confirmation where it agrees and a link to the player's current profile — never the source of truth for a historical roster. `verify-playerids.ts` classifies each mismatch by whether Liquipedia's account actually played the event: didn't play is benign, also played would need a human (none at TI8).
+
 ### Position is not a per-event constant
 
 Liquipedia lists one role per player per event, and it is right to — but it is a *default*, not a fixed assignment. Confirmed for TI8: Team Liquid drafted around MATUMBAMAN and Miracle- swapping safe lane and mid between games, which is part of what made that core so hard to draft against.

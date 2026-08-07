@@ -2,18 +2,30 @@
  * Collect GosuGamers period reporting for an event.
  *
  *   npm run research:gosugamers -- ti08
- *   npm run research:gosugamers -- ti08 --pages 12 --limit 60
+ *   npm run research:gosugamers -- ti08 --pages 40 --limit 60
  *
  * RUN THIS LOCALLY. GosuGamers sits behind bot protection that refuses
  * datacenter IPs, so it cannot be reached from a cloud session. From a normal
  * connection it is an ordinary site.
  *
- * UNTESTED against the live site — it was written from a session that could not
- * reach it. It is deliberately loud: it checks robots.txt first, reports what it
+ * The site is a Next.js app: each listing page embeds the full article list
+ * for that page — title, an exact `publishedAt` epoch, a teaser, and the
+ * pagination totals — as a React Flight payload inside a
+ * `self.__next_f.push([1, "..."])` script tag. That is parsed directly rather
+ * than scraping per-article meta tags, which is what makes exact dates
+ * available at all. Listings paginate with `?pageNo=`, not `?page=`.
+ *
+ * As of writing, GosuGamers' Dota 2 listings run ~1000 pages / ~12000
+ * articles deep, newest first, so reaching an old event like TI8 (2018) by
+ * walking from page 1 is impractical. Instead this binary-searches the page
+ * number using each page's embedded timestamps to jump straight to the
+ * event's date window, then walks forward collecting matches.
+ *
+ * It is deliberately loud: it checks robots.txt first, reports what it
  * extracts as it goes, and refuses to write a file if extraction looks wrong,
- * rather than quietly producing plausible rubbish. Expect the listing selectors
- * to need a nudge; `--dump` prints the raw HTML of one page so you can see what
- * changed without reading the whole script.
+ * rather than quietly producing plausible rubbish. `--dump` prints the raw
+ * HTML of page 1 so you can see what changed without reading the whole
+ * script, if GosuGamers changes its markup again.
  */
 
 import { writeFile } from 'node:fs/promises';
@@ -55,27 +67,81 @@ async function polite(url: string): Promise<Response> {
   });
 }
 
-/** Article links off a listing page. Kept broad so a markup change degrades rather than breaks. */
-function findArticleLinks(html: string): string[] {
-  const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((m) => m[1]!);
-  const articles = hrefs.filter((h) => /\/dota2\/(news|features)\/\d+-/.test(h));
-  return [...new Set(articles.map((h) => (h.startsWith('http') ? h : `${ORIGIN}${h}`)))];
+function listingUrl(listing: string, pageNo: number): string {
+  return `${ORIGIN}${listing}${pageNo > 1 ? `?pageNo=${pageNo}` : ''}`;
 }
 
-function extractArticle(html: string): { title: string | null; published: string | null; text: string } {
-  const meta = (property: string): string | null =>
-    new RegExp(`<meta[^>]+(?:property|name)="${property}"[^>]+content="([^"]*)"`, 'i').exec(html)?.[1] ??
-    new RegExp(`<meta[^>]+content="([^"]*)"[^>]+(?:property|name)="${property}"`, 'i').exec(html)?.[1] ??
-    null;
+/** Reverses one layer of JSON-string escaping, e.g. the `\r\n` and `\"` left inside a captured field. */
+function unescapeOnce(raw: string): string {
+  try {
+    return JSON.parse(`"${raw}"`) as string;
+  } catch {
+    return raw.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+  }
+}
 
-  const title = meta('og:title') ?? /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]?.trim() ?? null;
-  const publishedRaw =
-    meta('article:published_time') ??
-    meta('datePublished') ??
-    /<time[^>]+datetime="([^"]+)"/i.exec(html)?.[1] ??
-    null;
+interface ListingItem {
+  id: string;
+  title: string;
+  publishedAt: number;
+  teaser: string;
+  url: string;
+}
 
-  const text = html
+interface Pagination {
+  pageNo: number;
+  pageSize: number;
+  totalPages: number;
+  totalRows: number;
+}
+
+/**
+ * A value inside the embedded (once-escaped) JSON: either an escaped char, or anything but backslash/quote.
+ * Non-greedy — otherwise it matches through to the LAST quote in the chunk instead of the next one.
+ */
+const V = String.raw`(?:\\.|[^\\"])*?`;
+
+function parsePagination(html: string): Pagination | null {
+  const m = new RegExp(
+    String.raw`\\"pagination\\":\{\\"pageNo\\":(\d+),\\"pageSize\\":(\d+),\\"totalPages\\":(\d+),\\"totalRows\\":(\d+)\}`,
+  ).exec(html);
+  if (!m) return null;
+  return { pageNo: Number(m[1]), pageSize: Number(m[2]), totalPages: Number(m[3]), totalRows: Number(m[4]) };
+}
+
+/** Article items embedded in a listing page's React Flight payload. */
+function parseListingItems(html: string): ListingItem[] {
+  const items: ListingItem[] = [];
+  const anchor = /\\"item\\":\{\\"id\\":(\d+)/g;
+  let match: RegExpExecArray | null;
+
+  while ((match = anchor.exec(html))) {
+    const id = match[1]!;
+    // Fields of one item are close together; a bounded window avoids needing a real JSON parse.
+    const chunk = html.slice(match.index, match.index + 3000);
+
+    const title = new RegExp(String.raw`\\"title\\":\\"(${V})\\",\\"urlSafeTitle\\"`).exec(chunk)?.[1];
+    const publishedAt = new RegExp(String.raw`\\"publishedAt\\":(\d+)`).exec(chunk)?.[1];
+    const teaserUrl = new RegExp(String.raw`\\"teaser\\":\\"(${V})\\",\\"url\\":\\"(${V})\\"`).exec(chunk);
+
+    if (!title || !publishedAt || !teaserUrl) continue;
+
+    const url = unescapeOnce(teaserUrl[2]!);
+    items.push({
+      id,
+      title: unescapeOnce(title),
+      publishedAt: Number(publishedAt),
+      teaser: unescapeOnce(teaserUrl[1]!),
+      url: url.startsWith('http') ? url : `${ORIGIN}${url}`,
+    });
+  }
+
+  return items;
+}
+
+/** Full body text of one article page, for local caching. Dates come from the listing, not this. */
+function extractArticleText(html: string): string {
+  return html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<nav[\s\S]*?<\/nav>/gi, ' ')
@@ -89,12 +155,29 @@ function extractArticle(html: string): { title: string | null; published: string
     .replace(/&quot;/g, '"')
     .replace(/\s+/g, ' ')
     .trim();
+}
 
-  return {
-    title: title?.replace(/\s+/g, ' ').trim() ?? null,
-    published: publishedRaw ? (publishedRaw.slice(0, 10) || null) : null,
-    text,
-  };
+/** Binary-searches for the smallest pageNo whose oldest item is already at or before `beforeMs`. */
+async function findStartPage(listing: string, totalPages: number, beforeMs: number): Promise<number> {
+  let lo = 1;
+  let hi = totalPages;
+
+  while (lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    const response = await polite(listingUrl(listing, mid)).catch(() => null);
+    if (!response?.ok) {
+      // Can't probe this page; assume we need to go further back.
+      lo = mid + 1;
+      continue;
+    }
+    const items = parseListingItems(await response.text());
+    const oldestOnPage = items.length ? Math.min(...items.map((i) => i.publishedAt)) : Infinity;
+    console.log(`  probing page ${mid}: oldest item ${new Date(oldestOnPage).toISOString().slice(0, 10)}`);
+    if (oldestOnPage <= beforeMs) hi = mid;
+    else lo = mid + 1;
+  }
+
+  return lo;
 }
 
 async function main(): Promise<void> {
@@ -104,7 +187,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const maxPages = arg('pages', 8);
+  const maxPages = arg('pages', 40);
   const maxArticles = arg('limit', 80);
   const event = await loadEvent(key);
 
@@ -117,99 +200,111 @@ async function main(): Promise<void> {
 
   console.log(`${event.name}`);
   console.log(`window: ${windowFrom.toISOString().slice(0, 10)} -> ${windowTo.toISOString().slice(0, 10)}`);
-  console.log(`listings: ${LISTINGS.join(', ')}  (max ${maxPages} pages each)\n`);
+  console.log(`listings: ${LISTINGS.join(', ')}  (max ${maxPages} pages walked per listing once located)\n`);
 
   const robots = await checkRobots(`${ORIGIN}${LISTINGS[0]}`);
   if (!robots.allowed) throw new Error(`robots.txt disallows the listing path (${robots.rule}). Stopping.`);
   console.log(`robots.txt: allowed${robots.crawlDelaySeconds ? `, crawl-delay ${robots.crawlDelaySeconds}s` : ''}\n`);
 
-  // ---- Collect candidate article URLs ----
-  const candidates = new Set<string>();
-  for (const listing of LISTINGS) {
-    for (let page = 1; page <= maxPages; page++) {
-      const url = `${ORIGIN}${listing}${page > 1 ? `?page=${page}` : ''}`;
-      const response = await polite(url).catch(() => null);
+  if (process.argv.includes('--dump')) {
+    const response = await polite(listingUrl(LISTINGS[0]!, 1));
+    await writeFile('gosugamers-page-dump.html', await response.text(), 'utf8');
+    console.log('  wrote gosugamers-page-dump.html — inspect it and adjust parseListingItems()/parsePagination()');
+    return;
+  }
 
+  // ---- Locate the window in each listing's pagination, then walk it ----
+  const candidates = new Map<string, ListingItem>();
+
+  for (const listing of LISTINGS) {
+    const first1 = await polite(listingUrl(listing, 1)).catch(() => null);
+    if (!first1?.ok) {
+      console.log(`  ${listing} -> ${first1?.status ?? 'network error'}; skipping this listing`);
+      continue;
+    }
+    const pagination = parsePagination(await first1.text());
+    if (!pagination) {
+      console.log(`  ${listing}: could not find pagination info in the page — markup may have changed`);
+      continue;
+    }
+    console.log(`  ${listing}: ${pagination.totalRows} articles across ${pagination.totalPages} pages`);
+
+    const startPage = await findStartPage(listing, pagination.totalPages, windowTo.getTime());
+    console.log(`  ${listing}: window starts around page ${startPage}\n`);
+
+    let pagesWalked = 0;
+    for (let pageNo = startPage; pageNo <= pagination.totalPages && pagesWalked < maxPages; pageNo++, pagesWalked++) {
+      const response = await polite(listingUrl(listing, pageNo)).catch(() => null);
       if (!response?.ok) {
-        console.log(`  ${url} -> ${response?.status ?? 'network error'}; stopping this listing`);
+        console.log(`  ${listingUrl(listing, pageNo)} -> ${response?.status ?? 'network error'}; stopping this listing`);
         break;
       }
-      const html = await response.text();
-
-      if (process.argv.includes('--dump')) {
-        await writeFile('gosugamers-page-dump.html', html, 'utf8');
-        console.log('  wrote gosugamers-page-dump.html — inspect it and adjust findArticleLinks()');
-        return;
+      const items = parseListingItems(await response.text());
+      if (!items.length) {
+        console.log(`  page ${pageNo}: no items parsed; stopping this listing`);
+        break;
       }
 
-      const links = findArticleLinks(html);
-      links.forEach((l) => candidates.add(l));
-      console.log(`  ${url} -> ${links.length} article links (${candidates.size} unique so far)`);
-      if (!links.length) break;
+      const inWindow = items.filter((i) => i.publishedAt >= windowFrom.getTime() && i.publishedAt <= windowTo.getTime());
+      inWindow.forEach((i) => candidates.set(i.id, i));
+      console.log(
+        `  page ${pageNo}: ${items.length} items, ${inWindow.length} in window (${candidates.size} unique so far)`,
+      );
+
+      const allOlderThanWindow = items.every((i) => i.publishedAt < windowFrom.getTime());
+      if (allOlderThanWindow) {
+        console.log(`  page ${pageNo}: entirely older than the window; stopping this listing`);
+        break;
+      }
     }
   }
 
   if (!candidates.size) {
     throw new Error(
-      'No article links found. The listing markup has probably changed — ' +
-        're-run with --dump to see the HTML, then adjust findArticleLinks().',
+      'No articles found in the date window. Either the window is wrong, or the listing markup has ' +
+        'changed — re-run with --dump to see the HTML and adjust parseListingItems()/parsePagination().',
     );
   }
 
-  // ---- Fetch articles, keeping those inside the window ----
+  // ---- Fetch full text for each candidate, respecting --limit ----
   const items: ResearchItem[] = [];
-  let outsideWindow = 0;
   let thin = 0;
 
-  for (const url of [...candidates].slice(0, maxArticles * 3)) {
-    if (items.length >= maxArticles) break;
-
-    const response = await polite(url).catch(() => null);
+  for (const candidate of [...candidates.values()].slice(0, maxArticles)) {
+    const response = await polite(candidate.url).catch(() => null);
     if (!response?.ok) continue;
 
-    const { title, published, text } = extractArticle(await response.text());
-
+    const text = extractArticleText(await response.text());
     if (text.length < 600) {
       thin++;
       continue;
     }
-    if (published) {
-      const date = new Date(published);
-      if (date < windowFrom || date > windowTo) {
-        outsideWindow++;
-        continue;
-      }
-    }
 
-    const id = url.split('/').pop() ?? String(items.length);
-    const cachedPath = await cacheFullText(key, 'gosugamers', id, text);
+    const published = new Date(candidate.publishedAt).toISOString().slice(0, 10);
+    const cachedPath = await cacheFullText(key, 'gosugamers', candidate.id, text);
 
     items.push({
       source: 'gosugamers',
-      title: title ?? url,
-      url,
+      title: candidate.title,
+      url: candidate.url,
       published,
       author: null,
-      excerpt: excerpt(text),
-      signals: { chars: text.length, dated: published ? 'yes' : 'no' },
+      excerpt: candidate.teaser || excerpt(text),
+      signals: { chars: text.length },
       retrieved_at: new Date().toISOString(),
       cached_text_path: cachedPath,
     });
 
-    console.log(`  ${items.length.toString().padStart(3)}  ${published ?? '????-??-??'}  ${(title ?? url).slice(0, 60)}`);
+    console.log(`  ${items.length.toString().padStart(3)}  ${published}  ${candidate.title.slice(0, 60)}`);
   }
 
-  console.log(`\ncandidates: ${candidates.size} | kept: ${items.length} | outside window: ${outsideWindow} | too thin: ${thin}`);
+  console.log(`\ncandidates in window: ${candidates.size} | kept: ${items.length} | too thin: ${thin}`);
 
   if (!items.length) {
     throw new Error(
-      'Every article was rejected. Either the date window is wrong or extraction failed — ' +
-        'nothing written, rather than writing an empty file that looks like a real result.',
+      'Every candidate article was rejected as too thin to be useful — nothing written, rather than ' +
+        'writing an empty file that looks like a real result.',
     );
-  }
-  if (items.filter((i) => i.published).length < items.length / 2) {
-    console.log('\n  WARNING: over half the articles have no publication date.');
-    console.log('  Date filtering is therefore unreliable for this run — check before quoting.');
   }
 
   const path = await writeResearch(key, 'gosugamers', items, {

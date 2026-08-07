@@ -33,6 +33,19 @@ teams and players. This is correct behaviour for a live statistics site and a
 hazard for a historical one. It supplies the stable identifiers and the match
 facts here; names come from Liquipedia.
 
+## datdota
+
+<https://www.datdota.com/>
+
+Per-player tournament aggregates (games, win-loss, GPM) from datdota, created by
+Ben "Noxville" Steenhuisen, are used to cross-check the account-to-handle joins
+this project derives. Where OpenDota and Liquipedia together left a join
+uncertain, an independent match against datdota's figures confirmed it — and in
+one case at TI8 corrected a carry/mid pair the automated guess had swapped.
+
+Used with permission for this purpose. datdota data cross-checks the identity
+work; it is not redistributed here.
+
 ## Valve Corporation
 
 Dota 2 and The International are properties of Valve Corporation. Hero names,

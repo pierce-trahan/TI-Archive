@@ -77,6 +77,18 @@ The same mechanism applies to players: `name` is a *current* pro handle, so a pl
 
 **Therefore:** team and player names as of a given event come from Liquipedia, not OpenDota. OpenDota supplies the stable IDs and the match facts. This is what `names_over_time` on the team and player entities in `docs/DESIGN.md` §8.2 is for, and it is not optional.
 
+### datdota is the independent third source for the identity join
+
+OpenDota gives stable account_ids and match facts; Liquipedia gives event-time handles; neither knows both, so the join between them is partly inferred from farm priority — a guess. datdota (Noxville) computes per-player tournament aggregates from its own pipeline, which makes it the independent check that closes that gap.
+
+The mechanism: if the account we labelled "X" has the exact games, win-loss and GPM datdota reports for X, two independent sources agree and the label holds. A player exported under a *since-changed* handle still matches on those figures, which both confirms our account and reveals datdota's current name for them.
+
+TI8 cross-check (`data/sources/datdota/ti08.players.csv`): **90 of 90 accounts confirmed**, once one swap was applied. 85 matched by name outright; 5 matched by figures under a different current name — including the CCnC/Quinn case that motivated the whole entity model, plus zhizhizhi/Flyfly, YS/YawaR, Paparazi/Eurus, Moonn/Moon.
+
+**The swap it caught:** on Winstrike, the two accounts held each other's figures exactly. Iceberg (the mid) out-farmed Silent (the carry), so ranking by GPM had assigned the carry slot's account to Silent and vice versa — the carry/mid inversion, made concrete. datdota's figures are a mirror-image match, so this is not a judgement call; `scripts/apply-datdota.ts` swaps such pairs automatically, keeps the Liquipedia positions, and cites datdota. Real conflicts that are *not* a clean swap are reported and left for a human.
+
+Consequence for provenance: the 43 farm-priority inferences at TI8 are no longer bare guesses. An independent source agrees with 41 of them and corrected 2, and each confirmed roster row now carries a datdota cross-check stamp.
+
 ### Position is not a per-event constant
 
 Liquipedia lists one role per player per event, and it is right to — but it is a *default*, not a fixed assignment. Confirmed for TI8: Team Liquid drafted around MATUMBAMAN and Miracle- swapping safe lane and mid between games, which is part of what made that core so hard to draft against.

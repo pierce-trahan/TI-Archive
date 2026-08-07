@@ -22,7 +22,9 @@
     "ingest:heroes": "tsx scripts/ingest-hero-pool.ts",
     "research:reddit": "tsx --env-file-if-exists=.env scripts/research-reddit.ts",
     "research:wayback": "tsx scripts/research-wayback.ts",
-    "research:gosugamers": "tsx scripts/research-gosugamers.ts"
+    "research:gosugamers": "tsx scripts/research-gosugamers.ts",
+    "verify:datdota": "tsx scripts/verify-datdota.ts",
+    "apply:datdota": "tsx scripts/apply-datdota.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

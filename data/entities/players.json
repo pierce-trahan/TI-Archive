@@ -2,7 +2,7 @@
   "_note": "Player identity over time, keyed on account_id — the only stable key OpenDota exposes. `handles` records the handle a player used AS OF an event, which is the only thing the UI may display for that event. OpenDota's `name` is a CURRENT handle and is stored only as `opendota_current_name`, for drift detection.",
   "_source_types": {
     "owner-confirmation": "Confirmed directly by the project owner, who watched these events live. A first-class source for this project.",
-    "url": "Cite the page. Liquipedia preferred."
+    "url": "Cite the page. Liquipedia preferred; a datdota.com url means the join was fixed or set by a datdota cross-check."
   },
   "players": [
     {
@@ -431,10 +431,11 @@
       "handles": [
         {
           "event": "ti08",
-          "handle": "Iceberg",
+          "handle": "Silent",
           "source": {
-            "type": "owner-confirmation",
-            "date": "2026-08-06"
+            "type": "url",
+            "url": "https://www.datdota.com/",
+            "retrieved_at": "2026-08-06"
           }
         }
       ],
@@ -1333,10 +1334,11 @@
       "handles": [
         {
           "event": "ti08",
-          "handle": "Silent",
+          "handle": "Iceberg",
           "source": {
-            "type": "owner-confirmation",
-            "date": "2026-08-06"
+            "type": "url",
+            "url": "https://www.datdota.com/",
+            "retrieved_at": "2026-08-06"
           }
         }
       ],

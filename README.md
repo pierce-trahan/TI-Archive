@@ -18,6 +18,7 @@ prototype being replaced — see `docs/DESIGN.md` before building on it.
 | --- | --- |
 | `docs/DESIGN.md` | The agreed design scope. Read this first. |
 | `docs/DATA-NOTES.md` | What the data sources actually return, verified by fetching. |
+| `docs/PIPELINE.md` | How the data scripts work and how to run them. |
 | `CLAUDE.md` | Working rules, including the one that matters most. |
 
 ## The rule

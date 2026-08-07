@@ -24,7 +24,9 @@
     "research:wayback": "tsx scripts/research-wayback.ts",
     "research:gosugamers": "tsx scripts/research-gosugamers.ts",
     "verify:datdota": "tsx scripts/verify-datdota.ts",
-    "apply:datdota": "tsx scripts/apply-datdota.ts"
+    "apply:datdota": "tsx scripts/apply-datdota.ts",
+    "ingest:playerids": "tsx scripts/ingest-player-ids.ts",
+    "verify:playerids": "tsx scripts/verify-playerids.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

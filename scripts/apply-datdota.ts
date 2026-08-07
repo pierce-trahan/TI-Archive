@@ -24,6 +24,7 @@
  * and left for a human, because the script cannot tell which source is wrong.
  */
 
+import { fileURLToPath } from 'node:url';
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { loadEvent, phaseFor } from './lib/events.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -112,7 +113,7 @@ async function main(): Promise<void> {
   );
 
   // ---- recompute our per-account figures ----
-  const dir = new URL(`../data/raw/${key}/matches`, import.meta.url).pathname;
+  const dir = fileURLToPath(new URL(`../data/raw/${key}/matches`, import.meta.url));
   const mine = new Map<number, Mine>();
   for (const file of await readdir(dir)) {
     if (!file.endsWith('.json')) continue;

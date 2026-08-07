@@ -17,6 +17,7 @@
  * where on the page it was found, for every participant we could resolve.
  */
 
+import { fileURLToPath } from 'node:url';
 import { writeFile } from 'node:fs/promises';
 import { fetchJsonCached } from './lib/http.ts';
 import { loadEvent } from './lib/events.ts';
@@ -85,7 +86,7 @@ async function main(): Promise<void> {
   }
 
   const event = await loadEvent(key);
-  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
   const proposal = JSON.parse(
     await import('node:fs/promises').then((fs) =>
       fs.readFile(new URL(`../data/proposals/${key}.liquipedia.json`, import.meta.url), 'utf8'),

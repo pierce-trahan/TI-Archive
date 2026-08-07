@@ -22,6 +22,7 @@
  *     the event data, and a human must say which was this player. Reported loud.
  */
 
+import { fileURLToPath } from 'node:url';
 import { readFile, readdir } from 'node:fs/promises';
 import { loadEvent, phaseFor } from './lib/events.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -50,7 +51,7 @@ async function main(): Promise<void> {
 
   // Every account_id that actually appears in this event's matches.
   const event = await loadEvent(key);
-  const cacheDir = new URL(`../data/raw/${key}/matches`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}/matches`, import.meta.url));
   const played = new Set<number>();
   for (const file of await readdir(cacheDir)) {
     if (!file.endsWith('.json')) continue;

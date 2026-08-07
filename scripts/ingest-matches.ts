@@ -10,6 +10,7 @@
  * the API it is written as null, never inferred.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fetchLeagueMatches, fetchMatchDetail, isParsed } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -47,8 +48,8 @@ async function main(): Promise<void> {
   }
 
   const event = await loadEvent(key);
-  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
-  const outDir = new URL(`../data/computed/${key}`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
+  const outDir = fileURLToPath(new URL(`../data/computed/${key}`, import.meta.url));
 
   console.log(`${event.name}  (leagueid ${event.leagueid})`);
   console.log(`venue timezone: ${event.venue_timezone}`);

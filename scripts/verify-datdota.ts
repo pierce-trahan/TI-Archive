@@ -20,6 +20,7 @@
  * disagreements, because they are a different thing entirely.
  */
 
+import { fileURLToPath } from 'node:url';
 import { readFile, readdir } from 'node:fs/promises';
 import { loadEvent, phaseFor } from './lib/events.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -94,7 +95,7 @@ async function main(): Promise<void> {
   const rows = parseCsv(await readFile(csvPath, 'utf8'));
 
   // ---- Our numbers, recomputed per account from the raw matches ----
-  const cacheDir = new URL(`../data/raw/${key}/matches`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}/matches`, import.meta.url));
   const files = await readdir(cacheDir);
 
   interface Mine {

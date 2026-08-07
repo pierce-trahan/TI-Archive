@@ -14,6 +14,7 @@
  * it, and the verify step refuses to publish anything still unverified.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { fetchHeroes, fetchProPlayers } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -85,8 +86,8 @@ async function main(): Promise<void> {
 
   const event = await loadEvent(key);
   const entities = await loadEntities();
-  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
-  const outDir = new URL(`../data/entities`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
+  const outDir = fileURLToPath(new URL(`../data/entities`, import.meta.url));
 
   const heroes = await fetchHeroes(cacheDir);
   // proPlayers covers active pros only, but where it does have a row it often

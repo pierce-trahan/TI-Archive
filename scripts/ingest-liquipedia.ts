@@ -16,6 +16,7 @@
  *   - Content is CC-BY-SA 3.0 and MUST be attributed wherever it is displayed.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fetchJsonCached } from './lib/http.ts';
 import { findTemplates, parseTemplate, plainText } from './lib/wikitext.ts';
@@ -195,8 +196,8 @@ async function main(): Promise<void> {
   }
 
   const event = await loadEvent(key);
-  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
-  const outDir = new URL(`../data/proposals`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
+  const outDir = fileURLToPath(new URL(`../data/proposals`, import.meta.url));
 
   const title = new URL(event.source_url).pathname.replace(/^\/dota2\//, '').replace(/_/g, ' ');
   console.log(`${event.name}`);

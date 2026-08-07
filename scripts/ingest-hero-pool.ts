@@ -18,6 +18,7 @@
  * *rendered pages* outside the API remains off-limits and is not used.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fetchJsonCached } from './lib/http.ts';
 
@@ -85,7 +86,7 @@ function parseTable(html: string): HeroRelease[] {
 }
 
 async function main(): Promise<void> {
-  const cacheDir = new URL('../data/raw/_shared', import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL('../data/raw/_shared', import.meta.url));
   const outUrl = new URL('../data/entities/heroes.json', import.meta.url);
 
   const url = `${API}?action=parse&page=${encodeURIComponent(PAGE)}&prop=text&format=json`;
@@ -103,7 +104,7 @@ async function main(): Promise<void> {
 
   const missingDate = heroes.filter((h) => !h.released);
 
-  await mkdir(new URL('../data/entities/', import.meta.url).pathname, { recursive: true });
+  await mkdir(fileURLToPath(new URL('../data/entities/', import.meta.url)), { recursive: true });
   await writeFile(
     outUrl,
     `${JSON.stringify(

@@ -7,6 +7,7 @@
  * anywhere. Only rows that need a human appear; settled rows are summarised.
  */
 
+import { fileURLToPath } from 'node:url';
 import { readFile, writeFile } from 'node:fs/promises';
 
 interface Identity {
@@ -118,7 +119,7 @@ async function main(): Promise<void> {
     lines.push('');
   }
 
-  const outPath = new URL(`../data/proposals/${key}.review.md`, import.meta.url).pathname;
+  const outPath = fileURLToPath(new URL(`../data/proposals/${key}.review.md`, import.meta.url));
   await writeFile(outPath, lines.join('\n'), 'utf8');
   console.log(`${needy.length} teams need review`);
   console.log(`wrote ${outPath}`);

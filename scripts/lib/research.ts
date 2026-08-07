@@ -13,6 +13,7 @@
  * This project cites and quotes them; it does not host them.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 
 /** Excerpts are for citation, not for reading the piece without visiting it. */
@@ -51,7 +52,7 @@ export async function writeResearch(
   items: ResearchItem[],
   meta: Record<string, unknown> = {},
 ): Promise<string> {
-  const dir = new URL('../../data/research/', import.meta.url).pathname;
+  const dir = fileURLToPath(new URL('../../data/research/', import.meta.url));
   await mkdir(dir, { recursive: true });
   const path = `${dir}${event}.${source}.json`;
 
@@ -85,7 +86,7 @@ export async function cacheFullText(
   id: string,
   text: string,
 ): Promise<string> {
-  const dir = new URL(`../../data/raw/research/${event}/${source}/`, import.meta.url).pathname;
+  const dir = fileURLToPath(new URL(`../../data/raw/research/${event}/${source}/`, import.meta.url));
   await mkdir(dir, { recursive: true });
   const path = `${dir}${id.replace(/[^A-Za-z0-9_-]/g, '_')}.txt`;
   await writeFile(path, text, 'utf8');

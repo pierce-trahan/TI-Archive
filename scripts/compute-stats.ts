@@ -19,6 +19,7 @@
  *      emits null with the reason attached.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { fetchHeroes, isParsed } from './lib/opendota.ts';
 import type { MatchDetail } from './lib/opendota.ts';
@@ -68,8 +69,8 @@ async function main(): Promise<void> {
   const phases = new Set((process.argv[3] ?? 'group,main').split(','));
 
   const event = await loadEvent(key);
-  const cacheDir = new URL(`../data/raw/${key}`, import.meta.url).pathname;
-  const outDir = new URL(`../data/computed/${key}`, import.meta.url).pathname;
+  const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
+  const outDir = fileURLToPath(new URL(`../data/computed/${key}`, import.meta.url));
 
   const heroes = await fetchHeroes(cacheDir);
   const heroName = new Map(heroes.map((h) => [h.id, h.localized_name]));

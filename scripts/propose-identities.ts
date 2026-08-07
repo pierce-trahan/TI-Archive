@@ -26,6 +26,7 @@
  * "inferred" must never be promoted without someone confirming it.
  */
 
+import { fileURLToPath } from 'node:url';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 
 interface LiquipediaPlayer {
@@ -266,7 +267,7 @@ async function main(): Promise<void> {
     ambiguous: all.filter((p) => p.confidence === 'ambiguous').length,
   };
 
-  const outDir = new URL('../data/proposals', import.meta.url).pathname;
+  const outDir = fileURLToPath(new URL('../data/proposals', import.meta.url));
   await mkdir(outDir, { recursive: true });
   const outPath = `${outDir}/${key}.identities.json`;
   await writeFile(

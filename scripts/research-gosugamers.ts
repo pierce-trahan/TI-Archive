@@ -20,10 +20,12 @@
  * enumerate every article URL published in the event's date window without
  * needing pagination at all.
  *
- * Each article page still embeds its own metadata (exact `publishedAt`
- * epoch, title, teaser) as a React Flight payload, the same mechanism as the
- * listing pages, so that is parsed directly for accurate dates rather than
- * trusting the sitemap's `<lastmod>` (which reflects edits, not publication).
+ * Each article page still embeds its own metadata (exact `publishedAt` epoch
+ * and title) as a React Flight payload, the same mechanism as the listing
+ * pages, so that is parsed directly for accurate dates rather than trusting
+ * the sitemap's `<lastmod>` (which reflects edits, not publication). The
+ * excerpt itself comes from the rendered article text, not from that payload
+ * — see the comment on `extractArticleMeta` for why.
  *
  * It is deliberately loud: it checks robots.txt first, reports what it
  * extracts as it goes, and refuses to write a file if extraction looks wrong,
@@ -114,20 +116,27 @@ async function fetchSitemapArticleUrls(year: number, quarter: number): Promise<s
   return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]!);
 }
 
-/** Metadata embedded in an article page's own React Flight payload, anchored on its numeric id. */
-function extractArticleMeta(html: string, id: string): { title: string | null; publishedAt: number | null; teaser: string | null } {
+/**
+ * Metadata embedded in an article page's own React Flight payload, anchored on its numeric id.
+ *
+ * Deliberately does NOT extract `teaser` here. That field exists on the listing-page schema
+ * (where it's a short plain string immediately followed by `"url"`) but individual article
+ * pages embed a different object shape — their `teaser`-keyed value there is a full HTML
+ * paragraph with no nearby `"url"` to terminate on, so the same regex ran past it and captured
+ * the article's raw internal JSON along with it. `excerpt(text)` below is HTML-stripped and
+ * length-capped by construction, so it's used unconditionally instead of trusting this field.
+ */
+function extractArticleMeta(html: string, id: string): { title: string | null; publishedAt: number | null } {
   const anchor = new RegExp(String.raw`\\"id\\":${id},\\"frontendId\\"`).exec(html);
-  if (!anchor) return { title: null, publishedAt: null, teaser: null };
+  if (!anchor) return { title: null, publishedAt: null };
 
   const chunk = html.slice(anchor.index, anchor.index + 3000);
   const title = new RegExp(String.raw`\\"title\\":\\"(${V})\\",\\"urlSafeTitle\\"`).exec(chunk)?.[1];
   const publishedAt = new RegExp(String.raw`\\"publishedAt\\":(\d+)`).exec(chunk)?.[1];
-  const teaser = new RegExp(String.raw`\\"teaser\\":\\"(${V})\\",\\"url\\"`).exec(chunk)?.[1];
 
   return {
     title: title ? unescapeOnce(title) : null,
     publishedAt: publishedAt ? Number(publishedAt) : null,
-    teaser: teaser ? unescapeOnce(teaser) : null,
   };
 }
 
@@ -244,7 +253,7 @@ async function main(): Promise<void> {
       url,
       published,
       author: null,
-      excerpt: meta.teaser || excerpt(text),
+      excerpt: excerpt(text),
       signals: { chars: text.length },
       retrieved_at: new Date().toISOString(),
       cached_text_path: cachedPath,

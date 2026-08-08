@@ -40,6 +40,23 @@ async function polite(url: string, timeoutMs = SNAPSHOT_TIMEOUT_MS): Promise<Res
   return fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(timeoutMs) });
 }
 
+/**
+ * The CDX index is a shared public service and occasionally answers a slow or
+ * heavy query with a transient 502/503/504 rather than the actual result.
+ * That's overload, not "this query is invalid" — worth a few backed-off
+ * retries before giving up and failing loudly.
+ */
+async function politeCdx(url: string, timeoutMs: number, attempts = 4): Promise<Response> {
+  let response: Response;
+  for (let attempt = 1; ; attempt++) {
+    response = await polite(url, timeoutMs);
+    if (response.ok || attempt === attempts) return response;
+    const backoffMs = 5000 * 2 ** (attempt - 1); // 5s, 10s, 20s
+    console.log(`  CDX index answered ${response.status}; retrying in ${backoffMs / 1000}s (attempt ${attempt}/${attempts})...`);
+    await sleep(backoffMs);
+  }
+}
+
 const decodeEntities = (v: string): string =>
   v
     .replace(/&nbsp;/g, ' ')
@@ -150,8 +167,8 @@ async function main(): Promise<void> {
     `&from=${fromStamp}&to=${toStamp}&limit=${MAX_CAPTURES}`;
 
   console.log('querying the CDX index (this is slow — up to a few minutes)...');
-  const indexResponse = await polite(cdxUrl, CDX_TIMEOUT_MS);
-  if (!indexResponse.ok) throw new Error(`CDX index failed: ${indexResponse.status}`);
+  const indexResponse = await politeCdx(cdxUrl, CDX_TIMEOUT_MS);
+  if (!indexResponse.ok) throw new Error(`CDX index failed: ${indexResponse.status} (after retries)`);
 
   const rows = (await indexResponse.json()) as string[][];
   const captures = rows.slice(1); // first row is the column header

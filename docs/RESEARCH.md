@@ -33,8 +33,12 @@ Useful variations:
 # A different dead site, or a different section of JoinDota
 npm run research:wayback -- ti08 joindota.com/en/features
 
-# Fewer/more articles, or see what the sitemap XML actually looks like
+# Cap it lower for a quick test run — the default is high enough to cover the
+# whole date window; a low --limit will stop partway through (skewed toward
+# whichever quarter's candidates it reaches first) rather than sampling evenly.
 npm run research:gosugamers -- ti08 --limit 40
+
+# See what the sitemap XML actually looks like
 npm run research:gosugamers -- ti08 --dump
 ```
 

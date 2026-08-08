@@ -156,7 +156,9 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const maxArticles = arg('limit', 80);
+  // High enough that a normal run covers the whole date window rather than exhausting
+  // one quarter's worth of candidates and stopping before reaching the others.
+  const maxArticles = arg('limit', 600);
   const event = await loadEvent(key);
 
   const first = event.phases[0]?.from ?? `${event.year}-01-01`;

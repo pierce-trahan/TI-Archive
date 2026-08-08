@@ -181,8 +181,13 @@ async function main(): Promise<void> {
     const [timestamp, original] = row;
     if (!timestamp || !original) continue;
 
-    // The same article appears under ?comment_page=2, &3 and so on.
-    const canonical = original.replace(/^https?:\/\//, '').split(/[?&]/)[0]!;
+    // The same article appears under ?comment_page=2, &3 and so on, and also
+    // under path-based pagination like /page/2/, /page/3/ for long comment threads.
+    const canonical = original
+      .replace(/^https?:\/\//, '')
+      .split(/[?&]/)[0]!
+      .replace(/\/page\/\d+\/?$/, '')
+      .replace(/\/$/, '');
     if (seenUrls.has(canonical)) continue;
     seenUrls.add(canonical);
 

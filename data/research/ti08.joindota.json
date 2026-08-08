@@ -3,7 +3,7 @@
   "_generated_at": "2026-08-06T22:47:07.098Z",
   "event": "ti08",
   "source": "joindota",
-  "item_count": 79,
+  "item_count": 77,
   "archive_prefix": "joindota.com/en/news",
   "capture_window": {
     "from": "20180402",
@@ -605,40 +605,6 @@
       },
       "retrieved_at": "2026-08-06T22:45:26.374Z",
       "cached_text_path": "/home/user/TI-Archive/data/raw/research/ti08/joindota/20180730204843_36.txt"
-    },
-    {
-      "source": "joindota",
-      "title": "Optic keep TI8 invite dream alive but kill Fnatic's",
-      "url": "https://www.joindota.com/en/news/69874-optic-keep-ti8-invite-dream-alive-but-kill-fnatics/page/2/",
-      "published": null,
-      "author": "Malystryx.GDS",
-      "excerpt": "Optic Gaming have crushed Fnatic's hopes of a TI8 direct invite while also keeping theirs alive. They progress to the Grand Finals, where a win will secure their spot at TI8. ADVERTISING: THEY'VE DONE IT!! @OpTicGaming defeat @FNATIC and will now face @virtuspro in the #ESLOne Birmingham Grand Finals! Congrats!…",
-      "signals": {
-        "snapshot": "https://web.archive.org/web/20180730205452/https://www.joindota.com/en/news/69874-optic-keep-ti8-invite-dream-alive-but-kill-fnatics/page/2/",
-        "age_at_capture": null,
-        "captured": "2018-07-30",
-        "captured_note": "Date the archive crawled the page, NOT when it was published.",
-        "chars": 4033
-      },
-      "retrieved_at": "2026-08-06T22:45:28.371Z",
-      "cached_text_path": "/home/user/TI-Archive/data/raw/research/ti08/joindota/20180730205452_37.txt"
-    },
-    {
-      "source": "joindota",
-      "title": "Optic keep TI8 invite dream alive but kill Fnatic's",
-      "url": "https://www.joindota.com/en/news/69874-optic-keep-ti8-invite-dream-alive-but-kill-fnatics/page/3/",
-      "published": null,
-      "author": "Malystryx.GDS",
-      "excerpt": "Optic Gaming have crushed Fnatic's hopes of a TI8 direct invite while also keeping theirs alive. They progress to the Grand Finals, where a win will secure their spot at TI8. ADVERTISING: THEY'VE DONE IT!! @OpTicGaming defeat @FNATIC and will now face @virtuspro in the #ESLOne Birmingham Grand Finals! Congrats!…",
-      "signals": {
-        "snapshot": "https://web.archive.org/web/20180730205859/https://www.joindota.com/en/news/69874-optic-keep-ti8-invite-dream-alive-but-kill-fnatics/page/3/",
-        "age_at_capture": null,
-        "captured": "2018-07-30",
-        "captured_note": "Date the archive crawled the page, NOT when it was published.",
-        "chars": 4033
-      },
-      "retrieved_at": "2026-08-06T22:45:30.548Z",
-      "cached_text_path": "/home/user/TI-Archive/data/raw/research/ti08/joindota/20180730205859_38.txt"
     },
     {
       "source": "joindota",

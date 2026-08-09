@@ -47,6 +47,22 @@ export interface MatchPlayer {
   hero_damage: number | null;
   tower_damage: number | null;
   hero_healing: number | null;
+  /**
+   * Final inventory at the end of the match, as item ids; 0 means an empty
+   * slot. This is what the player was holding when it ended, NOT everything
+   * they bought — an item sold or consumed mid-game leaves no trace here.
+   */
+  item_0?: number;
+  item_1?: number;
+  item_2?: number;
+  item_3?: number;
+  item_4?: number;
+  item_5?: number;
+  backpack_0?: number;
+  backpack_1?: number;
+  backpack_2?: number;
+  /** Present only on parsed replays. Catches what final inventory misses. */
+  purchase_log?: { time: number; key: string }[] | null;
 }
 
 export interface PickBan {
@@ -144,6 +160,28 @@ export interface ProPlayer {
 export async function fetchProPlayers(cacheDir: string): Promise<ProPlayer[]> {
   const { data } = await fetchJsonCached<ProPlayer[]>(`${BASE}/proPlayers`, {
     cachePath: `${cacheDir}/proPlayers.json`,
+  });
+  return data;
+}
+
+/**
+ * An entry from /api/constants/items, keyed by the item's short name.
+ *
+ * `qual` is how the meta list separates real items from noise: "component"
+ * and "consumable" flood any purchase count with branches and tangoes. Using
+ * the field rather than a hand-written exclusion list means the rule is
+ * Valve's own classification, not our guess about what counts.
+ */
+export interface ItemConstant {
+  id: number;
+  dname?: string;
+  cost?: number | null;
+  qual?: string;
+}
+
+export async function fetchItems(cacheDir: string): Promise<Record<string, ItemConstant>> {
+  const { data } = await fetchJsonCached<Record<string, ItemConstant>>(`${BASE}/constants/items`, {
+    cachePath: `${cacheDir}/constants-items.json`,
   });
   return data;
 }

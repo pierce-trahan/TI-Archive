@@ -9,3 +9,8 @@ coverage/
 
 # Raw API response cache — regenerable, large, not a source of truth
 data/raw/
+
+# Chart builds with logos embedded as base64 (--inline). Nearly a megabyte
+# each, and reproducible from the committed chart plus data/assets/logos/.
+# Only the review artifact needs them; the real page links the image files.
+*.inline.html

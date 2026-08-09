@@ -279,8 +279,18 @@ async function main(): Promise<void> {
   let thin = 0;
   let undated = 0;
 
-  for (const url of [...candidateUrls].slice(0, maxArticles * 2)) {
-    if (items.length >= maxArticles) break;
+  // Two ways this run can quietly come up short, both tracked so the summary
+  // can say so. A truncated run that reports success is the exact failure that
+  // once dropped the tournament month itself from a TI8 pull.
+  const candidateBudget = maxArticles * 2;
+  const candidatesTruncated = candidateUrls.size > candidateBudget;
+  let hitCap = false;
+
+  for (const url of [...candidateUrls].slice(0, candidateBudget)) {
+    if (items.length >= maxArticles) {
+      hitCap = true;
+      break;
+    }
 
     const response = await polite(url).catch(() => null);
     if (!response?.ok) continue;
@@ -338,9 +348,63 @@ async function main(): Promise<void> {
     console.log('  Date filtering is therefore unreliable for this run — check before quoting.');
   }
 
+  // ---- Did this run actually cover the window it was asked for? ----
+  const dated = items.map((i) => i.published).filter((d): d is string => !!d).sort();
+  const earliest = dated[0] ?? null;
+  const latest = dated.at(-1) ?? null;
+  const askedFrom = windowFrom.toISOString().slice(0, 10);
+  const askedTo = windowTo.toISOString().slice(0, 10);
+
+  console.log(`\nrequested window: ${askedFrom} -> ${askedTo}`);
+  console.log(`actual coverage:  ${earliest ?? '?'} -> ${latest ?? '?'}`);
+
+  if (hitCap || candidatesTruncated) {
+    console.log(`\n  ${'='.repeat(68)}`);
+    console.log('  THIS RUN IS INCOMPLETE. The output covers only part of the window.');
+    if (hitCap) {
+      console.log(`  Stopped at the ${maxArticles}-article cap${earliest ? `, having reached back to ${earliest}` : ''}.`);
+    }
+    if (candidatesTruncated) {
+      console.log(`  Only ${candidateBudget} of ${candidateUrls.size} candidate URLs were even considered.`);
+    }
+    console.log(`  Re-run with a higher cap, e.g.  --limit ${Math.ceil((candidateUrls.size * 1.2) / 100) * 100}`);
+    console.log(`  ${'='.repeat(68)}`);
+  } else if (earliest) {
+    // The cap wasn't the limit, so a short front edge means GosuGamers simply
+    // published nothing earlier — worth distinguishing from truncation.
+    const gapDays = Math.round(
+      (new Date(`${earliest}T00:00:00Z`).getTime() - windowFrom.getTime()) / 86_400_000,
+    );
+    if (gapDays > 21) {
+      console.log(
+        `\n  NOTE: earliest article is ${gapDays} days after the window opens. Not a truncation — ` +
+          `the cap was not reached — so the sitemap simply had nothing earlier in /dota2/.`,
+      );
+    }
+  }
+
   const path = await writeResearch(key, 'gosugamers', items, {
     window: { from: windowFrom.toISOString(), to: windowTo.toISOString() },
     sitemap_quarters: quarters.map((q) => `${q.year}Q${q.quarter}`),
+    // Terminal output scrolls away; whether a pull was complete must be
+    // answerable from the file months later, without re-running anything.
+    coverage: {
+      requested_from: askedFrom,
+      requested_to: askedTo,
+      earliest_article: earliest,
+      latest_article: latest,
+      complete: !hitCap && !candidatesTruncated,
+      article_cap: maxArticles,
+      candidates_found: candidateUrls.size,
+      candidates_considered: Math.min(candidateUrls.size, candidateBudget),
+      ...(hitCap || candidatesTruncated
+        ? {
+            incomplete_reason: hitCap
+              ? `Stopped at the ${maxArticles}-article cap; coverage begins at ${earliest ?? 'unknown'} rather than ${askedFrom}.`
+              : `Only ${candidateBudget} of ${candidateUrls.size} candidate URLs were considered.`,
+          }
+        : {}),
+    },
   });
 
   console.log(`\nmetadata + excerpts: ${path}`);

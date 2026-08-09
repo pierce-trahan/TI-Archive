@@ -27,19 +27,42 @@
  *
  * It is NOT a stock avatar, a silhouette, or another player's photo.
  *
+ * THE PHOTO MUST FIT THE EVENT'S ERA
+ *
+ * A player page's infobox image is their CURRENT photo. Fly's and Abed's are
+ * from 2026. Putting those on a 2018 page is the same error as rendering Evil
+ * Geniuses as "Shopify Rebellion" — right subject, wrong decade.
+ *
+ * Liquipedia pages also carry a dated gallery, which is where an
+ * era-appropriate photograph actually lives. This prefers a photo taken at
+ * the event itself, then one from the same year, then the nearest available —
+ * and records which it used and how far off it is, so a page can say when the
+ * picture is from rather than implying it is contemporary.
+ *
  * LICENSING — different from team logos, and worth reading.
  *
  * Team logos are trademarks used to identify a team. These are photographs of
- * real people, usually taken by event photographers, and Liquipedia's own
- * file pages carry per-image licence terms that vary. The script records each
- * file's stated licence and author where the API exposes them, and flags any
- * photo whose terms it could not read, so the decision to publish is made
- * per-image rather than in bulk.
+ * real people, usually taken by event photographers, with per-file terms.
+ *
+ * A first version read licences from the imageinfo API's `extmetadata`, which
+ * returned nothing for all 55 photos in the first TI8 run — not because they
+ * lack licences, but because `extmetadata` comes from the CommonsMetadata
+ * extension, which Liquipedia does not appear to run. Fifty-five false alarms
+ * from one wrong assumption. Licences now come from each File: page's own
+ * wikitext.
+ *
+ * Worth knowing before publishing any of these: many infobox images carry the
+ * comment "the copyright holder of the picture needs to send the picture and
+ * permission to use it to photos@liquipedia.net", which suggests Liquipedia
+ * hosts them by permission granted to Liquipedia rather than under a licence
+ * that travels. Permission to them is not permission to us. Read what each
+ * File: page actually says before treating any of this as redistributable.
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { fetchJsonCached, USER_AGENT } from './lib/http.ts';
+import { loadEvent } from './lib/events.ts';
 
 const DOTA_API = 'https://liquipedia.net/dota2/api.php';
 const COMMONS_API = 'https://liquipedia.net/commons/api.php';
@@ -71,17 +94,7 @@ interface WikitextResponse {
 
 interface ImageInfoResponse {
   query?: {
-    pages?: Record<
-      string,
-      {
-        missing?: string;
-        imageinfo?: {
-          url: string;
-          thumburl?: string;
-          extmetadata?: Record<string, { value?: string }>;
-        }[];
-      }
-    >;
+    pages?: Record<string, { missing?: string; imageinfo?: { url: string; thumburl?: string }[] }>;
   };
   error?: { info: string };
 }
@@ -101,10 +114,100 @@ async function fetchPlayerWikitext(title: string, cacheDir: string): Promise<str
   return page.revisions?.[0]?.slots.main['*'] ?? null;
 }
 
-function imageField(wikitext: string): string | null {
-  const match = /\|\s*image\s*=\s*([^|\n}]+)/i.exec(wikitext);
-  const value = match?.[1]?.trim();
-  return value && !/^\s*$/.test(value) ? value : null;
+interface PhotoCandidate {
+  file: string;
+  /** Year the photograph was taken, where the filename or caption states one. */
+  year: number | null;
+  caption: string | null;
+  origin: 'infobox' | 'gallery';
+}
+
+/**
+ * Every photograph a player's page offers, with the year where it is stated.
+ *
+ * Two traps here, both found by comparing real pages.
+ *
+ * The infobox value often carries an HTML comment:
+ *
+ *     |image=SumaiL 2025 PGL Wallachia Season 3.jpg<!--the copyright holder…-->
+ *
+ * Reading to the next pipe swallows the comment into the filename, the lookup
+ * misses, and the player silently gets a placeholder despite having a photo.
+ *
+ * More importantly, the infobox photo is the player's CURRENT one — Fly's is
+ * from 2026. Putting that on a 2018 page is the same error as rendering Evil
+ * Geniuses as "Shopify Rebellion". The dated gallery below it is where an
+ * era-appropriate photograph actually lives.
+ */
+function photoCandidates(wikitext: string): PhotoCandidate[] {
+  const candidates: PhotoCandidate[] = [];
+  const yearOf = (text: string): number | null => {
+    const years = [...text.matchAll(/\b(19[89]\d|20[0-4]\d)\b/g)].map((m) => Number(m[1]));
+    // Last wins: "SumaiL2 ESL Frankfurt 2015" — the trailing year is the event's.
+    return years.length ? years[years.length - 1]! : null;
+  };
+
+  // Stop at "<" so an HTML comment can never become part of the filename.
+  const infobox = /\|\s*image\s*=\s*([^|\n}<]+)/i.exec(wikitext)?.[1]?.trim();
+  if (infobox) {
+    candidates.push({ file: infobox, year: yearOf(infobox), caption: null, origin: 'infobox' });
+  }
+
+  // Gallery entries: "File name.jpg|Caption mentioning the event and year".
+  for (const line of wikitext.split('\n')) {
+    const match = /^\s*([^|\n<>[\]]+\.(?:jpe?g|png|webp|gif))\s*\|(.*)$/i.exec(line);
+    if (!match) continue;
+    const file = match[1]!.trim();
+    const caption = match[2]!.trim();
+    if (candidates.some((c) => c.file === file)) continue;
+    candidates.push({ file, year: yearOf(`${file} ${caption}`), caption: caption || null, origin: 'gallery' });
+  }
+  return candidates;
+}
+
+/**
+ * Picks the photograph closest to the event, preferring one taken at the
+ * event itself.
+ *
+ * The owner's instruction: "from that TI or if one is available from that
+ * year use that." So exact-event beats same-year beats nearest-year, and how
+ * far off the chosen photo is gets recorded rather than hidden — a reader
+ * looking at a 2018 page deserves to know when the picture is from 2021.
+ */
+function pickPhoto(
+  candidates: PhotoCandidate[],
+  eventYear: number,
+  eventName: string,
+): { choice: PhotoCandidate; reason: string } | null {
+  if (!candidates.length) return null;
+
+  const atEvent = candidates.find(
+    (c) =>
+      c.year === eventYear &&
+      new RegExp(eventName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(
+        `${c.file} ${c.caption ?? ''}`,
+      ),
+  );
+  if (atEvent) return { choice: atEvent, reason: 'taken at this event' };
+
+  const sameYear = candidates.filter((c) => c.year === eventYear);
+  if (sameYear.length) return { choice: sameYear[0]!, reason: `same year (${eventYear})` };
+
+  const dated = candidates.filter((c) => c.year != null);
+  if (dated.length) {
+    const nearest = dated.reduce((best, c) =>
+      Math.abs(c.year! - eventYear) < Math.abs(best.year! - eventYear) ? c : best,
+    );
+    const delta = nearest.year! - eventYear;
+    return {
+      choice: nearest,
+      reason: `nearest available (${nearest.year}, ${delta > 0 ? '+' : ''}${delta} years)`,
+    };
+  }
+
+  // Undated, so almost certainly the current infobox photo. Usable, but the
+  // manifest must say the year is unknown rather than implying it fits.
+  return { choice: candidates[0]!, reason: 'undated — year unknown' };
 }
 
 interface PhotoMeta {
@@ -114,11 +217,52 @@ interface PhotoMeta {
   credit: string | null;
 }
 
+/**
+ * A file's licence, read from its own File: page.
+ *
+ * The first version of this read `extmetadata` from the imageinfo API, which
+ * returned nothing for all 55 photos in the first TI8 run. That is not
+ * Liquipedia stating "no licence" — `extmetadata` comes from the
+ * CommonsMetadata extension, which their wiki does not appear to run, so the
+ * field is simply absent. Reporting 55 photos as licence-unknown on that
+ * basis was a false alarm generated entirely by this script.
+ *
+ * The File: page's own wikitext is where the terms actually live.
+ */
+async function fetchFileLicence(
+  fileName: string,
+  cacheDir: string,
+): Promise<{ licence: string | null; author: string | null; raw: string | null }> {
+  const title = fileName.startsWith('File:') ? fileName : `File:${fileName}`;
+  const url =
+    `${COMMONS_API}?action=query&prop=revisions&rvprop=content&rvslots=main&format=json` +
+    `&titles=${encodeURIComponent(title)}`;
+  try {
+    const { data } = await fetchJsonCached<WikitextResponse>(url, {
+      cachePath: `${cacheDir}/file-pages/${fileName.replace(/[^A-Za-z0-9._-]/g, '_')}.json`,
+      minIntervalMs: MIN_INTERVAL_MS,
+    });
+    const page = Object.values(data.query?.pages ?? {})[0];
+    const wikitext = page?.revisions?.[0]?.slots.main['*'];
+    if (!wikitext) return { licence: null, author: null, raw: null };
+
+    const licence =
+      /\|\s*licen[cs]e\s*=\s*([^|\n}]+)/i.exec(wikitext)?.[1]?.trim() ??
+      /\{\{\s*(cc-[^|}\s]+|fairuse|permission[^|}\s]*)/i.exec(wikitext)?.[1]?.trim() ??
+      null;
+    const author =
+      /\|\s*(?:author|photographer|source)\s*=\s*([^|\n}]+)/i.exec(wikitext)?.[1]?.trim() ?? null;
+    return { licence, author, raw: wikitext.slice(0, 400) };
+  } catch {
+    return { licence: null, author: null, raw: null };
+  }
+}
+
 async function fetchPhotoMeta(fileName: string, cacheDir: string): Promise<PhotoMeta | null> {
   const title = fileName.startsWith('File:') ? fileName : `File:${fileName}`;
   const url =
     `${COMMONS_API}?action=query&titles=${encodeURIComponent(title)}` +
-    `&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=${THUMB_WIDTH}&format=json`;
+    `&prop=imageinfo&iiprop=url&iiurlwidth=${THUMB_WIDTH}&format=json`;
   const { data } = await fetchJsonCached<ImageInfoResponse>(url, {
     cachePath: `${cacheDir}/photo-meta/${fileName.replace(/[^A-Za-z0-9._-]/g, '_')}.json`,
     minIntervalMs: MIN_INTERVAL_MS,
@@ -128,13 +272,12 @@ async function fetchPhotoMeta(fileName: string, cacheDir: string): Promise<Photo
     if (page.missing !== undefined) return null;
     const info = page.imageinfo?.[0];
     if (!info) return null;
-    const meta = info.extmetadata ?? {};
-    const strip = (v?: string) => (v ? v.replace(/<[^>]+>/g, '').trim() || null : null);
+    const licence = await fetchFileLicence(fileName, cacheDir);
     return {
       thumb_url: info.thumburl ?? info.url,
-      licence: strip(meta['LicenseShortName']?.value) ?? strip(meta['License']?.value),
-      author: strip(meta['Artist']?.value),
-      credit: strip(meta['Credit']?.value),
+      licence: licence.licence,
+      author: licence.author,
+      credit: licence.raw,
     };
   }
   return null;
@@ -201,6 +344,12 @@ interface PhotoRecord {
   /** "photo" or "placeholder" — every player has one of the two. */
   kind: 'photo' | 'placeholder';
   local_path: string;
+  /** Year the photograph was taken, where the source states one. */
+  photo_year: number | null;
+  /** Why this photo was chosen over the others on the player's page. */
+  photo_choice: string | null;
+  /** True when the photo is from a different year than the event. */
+  off_era: boolean;
   source_url: string | null;
   licence: string | null;
   author: string | null;
@@ -215,6 +364,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  const event = await loadEvent(key);
   const rosters = JSON.parse(
     await readFile(fileURLToPath(new URL(`../data/events/${key}.rosters.json`, import.meta.url)), 'utf8'),
   ) as { teams?: RosterTeam[]; rosters?: RosterTeam[] };
@@ -233,12 +383,13 @@ async function main(): Promise<void> {
   let withPhoto = 0;
   let placeheld = 0;
   const unclearLicence: string[] = [];
+  const offEraPhotos: string[] = [];
 
   for (const player of players) {
     const slug = `${player.handle.replace(/[^A-Za-z0-9._-]/g, '_')}${
       player.account_id ? `_${player.account_id}` : ''
     }`;
-    const base: Omit<PhotoRecord, 'kind' | 'local_path' | 'source_url' | 'licence' | 'author' | 'credit'> = {
+    const base: Pick<PhotoRecord, 'account_id' | 'handle' | 'team' | 'retrieved_at'> = {
       account_id: player.account_id ?? null,
       handle: player.handle,
       team: player.team,
@@ -246,22 +397,31 @@ async function main(): Promise<void> {
     };
 
     let meta: PhotoMeta | null = null;
+    let picked: { choice: PhotoCandidate; reason: string } | null = null;
     try {
       const wikitext = await fetchPlayerWikitext(player.page || player.handle, cacheDir);
-      const file = wikitext ? imageField(wikitext) : null;
-      if (file) meta = await fetchPhotoMeta(file, cacheDir);
+      if (wikitext) {
+        picked = pickPhoto(photoCandidates(wikitext), event.year, event.name);
+        if (picked) meta = await fetchPhotoMeta(picked.choice.file, cacheDir);
+      }
     } catch (error) {
       console.log(`  ! ${player.handle}: lookup failed (${(error as Error).message}) — using placeholder`);
     }
 
-    if (meta) {
+    if (meta && picked) {
       try {
-        const name = `${slug}.png`;
+        const ext = /\.([a-z0-9]+)$/i.exec(meta.thumb_url)?.[1]?.toLowerCase() ?? 'png';
+        const name = `${slug}.${ext}`;
         const size = await download(meta.thumb_url, `${photoDir}${name}`);
+        const year = picked.choice.year;
+        const offEra = year != null && year !== event.year;
         records.push({
           ...base,
           kind: 'photo',
           local_path: `data/assets/players/${name}`,
+          photo_year: year,
+          photo_choice: picked.reason,
+          off_era: offEra,
           source_url: meta.thumb_url,
           licence: meta.licence,
           author: meta.author,
@@ -269,10 +429,10 @@ async function main(): Promise<void> {
         });
         withPhoto += 1;
         if (!meta.licence) unclearLicence.push(player.handle);
+        if (offEra || year == null) offEraPhotos.push(`${player.handle} — ${picked.reason}`);
         console.log(
-          `  ${player.handle.padEnd(16)} photo ${(size / 1024).toFixed(1).padStart(6)} KB  ${
-            meta.licence ?? 'LICENCE NOT STATED'
-          }`,
+          `  ${player.handle.padEnd(16)} ${(size / 1024).toFixed(1).padStart(6)} KB  ` +
+            `${(picked.reason).padEnd(30)} ${meta.licence ?? 'licence unread'}`,
         );
         continue;
       } catch (error) {
@@ -286,6 +446,9 @@ async function main(): Promise<void> {
       ...base,
       kind: 'placeholder',
       local_path: `data/assets/players/placeholder/${name}`,
+      photo_year: null,
+      photo_choice: null,
+      off_era: false,
       source_url: null,
       licence: null,
       author: null,
@@ -311,7 +474,9 @@ async function main(): Promise<void> {
         _generated_by: 'scripts/fetch-player-photos.ts',
         _generated_at: new Date().toISOString(),
         event: key,
+        event_year: event.year,
         thumb_width: THUMB_WIDTH,
+        off_era_count: offEraPhotos.length,
         player_count: records.length,
         photo_count: withPhoto,
         placeholder_count: placeheld,
@@ -325,6 +490,13 @@ async function main(): Promise<void> {
 
   const pct = records.length ? Math.round((withPhoto / records.length) * 100) : 0;
   console.log(`\n${withPhoto} photo(s), ${placeheld} placeholder(s) — ${pct}% coverage`);
+  if (offEraPhotos.length) {
+    console.log(
+      `\n${offEraPhotos.length} photo(s) are NOT from ${event.year}. Usable, but the page should ` +
+        `say when the picture is from:`,
+    );
+    for (const p of offEraPhotos) console.log(`  ${p}`);
+  }
   if (unclearLicence.length) {
     console.log(`\n${unclearLicence.length} photo(s) have NO stated licence. Review before publishing:`);
     for (const h of unclearLicence) console.log(`  ${h}`);

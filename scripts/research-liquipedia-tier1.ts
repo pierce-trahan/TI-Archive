@@ -89,6 +89,23 @@ async function fetchRenderedHtml(page: string, cacheDir: string): Promise<string
   return html;
 }
 
+/**
+ * Every heading id on a page, in document order.
+ *
+ * Printed when a year's section can't be found. A page that organises its
+ * content differently is the likeliest cause, and guessing at the structure
+ * from the outside wastes a 30-second rate-limited request per attempt —
+ * far better to have the script say what is actually there.
+ */
+function headingIds(html: string): string[] {
+  const ids: string[] = [];
+  for (const match of html.matchAll(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi)) {
+    const id = /id="([^"]+)"/i.exec(match[0])?.[1];
+    if (id) ids.push(id);
+  }
+  return ids;
+}
+
 /** Isolates one year's section: from its heading to the next heading of any level. */
 function extractYearSection(html: string, year: string): string | null {
   const headingRe = new RegExp(`<h[1-6][^>]*id="${year}"[^>]*>[\\s\\S]*?</h[1-6]>`, 'i');
@@ -355,15 +372,27 @@ async function main(): Promise<void> {
     const debugPath = `${liquipediaDir}${page}.html`;
     await writeFile(debugPath, html, 'utf8');
 
+    let anyFound = false;
     for (const year of years) {
       const section = extractYearSection(html, year);
       if (!section) {
-        console.log(`  ${year}: no heading found — skipping (check ${debugPath})`);
+        console.log(`  ${year}: no heading found`);
         continue;
       }
+      anyFound = true;
       const parsed = parseRows(section, tier);
       console.log(`  ${year}: ${parsed.length} row(s)`);
       all.push(...parsed);
+    }
+
+    if (!anyFound) {
+      const ids = headingIds(html);
+      console.log(`\n  ${page} has no section for any requested year. Headings it does have (${ids.length}):`);
+      console.log(`    ${ids.slice(0, 60).join(', ') || '(none at all — the page may not use headings)'}`);
+      if (ids.length > 60) console.log(`    ...and ${ids.length - 60} more`);
+      const rowCount = [...html.matchAll(/<tr[^>]*>/gi)].length;
+      console.log(`  the page does contain ${rowCount} table row(s), so the data may be laid out another way.`);
+      console.log(`  full HTML: ${debugPath}\n`);
     }
   }
 

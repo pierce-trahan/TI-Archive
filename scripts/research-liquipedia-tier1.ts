@@ -106,29 +106,44 @@ function headingIds(html: string): string[] {
   return ids;
 }
 
+interface AllPagesResponse {
+  query?: { allpages?: { title: string }[] };
+  error?: { info: string };
+}
+
 /**
- * The page's own link to a year's subpage, e.g. "Tier_2_Tournaments/2018".
+ * Every subpage of a tier index, e.g. "Tier 2 Tournaments/2018".
  *
- * A tier index only keeps the most recent years inline and moves the rest to
- * subpages. Rather than guessing that convention — every wrong guess burns a
- * 30-second rate-limited request — this reads the link the index itself
- * provides. Restricted to subpages OF THIS PAGE, so an ordinary tournament
- * link that happens to contain the year can't be mistaken for one.
+ * A tier index keeps only its most recent years inline and moves the rest to
+ * subpages, but it links to them through the wiki's sidebar — which
+ * `action=parse` does not return, so there is no link in the HTML to follow.
+ *
+ * Asking the API to list them is both authoritative and cheap: `list=allpages`
+ * is an ordinary query bound by the 1-per-2s limit, not the 30-second cap that
+ * `action=parse` carries. That matters — it means discovering the real page
+ * names costs one quick request instead of a series of 30-second guesses.
  */
-function findYearPageTitle(html: string, page: string, year: string): string | null {
-  const prefix = `${page}/`;
-  // The trailing group lets an "#anchor" or "?query" follow the page title
-  // without the link being skipped — the title itself is still group 1.
-  for (const match of html.matchAll(/href="\/dota2\/([^"#?]+)(?:[#?][^"]*)?"/gi)) {
-    let title: string;
-    try {
-      title = decodeURIComponent(match[1]!);
-    } catch {
-      continue; // malformed percent-encoding; not a link we can follow
-    }
-    if (title.startsWith(prefix) && title.includes(year)) return title;
-  }
-  return null;
+async function listSubpages(page: string, cacheDir: string): Promise<string[]> {
+  // The API works in display titles (spaces), not URL titles (underscores).
+  const prefix = `${page.replace(/_/g, ' ')}/`;
+  const url =
+    `${API}?action=query&list=allpages&apprefix=${encodeURIComponent(prefix)}` +
+    `&aplimit=500&format=json`;
+  const { data } = await fetchJsonCached<AllPagesResponse>(url, {
+    cachePath: `${cacheDir}/liquipedia/${page.replace(/[^A-Za-z0-9]/g, '_')}.subpages.json`,
+    minIntervalMs: 2000,
+  });
+  if (data.error) throw new Error(`subpage listing for ${page} -> ${data.error.info}`);
+  return (data.query?.allpages ?? []).map((p) => p.title);
+}
+
+/** The subpage covering a given year, from a list of real page titles. */
+function pickYearSubpage(subpages: string[], year: string): string | null {
+  // Exact match first ("Tier 2 Tournaments/2018") so a page like
+  // ".../2018 Season Recap" can't win over the year's own page.
+  const exact = subpages.find((t) => t.split('/').at(-1)?.trim() === year);
+  if (exact) return exact;
+  return subpages.find((t) => t.includes(year)) ?? null;
 }
 
 /** Isolates one year's section: from its heading to the next heading of any level. */
@@ -400,19 +415,27 @@ async function main(): Promise<void> {
     const debugPath = `${liquipediaDir}${page}.html`;
     await writeFile(debugPath, html, 'utf8');
 
+    // Resolved lazily, and only once per tier — most tiers never need it.
+    let subpages: string[] | null = null;
+
     let anyFound = false;
     for (const year of years) {
       let section = extractYearSection(html, year);
       let sourcePage = page;
 
-      // Not on the index? The index links to the year's own subpage.
+      // Not on the index? Older years live on their own subpages.
       if (!section) {
-        const subTitle = findYearPageTitle(html, page, year);
+        if (subpages === null) {
+          subpages = await listSubpages(page, cacheDir);
+          console.log(`  ${page} has ${subpages.length} subpage(s)`);
+        }
+        const subTitle = pickYearSubpage(subpages, year);
         if (!subTitle) {
-          console.log(`  ${year}: not on this page, and it links to no subpage for that year`);
+          console.log(`  ${year}: not on the index, and no subpage covers it`);
+          if (subpages.length) console.log(`    subpages seen: ${subpages.slice(0, 20).join(', ')}`);
           continue;
         }
-        console.log(`  ${year}: not on the index — following its own link to "${subTitle}"`);
+        console.log(`  ${year}: not on the index — reading subpage "${subTitle}"`);
         const subHtml = await fetchRenderedHtml(subTitle, cacheDir);
         await writeFile(`${liquipediaDir}${subTitle.replace(/\//g, '_')}.html`, subHtml, 'utf8');
         sourcePage = subTitle;

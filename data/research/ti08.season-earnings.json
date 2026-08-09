@@ -1,0 +1,4822 @@
+{
+  "_note": "Season earnings per team, read from each team's own Liquipedia Results page. season_usd covers the window between the previous International and this one and EXCLUDES The International itself; ti_usd is that event alone. Figures are Liquipedia's stated amounts, not derived. A row showing \"-\" earned nothing and counts as zero; a row whose amount could not be read is listed in `unpriced` and counts as nothing at all, because unknown and zero must not look the same.",
+  "_whose_money": "A Results page belongs to the organisation, so a team that changed players mid-season still shows one continuous history. The money is the org's, not that specific five.",
+  "_attribution": "Team results and prize data from Liquipedia, licensed CC-BY-SA 3.0.",
+  "_generated_by": "scripts/ingest-team-results.ts",
+  "_generated_at": "2026-08-09T22:07:08.106Z",
+  "event": "ti08",
+  "season_window": {
+    "from_exclusive": "2017-08-12",
+    "to_inclusive": "2018-08-25"
+  },
+  "teams": [
+    {
+      "team": "OG",
+      "page": "OG/Results",
+      "found": true,
+      "season_usd": 399500,
+      "ti_usd": 11234158,
+      "rows_in_window": [
+        {
+          "date": "2018-08-25",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 11234158,
+          "prize_readable": true,
+          "prize_displayed": "$11,234,158"
+        },
+        {
+          "date": "2018-07-28",
+          "place": null,
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": 2500,
+          "prize_readable": true,
+          "prize_displayed": "$2,500"
+        },
+        {
+          "date": "2018-06-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-15",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: Europe Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/Europe/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-05-25",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 34000,
+          "prize_readable": true,
+          "prize_displayed": "$34,000"
+        },
+        {
+          "date": "2018-05-18",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 25000,
+          "prize_readable": true,
+          "prize_displayed": "$25,000"
+        },
+        {
+          "date": "2018-05-05",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-01",
+          "place": "13th - 14th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-03-23",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-03-18",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-07",
+          "place": "9th - 11th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-22",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2018-02-17",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-16",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-21",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "Galaxy Battles II: Emerging Worlds",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+          "prize_usd": 45000,
+          "prize_readable": true,
+          "prize_displayed": "$45,000"
+        },
+        {
+          "date": "2018-01-13",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-11",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-06",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 37500,
+          "prize_readable": true,
+          "prize_displayed": "$37,500"
+        },
+        {
+          "date": "2017-12-21",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-17",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 36000,
+          "prize_readable": true,
+          "prize_displayed": "$36,000"
+        },
+        {
+          "date": "2017-12-10",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "MDL Macau 2017",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+          "prize_usd": 125000,
+          "prize_readable": true,
+          "prize_displayed": "$125,000"
+        },
+        {
+          "date": "2017-11-24",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "Midas Mode",
+          "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+          "prize_usd": 4500,
+          "prize_readable": true,
+          "prize_displayed": "$4,500"
+        },
+        {
+          "date": "2017-11-16",
+          "place": "5th",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Europe & CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Europe_CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-13",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-04",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-26",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-22",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-20",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 11633658
+    },
+    {
+      "team": "PSG.LGD",
+      "page": "PSG.LGD/Results",
+      "found": true,
+      "season_usd": 1357321,
+      "ti_usd": 4085148,
+      "rows_in_window": [
+        {
+          "date": "2018-08-25",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 4085148,
+          "prize_readable": true,
+          "prize_displayed": "$4,085,148"
+        },
+        {
+          "date": "2018-06-10",
+          "place": "3rd",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 150000,
+          "prize_readable": true,
+          "prize_displayed": "$150,000"
+        },
+        {
+          "date": "2018-05-20",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 400000,
+          "prize_readable": true,
+          "prize_displayed": "$400,000"
+        },
+        {
+          "date": "2018-05-06",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 500000,
+          "prize_readable": true,
+          "prize_displayed": "$500,000"
+        },
+        {
+          "date": "2018-04-23",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-20",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2018 S1: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+          "prize_usd": 9532,
+          "prize_readable": true,
+          "prize_displayed": "$9,532"
+        },
+        {
+          "date": "2018-04-18",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-07",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 135000,
+          "prize_readable": true,
+          "prize_displayed": "$135,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-22",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-02-11",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-04",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 4",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-07",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-23",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-15",
+          "place": "8th - 9th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 6000,
+          "prize_readable": true,
+          "prize_displayed": "$6,000"
+        },
+        {
+          "date": "2017-12-09",
+          "place": "8th",
+          "tier": "Tier 2",
+          "tournament": "MDL Macau 2017",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+          "prize_usd": 9000,
+          "prize_readable": true,
+          "prize_displayed": "$9,000"
+        },
+        {
+          "date": "2017-11-20",
+          "place": "9th - 10th",
+          "tier": "Tier 2",
+          "tournament": "Perfect World Masters",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+          "prize_usd": 3000,
+          "prize_readable": true,
+          "prize_displayed": "$3,000"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-10",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2017 S2: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+          "prize_usd": 9789,
+          "prize_readable": true,
+          "prize_displayed": "$9,789"
+        },
+        {
+          "date": "2017-10-22",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "PGL Open Bucharest",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+          "prize_usd": 65000,
+          "prize_readable": true,
+          "prize_displayed": "$65,000"
+        },
+        {
+          "date": "2017-10-07",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-01",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-20",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 5442469
+    },
+    {
+      "team": "Virtus.pro",
+      "page": "Virtus.pro/Results",
+      "found": true,
+      "season_usd": 2565000,
+      "ti_usd": 1148948,
+      "rows_in_window": [
+        {
+          "date": "2018-08-23",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 1148948,
+          "prize_readable": true,
+          "prize_displayed": "$1,148,948"
+        },
+        {
+          "date": "2018-06-10",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 225000,
+          "prize_readable": true,
+          "prize_displayed": "$225,000"
+        },
+        {
+          "date": "2018-05-27",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 500000,
+          "prize_readable": true,
+          "prize_displayed": "$500,000"
+        },
+        {
+          "date": "2018-05-05",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 70000,
+          "prize_readable": true,
+          "prize_displayed": "$70,000"
+        },
+        {
+          "date": "2018-04-07",
+          "place": "3rd",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 105000,
+          "prize_readable": true,
+          "prize_displayed": "$105,000"
+        },
+        {
+          "date": "2018-03-11",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 500000,
+          "prize_readable": true,
+          "prize_displayed": "$500,000"
+        },
+        {
+          "date": "2018-02-27",
+          "place": null,
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-25",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 400000,
+          "prize_readable": true,
+          "prize_displayed": "$400,000"
+        },
+        {
+          "date": "2018-01-26",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2017-12-17",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 120000,
+          "prize_readable": true,
+          "prize_displayed": "$120,000"
+        },
+        {
+          "date": "2017-12-10",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "MDL Macau 2017",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2017-12-02",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 45000,
+          "prize_readable": true,
+          "prize_displayed": "$45,000"
+        },
+        {
+          "date": "2017-11-22",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Adrenaline Cyber League",
+          "tournament_url": "https://liquipedia.net/dota2/Adrenaline_Cyber_League/2017",
+          "prize_usd": 25000,
+          "prize_readable": true,
+          "prize_displayed": "$25,000"
+        },
+        {
+          "date": "2017-11-16",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Europe & CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Europe_CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-04",
+          "place": "4th",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 25000,
+          "prize_readable": true,
+          "prize_displayed": "$25,000"
+        },
+        {
+          "date": "2017-10-29",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 500000,
+          "prize_readable": true,
+          "prize_displayed": "$500,000"
+        },
+        {
+          "date": "2017-10-14",
+          "place": "3rd - 4th",
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-27",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-20",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 3713948
+    },
+    {
+      "team": "Team Liquid",
+      "page": "Team_Liquid/Results",
+      "found": true,
+      "season_usd": 1861500,
+      "ti_usd": 1787252,
+      "rows_in_window": [
+        {
+          "date": "2018-08-24",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 1787252,
+          "prize_readable": true,
+          "prize_displayed": "$1,787,252"
+        },
+        {
+          "date": "2018-06-10",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 555000,
+          "prize_readable": true,
+          "prize_displayed": "$555,000"
+        },
+        {
+          "date": "2018-05-24",
+          "place": "7th - 9th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 16000,
+          "prize_readable": true,
+          "prize_displayed": "$16,000"
+        },
+        {
+          "date": "2018-05-06",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-04-06",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 67500,
+          "prize_readable": true,
+          "prize_displayed": "$67,500"
+        },
+        {
+          "date": "2018-03-24",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-03-10",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2018-02-25",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 120000,
+          "prize_readable": true,
+          "prize_displayed": "$120,000"
+        },
+        {
+          "date": "2018-02-04",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 4",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4",
+          "prize_usd": 135000,
+          "prize_readable": true,
+          "prize_displayed": "$135,000"
+        },
+        {
+          "date": "2018-01-28",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 80000,
+          "prize_readable": true,
+          "prize_displayed": "$80,000"
+        },
+        {
+          "date": "2017-12-03",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2017-11-26",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "Midas Mode",
+          "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+          "prize_usd": 18000,
+          "prize_readable": true,
+          "prize_displayed": "$18,000"
+        },
+        {
+          "date": "2017-11-16",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Europe & CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Europe_CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 125000,
+          "prize_readable": true,
+          "prize_displayed": "$125,000"
+        },
+        {
+          "date": "2017-10-29",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 3",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+          "prize_usd": 135000,
+          "prize_readable": true,
+          "prize_displayed": "$135,000"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 3648752
+    },
+    {
+      "team": "Evil Geniuses",
+      "page": "Evil_Geniuses/Results",
+      "found": true,
+      "season_usd": 633500,
+      "ti_usd": 2680879,
+      "rows_in_window": [
+        {
+          "date": "2018-08-25",
+          "place": "3rd",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 2680879,
+          "prize_readable": true,
+          "prize_displayed": "$2,680,879"
+        },
+        {
+          "date": "2018-07-29",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 9",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2018-06-25",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-16",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: North America Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-06",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 22500,
+          "prize_readable": true,
+          "prize_displayed": "$22,500"
+        },
+        {
+          "date": "2018-05-23",
+          "place": "10th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 8000,
+          "prize_readable": true,
+          "prize_displayed": "$8,000"
+        },
+        {
+          "date": "2018-05-11",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "GESC: Thailand Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018",
+          "prize_usd": 17500,
+          "prize_readable": true,
+          "prize_displayed": "$17,500"
+        },
+        {
+          "date": "2018-04-05",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-18",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "GESC: Indonesia Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018",
+          "prize_usd": 110000,
+          "prize_readable": true,
+          "prize_displayed": "$110,000"
+        },
+        {
+          "date": "2018-03-09",
+          "place": "5th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-02-24",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 50000,
+          "prize_readable": true,
+          "prize_displayed": "$50,000"
+        },
+        {
+          "date": "2018-02-16",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-08",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-27",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2018-01-21",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "Galaxy Battles II: Emerging Worlds",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+          "prize_usd": 85000,
+          "prize_readable": true,
+          "prize_displayed": "$85,000"
+        },
+        {
+          "date": "2018-01-05",
+          "place": "5th - 8th",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 12000,
+          "prize_readable": true,
+          "prize_displayed": "$12,000"
+        },
+        {
+          "date": "2017-12-16",
+          "place": "6th - 7th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 9000,
+          "prize_readable": true,
+          "prize_displayed": "$9,000"
+        },
+        {
+          "date": "2017-12-03",
+          "place": "3rd",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 100000,
+          "prize_readable": true,
+          "prize_displayed": "$100,000"
+        },
+        {
+          "date": "2017-11-24",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "Midas Mode",
+          "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+          "prize_usd": 4500,
+          "prize_readable": true,
+          "prize_displayed": "$4,500"
+        },
+        {
+          "date": "2017-11-13",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-28",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2017-10-22",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "PGL Open Bucharest",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-23",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 3314379
+    },
+    {
+      "team": "Team Secret",
+      "page": "Team_Secret/Results",
+      "found": true,
+      "season_usd": 1335000,
+      "ti_usd": 1148948,
+      "rows_in_window": [
+        {
+          "date": "2018-08-24",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 1148948,
+          "prize_readable": true,
+          "prize_displayed": "$1,148,948"
+        },
+        {
+          "date": "2018-06-09",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 120000,
+          "prize_readable": true,
+          "prize_displayed": "$120,000"
+        },
+        {
+          "date": "2018-05-19",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2018-05-12",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "GESC: Thailand Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-05-04",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-04-03",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 125000,
+          "prize_readable": true,
+          "prize_displayed": "$125,000"
+        },
+        {
+          "date": "2018-03-09",
+          "place": "5th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-02-23",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 50000,
+          "prize_readable": true,
+          "prize_displayed": "$50,000"
+        },
+        {
+          "date": "2018-01-27",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2018-01-07",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 108000,
+          "prize_readable": true,
+          "prize_displayed": "$108,000"
+        },
+        {
+          "date": "2017-12-03",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 500000,
+          "prize_readable": true,
+          "prize_displayed": "$500,000"
+        },
+        {
+          "date": "2017-11-29",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-24",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "Perfect World Masters",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+          "prize_usd": 12000,
+          "prize_readable": true,
+          "prize_displayed": "$12,000"
+        },
+        {
+          "date": "2017-11-16",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Europe & CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Europe_CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-29",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2017-10-21",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "PGL Open Bucharest",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 3",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2017-09-26",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: Europe Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/Europe",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 2483948
+    },
+    {
+      "team": "OpTic Gaming",
+      "page": "OpTic_Gaming/Results",
+      "found": true,
+      "season_usd": 592900,
+      "ti_usd": 638333,
+      "rows_in_window": [
+        {
+          "date": "2018-08-23",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 638333,
+          "prize_readable": true,
+          "prize_displayed": "$638,333"
+        },
+        {
+          "date": "2018-08-07",
+          "place": null,
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-07-28",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 9",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+          "prize_usd": 7100,
+          "prize_readable": true,
+          "prize_displayed": "$7,100"
+        },
+        {
+          "date": "2018-06-25",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-09",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2018-05-27",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-04-25",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: North American Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-15",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "StarLadder ImbaTV Invitational Season 5",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5",
+          "prize_usd": 135000,
+          "prize_readable": true,
+          "prize_displayed": "$135,000"
+        },
+        {
+          "date": "2018-04-05",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-03-26",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-24",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Thailand Dota2 Minor - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-10",
+          "place": "5th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-02-21",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-02-16",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-26",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 North America Last Chance Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/North_America/Last_Chance_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-19",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-10",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-16",
+          "place": "6th - 7th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 9000,
+          "prize_readable": true,
+          "prize_displayed": "$9,000"
+        },
+        {
+          "date": "2017-12-10",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "ROG MASTERS 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ROG_MASTERS/2017",
+          "prize_usd": 58800,
+          "prize_readable": true,
+          "prize_displayed": "$58,800"
+        },
+        {
+          "date": "2017-11-29",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-25",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "Midas Mode",
+          "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+          "prize_usd": 18000,
+          "prize_readable": true,
+          "prize_displayed": "$18,000"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-08",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ROG MASTERS 2017 Americas Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ROG_MASTERS/2017/Americas_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-14",
+          "place": "3rd - 4th",
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 1231233
+    },
+    {
+      "team": "Vici Gaming",
+      "page": "Vici_Gaming/Results",
+      "found": true,
+      "season_usd": 783045,
+      "ti_usd": 382983,
+      "rows_in_window": [
+        {
+          "date": "2018-08-22",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 382983,
+          "prize_readable": true,
+          "prize_displayed": "$382,983"
+        },
+        {
+          "date": "2018-06-09",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2018-05-23",
+          "place": "10th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 8000,
+          "prize_readable": true,
+          "prize_displayed": "$8,000"
+        },
+        {
+          "date": "2018-05-20",
+          "place": "3rd",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 130000,
+          "prize_readable": true,
+          "prize_displayed": "$130,000"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2018 S1: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+          "prize_usd": 52424,
+          "prize_readable": true,
+          "prize_displayed": "$52,424"
+        },
+        {
+          "date": "2018-04-06",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 67500,
+          "prize_readable": true,
+          "prize_displayed": "$67,500"
+        },
+        {
+          "date": "2018-03-24",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-07",
+          "place": "12th - 14th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-28",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-25",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-02-10",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-26",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-07",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 69000,
+          "prize_readable": true,
+          "prize_displayed": "$69,000"
+        },
+        {
+          "date": "2017-12-31",
+          "place": "1st",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/9",
+          "prize_usd": 1573,
+          "prize_readable": true,
+          "prize_displayed": "$1,573"
+        },
+        {
+          "date": "2017-12-23",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-26",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Perfect World Masters",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "4th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2017 S2: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+          "prize_usd": 12048,
+          "prize_readable": true,
+          "prize_displayed": "$12,048"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 65000,
+          "prize_readable": true,
+          "prize_displayed": "$65,000"
+        },
+        {
+          "date": "2017-10-14",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 3",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+          "prize_usd": 7500,
+          "prize_readable": true,
+          "prize_displayed": "$7,500"
+        },
+        {
+          "date": "2017-10-08",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-01",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-19",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-16",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 1166028
+    },
+    {
+      "team": "Mineski",
+      "page": "Mineski/Results",
+      "found": true,
+      "season_usd": 774000,
+      "ti_usd": 382983,
+      "rows_in_window": [
+        {
+          "date": "2018-08-21",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 382983,
+          "prize_readable": true,
+          "prize_displayed": "$382,983"
+        },
+        {
+          "date": "2018-06-06",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 22500,
+          "prize_readable": true,
+          "prize_displayed": "$22,500"
+        },
+        {
+          "date": "2018-05-25",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 34000,
+          "prize_readable": true,
+          "prize_displayed": "$34,000"
+        },
+        {
+          "date": "2018-05-19",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 40000,
+          "prize_readable": true,
+          "prize_displayed": "$40,000"
+        },
+        {
+          "date": "2018-05-05",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-04-07",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 370000,
+          "prize_readable": true,
+          "prize_displayed": "$370,000"
+        },
+        {
+          "date": "2018-03-14",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-07",
+          "place": "12th - 14th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-21",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-02-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-08",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-04",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 4",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-01-25",
+          "place": "9th - 12th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 4000,
+          "prize_readable": true,
+          "prize_displayed": "$4,000"
+        },
+        {
+          "date": "2018-01-17",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-05",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 37500,
+          "prize_readable": true,
+          "prize_displayed": "$37,500"
+        },
+        {
+          "date": "2017-11-28",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-24",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "Perfect World Masters",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+          "prize_usd": 6000,
+          "prize_readable": true,
+          "prize_displayed": "$6,000"
+        },
+        {
+          "date": "2017-11-18",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-22",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "PGL Open Bucharest",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+          "prize_usd": 130000,
+          "prize_readable": true,
+          "prize_displayed": "$130,000"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 3",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-27",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-22",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-17",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 1156983
+    },
+    {
+      "team": "VGJ.Storm",
+      "page": "VGJ.Storm/Results",
+      "found": true,
+      "season_usd": 380250,
+      "ti_usd": 638333,
+      "rows_in_window": [
+        {
+          "date": "2018-08-23",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 638333,
+          "prize_readable": true,
+          "prize_displayed": "$638,333"
+        },
+        {
+          "date": "2018-08-07",
+          "place": null,
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-07-29",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 9",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+          "prize_usd": 15750,
+          "prize_readable": true,
+          "prize_displayed": "$15,750"
+        },
+        {
+          "date": "2018-06-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-17",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: North America Open Qualifier #2",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America/Open_Qualifier/2",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-16",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: North America Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/North_America/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-06",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 22500,
+          "prize_readable": true,
+          "prize_displayed": "$22,500"
+        },
+        {
+          "date": "2018-05-20",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-05-12",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "GESC: Thailand Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018",
+          "prize_usd": 111000,
+          "prize_readable": true,
+          "prize_displayed": "$111,000"
+        },
+        {
+          "date": "2018-04-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: North American Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-26",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "GESC: Thailand Dota2 Minor - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-14",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-19",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-25",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 North America Last Chance Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/North_America/Last_Chance_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-18",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-14",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-10",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-22",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-09",
+          "place": "9th",
+          "tier": "Tier 2",
+          "tournament": "MDL Macau 2017",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+          "prize_usd": 9000,
+          "prize_readable": true,
+          "prize_displayed": "$9,000"
+        },
+        {
+          "date": "2017-11-28",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-25",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Midas Mode",
+          "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+          "prize_usd": 7500,
+          "prize_readable": true,
+          "prize_displayed": "$7,500"
+        },
+        {
+          "date": "2017-11-16",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-09",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-03",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ROG MASTERS 2017 Americas Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ROG_MASTERS/2017/Americas_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-22",
+          "place": "1st",
+          "tier": "Tier 3",
+          "tournament": "World Cyber Arena 2017 North America Finals",
+          "tournament_url": "https://liquipedia.net/dota2/World_Cyber_Arena/2017/North_America_Qualifier",
+          "prize_usd": 14500,
+          "prize_readable": true,
+          "prize_displayed": "$14,500"
+        },
+        {
+          "date": "2017-09-27",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-24",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-23",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-21",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 North America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/North_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-17",
+          "place": "5th",
+          "tier": "Qualifier",
+          "tournament": "King’s Cup: America",
+          "tournament_url": "https://liquipedia.net/dota2/King%27s_Cup/America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 1018583
+    },
+    {
+      "team": "Newbee",
+      "page": "Newbee/Results",
+      "found": true,
+      "season_usd": 881117,
+      "ti_usd": 127661,
+      "rows_in_window": [
+        {
+          "date": "2018-08-20",
+          "place": "13th - 16th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 127661,
+          "prize_readable": true,
+          "prize_displayed": "$127,661"
+        },
+        {
+          "date": "2018-06-07",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2018-05-23",
+          "place": "10th - 12th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 8000,
+          "prize_readable": true,
+          "prize_displayed": "$8,000"
+        },
+        {
+          "date": "2018-05-19",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 85000,
+          "prize_readable": true,
+          "prize_displayed": "$85,000"
+        },
+        {
+          "date": "2018-05-02",
+          "place": "9th - 10th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2018 S1: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+          "prize_usd": 22240,
+          "prize_readable": true,
+          "prize_displayed": "$22,240"
+        },
+        {
+          "date": "2018-04-03",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-03-24",
+          "place": "4th",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-03-10",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2018-02-28",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-23",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2018-02-11",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-04",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 4",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-01-28",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 160000,
+          "prize_readable": true,
+          "prize_displayed": "$160,000"
+        },
+        {
+          "date": "2017-12-31",
+          "place": "2nd",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/9",
+          "prize_usd": 787,
+          "prize_readable": true,
+          "prize_displayed": "$787"
+        },
+        {
+          "date": "2017-12-02",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 45000,
+          "prize_readable": true,
+          "prize_displayed": "$45,000"
+        },
+        {
+          "date": "2017-11-26",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "Perfect World Masters",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+          "prize_usd": 150000,
+          "prize_readable": true,
+          "prize_displayed": "$150,000"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-14",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2017 S2: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+          "prize_usd": 22590,
+          "prize_readable": true,
+          "prize_displayed": "$22,590"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2017-10-29",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 90000,
+          "prize_readable": true,
+          "prize_displayed": "$90,000"
+        },
+        {
+          "date": "2017-10-14",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder i-League Invitational Season 3",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+          "prize_usd": 7500,
+          "prize_readable": true,
+          "prize_displayed": "$7,500"
+        },
+        {
+          "date": "2017-10-08",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 1008778
+    },
+    {
+      "team": "VGJ.Thunder",
+      "page": "VGJ.Thunder/Results",
+      "found": true,
+      "season_usd": 611939,
+      "ti_usd": 127661,
+      "rows_in_window": [
+        {
+          "date": "2018-08-20",
+          "place": "13th - 16th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 127661,
+          "prize_readable": true,
+          "prize_displayed": "$127,661"
+        },
+        {
+          "date": "2018-06-06",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 22500,
+          "prize_readable": true,
+          "prize_displayed": "$22,500"
+        },
+        {
+          "date": "2018-04-24",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Thailand Dota2 Minor - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-20",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2018 S1: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+          "prize_usd": 6354,
+          "prize_readable": true,
+          "prize_displayed": "$6,354"
+        },
+        {
+          "date": "2018-04-18",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-15",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "StarLadder ImbaTV Invitational Season 5",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2018-04-03",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-18",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "GESC: Indonesia Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018",
+          "prize_usd": 65000,
+          "prize_readable": true,
+          "prize_displayed": "$65,000"
+        },
+        {
+          "date": "2018-03-11",
+          "place": "2nd",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-02-11",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-25",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 8000,
+          "prize_readable": true,
+          "prize_displayed": "$8,000"
+        },
+        {
+          "date": "2018-01-21",
+          "place": "1st",
+          "tier": "Tier 1",
+          "tournament": "Galaxy Battles II: Emerging Worlds",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+          "prize_usd": 200000,
+          "prize_readable": true,
+          "prize_displayed": "$200,000"
+        },
+        {
+          "date": "2018-01-11",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-11",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-07",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-31",
+          "place": "3rd",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/9",
+          "prize_usd": 472,
+          "prize_readable": true,
+          "prize_displayed": "$472"
+        },
+        {
+          "date": "2017-12-30",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-17",
+          "place": "1st",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/8",
+          "prize_usd": 1513,
+          "prize_readable": true,
+          "prize_displayed": "$1,513"
+        },
+        {
+          "date": "2017-11-23",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "China Top 2017",
+          "tournament_url": "https://liquipedia.net/dota2/China_Top/2017",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-14",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2017 S2: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+          "prize_usd": 15060,
+          "prize_readable": true,
+          "prize_displayed": "$15,060"
+        },
+        {
+          "date": "2017-11-08",
+          "place": "5th",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-21",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "PGL Open Bucharest",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "3rd",
+          "tier": "Tier 3",
+          "tournament": "World Cyber Arena 2017 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/World_Cyber_Arena/2017/China_Qualifier",
+          "prize_usd": 3040,
+          "prize_readable": true,
+          "prize_displayed": "$3,040"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-19",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-16",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-09",
+          "place": "17th - 30th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 739600
+    },
+    {
+      "team": "TNC Predator",
+      "page": "TNC_Predator/Results",
+      "found": true,
+      "season_usd": 460935,
+      "ti_usd": 127661,
+      "rows_in_window": [
+        {
+          "date": "2018-08-20",
+          "place": "13th - 16th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 127661,
+          "prize_readable": true,
+          "prize_displayed": "$127,661"
+        },
+        {
+          "date": "2018-06-25",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-07",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "China Dota2 Supermajor",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2018-05-18",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 25000,
+          "prize_readable": true,
+          "prize_displayed": "$25,000"
+        },
+        {
+          "date": "2018-04-25",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: Southeast Asian Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-20",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "GESC: Thailand Dota2 Minor - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-06",
+          "place": "4th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 85000,
+          "prize_readable": true,
+          "prize_displayed": "$85,000"
+        },
+        {
+          "date": "2018-03-14",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-09",
+          "place": "5th - 8th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-02-14",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-12",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-25",
+          "place": "9th - 12th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 4000,
+          "prize_readable": true,
+          "prize_displayed": "$4,000"
+        },
+        {
+          "date": "2018-01-21",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "Galaxy Battles II: Emerging Worlds",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-01-15",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "World Electronic Sports Games 2017 Philippines Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/World_Electronic_Sports_Games/2017/APAC/Philippines",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-10",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "MDL Macau 2017",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+          "prize_usd": 70000,
+          "prize_readable": true,
+          "prize_displayed": "$70,000"
+        },
+        {
+          "date": "2017-11-23",
+          "place": "1st",
+          "tier": "Tier 2",
+          "tournament": "China Top 2017",
+          "tournament_url": "https://liquipedia.net/dota2/China_Top/2017",
+          "prize_usd": 151935,
+          "prize_readable": true,
+          "prize_displayed": "$151,935"
+        },
+        {
+          "date": "2017-11-18",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-15",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-05",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Captains Draft 4.0: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-29",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ROG MASTERS 2017 APAC Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ROG_MASTERS/2017/APAC_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "1st",
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-26",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-22",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-17",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-11",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 588596
+    },
+    {
+      "team": "paiN Gaming",
+      "page": "paiN_Gaming/Results",
+      "found": true,
+      "season_usd": 507600,
+      "ti_usd": 63830,
+      "rows_in_window": [
+        {
+          "date": "2018-08-22",
+          "place": null,
+          "tier": "Showmatch",
+          "tournament": "Show Matches",
+          "tournament_url": "https://liquipedia.net/dota2/Show_Matches",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-08-18",
+          "place": "17th - 18th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 63830,
+          "prize_readable": true,
+          "prize_displayed": "$63,830"
+        },
+        {
+          "date": "2018-07-28",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 9",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+          "prize_usd": 8100,
+          "prize_readable": true,
+          "prize_displayed": "$8,100"
+        },
+        {
+          "date": "2018-06-23",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-16",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: South America Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/South_America/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-05-27",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 100000,
+          "prize_readable": true,
+          "prize_displayed": "$100,000"
+        },
+        {
+          "date": "2018-05-04",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "EPICENTER XL",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-19",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: South American Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-01",
+          "place": "15th - 16th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 10000,
+          "prize_readable": true,
+          "prize_displayed": "$10,000"
+        },
+        {
+          "date": "2018-03-22",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 7500,
+          "prize_readable": true,
+          "prize_displayed": "$7,500"
+        },
+        {
+          "date": "2018-03-18",
+          "place": "2nd",
+          "tier": "National",
+          "tournament": "World Electronic Sports Games 2017",
+          "tournament_url": "https://liquipedia.net/dota2/World_Electronic_Sports_Games/2017",
+          "prize_usd": 300000,
+          "prize_readable": true,
+          "prize_displayed": "$300,000"
+        },
+        {
+          "date": "2018-03-07",
+          "place": "12th - 14th",
+          "tier": "Tier 1",
+          "tournament": "The Bucharest Major",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-16",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-11",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-04",
+          "place": "1st",
+          "tier": "National",
+          "tournament": "WESG 2017 South America Finals",
+          "tournament_url": "https://liquipedia.net/dota2/World_Electronic_Sports_Games/2017/South_America",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2018-01-21",
+          "place": "5th - 6th",
+          "tier": "Tier 1",
+          "tournament": "Galaxy Battles II: Emerging Worlds",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-01-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-11",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-05",
+          "place": "5th - 8th",
+          "tier": "Tier 2",
+          "tournament": "Captains Draft 4.0",
+          "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+          "prize_usd": 12000,
+          "prize_readable": true,
+          "prize_displayed": "$12,000"
+        },
+        {
+          "date": "2017-12-22",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-20",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-04",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "World Electronic Sports Games 2017 Brazil Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/World_Electronic_Sports_Games/2017/Americas/Brazil",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-30",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-11",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau South America Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/South_America",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 571430
+    },
+    {
+      "team": "Fnatic",
+      "page": "Fnatic/Results",
+      "found": true,
+      "season_usd": 441596,
+      "ti_usd": 127661,
+      "rows_in_window": [
+        {
+          "date": "2018-08-20",
+          "place": "13th - 16th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 127661,
+          "prize_readable": true,
+          "prize_displayed": "$127,661"
+        },
+        {
+          "date": "2018-07-29",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 9",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+          "prize_usd": 20500,
+          "prize_readable": true,
+          "prize_displayed": "$20,500"
+        },
+        {
+          "date": "2018-06-24",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-05-27",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Birmingham 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+          "prize_usd": 70000,
+          "prize_readable": true,
+          "prize_displayed": "$70,000"
+        },
+        {
+          "date": "2018-05-12",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "GESC: Thailand Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018",
+          "prize_usd": 35000,
+          "prize_readable": true,
+          "prize_displayed": "$35,000"
+        },
+        {
+          "date": "2018-04-25",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: Southeast Asian Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "MDL Changsha Major: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-20",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "GESC: Thailand Dota2 Minor - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-15",
+          "place": "3rd - 4th",
+          "tier": "Tier 2",
+          "tournament": "StarLadder ImbaTV Invitational Season 5",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5",
+          "prize_usd": 30000,
+          "prize_readable": true,
+          "prize_displayed": "$30,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "DreamLeague Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+          "prize_usd": 70000,
+          "prize_readable": true,
+          "prize_displayed": "$70,000"
+        },
+        {
+          "date": "2018-03-17",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "GESC: Indonesia Dota2 Minor",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018",
+          "prize_usd": 17500,
+          "prize_readable": true,
+          "prize_displayed": "$17,500"
+        },
+        {
+          "date": "2018-03-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-25",
+          "place": "3rd - 4th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Katowice 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+          "prize_usd": 80000,
+          "prize_readable": true,
+          "prize_displayed": "$80,000"
+        },
+        {
+          "date": "2018-02-14",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-12",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-09",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-24",
+          "place": "9th - 12th",
+          "tier": "Tier 2",
+          "tournament": "ESL One Genting 2018",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+          "prize_usd": 4000,
+          "prize_readable": true,
+          "prize_displayed": "$4,000"
+        },
+        {
+          "date": "2018-01-18",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "GESC: Indonesia Dota2 Minor - Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-14",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-09",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-17",
+          "place": "2nd",
+          "tier": "Tier 2",
+          "tournament": "DOTA Summit 8",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+          "prize_usd": 60000,
+          "prize_readable": true,
+          "prize_displayed": "$60,000"
+        },
+        {
+          "date": "2017-12-01",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "DreamLeague Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2017-11-28",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-18",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 8 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-14",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "MDL Macau Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-12",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "DOTA Summit 8: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_Summit/8/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-04",
+          "place": "7th - 8th",
+          "tier": "Tier 2",
+          "tournament": "AMD SAPPHIRE Dota PIT League",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+          "prize_usd": 7500,
+          "prize_readable": true,
+          "prize_displayed": "$7,500"
+        },
+        {
+          "date": "2017-10-27",
+          "place": "7th - 8th",
+          "tier": "Tier 1",
+          "tournament": "ESL One Hamburg 2017",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+          "prize_usd": 20000,
+          "prize_readable": true,
+          "prize_displayed": "$20,000"
+        },
+        {
+          "date": "2017-10-22",
+          "place": "3rd",
+          "tier": "Tier 3",
+          "tournament": "The Major League",
+          "tournament_url": "https://liquipedia.net/dota2/The_Major_League/2017",
+          "prize_usd": 7096,
+          "prize_readable": true,
+          "prize_displayed": "$7,096"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-27",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-23",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-14",
+          "place": "7th - 8th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-11",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 Southeast Asia Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/Southeast_Asia",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 569257
+    },
+    {
+      "team": "Winstrike Team",
+      "page": "Winstrike_Team/Results",
+      "found": true,
+      "season_usd": 0,
+      "ti_usd": 382983,
+      "rows_in_window": [
+        {
+          "date": "2018-08-22",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 382983,
+          "prize_readable": true,
+          "prize_displayed": "$382,983"
+        },
+        {
+          "date": "2018-06-21",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 CIS Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/CIS",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 382983
+    },
+    {
+      "team": "Team Serenity",
+      "page": "Team_Serenity/Results",
+      "found": true,
+      "season_usd": 0,
+      "ti_usd": 382983,
+      "rows_in_window": [
+        {
+          "date": "2018-08-21",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 382983,
+          "prize_readable": true,
+          "prize_displayed": "$382,983"
+        },
+        {
+          "date": "2018-06-20",
+          "place": "1st",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-06-15",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018: China Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/China/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "6th - 7th",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-17",
+          "place": "7th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-15",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-22",
+          "place": "7th - 8th",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-03-20",
+          "place": "1st - 4th",
+          "tier": "Qualifier",
+          "tournament": "EPICENTER XL: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-02-08",
+          "place": "7th - 8th",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-28",
+          "place": "1st - 2nd",
+          "tier": "Qualifier",
+          "tournament": "Dota 2 Asia Championships 2018 - China Open Qualifier #1",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018/China/Open_Qualifier/1",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-24",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "DreamLeague Season 9 China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-08",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-07",
+          "place": "17th - 32nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-29",
+          "place": "21st - 24th",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/9",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-15",
+          "place": "9th - 12th",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/8",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-18",
+          "place": "9th - 12th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-16",
+          "place": "1st - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-10",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 382983
+    },
+    {
+      "team": "Invictus Gaming",
+      "page": "Invictus_Gaming/Results",
+      "found": true,
+      "season_usd": 116762,
+      "ti_usd": 63830,
+      "rows_in_window": [
+        {
+          "date": "2018-08-18",
+          "place": "17th - 18th",
+          "tier": "Tier 1",
+          "tournament": "The International 2018",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+          "prize_usd": 63830,
+          "prize_readable": true,
+          "prize_displayed": "$63,830"
+        },
+        {
+          "date": "2018-06-21",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "The International 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/The_International/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-05-18",
+          "place": "9th - 10th",
+          "tier": "Tier 1",
+          "tournament": "MDL Changsha Major",
+          "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+          "prize_usd": 17500,
+          "prize_readable": true,
+          "prize_displayed": "$17,500"
+        },
+        {
+          "date": "2018-04-30",
+          "place": "1st",
+          "tier": "Tier 3",
+          "tournament": "World Cyber Arena 2017",
+          "tournament_url": "https://liquipedia.net/dota2/World_Cyber_Arena/2017",
+          "prize_usd": 47397,
+          "prize_readable": true,
+          "prize_displayed": "$47,397"
+        },
+        {
+          "date": "2018-04-23",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "China Dota2 Supermajor: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-22",
+          "place": "4th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2018 S1: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+          "prize_usd": 11120,
+          "prize_readable": true,
+          "prize_displayed": "$11,120"
+        },
+        {
+          "date": "2018-04-19",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-17",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "ESL One Birmingham 2018: China Open Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018/China/Open_Qualifier",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-04-03",
+          "place": "9th - 12th",
+          "tier": "Tier 1",
+          "tournament": "Dota 2 Asia Championships 2018",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+          "prize_usd": 15000,
+          "prize_readable": true,
+          "prize_displayed": "$15,000"
+        },
+        {
+          "date": "2018-03-25",
+          "place": "2nd",
+          "tier": "Qualifier",
+          "tournament": "StarLadder ImbaTV Invitational #5: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-10",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Katowice 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-09",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #4: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2018-01-06",
+          "place": "4th",
+          "tier": "Qualifier",
+          "tournament": "The Bucharest Major China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-30",
+          "place": "3rd - 4th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Genting 2018 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-29",
+          "place": "9th - 12th",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 9",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/9",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-20",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "Galaxy Battles II: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-12-17",
+          "place": "2nd",
+          "tier": "Weekly",
+          "tournament": "H-Cup Season 8",
+          "tournament_url": "https://liquipedia.net/dota2/H-Cup/8",
+          "prize_usd": 756,
+          "prize_readable": true,
+          "prize_displayed": "$756"
+        },
+        {
+          "date": "2017-11-23",
+          "place": "3rd",
+          "tier": "Tier 2",
+          "tournament": "China Top 2017",
+          "tournament_url": "https://liquipedia.net/dota2/China_Top/2017",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-11-10",
+          "place": "5th - 6th",
+          "tier": "Tier 2",
+          "tournament": "Dota2 Professional League 2017 S2: Top",
+          "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+          "prize_usd": 9789,
+          "prize_readable": true,
+          "prize_displayed": "$9,789"
+        },
+        {
+          "date": "2017-10-15",
+          "place": "1st",
+          "tier": "Tier 3",
+          "tournament": "World Cyber Arena 2017 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/World_Cyber_Arena/2017/China_Qualifier",
+          "prize_usd": 15200,
+          "prize_readable": true,
+          "prize_displayed": "$15,200"
+        },
+        {
+          "date": "2017-09-30",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "AMD SAPPHIRE Dota PIT League: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-29",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "Perfect World Masters China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-22",
+          "place": "5th - 6th",
+          "tier": "Qualifier",
+          "tournament": "StarLadder i-League Invitational #3: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-19",
+          "place": "5th - 8th",
+          "tier": "Qualifier",
+          "tournament": "ESL One Hamburg 2017: China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        },
+        {
+          "date": "2017-09-16",
+          "place": "3rd",
+          "tier": "Qualifier",
+          "tournament": "PGL Open Bucharest 2017 China Qualifier",
+          "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017/China",
+          "prize_usd": null,
+          "prize_readable": true,
+          "prize_displayed": "-"
+        }
+      ],
+      "unpriced": [],
+      "total_usd": 180592
+    }
+  ]
+}

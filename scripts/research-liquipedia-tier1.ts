@@ -90,14 +90,23 @@ function extractYearSection(html: string, year: string): string | null {
   return html.slice(from, next ? from + next.index : html.length);
 }
 
-const stripTags = (html: string): string =>
-  html
-    .replace(/<[^>]+>/g, ' ')
+const decodeEntities = (text: string): string =>
+  text
     .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&#39;/g, "'")
+    .replace(/&#39;|&apos;/g, "'")
     .replace(/&quot;/g, '"')
     .replace(/&ndash;/g, '–')
+    .replace(/&mdash;/g, '—')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    // Liquipedia escapes underscores in class names as &#95;, which otherwise
+    // survives into the output as literal "&#95;" instead of "_".
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCharCode(Number(code)))
+    // Ampersand last, so a literal "&amp;#95;" isn't double-decoded.
+    .replace(/&amp;/g, '&');
+
+const stripTags = (html: string): string =>
+  decodeEntities(html.replace(/<[^>]+>/g, ' '))
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -107,6 +116,22 @@ const absoluteUrl = (src: string): string =>
 interface TeamRef {
   name: string | null;
   logo_url: string | null;
+  /**
+   * Liquipedia files carry a theme suffix: "allmode" works on any background,
+   * while "lightmode" is drawn for light backgrounds and can be near-invisible
+   * on a dark one (there is usually a "darkmode" counterpart). The archive
+   * renders in both themes, so this has to be recorded, not discovered later
+   * as a black-on-black logo.
+   */
+  logo_variant: 'allmode' | 'lightmode' | 'darkmode' | 'unknown' | null;
+}
+
+function logoVariant(url: string | null): TeamRef['logo_variant'] {
+  if (!url) return null;
+  if (/allmode/i.test(url)) return 'allmode';
+  if (/lightmode/i.test(url)) return 'lightmode';
+  if (/darkmode/i.test(url)) return 'darkmode';
+  return 'unknown';
 }
 
 /** A winner/runner-up cell: a team-icon image plus a linked team name. */
@@ -118,7 +143,8 @@ function extractTeamCell(cellHtml: string): TeamRef {
   const name = nameLink ? stripTags(nameLink[2] ?? '') : stripTags(cellHtml);
   // "TBD" is Liquipedia's placeholder for an unfinished event, not a team.
   const real = name && name.toUpperCase() !== 'TBD' ? name : null;
-  return { name: real, logo_url: img ? absoluteUrl(img[1]!) : null };
+  const logoUrl = img ? absoluteUrl(img[1]!) : null;
+  return { name: real, logo_url: logoUrl, logo_variant: logoVariant(logoUrl) };
 }
 
 const MONTHS: Record<string, number> = {
@@ -160,6 +186,41 @@ function parseStartDate(display: string | null): string | null {
 }
 
 /**
+ * The END date of a displayed range, as YYYY-MM-DD.
+ *
+ * Needed to place the season's front boundary at the previous International's
+ * final day rather than at a calendar-year edge. Shapes, from real output:
+ *   "Aug 02–12, 2017"        -> 2017-08-12   (end month implied by the start)
+ *   "Apr 27 – May 06, 2018"  -> 2018-05-06   (end month stated)
+ *   "Jan 19–21, 2018"        -> 2018-01-21
+ */
+function parseEndDate(display: string | null): string | null {
+  if (!display) return null;
+  const text = display.replace(/–|—/g, '-').trim();
+  const year = Number(/(\d{4})\s*$/.exec(text)?.[1]);
+  if (!Number.isFinite(year)) return null;
+
+  // "- May 06" — the tail names its own month.
+  const withMonth = /-\s*([A-Za-z]{3})[a-z]*\s+(\d{1,2})/.exec(text);
+  if (withMonth) {
+    const month = MONTHS[withMonth[1]!.toLowerCase()];
+    if (!month) return null;
+    return `${year}-${String(month).padStart(2, '0')}-${String(Number(withMonth[2])).padStart(2, '0')}`;
+  }
+
+  // "Aug 02-12" — the tail is a bare day in the start's month.
+  const bareDay = /^([A-Za-z]{3})[a-z]*\s+\d{1,2}\s*-\s*(\d{1,2})/.exec(text);
+  if (bareDay) {
+    const month = MONTHS[bareDay[1]!.toLowerCase()];
+    if (!month) return null;
+    return `${year}-${String(month).padStart(2, '0')}-${String(Number(bareDay[2])).padStart(2, '0')}`;
+  }
+
+  // Single-day event: end is the start.
+  return parseStartDate(display);
+}
+
+/**
  * "$25,532,177" -> 25532177. Null when the cell isn't a plain USD figure —
  * some events list a non-USD currency or a placeholder, and converting or
  * guessing at those would be inventing a number.
@@ -178,6 +239,7 @@ interface TierOneRow {
   date: string | null;
   /** Derived from `date` for sorting and the season cutoff. Null if unparsed. */
   start_date: string | null;
+  end_date: string | null;
   /** Derived from `prizepool`. Null when the cell isn't a plain USD amount. */
   prizepool_usd: number | null;
   prizepool: string | null;
@@ -226,6 +288,7 @@ function parseRows(sectionHtml: string): TierOneRow[] {
       tournament_url: link ? absoluteUrl(link[1]!) : null,
       date,
       start_date: parseStartDate(date),
+      end_date: parseEndDate(date),
       prizepool_usd: parsePrizeUsd(prizepool),
       prizepool,
       location: stripTags(cells[4] ?? '') || null,
@@ -283,10 +346,39 @@ async function main(): Promise<void> {
   // Report anything undated before filtering — a row dropped for an unparsed
   // date would otherwise vanish without explanation.
   const undated = all.filter((r) => !r.start_date);
-  const dropped = all.filter((r) => r.start_date && r.start_date > cutoff);
-  const rows = all
-    .filter((r) => r.start_date && r.start_date <= cutoff)
-    .sort((a, b) => a.start_date!.localeCompare(b.start_date!));
+
+  /**
+   * The season's front boundary is the PREVIOUS International's last day, not
+   * a calendar-year edge — a competitive season runs TI to TI. Derived from
+   * the table's own rows rather than hardcoded, so it stays correct for every
+   * year this is pointed at. Absent (TI1), the window simply opens earlier.
+   */
+  const previousTi = all
+    .filter(
+      (r) =>
+        /^The International/i.test(r.tournament ?? '') &&
+        r.start_date &&
+        r.start_date < (event.phases[0]?.from ?? cutoff),
+    )
+    .sort((a, b) => a.start_date!.localeCompare(b.start_date!))
+    .at(-1);
+  const seasonStart = previousTi?.end_date ?? previousTi?.start_date ?? null;
+  if (previousTi) {
+    console.log(
+      `\nseason start: the day after ${previousTi.tournament} ended (${seasonStart})`,
+    );
+  } else {
+    console.log('\nseason start: no previous International found in these years — no front cutoff');
+  }
+
+  const inWindow = (r: TierOneRow): boolean =>
+    !!r.start_date && r.start_date <= cutoff && (!seasonStart || r.start_date > seasonStart);
+
+  const afterCutoff = all.filter((r) => r.start_date && r.start_date > cutoff);
+  const beforeSeason = all.filter(
+    (r) => r.start_date && seasonStart && r.start_date <= seasonStart,
+  );
+  const rows = all.filter(inWindow).sort((a, b) => a.start_date!.localeCompare(b.start_date!));
 
   console.log(`\n${rows.length} event(s) in the season leading into ${event.name}:\n`);
   for (const row of rows) {
@@ -300,9 +392,13 @@ async function main(): Promise<void> {
     );
   }
 
-  if (dropped.length) {
-    console.log(`\ndropped ${dropped.length} event(s) starting after ${cutoff} (next season):`);
-    for (const row of dropped) console.log(`  ${row.start_date}  ${row.tournament}`);
+  if (afterCutoff.length) {
+    console.log(`\ndropped ${afterCutoff.length} event(s) starting after ${cutoff} (next season):`);
+    for (const row of afterCutoff) console.log(`  ${row.start_date}  ${row.tournament}`);
+  }
+  if (beforeSeason.length) {
+    console.log(`\ndropped ${beforeSeason.length} event(s) at or before ${seasonStart} (previous season):`);
+    for (const row of beforeSeason) console.log(`  ${row.start_date}  ${row.tournament}`);
   }
   if (undated.length) {
     console.log(`\n${undated.length} row(s) had a date this script could not parse — NOT included:`);
@@ -317,6 +413,14 @@ async function main(): Promise<void> {
   if (missingPrize.length) {
     console.log(`\n${missingPrize.length} included row(s) have no parseable USD prize pool:`);
     for (const row of missingPrize) console.log(`  ${row.tournament} — "${row.prizepool}"`);
+  }
+  const lightOnly = rows.filter((r) => r.winner.logo_variant === 'lightmode');
+  if (lightOnly.length) {
+    console.log(
+      `\n${lightOnly.length} winner logo(s) are "lightmode" files — these can disappear against the ` +
+        `archive's dark theme and need their darkmode counterpart before use:`,
+    );
+    for (const row of lightOnly) console.log(`  ${row.winner.name}  (${row.tournament})`);
   }
 
   const outDir = fileURLToPath(new URL('../data/research/', import.meta.url));
@@ -343,10 +447,16 @@ async function main(): Promise<void> {
         },
         event: key,
         years,
-        season_cutoff: cutoff,
+        season_window: {
+          from_exclusive: seasonStart,
+          from_basis: previousTi ? `end of ${previousTi.tournament}` : 'none found in these years',
+          to_inclusive: cutoff,
+          to_basis: `final day of ${event.name}, from data/sources/events.json`,
+        },
         row_count: rows.length,
         _excluded: {
-          after_cutoff: dropped.map((r) => ({ tournament: r.tournament, start_date: r.start_date })),
+          after_cutoff: afterCutoff.map((r) => ({ tournament: r.tournament, start_date: r.start_date })),
+          before_season: beforeSeason.map((r) => ({ tournament: r.tournament, start_date: r.start_date })),
           unparsed_date: undated.map((r) => ({ tournament: r.tournament, date: r.date })),
         },
         rows,

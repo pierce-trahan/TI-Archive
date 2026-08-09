@@ -8,16 +8,15 @@
  * data/research/<event>.liquipedia-tournaments.json and, when present,
  * data/research/<event>.logos.json so bars can carry the winner's logo.
  *
- * WHY THE SCALE IS SPLIT
+ * THE INTERNATIONAL IS DELIBERATELY ABSENT
  *
- * The International's pool dwarfs the rest of the season by more than an
- * order of magnitude — $25.5M against a $300k Minor at TI8. On one linear
- * scale every other bar collapses into a sliver, which hides precisely the
- * thing the chart is for: the shape of the season. So the season's events
- * share a scale of their own and The International is drawn separately at
- * full width, with its true multiple stated. That is a presentational
- * choice, not a distortion of the numbers — every bar is labelled with its
- * real figure, and the break is called out on the chart itself.
+ * Per the owner: "TI should never be in the graphs, that info is available in
+ * the larger page itself, the graph is about the season leading up to TI."
+ *
+ * That is also what makes the chart readable. TI8's pool was ~17x the
+ * season's largest event, so including it would flatten every Major and
+ * Minor into a sliver and hide the one thing the chart exists to show. The
+ * International bounds the season; it is not a bar in it.
  *
  * Nothing here invents data. An event with no recorded prize pool renders as
  * a marked "not recorded" bar rather than a zero or an estimate.
@@ -178,14 +177,12 @@ async function main(): Promise<void> {
   const logos = await loadLogos(key);
   const rows = [...data.rows].sort((a, b) => (a.start_date ?? '').localeCompare(b.start_date ?? ''));
 
+  // The International bounds the season rather than appearing in it.
   const ti = rows.filter((r) => classify(r).kind === 'ti');
   const season = rows.filter((r) => classify(r).kind !== 'ti');
 
-  // The season's own scale excludes The International, for the reason in the
-  // file header. Unrecorded pools can't set a maximum.
+  // Unrecorded pools can't set a maximum.
   const seasonMax = Math.max(...season.map((r) => r.prizepool_usd ?? 0), 1);
-  const tiTotal = ti[0]?.prizepool_usd ?? null;
-  const multiple = tiTotal ? tiTotal / seasonMax : null;
 
   // Month rules make the season's rhythm legible — the gaps between events
   // are part of the story, not dead space.
@@ -206,40 +203,21 @@ async function main(): Promise<void> {
     other: season.filter((r) => classify(r).kind === 'other').length,
   };
 
-  const tiBlock = ti
-    .map((row) => {
-      const winner = row.winner.name;
-      const logo = winner ? logos.get(winner) : undefined;
-      const mark = logo
-        ? `<img class="bar-logo" src="${escapeHtml(`../../${logo.local_path}`)}" alt="" width="24" height="24">`
-        : '';
-      return `      <li class="bar-row kind-ti is-finale">
-        <div class="bar-head">
-          <span class="bar-date">${escapeHtml(row.start_date ?? '')}</span>
-          <span class="bar-name">${escapeHtml(row.tournament ?? '')}</span>
-          <span class="chip chip-ti">The International</span>
-        </div>
-        <div class="bar-track" title="${escapeHtml(row.prizepool_usd ? usd(row.prizepool_usd) : 'not recorded')}">
-          <div class="bar-fill" style="width:100%"></div>
-          <div class="bar-inner">${mark}<span class="bar-winner">${escapeHtml(winner ?? 'not recorded')}</span></div>
-        </div>
-        <div class="bar-foot">
-          <span class="bar-amount">${escapeHtml(row.prizepool_usd ? compactUsd(row.prizepool_usd) : 'not recorded')}</span>
-          ${row.participants ? `<span class="bar-teams">${escapeHtml(row.participants)} teams</span>` : ''}
-        </div>
-      </li>`;
-    })
-    .join('\n');
+  const finale = ti[0];
+  const closing = finale
+    ? `<p class="chart-close">The season ends at <strong>${escapeHtml(finale.tournament ?? 'The International')}</strong>` +
+      `${finale.start_date ? `, ${escapeHtml(monthLabel(finale.start_date))}` : ''}. ` +
+      `Its prize pool sits apart from this chart by an order of magnitude and is covered on the page above.</p>`
+    : '';
 
   const fragment = `<section class="season-chart">
   <header class="chart-head">
     <h3>The season, by prize pool</h3>
-    <p class="chart-sub">Every tier-1 and tier-2 LAN from the end of the previous International to this one, in order. Bars are the <strong>total</strong> prize pool, not the winner's share.</p>
+    <p class="chart-sub">Every tier-1 and tier-2 LAN between the last International and this one, in order. Bars are the <strong>total</strong> prize pool, not the winner's share.</p>
     <ul class="chart-legend">
       <li><span class="swatch sw-major"></span>Major <em>&times;${counts.major}</em></li>
       <li><span class="swatch sw-minor"></span>Minor <em>&times;${counts.minor}</em></li>
       <li><span class="swatch sw-other"></span>Non-DPC <em>&times;${counts.other}</em></li>
-      <li><span class="swatch sw-ti"></span>The International</li>
     </ul>
   </header>
 
@@ -247,18 +225,7 @@ async function main(): Promise<void> {
 ${bars.join('\n')}
   </ol>
 
-  <div class="scale-break">
-    <span>scale break</span>
-    <p>${
-      multiple
-        ? `The International's pool is <strong>${multiple.toFixed(1)}&times;</strong> the season's largest. Drawn at full width so the bars above stay readable.`
-        : 'The International is drawn separately.'
-    }</p>
-  </div>
-
-  <ol class="bar-list bar-list-finale">
-${tiBlock}
-  </ol>
+  ${closing}
 
   <p class="chart-note">Tier and Valve-sponsorship are Liquipedia's own classifications. Mapping those to &ldquo;Major&rdquo; and &ldquo;Minor&rdquo; is this archive's reading of the DPC structure that year &mdash; the underlying tier and highlight are preserved in the data.</p>
 </section>`;
@@ -268,10 +235,12 @@ ${tiBlock}
   const outPath = `${outDir}${key}.season-chart.html`;
   await writeFile(outPath, `${fragment}\n`, 'utf8');
 
-  console.log(`${season.length} season event(s) + ${ti.length} International`);
+  console.log(`${season.length} season event(s) charted`);
   console.log(`  Majors: ${counts.major}   Minors: ${counts.minor}   Non-DPC: ${counts.other}`);
-  console.log(`  season scale max: ${usd(seasonMax)}`);
-  if (tiTotal) console.log(`  The International: ${usd(tiTotal)} (${multiple!.toFixed(1)}x the season max)`);
+  console.log(`  scale max: ${usd(seasonMax)}`);
+  for (const row of ti) {
+    console.log(`  excluded from the chart by design: ${row.tournament} (${usd(row.prizepool_usd ?? 0)})`);
+  }
   const noPool = season.filter((r) => r.prizepool_usd === null);
   if (noPool.length) {
     console.log(`  ${noPool.length} event(s) render as "not recorded": ${noPool.map((r) => r.tournament).join(', ')}`);

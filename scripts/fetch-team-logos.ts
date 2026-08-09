@@ -23,15 +23,17 @@
  *    jumble of resolutions. Rather than rewriting the width into the URL by
  *    hand, this asks the API for a thumbnail at one consistent width.
  *
- * LICENSING — READ BEFORE COMMITTING THE OUTPUT
+ * LICENSING
  *
  * Liquipedia's text is CC-BY-SA 3.0, but team logos are trademarks of their
- * organisations, hosted by Liquipedia under fair use rather than released
- * under that licence. Downloading them for local use is one thing;
- * redistributing them in a public repository is a different question, and it
- * is the owner's call, not this script's. Output therefore goes to
- * data/raw/logos/ (gitignored) by default. Pass --commit to write to
- * data/assets/logos/ instead, once that call has been made.
+ * organisations, hosted there under fair use rather than released under that
+ * licence. The owner's call, recorded here so it isn't re-litigated: these
+ * are marks the organisations publish for media use, and an uneditorialised
+ * historical archive identifying who won a tournament is the ordinary use
+ * such marks exist for. They are committed to data/assets/logos/ with
+ * attribution, and any organisation that objects gets theirs removed.
+ *
+ * Pass --no-commit to write to gitignored data/raw/logos/ instead.
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -148,9 +150,9 @@ interface LogoRecord {
 
 async function main(): Promise<void> {
   const key = process.argv[2];
-  const commit = process.argv.includes('--commit');
+  const commit = !process.argv.includes('--no-commit');
   if (!key) {
-    console.error('usage: npm run fetch:logos -- <event-key> [--commit]');
+    console.error('usage: npm run fetch:logos -- <event-key> [--no-commit]');
     process.exit(1);
   }
 
@@ -184,7 +186,7 @@ async function main(): Promise<void> {
   const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
 
   console.log(`${rows.length} tournament row(s); ${wanted.size} distinct logo file(s)`);
-  console.log(`writing to ${outDir}${commit ? '' : '  (gitignored — pass --commit to change)'}\n`);
+  console.log(`writing to ${outDir}${commit ? '' : '  (gitignored)'}\n`);
 
   const records: LogoRecord[] = [];
   const noDark: string[] = [];
@@ -238,6 +240,27 @@ async function main(): Promise<void> {
     }
   }
 
+  // Attribution has to travel with the files, not only with the manifest —
+  // someone browsing data/assets/logos/ should find the terms right there.
+  if (commit) {
+    await writeFile(
+      `${outDir}ATTRIBUTION.md`,
+      `# Team logos\n\n` +
+        `Downloaded from [Liquipedia Commons](https://liquipedia.net/commons/) by ` +
+        `\`scripts/fetch-team-logos.ts\`, at a single consistent width.\n\n` +
+        `Each logo is the trademark of the organisation it represents. They are reproduced here ` +
+        `to identify the teams that competed in and won the events this archive documents — the ` +
+        `ordinary identifying use such marks are published for. They are not endorsements, and ` +
+        `no claim of ownership is made.\n\n` +
+        `**If you represent one of these organisations and want your logo removed, open an issue ` +
+        `and it will be taken out.**\n\n` +
+        `Liquipedia's own text and tournament data are CC-BY-SA 3.0; that licence covers the ` +
+        `surrounding data, not the marks themselves.\n\n` +
+        `See \`data/research/*.logos.json\` for the source URL and retrieval date of each file.\n`,
+      'utf8',
+    );
+  }
+
   const manifestPath = fileURLToPath(new URL(`../data/research/${key}.logos.json`, import.meta.url));
   await writeFile(
     manifestPath,
@@ -248,9 +271,9 @@ async function main(): Promise<void> {
           'dark_file is populated only where a darkmode file was CONFIRMED to exist — it is ' +
           'never derived from the lightmode name without checking.',
         _licensing:
-          "Liquipedia's text is CC-BY-SA 3.0, but team logos are the trademarks of their " +
-          'organisations and are hosted there under fair use, not under that licence. Confirm ' +
-          'redistribution is acceptable before committing these files to a public repository.',
+          "Liquipedia's text is CC-BY-SA 3.0, but these logos are the trademarks of their " +
+          'organisations, not CC-BY-SA content. They are reproduced to identify the teams that ' +
+          'won the events documented here. See data/assets/logos/ATTRIBUTION.md.',
         _generated_by: 'scripts/fetch-team-logos.ts',
         _generated_at: new Date().toISOString(),
         event: key,
@@ -276,12 +299,11 @@ async function main(): Promise<void> {
     for (const item of failed) console.log(`  ${item}`);
   }
   console.log(`\nmanifest -> ${manifestPath}`);
-  if (!commit) {
-    console.log(
-      '\nFiles are in a gitignored directory. Read the _licensing note in the manifest before ' +
-        're-running with --commit.',
-    );
-  }
+  console.log(
+    commit
+      ? `attribution -> ${outDir}ATTRIBUTION.md  (commit this alongside the images)`
+      : '\nFiles are in a gitignored directory.',
+  );
 }
 
 main().catch((error: unknown) => {

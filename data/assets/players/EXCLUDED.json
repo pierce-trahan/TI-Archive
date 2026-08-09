@@ -1,0 +1,7 @@
+{
+  "_note": "Photographs that must never be downloaded or published, and why. The fetch script reads this before every run and writes a placeholder instead, so a removal survives re-runs. Without this file a takedown would be silently undone the next time anyone regenerates the photos.",
+  "_how_to_use": "Add an entry keyed by the player's handle (matching data/events/<event>.rosters.json) or by an exact Liquipedia file name. Re-run `npm run fetch:photos -- <event>`; the player falls back to their generated initials mark automatically and nothing else changes.",
+  "_policy": "This archive is non-commercial and educational. Any player, photographer, or organisation who asks for an image to be removed gets it removed, no questions and no negotiation. Record the request here rather than only deleting the file.",
+  "_example": { "handle": "SomePlayer", "file": null, "reason": "removal requested by the player", "date": "2026-01-01" },
+  "excluded": []
+}

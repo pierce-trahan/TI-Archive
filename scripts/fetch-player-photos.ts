@@ -51,12 +51,19 @@
  * from one wrong assumption. Licences now come from each File: page's own
  * wikitext.
  *
- * Worth knowing before publishing any of these: many infobox images carry the
- * comment "the copyright holder of the picture needs to send the picture and
- * permission to use it to photos@liquipedia.net", which suggests Liquipedia
- * hosts them by permission granted to Liquipedia rather than under a licence
- * that travels. Permission to them is not permission to us. Read what each
- * File: page actually says before treating any of this as redistributable.
+ * Many infobox images carry the comment "the copyright holder of the picture
+ * needs to send the picture and permission to use it to photos@liquipedia.net",
+ * which suggests Liquipedia hosts them by permission granted to Liquipedia
+ * rather than under a licence that travels.
+ *
+ * The owner's decision, recorded so it is not re-litigated: this archive is
+ * non-commercial and educational, the same posture as the publicly circulated
+ * sports-database projects that carry club photographs, and anything anyone
+ * objects to comes down on request.
+ *
+ * That promise needs a mechanism, or a re-run quietly undoes it. See
+ * data/assets/players/EXCLUDED.json — listed images are never fetched, and the
+ * player falls back to their generated mark automatically.
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -365,6 +372,27 @@ async function main(): Promise<void> {
   }
 
   const event = await loadEvent(key);
+
+  /**
+   * Removal requests, honoured before anything is fetched. Deleting a file
+   * alone would not hold: the next run would download it again.
+   */
+  const excludedHandles = new Set<string>();
+  const excludedFiles = new Set<string>();
+  try {
+    const list = JSON.parse(
+      await readFile(fileURLToPath(new URL('../data/assets/players/EXCLUDED.json', import.meta.url)), 'utf8'),
+    ) as { excluded?: { handle?: string; file?: string }[] };
+    for (const e of list.excluded ?? []) {
+      if (e.handle) excludedHandles.add(e.handle.toLowerCase());
+      if (e.file) excludedFiles.add(e.file.toLowerCase());
+    }
+  } catch {
+    // No list yet. Nothing has been asked to come down.
+  }
+  if (excludedHandles.size || excludedFiles.size) {
+    console.log(`${excludedHandles.size + excludedFiles.size} image(s) excluded on request — using placeholders\n`);
+  }
   const rosters = JSON.parse(
     await readFile(fileURLToPath(new URL(`../data/events/${key}.rosters.json`, import.meta.url)), 'utf8'),
   ) as { teams?: RosterTeam[]; rosters?: RosterTeam[] };
@@ -398,10 +426,14 @@ async function main(): Promise<void> {
 
     let meta: PhotoMeta | null = null;
     let picked: { choice: PhotoCandidate; reason: string } | null = null;
+    const excluded = excludedHandles.has(player.handle.toLowerCase());
     try {
-      const wikitext = await fetchPlayerWikitext(player.page || player.handle, cacheDir);
+      const wikitext = excluded ? null : await fetchPlayerWikitext(player.page || player.handle, cacheDir);
       if (wikitext) {
-        picked = pickPhoto(photoCandidates(wikitext), event.year, event.name);
+        const candidates = photoCandidates(wikitext).filter(
+          (c) => !excludedFiles.has(c.file.toLowerCase()),
+        );
+        picked = pickPhoto(candidates, event.year, event.name);
         if (picked) meta = await fetchPhotoMeta(picked.choice.file, cacheDir);
       }
     } catch (error) {
@@ -455,7 +487,10 @@ async function main(): Promise<void> {
       credit: null,
     });
     placeheld += 1;
-    console.log(`  ${player.handle.padEnd(16)} placeholder (${initials(player.handle)})`);
+    console.log(
+      `  ${player.handle.padEnd(16)} placeholder (${initials(player.handle)})` +
+        `${excluded ? '  [excluded on request]' : ''}`,
+    );
   }
 
   const manifestPath = fileURLToPath(new URL(`../data/research/${key}.player-photos.json`, import.meta.url));

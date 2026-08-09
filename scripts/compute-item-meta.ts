@@ -14,11 +14,20 @@
  * WHICH ITEMS COUNT
  *
  * A raw purchase count is worthless: tangoes, branches and observer wards
- * dominate every list. Rather than hand-writing an exclusion list — a guess
- * about what matters dressed as a rule — this filters on OpenDota's own `qual`
- * field, dropping anything Valve classifies as a component or a consumable.
- * A short explicit list handles what that misses: Aegis and Cheese are picked
- * up off the ground, not bought, and a Tome of Knowledge is not a build.
+ * dominate every list. Three filters, all from Valve's own data rather than
+ * from an opinion about what matters:
+ *
+ *   1. `qual` of "consumable" or "component".
+ *   2. Anything listed in another item's `components` — an ingredient by the
+ *      game's own recipe data. The first run showed why this is needed: `qual`
+ *      alone let Vitality Booster, Ultimate Orb, Energy Booster, Point Booster
+ *      and Shadow Amulet into the purchase list, all of them pure ingredients.
+ *   3. A short explicit list for what neither catches — Aegis and Cheese are
+ *      picked up off the ground, and a Tome of Knowledge is not a build.
+ *
+ * Cheap terminal items like Wraith Band survive all three, correctly: they are
+ * genuinely bought and genuinely sold later, and the held-versus-bought gap is
+ * the honest way to show that rather than hiding them.
  *
  * FINAL INVENTORY, NOT PURCHASES — AND WHY THAT MATTERS
  *
@@ -114,6 +123,23 @@ async function main(): Promise<void> {
     if (v && typeof v.id === 'number') byId.set(v.id, { key: k, ...v });
   }
 
+  // Every key that appears in some other item's recipe. Valve's own data
+  // saying "this is an ingredient", which `qual` alone does not reliably say.
+  const ingredients = new Set<string>();
+  for (const v of Object.values(items) as (ItemConstant & { components?: string[] | null })[]) {
+    if (Array.isArray(v?.components)) for (const c of v.components) ingredients.add(c);
+  }
+
+  // Distribution of qual values, so the filter can be tuned against reality
+  // rather than against an assumption about what the field contains.
+  const qualCounts = new Map<string, number>();
+  for (const v of Object.values(items)) {
+    const q = v?.qual ?? '(none)';
+    qualCounts.set(q, (qualCounts.get(q) ?? 0) + 1);
+  }
+  console.log(`qual values in the constants: ${[...qualCounts].map(([q, n]) => `${q}=${n}`).join(', ')}`);
+  console.log(`${ingredients.size} items appear in another item's recipe and are excluded as ingredients`);
+
   const all = await readMatches(cacheDir);
   const matches = all.filter((m) => inEvent.has(m.match_id));
   const parsedMatches = matches.filter(isParsed);
@@ -128,6 +154,7 @@ async function main(): Promise<void> {
     if (!constant) return null;
     if (ALWAYS_EXCLUDE[k]) return null;
     if (constant.qual === 'component' || constant.qual === 'consumable') return null;
+    if (ingredients.has(k)) return null;
     if (!counts.has(k)) {
       counts.set(k, {
         item: k,
@@ -232,8 +259,11 @@ async function main(): Promise<void> {
           'questions and a page must say which it is showing. Win rates below the minimum sample ' +
           'are null, never rounded into existence.',
         _excluded:
-          "Items Valve's own constants classify as component or consumable, plus a short " +
-          'explicit list of things picked up rather than bought. Each exclusion carries a reason.',
+          "Three filters, all from the game's own data: qual of component or consumable; any " +
+          "item appearing in another item's recipe (which is how Vitality Booster and Ultimate " +
+          'Orb are removed, since qual does not mark them); and a short explicit list of things ' +
+          'picked up rather than bought, each with a reason.',
+        ingredient_count: ingredients.size,
         _not_computed: {
           new_this_patch:
             'Needs per-item patch introduction dates, which this project does not hold yet.',

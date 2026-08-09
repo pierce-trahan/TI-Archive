@@ -1,8 +1,9 @@
 /**
- * Pull one year's Tier 1 tournaments from Liquipedia's own
- * "Tier 1 Tournaments" page: https://liquipedia.net/dota2/Tier_1_Tournaments
+ * Pull the tier-1 tournament season leading into a given International, from
+ * Liquipedia's own "Tier 1 Tournaments" page:
+ * https://liquipedia.net/dota2/Tier_1_Tournaments
  *
- *   npm run research:liquipedia -- ti08 2018
+ *   npm run research:liquipedia -- ti08 2017,2018
  *
  * That page already carries exactly what a season-overview chart needs, per
  * year: tournament, date, prize pool, location, winner and runner-up (each
@@ -13,6 +14,13 @@
  * system", and that comparison is only honest if the tiering comes from a
  * consistent external source rather than from us deciding per year what
  * counted as big.
+ *
+ * WHY MULTIPLE YEARS, AND WHY A CUTOFF: a DPC season does not line up with a
+ * calendar year. The 2017-18 season opened in late 2017 and ended at TI8 in
+ * August 2018, while the calendar year 2018 also contains the Kuala Lumpur
+ * Major — which belongs to the NEXT season entirely. So the years given are
+ * merged, then everything starting after the event's final day is dropped.
+ * The International itself is kept: it is the end of the story, not outside it.
  *
  * TERMS OF USE (https://liquipedia.net/api-terms-of-use), as recorded in
  * scripts/ingest-liquipedia.ts and observed here:
@@ -40,6 +48,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { fetchJsonCached } from './lib/http.ts';
+import { loadEvent } from './lib/events.ts';
 
 const API = 'https://liquipedia.net/dota2/api.php';
 const PAGE = 'Tier_1_Tournaments';
@@ -112,10 +121,65 @@ function extractTeamCell(cellHtml: string): TeamRef {
   return { name: real, logo_url: img ? absoluteUrl(img[1]!) : null };
 }
 
+const MONTHS: Record<string, number> = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+};
+
+/**
+ * Turns Liquipedia's displayed date range into the event's START date, as
+ * YYYY-MM-DD, for sorting and for the cutoff.
+ *
+ * Observed shapes, all from real output:
+ *   "Aug 15–25, 2018"            single month
+ *   "Apr 27 – May 06, 2018"      spans two months
+ *   "Nov 09–18, 2018"
+ *
+ * A season-opening event can also span New Year, which Liquipedia writes with
+ * the year attached to the start ("Dec 28, 2017 – Jan 05, 2018"). That inline
+ * year must win over the trailing one, or a December event lands twelve months
+ * late. Returns null rather than guessing when nothing matches — an unparsed
+ * date is reported, never silently dropped or defaulted.
+ */
+function parseStartDate(display: string | null): string | null {
+  if (!display) return null;
+  const text = display.replace(/–|—/g, '-').trim();
+
+  const head = /^([A-Za-z]{3})[a-z]*\s+(\d{1,2})(?:\s*,\s*(\d{4}))?/.exec(text);
+  if (!head) return null;
+
+  const month = MONTHS[head[1]!.toLowerCase()];
+  if (!month) return null;
+  const day = Number(head[2]);
+
+  // Prefer a year stated right after the start day; fall back to the trailing one.
+  const year = Number(head[3] ?? /(\d{4})\s*$/.exec(text)?.[1]);
+  if (!Number.isFinite(year) || !Number.isFinite(day)) return null;
+
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+/**
+ * "$25,532,177" -> 25532177. Null when the cell isn't a plain USD figure —
+ * some events list a non-USD currency or a placeholder, and converting or
+ * guessing at those would be inventing a number.
+ */
+function parsePrizeUsd(display: string | null): number | null {
+  if (!display) return null;
+  const match = /^\$\s*([\d,]+)/.exec(display.trim());
+  if (!match) return null;
+  const value = Number(match[1]!.replace(/,/g, ''));
+  return Number.isFinite(value) && value > 0 ? value : null;
+}
+
 interface TierOneRow {
   tournament: string | null;
   tournament_url: string | null;
   date: string | null;
+  /** Derived from `date` for sorting and the season cutoff. Null if unparsed. */
+  start_date: string | null;
+  /** Derived from `prizepool`. Null when the cell isn't a plain USD amount. */
+  prizepool_usd: number | null;
   prizepool: string | null;
   location: string | null;
   /** Team count, Liquipedia's "P#" column. */
@@ -154,11 +218,16 @@ function parseRows(sectionHtml: string): TierOneRow[] {
     const tournament = stripTags(nameCell) || (link ? link[2]! : null);
     if (!tournament) continue;
 
+    const date = stripTags(cells[2] ?? '') || null;
+    const prizepool = stripTags(cells[3] ?? '') || null;
+
     rows.push({
       tournament,
       tournament_url: link ? absoluteUrl(link[1]!) : null,
-      date: stripTags(cells[2] ?? '') || null,
-      prizepool: stripTags(cells[3] ?? '') || null,
+      date,
+      start_date: parseStartDate(date),
+      prizepool_usd: parsePrizeUsd(prizepool),
+      prizepool,
       location: stripTags(cells[4] ?? '') || null,
       participants: stripTags(cells[5] ?? '') || null,
       row_classes: /class="([^"]*)"/i.exec(rowAttrs)?.[1] ?? null,
@@ -171,51 +240,83 @@ function parseRows(sectionHtml: string): TierOneRow[] {
 
 async function main(): Promise<void> {
   const key = process.argv[2];
-  const year = process.argv[3];
-  if (!key || !year) {
-    console.error('usage: npm run research:liquipedia -- <event-key> <year>   (e.g. ti08 2018)');
+  const yearsArg = process.argv[3];
+  if (!key || !yearsArg) {
+    console.error(
+      'usage: npm run research:liquipedia -- <event-key> <years>   (e.g. ti08 2017,2018)',
+    );
     process.exit(1);
   }
+  const years = yearsArg.split(',').map((y) => y.trim()).filter(Boolean);
+
+  const event = await loadEvent(key);
+  // The season ends when the event does. Everything starting after the final
+  // day belongs to the next season, not this story.
+  const cutoff = event.phases.at(-1)?.to ?? `${event.year}-12-31`;
 
   const cacheDir = fileURLToPath(new URL(`../data/raw/${key}`, import.meta.url));
 
-  console.log(`Liquipedia: ${PAGE}, year ${year}`);
+  console.log(`${event.name}`);
+  console.log(`Liquipedia: ${PAGE}, years ${years.join(', ')}`);
+  console.log(`season cutoff: events starting after ${cutoff} are dropped`);
   console.log('note: action=parse is capped at 1 request / 30s — this makes exactly one.\n');
   const html = await fetchRenderedHtml(PAGE, cacheDir);
 
-  const debugPath = fileURLToPath(new URL(`../data/raw/${key}/liquipedia/${PAGE}.html`, import.meta.url));
-  await mkdir(fileURLToPath(new URL(`../data/raw/${key}/liquipedia/`, import.meta.url)), { recursive: true });
+  const liquipediaDir = fileURLToPath(new URL(`../data/raw/${key}/liquipedia/`, import.meta.url));
+  await mkdir(liquipediaDir, { recursive: true });
+  const debugPath = `${liquipediaDir}${PAGE}.html`;
   await writeFile(debugPath, html, 'utf8');
   console.log(`  rendered HTML saved for inspection (gitignored) -> ${debugPath}`);
 
-  const section = extractYearSection(html, year);
-  if (!section) {
-    console.log(`\nNo "${year}" heading found. Check ${debugPath} for the real heading markup.`);
-    process.exit(1);
+  const all: TierOneRow[] = [];
+  for (const year of years) {
+    const section = extractYearSection(html, year);
+    if (!section) {
+      console.log(`\nNo "${year}" heading found — skipping. Check ${debugPath} for the real markup.`);
+      continue;
+    }
+    const parsed = parseRows(section);
+    console.log(`  ${year}: ${parsed.length} row(s)`);
+    all.push(...parsed);
   }
 
-  const rows = parseRows(section);
-  console.log(`\nparsed ${rows.length} row(s) for ${year}:\n`);
+  // Report anything undated before filtering — a row dropped for an unparsed
+  // date would otherwise vanish without explanation.
+  const undated = all.filter((r) => !r.start_date);
+  const dropped = all.filter((r) => r.start_date && r.start_date > cutoff);
+  const rows = all
+    .filter((r) => r.start_date && r.start_date <= cutoff)
+    .sort((a, b) => a.start_date!.localeCompare(b.start_date!));
+
+  console.log(`\n${rows.length} event(s) in the season leading into ${event.name}:\n`);
   for (const row of rows) {
-    const marker = row.row_classes ? ` [${row.row_classes}]` : '';
+    const marker = row.row_classes ? `  [${row.row_classes}]` : '';
     console.log(
-      `  ${(row.date ?? '?').padEnd(24)} ${(row.tournament ?? '?').padEnd(34)} ` +
-        `${(row.prizepool ?? '?').padEnd(12)} ${row.participants ?? '?'} teams${marker}`,
+      `  ${row.start_date}  ${(row.tournament ?? '?').padEnd(36)} ` +
+        `${(row.prizepool ?? '?').padStart(12)}  ${(row.participants ?? '?').padStart(2)} teams${marker}`,
     );
     console.log(
-      `      winner: ${(row.winner.name ?? '(not parsed)').padEnd(22)} ${row.winner.logo_url ?? '(no logo)'}`,
+      `      winner: ${(row.winner.name ?? '(not parsed)').padEnd(24)} ${row.winner.logo_url ?? '(no logo)'}`,
     );
   }
 
-  if (rows.length === 0) {
-    console.log(
-      `\n0 rows parsed despite finding the ${year} section — the table markup differs from what this ` +
-        `script guessed. Send me a chunk of ${debugPath} around the ${year} heading and I'll fix the parser.`,
-    );
+  if (dropped.length) {
+    console.log(`\ndropped ${dropped.length} event(s) starting after ${cutoff} (next season):`);
+    for (const row of dropped) console.log(`  ${row.start_date}  ${row.tournament}`);
+  }
+  if (undated.length) {
+    console.log(`\n${undated.length} row(s) had a date this script could not parse — NOT included:`);
+    for (const row of undated) console.log(`  "${row.date}"  ${row.tournament}`);
   }
   const missingLogo = rows.filter((r) => r.winner.name && !r.winner.logo_url);
   if (missingLogo.length) {
-    console.log(`\n${missingLogo.length} row(s) have a winner but no logo URL — worth a look before charting.`);
+    console.log(`\n${missingLogo.length} included row(s) have a winner but no logo URL:`);
+    for (const row of missingLogo) console.log(`  ${row.tournament} — ${row.winner.name}`);
+  }
+  const missingPrize = rows.filter((r) => r.prizepool_usd === null);
+  if (missingPrize.length) {
+    console.log(`\n${missingPrize.length} included row(s) have no parseable USD prize pool:`);
+    for (const row of missingPrize) console.log(`  ${row.tournament} — "${row.prizepool}"`);
   }
 
   const outDir = fileURLToPath(new URL('../data/research/', import.meta.url));
@@ -226,9 +327,12 @@ async function main(): Promise<void> {
     `${JSON.stringify(
       {
         _note:
-          "Tier-1 tournaments for one year, from Liquipedia's own Tier_1_Tournaments page. Tier " +
-          'classification, prize pool and winner are Liquipedia\'s, not inferred by this project. ' +
-          'Prize pool is the TOTAL pool as listed, NOT the first-place share.',
+          "Tier-1 tournaments in the season leading into this event, from Liquipedia's own " +
+          "Tier_1_Tournaments page. Tier classification, prize pool and winner are Liquipedia's, " +
+          'not inferred by this project. prizepool is the TOTAL pool as listed, NOT the ' +
+          'first-place share. Rows starting after the event ended belong to the next season and ' +
+          'were dropped; rows whose date could not be parsed were also dropped and are listed ' +
+          'in _excluded so nothing disappears silently.',
         _generated_by: 'scripts/research-liquipedia-tier1.ts',
         _generated_at: new Date().toISOString(),
         _attribution: ATTRIBUTION,
@@ -238,8 +342,13 @@ async function main(): Promise<void> {
           retrieved_at: new Date().toISOString(),
         },
         event: key,
-        year,
+        years,
+        season_cutoff: cutoff,
         row_count: rows.length,
+        _excluded: {
+          after_cutoff: dropped.map((r) => ({ tournament: r.tournament, start_date: r.start_date })),
+          unparsed_date: undated.map((r) => ({ tournament: r.tournament, date: r.date })),
+        },
         rows,
       },
       null,

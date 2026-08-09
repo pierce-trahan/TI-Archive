@@ -1,0 +1,936 @@
+{
+  "_note": "Tier-1 and tier-2 tournaments in the season leading into this event, from Liquipedia's own tier listing pages. Tier classification, prize pool and winner are Liquipedia's, not inferred by this project. prizepool is the TOTAL pool as listed, NOT the first-place share. row_classes carries Liquipedia's own highlight marker, whose legend reads \"special Dota Major Championships and The International events which are sponsored by Valve\" — the evidence for whether an event was Valve-backed in that year. Rows outside the season window, or whose date could not be parsed, were dropped and are listed in _excluded so nothing disappears silently.",
+  "_generated_by": "scripts/research-liquipedia-tier1.ts",
+  "_generated_at": "2026-08-09T00:58:34.304Z",
+  "_attribution": "Tournament, prize pool and tier data from Liquipedia, licensed CC-BY-SA 3.0.",
+  "_sources": [
+    {
+      "type": "url",
+      "url": "https://liquipedia.net/dota2/Tier 2 Tournaments/2016-2019",
+      "retrieved_at": "2026-08-09T00:58:34.304Z"
+    },
+    {
+      "type": "url",
+      "url": "https://liquipedia.net/dota2/Tier_1_Tournaments",
+      "retrieved_at": "2026-08-09T00:58:34.304Z"
+    }
+  ],
+  "event": "ti08",
+  "years": [
+    "2017",
+    "2018"
+  ],
+  "tiers": [
+    1,
+    2
+  ],
+  "season_window": {
+    "from_exclusive": "2017-08-12",
+    "from_basis": "end of The International 2017",
+    "to_inclusive": "2018-08-25",
+    "to_basis": "final day of The International 2018, from data/sources/events.json"
+  },
+  "row_count": 32,
+  "tier_counts": {
+    "tier1": 11,
+    "tier2": 21
+  },
+  "_excluded": {
+    "after_cutoff": [
+      {
+        "tournament": "The Kuala Lumpur Major",
+        "start_date": "2018-11-09"
+      },
+      {
+        "tournament": "Dota2 Professional League 2018 S2",
+        "start_date": "2018-11-21"
+      },
+      {
+        "tournament": "MegaFon Winter Clash",
+        "start_date": "2018-12-07"
+      },
+      {
+        "tournament": "DreamLeague Season 10",
+        "start_date": "2018-10-29"
+      },
+      {
+        "tournament": "ESL One Hamburg 2018",
+        "start_date": "2018-10-23"
+      },
+      {
+        "tournament": "World Showdown of Esports #1",
+        "start_date": "2018-10-14"
+      },
+      {
+        "tournament": "Maincast Autumn Brawl",
+        "start_date": "2018-10-06"
+      },
+      {
+        "tournament": "PVP Esports Championship",
+        "start_date": "2018-10-03"
+      }
+    ],
+    "before_season": [
+      {
+        "tournament": "The International 2017",
+        "start_date": "2017-08-02"
+      },
+      {
+        "tournament": "Mars Dota 2 League 2017",
+        "start_date": "2017-07-05"
+      },
+      {
+        "tournament": "Galaxy Battles",
+        "start_date": "2017-06-15"
+      },
+      {
+        "tournament": "DOTA Summit 7",
+        "start_date": "2017-06-14"
+      },
+      {
+        "tournament": "EPICENTER 2017",
+        "start_date": "2017-06-04"
+      },
+      {
+        "tournament": "ZOTAC Cup Masters",
+        "start_date": "2017-05-30"
+      },
+      {
+        "tournament": "The Manila Masters",
+        "start_date": "2017-05-25"
+      },
+      {
+        "tournament": "StarLadder i-League Invitational Season 2",
+        "start_date": "2017-05-18"
+      },
+      {
+        "tournament": "The Kiev Major 2017",
+        "start_date": "2017-04-24"
+      },
+      {
+        "tournament": "Dota 2 Asia Championships 2017",
+        "start_date": "2017-03-27"
+      },
+      {
+        "tournament": "StarLadder i-League StarSeries Season 3",
+        "start_date": "2017-02-23"
+      },
+      {
+        "tournament": "Dota Pit League Season 5",
+        "start_date": "2017-01-20"
+      },
+      {
+        "tournament": "ESL One Genting 2017",
+        "start_date": "2017-01-06"
+      },
+      {
+        "tournament": "DreamLeague Season 7",
+        "start_date": "2017-07-21"
+      },
+      {
+        "tournament": "The Final Match Season 1",
+        "start_date": "2017-07-07"
+      },
+      {
+        "tournament": "DreamLeague Season 7 NA Division",
+        "start_date": "2017-05-30"
+      },
+      {
+        "tournament": "Russian Esports Cup 2017",
+        "start_date": "2017-04-01"
+      },
+      {
+        "tournament": "DreamLeague Season 7 EU Division",
+        "start_date": "2017-05-04"
+      },
+      {
+        "tournament": "Mr. Cat Invitational Europe",
+        "start_date": "2017-05-02"
+      },
+      {
+        "tournament": "Dota2 Professional League 2017 S1: Top",
+        "start_date": "2017-03-15"
+      },
+      {
+        "tournament": "Elimination Mode 3.0",
+        "start_date": "2017-02-11"
+      },
+      {
+        "tournament": "Russian Esports Cup 2016",
+        "start_date": "2016-04-09"
+      }
+    ],
+    "unparsed_date": [],
+    "duplicate_across_tiers": []
+  },
+  "rows": [
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Dota2 Professional League 2017 S2: Top",
+      "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_4/Top",
+      "date": "Sep 30 – Nov 12, 2017",
+      "start_date": "2017-09-30",
+      "end_date": "2017-11-12",
+      "prizepool_usd": 143070,
+      "prizepool": "$143,070",
+      "location": "Fuzhou",
+      "participants": "9",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "LGD.Forever Young",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/6/67/LGD.Forever_Young.png/100px-LGD.Forever_Young.png",
+        "logo_variant": "unknown"
+      },
+      "runner_up": {
+        "name": "Newbee",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/d/d7/Newbee_allmode.png/41px-Newbee_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "StarLadder i-League Invitational Season 3",
+      "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/3",
+      "date": "Oct 12–15, 2017",
+      "start_date": "2017-10-12",
+      "end_date": "2017-10-15",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Kyiv",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Mineski",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/0b/Mineski_201706_allmode.png/53px-Mineski_201706_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "PGL Open Bucharest",
+      "tournament_url": "https://liquipedia.net/dota2/PGL_Open/Bucharest/2017",
+      "date": "Oct 19–22, 2017",
+      "start_date": "2017-10-19",
+      "end_date": "2017-10-22",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Bucharest",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Mineski",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/0b/Mineski_201706_allmode.png/53px-Mineski_201706_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "LGD Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ea/LGD_Gaming_2016_allmode.png/100px-LGD_Gaming_2016_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "ESL One Hamburg 2017",
+      "tournament_url": "https://liquipedia.net/dota2/ESL_One/Hamburg/2017",
+      "date": "Oct 26–29, 2017",
+      "start_date": "2017-10-26",
+      "end_date": "2017-10-29",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Hamburg",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Team Secret",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/07/Team_Secret_lightmode.png/100px-Team_Secret_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "AMD SAPPHIRE Dota PIT League",
+      "tournament_url": "https://liquipedia.net/dota2/Dota_Pit_League/Season_6",
+      "date": "Nov 02–05, 2017",
+      "start_date": "2017-11-02",
+      "end_date": "2017-11-05",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Split",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Vici Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/c/ce/VICI_Gaming_allmode.png/49px-VICI_Gaming_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Midas Mode",
+      "tournament_url": "https://liquipedia.net/dota2/Midas_Mode/1",
+      "date": "Nov 18–26, 2017",
+      "start_date": "2017-11-18",
+      "end_date": "2017-11-26",
+      "prizepool_usd": 60000,
+      "prizepool": "$60,000",
+      "location": "World",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Storm",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ec/VGJ.Storm_lightmode.png/50px-VGJ.Storm_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Perfect World Masters",
+      "tournament_url": "https://liquipedia.net/dota2/Perfect_World_Masters/2017",
+      "date": "Nov 19–26, 2017",
+      "start_date": "2017-11-19",
+      "end_date": "2017-11-26",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Shanghai",
+      "participants": "10",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Newbee",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/d/d7/Newbee_allmode.png/41px-Newbee_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Vici Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/c/ce/VICI_Gaming_allmode.png/49px-VICI_Gaming_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "China Top 2017",
+      "tournament_url": "https://liquipedia.net/dota2/China_Top/2017",
+      "date": "Nov 19–23, 2017",
+      "start_date": "2017-11-19",
+      "end_date": "2017-11-23",
+      "prizepool_usd": null,
+      "prizepool": null,
+      "location": "Shenzhen",
+      "participants": "4",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "TNC Pro Team",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/2/2a/TNC_Pro_Team_allmode.png/49px-TNC_Pro_Team_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Thunder",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/8/85/VGJ.Thunder_lightmode.png/50px-VGJ.Thunder_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Adrenaline Cyber League",
+      "tournament_url": "https://liquipedia.net/dota2/Adrenaline_Cyber_League/2017",
+      "date": "Nov 21–22, 2017",
+      "start_date": "2017-11-21",
+      "end_date": "2017-11-22",
+      "prizepool_usd": 100000,
+      "prizepool": "$100,000",
+      "location": "Moscow",
+      "participants": "4",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Natus Vincere",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/2/2a/Natus_Vincere_allmode.png/56px-Natus_Vincere_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "DreamLeague Season 8",
+      "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_8",
+      "date": "Dec 01–03, 2017",
+      "start_date": "2017-12-01",
+      "end_date": "2017-12-03",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Jönköping",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Secret",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/07/Team_Secret_lightmode.png/100px-Team_Secret_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "ROG MASTERS 2017",
+      "tournament_url": "https://liquipedia.net/dota2/ROG_MASTERS/2017",
+      "date": "Dec 07–10, 2017",
+      "start_date": "2017-12-07",
+      "end_date": "2017-12-10",
+      "prizepool_usd": 235000,
+      "prizepool": "$235,000",
+      "location": "Kuala Lumpur",
+      "participants": "6",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Team Empire",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/2/21/Team_Empire_2016_allmode.png/38px-Team_Empire_2016_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "OpTic Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/79/OpTic_Gaming_lightmode.png/77px-OpTic_Gaming_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "MDL Macau 2017",
+      "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Macau/2017",
+      "date": "Dec 08–10, 2017",
+      "start_date": "2017-12-08",
+      "end_date": "2017-12-10",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Macau",
+      "participants": "9",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "OG",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/70/OG_RB_allmode.png/34px-OG_RB_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "TNC Pro Team",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/2/2a/TNC_Pro_Team_allmode.png/49px-TNC_Pro_Team_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "DOTA Summit 8",
+      "tournament_url": "https://liquipedia.net/dota2/The_Summit/8",
+      "date": "Dec 13–17, 2017",
+      "start_date": "2017-12-13",
+      "end_date": "2017-12-17",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Los Angeles",
+      "participants": "9",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Fnatic",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/4/4e/Fnatic_2015_allmode.png/60px-Fnatic_2015_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Captains Draft 4.0",
+      "tournament_url": "https://liquipedia.net/dota2/Captains_Draft/4",
+      "date": "Jan 04–07, 2018",
+      "start_date": "2018-01-04",
+      "end_date": "2018-01-07",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Washington, D.C.",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Secret",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/07/Team_Secret_lightmode.png/100px-Team_Secret_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Vici Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/c/ce/VICI_Gaming_allmode.png/49px-VICI_Gaming_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "Galaxy Battles II: Emerging Worlds",
+      "tournament_url": "https://liquipedia.net/dota2/Galaxy_Battles/2",
+      "date": "Jan 19–21, 2018",
+      "start_date": "2018-01-19",
+      "end_date": "2018-01-21",
+      "prizepool_usd": 500000,
+      "prizepool": "$500,000",
+      "location": "Ciudad de Victoria",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "VGJ.Thunder",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/8/85/VGJ.Thunder_lightmode.png/50px-VGJ.Thunder_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Evil Geniuses",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a9/Evil_Geniuses_2018_lightmode.png/72px-Evil_Geniuses_2018_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "ESL One Genting 2018",
+      "tournament_url": "https://liquipedia.net/dota2/ESL_One/Genting/2018",
+      "date": "Jan 23–28, 2018",
+      "start_date": "2018-01-23",
+      "end_date": "2018-01-28",
+      "prizepool_usd": 400000,
+      "prizepool": "$400,000",
+      "location": "Genting Highlands",
+      "participants": "16",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Newbee",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/d/d7/Newbee_allmode.png/41px-Newbee_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "StarLadder i-League Invitational Season 4",
+      "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/4",
+      "date": "Feb 01–04, 2018",
+      "start_date": "2018-02-01",
+      "end_date": "2018-02-04",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Shanghai",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "LGD Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ea/LGD_Gaming_2016_allmode.png/100px-LGD_Gaming_2016_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "ESL One Katowice 2018",
+      "tournament_url": "https://liquipedia.net/dota2/ESL_One/Katowice/2018",
+      "date": "Feb 20–25, 2018",
+      "start_date": "2018-02-20",
+      "end_date": "2018-02-25",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Katowice",
+      "participants": "16",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Vici Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/c/ce/VICI_Gaming_allmode.png/49px-VICI_Gaming_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "The Bucharest Major",
+      "tournament_url": "https://liquipedia.net/dota2/PGL/Bucharest_Major/2018",
+      "date": "Mar 04–11, 2018",
+      "start_date": "2018-03-04",
+      "end_date": "2018-03-11",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Bucharest",
+      "participants": "16",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Thunder",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/8/85/VGJ.Thunder_lightmode.png/50px-VGJ.Thunder_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "Dota2 Professional League 2018 S1: Top",
+      "tournament_url": "https://liquipedia.net/dota2/Dota2_Professional_League/Season_5/Top",
+      "date": "Mar 13 – Apr 22, 2018",
+      "start_date": "2018-03-13",
+      "end_date": "2018-04-22",
+      "prizepool_usd": 158860,
+      "prizepool": "$158,860",
+      "location": "China",
+      "participants": "12",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Vici Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/c/ce/VICI_Gaming_allmode.png/49px-VICI_Gaming_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Newbee",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/d/d7/Newbee_allmode.png/41px-Newbee_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "GESC: Indonesia Dota2 Minor",
+      "tournament_url": "https://liquipedia.net/dota2/GESC/Indonesia_Minor/2018",
+      "date": "Mar 15–18, 2018",
+      "start_date": "2018-03-15",
+      "end_date": "2018-03-18",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Jakarta",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Evil Geniuses",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a9/Evil_Geniuses_2018_lightmode.png/72px-Evil_Geniuses_2018_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Thunder",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/8/85/VGJ.Thunder_lightmode.png/50px-VGJ.Thunder_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "DreamLeague Season 9",
+      "tournament_url": "https://liquipedia.net/dota2/DreamLeague/Season_9",
+      "date": "Mar 21–25, 2018",
+      "start_date": "2018-03-21",
+      "end_date": "2018-03-25",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Stockholm",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Secret",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/07/Team_Secret_lightmode.png/100px-Team_Secret_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Fnatic",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/4/4e/Fnatic_2015_allmode.png/60px-Fnatic_2015_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "Dota 2 Asia Championships 2018",
+      "tournament_url": "https://liquipedia.net/dota2/Dota_2_Asia_Championships/2018",
+      "date": "Mar 29 – Apr 07, 2018",
+      "start_date": "2018-03-29",
+      "end_date": "2018-04-07",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Shanghai",
+      "participants": "16",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Mineski",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/0/0b/Mineski_201706_allmode.png/53px-Mineski_201706_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "LGD Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ea/LGD_Gaming_2016_allmode.png/100px-LGD_Gaming_2016_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "StarLadder ImbaTV Invitational Season 5",
+      "tournament_url": "https://liquipedia.net/dota2/StarLadder/i-League_Invitational/5",
+      "date": "Apr 12–15, 2018",
+      "start_date": "2018-04-12",
+      "end_date": "2018-04-15",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Kyiv",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "OpTic Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/79/OpTic_Gaming_lightmode.png/77px-OpTic_Gaming_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Thunder",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/8/85/VGJ.Thunder_lightmode.png/50px-VGJ.Thunder_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "EPICENTER XL",
+      "tournament_url": "https://liquipedia.net/dota2/EPICENTER/2018",
+      "date": "Apr 27 – May 06, 2018",
+      "start_date": "2018-04-27",
+      "end_date": "2018-05-06",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Moscow",
+      "participants": "12",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "PSG.LGD",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/e8/PSG.LGD_allmode.png/100px-PSG.LGD_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "GESC: Thailand Dota2 Minor",
+      "tournament_url": "https://liquipedia.net/dota2/GESC/Thailand_Minor/2018",
+      "date": "May 09–12, 2018",
+      "start_date": "2018-05-09",
+      "end_date": "2018-05-12",
+      "prizepool_usd": 300000,
+      "prizepool": "$300,000",
+      "location": "Bangkok",
+      "participants": "8",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "VGJ.Storm",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ec/VGJ.Storm_lightmode.png/50px-VGJ.Storm_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Keen Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/9/9d/Keen_Gaming_logo.png/44px-Keen_Gaming_logo.png",
+        "logo_variant": "unknown"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "MDL Changsha Major",
+      "tournament_url": "https://liquipedia.net/dota2/Mars_Dota_2_League/Changsha_Major/2018",
+      "date": "May 14–20, 2018",
+      "start_date": "2018-05-14",
+      "end_date": "2018-05-20",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Changsha",
+      "participants": "12",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "PSG.LGD",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/e8/PSG.LGD_allmode.png/100px-PSG.LGD_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "VGJ.Storm",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/ec/VGJ.Storm_lightmode.png/50px-VGJ.Storm_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "ESL One Birmingham 2018",
+      "tournament_url": "https://liquipedia.net/dota2/ESL_One/Birmingham/2018",
+      "date": "May 23–27, 2018",
+      "start_date": "2018-05-23",
+      "end_date": "2018-05-27",
+      "prizepool_usd": 1000000,
+      "prizepool": "$1,000,000",
+      "location": "Birmingham",
+      "participants": "12",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "OpTic Gaming",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/79/OpTic_Gaming_lightmode.png/77px-OpTic_Gaming_lightmode.png",
+        "logo_variant": "lightmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "China Dota2 Supermajor",
+      "tournament_url": "https://liquipedia.net/dota2/Supermajor/2018",
+      "date": "Jun 02–10, 2018",
+      "start_date": "2018-06-02",
+      "end_date": "2018-06-10",
+      "prizepool_usd": 1500000,
+      "prizepool": "$1,500,000",
+      "location": "Shanghai",
+      "participants": "16",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "Team Liquid",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-Team_Liquid_2017_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Virtus.pro",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/1/1d/Virtus.pro_allmode.png/48px-Virtus.pro_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "MPGL Asian Championship",
+      "tournament_url": "https://liquipedia.net/dota2/MPGL/Asian_Championship",
+      "date": "Jul 06–08, 2018",
+      "start_date": "2018-07-06",
+      "end_date": "2018-07-08",
+      "prizepool_usd": 80000,
+      "prizepool": "$80,000",
+      "location": "Khon Kaen",
+      "participants": "4",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Execration",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/4/4b/Execration_allmode.png/50px-Execration_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "Clutch Gamers",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/73/Clutch_Gamers_allmode.png/66px-Clutch_Gamers_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 2,
+      "source_page": "Tier 2 Tournaments/2016-2019",
+      "tournament": "DOTA Summit 9",
+      "tournament_url": "https://liquipedia.net/dota2/The_Summit/9",
+      "date": "Jul 25–29, 2018",
+      "start_date": "2018-07-25",
+      "end_date": "2018-07-29",
+      "prizepool_usd": 100000,
+      "prizepool": "$100,000",
+      "location": "Los Angeles",
+      "participants": "6",
+      "row_classes": "table2&#95;&#95;row--body",
+      "winner": {
+        "name": "Evil Geniuses",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/f/fd/Evil_Geniuses_March_2018_lightmode.png/72px-Evil_Geniuses_March_2018_lightmode.png",
+        "logo_variant": "lightmode"
+      },
+      "runner_up": {
+        "name": "Fnatic",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/4/4e/Fnatic_2015_allmode.png/60px-Fnatic_2015_allmode.png",
+        "logo_variant": "allmode"
+      }
+    },
+    {
+      "tier": 1,
+      "source_page": "Tier_1_Tournaments",
+      "tournament": "The International 2018",
+      "tournament_url": "https://liquipedia.net/dota2/The_International/2018",
+      "date": "Aug 15–25, 2018",
+      "start_date": "2018-08-15",
+      "end_date": "2018-08-25",
+      "prizepool_usd": 25532177,
+      "prizepool": "$25,532,177",
+      "location": "Vancouver",
+      "participants": "18",
+      "row_classes": "table2&#95;&#95;row--body table2&#95;&#95;row--highlighted",
+      "winner": {
+        "name": "OG",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/7/70/OG_RB_allmode.png/34px-OG_RB_allmode.png",
+        "logo_variant": "allmode"
+      },
+      "runner_up": {
+        "name": "PSG.LGD",
+        "logo_url": "https://liquipedia.net/commons/images/thumb/e/e8/PSG.LGD_allmode.png/100px-PSG.LGD_allmode.png",
+        "logo_variant": "allmode"
+      }
+    }
+  ]
+}

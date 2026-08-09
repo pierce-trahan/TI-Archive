@@ -32,7 +32,8 @@
     "verify:playerids": "tsx scripts/verify-playerids.ts",
     "build:standings": "tsx scripts/build-group-standings.ts",
     "verify:names": "tsx scripts/verify-computed-names.ts",
-    "fetch:photos": "tsx scripts/fetch-player-photos.ts"
+    "fetch:photos": "tsx scripts/fetch-player-photos.ts",
+    "build:rosters": "tsx scripts/build-rosters-section.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

@@ -1,0 +1,40 @@
+{
+  "_note": "Historical names that refer to the same team, and names that look related but are NOT. A first, deliberately small down-payment on DESIGN.md §8.4.3 — enough to stop season aggregates being wrong, not an attempt to solve identity across all years.",
+  "_why": "Season titles are aggregated by winner name, so a team that renamed mid-season loses the titles it won under its old name. TNC won China Top 2017 as 'TNC Pro Team' and appeared at TI8 as 'TNC Predator'; without this, their row read zero.",
+  "_rule": "An alias asserts the SAME TEAM under a different name. A B-team or secondary roster is a different team and belongs in `distinct`, never here.",
+  "aliases": [
+    {
+      "canonical": "TNC Predator",
+      "also_known_as": ["TNC Pro Team", "TnC"],
+      "basis": "rebrand of the same team",
+      "source": {
+        "type": "owner",
+        "note": "Confirmed by the archive's owner, who followed the scene live: 'TNC Pro Team rebranded to TNC Predator, Tiger was their B-team.'",
+        "date": "2026-08-09"
+      },
+      "corroboration": {
+        "note": "This project's own GosuGamers set brackets the changeover without explaining it: 'TnC' in headlines through 2018-03-07, 'TNC Predator' from 2018-04-01.",
+        "last_old_name": "https://www.gosugamers.net/dota2/news/46589-pgl-bucharest-playoff-teams-are-decided-optic-tnc-rise-to-the-occasion",
+        "first_new_name": "https://www.gosugamers.net/dota2/news/46731-dac-playoff-teams-decided-virtus-pro-and-tnc-predator-top-each-of-their-groups"
+      }
+    }
+  ],
+  "distinct": [
+    {
+      "name": "TnC Tiger",
+      "not": "TNC Predator",
+      "basis": "B-team, not the same roster",
+      "source": {
+        "type": "owner",
+        "note": "Confirmed by the archive's owner: 'Tiger was their B-team.'",
+        "date": "2026-08-09"
+      }
+    },
+    {
+      "name": "LGD.Forever Young",
+      "not": "PSG.LGD",
+      "basis": "a separate team sharing an organisation's branding, not a rename",
+      "source": { "type": "inference", "note": "Both competed in the same season as distinct entrants." }
+    }
+  ]
+}

@@ -110,7 +110,25 @@ function classify(row: TournamentRow): { label: string; kind: string } {
   if (isValve(row)) {
     return row.tier === 1 ? { label: 'Major', kind: 'major' } : { label: 'Minor', kind: 'minor' };
   }
+  // Tier 1 without Valve backing: top-level by field and prize money, but
+  // outside the circuit. Rare, and always for a reason worth a note.
+  if (row.tier === 1) return { label: 'No Valve backing', kind: 'unbacked' };
   return { label: `Tier ${row.tier}`, kind: 'other' };
+}
+
+/**
+ * The chart shows the competitive circuit, not every LAN that happened.
+ *
+ * Per the owner, the non-DPC tier-2 events "clutter up the visual too much" —
+ * and they do: a $60k eight-team invitational sits beside a $1M Major and
+ * flattens the comparison the chart exists to make. So the bars are the
+ * circuit: every tier-1 event, plus the tier-2 events Valve backed, which is
+ * what a DPC Minor was. A tier-1 event outside the circuit still appears —
+ * being top-tier yet unsanctioned is itself part of the season's story.
+ */
+function inChart(row: TournamentRow): boolean {
+  const { kind } = classify(row);
+  return kind === 'major' || kind === 'minor' || kind === 'unbacked';
 }
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -236,7 +254,8 @@ async function main(): Promise<void> {
 
   // The International bounds the season rather than appearing in it.
   const ti = rows.filter((r) => classify(r).kind === 'ti');
-  const season = rows.filter((r) => classify(r).kind !== 'ti');
+  const season = rows.filter(inChart);
+  const excluded = rows.filter((r) => classify(r).kind === 'other');
 
   // Unrecorded pools can't set a maximum.
   const seasonMax = Math.max(...season.map((r) => r.prizepool_usd ?? 0), 1);
@@ -257,7 +276,7 @@ async function main(): Promise<void> {
   const counts = {
     major: season.filter((r) => classify(r).kind === 'major').length,
     minor: season.filter((r) => classify(r).kind === 'minor').length,
-    other: season.filter((r) => classify(r).kind === 'other').length,
+    unbacked: season.filter((r) => classify(r).kind === 'unbacked').length,
   };
 
   const finale = ti[0];
@@ -267,14 +286,33 @@ async function main(): Promise<void> {
       `Its prize pool sits apart from this chart by an order of magnitude and is covered on the page above.</p>`
     : '';
 
+  /**
+   * Editorial prose lives in data/narrative/, not in this script. When a
+   * season needs an explanation under its chart — an event that doesn't fit
+   * the pattern, a year the structure changed — the note is written there
+   * and picked up here, so the owner edits prose without touching code.
+   */
+  let note = '';
+  try {
+    const notePath = fileURLToPath(
+      new URL(`../data/narrative/${key}.chart-note.html`, import.meta.url),
+    );
+    note = `\n  <aside class="chart-aside">\n${(await readFile(notePath, 'utf8')).trim()}\n  </aside>\n`;
+  } catch {
+    // No note for this season. Nothing to explain, or not written yet.
+  }
+
+  const unbackedLegend = counts.unbacked
+    ? `\n      <li><span class="swatch sw-unbacked"></span>No Valve backing <em>&times;${counts.unbacked}</em></li>`
+    : '';
+
   const fragment = `<section class="season-chart">
   <header class="chart-head">
     <h3>The season, by prize pool</h3>
-    <p class="chart-sub">Every tier-1 and tier-2 LAN between the last International and this one, in order. Bars are the <strong>total</strong> prize pool, not the winner's share.</p>
+    <p class="chart-sub">The circuit between the last International and this one, in order: every Major and Minor, plus any top-tier event outside the circuit. Bars are the <strong>total</strong> prize pool, not the winner's share.</p>
     <ul class="chart-legend">
       <li><span class="swatch sw-major"></span>Major <em>&times;${counts.major}</em></li>
-      <li><span class="swatch sw-minor"></span>Minor <em>&times;${counts.minor}</em></li>
-      <li><span class="swatch sw-other"></span>Non-DPC <em>&times;${counts.other}</em></li>
+      <li><span class="swatch sw-minor"></span>Minor <em>&times;${counts.minor}</em></li>${unbackedLegend}
     </ul>
   </header>
 
@@ -283,8 +321,8 @@ ${bars.join('\n')}
   </ol>
 
   ${closing}
-
-  <p class="chart-note">Tier and Valve-sponsorship are Liquipedia's own classifications. Mapping those to &ldquo;Major&rdquo; and &ldquo;Minor&rdquo; is this archive's reading of the DPC structure that year &mdash; the underlying tier and highlight are preserved in the data.</p>
+${note}
+  <p class="chart-note">Tier and Valve-sponsorship are Liquipedia's own classifications. Mapping those to &ldquo;Major&rdquo; and &ldquo;Minor&rdquo; is this archive's reading of the DPC structure that year &mdash; the underlying tier and highlight are preserved in the data. Smaller non-circuit events are recorded in the data but left off the chart.</p>
 </section>`;
 
   const outDir = fileURLToPath(new URL('../data/computed/', import.meta.url));
@@ -292,8 +330,15 @@ ${bars.join('\n')}
   const outPath = `${outDir}${key}.season-chart${INLINE ? '.inline' : ''}.html`;
   await writeFile(outPath, `${fragment}\n`, 'utf8');
 
-  console.log(`${season.length} season event(s) charted`);
-  console.log(`  Majors: ${counts.major}   Minors: ${counts.minor}   Non-DPC: ${counts.other}`);
+  console.log(`${season.length} event(s) charted`);
+  console.log(
+    `  Majors: ${counts.major}   Minors: ${counts.minor}   No Valve backing: ${counts.unbacked}`,
+  );
+  console.log(`  ${note ? 'editorial note attached' : 'no editorial note (data/narrative/' + key + '.chart-note.html)'}`);
+  if (excluded.length) {
+    console.log(`  ${excluded.length} non-circuit event(s) kept in the data but off the chart:`);
+    for (const row of excluded) console.log(`      ${row.start_date}  ${row.tournament}`);
+  }
   console.log(`  scale max: ${usd(seasonMax)}`);
   for (const row of ti) {
     console.log(`  excluded from the chart by design: ${row.tournament} (${usd(row.prizepool_usd ?? 0)})`);

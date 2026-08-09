@@ -137,13 +137,35 @@ async function listSubpages(page: string, cacheDir: string): Promise<string[]> {
   return (data.query?.allpages ?? []).map((p) => p.title);
 }
 
-/** The subpage covering a given year, from a list of real page titles. */
-function pickYearSubpage(subpages: string[], year: string): string | null {
-  // Exact match first ("Tier 2 Tournaments/2018") so a page like
-  // ".../2018 Season Recap" can't win over the year's own page.
-  const exact = subpages.find((t) => t.split('/').at(-1)?.trim() === year);
-  if (exact) return exact;
-  return subpages.find((t) => t.includes(year)) ?? null;
+/**
+ * The calendar years a subpage covers, read from its title.
+ *
+ * These are named by SEASON, not by year — "Tier 2 Tournaments/2016-2017".
+ * Matching a year against the title as a substring picks the wrong page:
+ * "2017" matches the 2016-2017 season, when the season leading into TI8 is
+ * 2017-2018. Expanding the range and testing for overlap is the only way to
+ * ask the question that actually matters.
+ */
+function subpageYears(title: string): number[] {
+  const last = title.split('/').at(-1)?.trim() ?? '';
+  const range = /^(\d{4})\s*[-–—]\s*(\d{4})$/.exec(last);
+  if (range) {
+    const from = Number(range[1]);
+    const to = Number(range[2]);
+    if (to < from || to - from > 20) return []; // not a season range
+    return Array.from({ length: to - from + 1 }, (_, i) => from + i);
+  }
+  const single = /^(\d{4})$/.exec(last);
+  if (single) return [Number(single[1])];
+  // Anything else: take whatever years the title mentions, so an oddly named
+  // page is still considered rather than silently skipped.
+  return [...last.matchAll(/\b(\d{4})\b/g)].map((m) => Number(m[1]));
+}
+
+/** Every subpage overlapping the wanted years, in the order the wiki listed them. */
+function subpagesCoveringYears(subpages: string[], years: string[]): string[] {
+  const wanted = new Set(years.map(Number));
+  return subpages.filter((title) => subpageYears(title).some((y) => wanted.has(y)));
 }
 
 /** Isolates one year's section: from its heading to the next heading of any level. */
@@ -415,49 +437,55 @@ async function main(): Promise<void> {
     const debugPath = `${liquipediaDir}${page}.html`;
     await writeFile(debugPath, html, 'utf8');
 
-    // Resolved lazily, and only once per tier — most tiers never need it.
-    let subpages: string[] | null = null;
-
-    let anyFound = false;
-    for (const year of years) {
-      let section = extractYearSection(html, year);
-      let sourcePage = page;
-
-      // Not on the index? Older years live on their own subpages.
-      if (!section) {
-        if (subpages === null) {
-          subpages = await listSubpages(page, cacheDir);
-          console.log(`  ${page} has ${subpages.length} subpage(s)`);
-        }
-        const subTitle = pickYearSubpage(subpages, year);
-        if (!subTitle) {
-          console.log(`  ${year}: not on the index, and no subpage covers it`);
-          if (subpages.length) console.log(`    subpages seen: ${subpages.slice(0, 20).join(', ')}`);
-          continue;
-        }
-        console.log(`  ${year}: not on the index — reading subpage "${subTitle}"`);
-        const subHtml = await fetchRenderedHtml(subTitle, cacheDir);
-        await writeFile(`${liquipediaDir}${subTitle.replace(/\//g, '_')}.html`, subHtml, 'utf8');
-        sourcePage = subTitle;
-        // A year subpage may repeat the year as a heading, or may simply BE
-        // that year — in which case the whole page is the section.
-        section = extractYearSection(subHtml, year) ?? subHtml;
-      }
-
-      anyFound = true;
-      const parsed = parseRows(section, tier, sourcePage);
-      console.log(`  ${year}: ${parsed.length} row(s) from ${sourcePage}`);
+    // Years the index carries itself.
+    const onIndex = years.filter((year) => extractYearSection(html, year) !== null);
+    for (const year of onIndex) {
+      const parsed = parseRows(extractYearSection(html, year)!, tier, page);
+      console.log(`  ${year}: ${parsed.length} row(s) from ${page}`);
       all.push(...parsed);
     }
 
-    if (!anyFound) {
+    const missing = years.filter((year) => !onIndex.includes(year));
+    if (missing.length === 0) continue;
+
+    const subpages = await listSubpages(page, cacheDir);
+    const targets = subpagesCoveringYears(subpages, missing);
+    console.log(
+      `  ${missing.join(', ')} not on the index; ${subpages.length} subpage(s) exist, ` +
+        `${targets.length} cover those years`,
+    );
+
+    if (targets.length === 0) {
       const ids = headingIds(html);
-      console.log(`\n  ${page} has no section for any requested year. Headings it does have (${ids.length}):`);
-      console.log(`    ${ids.slice(0, 60).join(', ') || '(none at all — the page may not use headings)'}`);
-      if (ids.length > 60) console.log(`    ...and ${ids.length - 60} more`);
-      const rowCount = [...html.matchAll(/<tr[^>]*>/gi)].length;
-      console.log(`  the page does contain ${rowCount} table row(s), so the data may be laid out another way.`);
-      console.log(`  full HTML: ${debugPath}\n`);
+      console.log(`\n  Nothing covers ${missing.join(', ')} for ${page}.`);
+      console.log(`    index headings: ${ids.slice(0, 40).join(', ') || '(none)'}`);
+      console.log(`    subpages:       ${subpages.slice(0, 40).join(', ') || '(none)'}`);
+      console.log(`    full HTML: ${debugPath}\n`);
+      continue;
+    }
+
+    for (const target of targets) {
+      console.log(`  reading subpage "${target}"`);
+      const subHtml = await fetchRenderedHtml(target, cacheDir);
+      await writeFile(`${liquipediaDir}${target.replace(/[\/ ]/g, '_')}.html`, subHtml, 'utf8');
+
+      // A season page may still split by year internally. Prefer those
+      // sections; fall back to the whole page when it doesn't.
+      const sections = missing
+        .map((year) => ({ year, section: extractYearSection(subHtml, year) }))
+        .filter((s): s is { year: string; section: string } => s.section !== null);
+
+      if (sections.length) {
+        for (const { year, section } of sections) {
+          const parsed = parseRows(section, tier, target);
+          console.log(`    ${year}: ${parsed.length} row(s)`);
+          all.push(...parsed);
+        }
+      } else {
+        const parsed = parseRows(subHtml, tier, target);
+        console.log(`    whole page: ${parsed.length} row(s) (no per-year sections)`);
+        all.push(...parsed);
+      }
     }
   }
 

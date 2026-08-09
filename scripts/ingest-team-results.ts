@@ -52,7 +52,10 @@ interface ParseResponse {
 }
 
 async function fetchRendered(page: string, cacheDir: string): Promise<string | null> {
-  const url = `${API}?action=parse&page=${encodeURIComponent(page)}&prop=text&format=json`;
+  // redirects=1 matters: many team pages are redirects, and parsing one
+  // without it returns the redirect stub, which yields zero rows and looks
+  // exactly like a team that earned nothing. PSG.LGD did this.
+  const url = `${API}?action=parse&page=${encodeURIComponent(page)}&prop=text&redirects=1&format=json`;
   const { data, cached } = await fetchJsonCached<ParseResponse>(url, {
     cachePath: `${cacheDir}/liquipedia/results/${page.replace(/[^A-Za-z0-9]/g, '_')}.json`,
     minIntervalMs: PARSE_INTERVAL_MS,
@@ -78,12 +81,36 @@ const decodeEntities = (t: string): string =>
 const stripTags = (html: string): string =>
   decodeEntities(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 
-/** "$1,151,000" -> 1151000. Null for "-", "TBD", or a non-USD figure. */
-function parsePrize(text: string): number | null {
-  const match = /^\$\s*([\d,]+)/.exec(text.trim());
-  if (!match) return null;
-  const value = Number(match[1]!.replace(/,/g, ''));
-  return Number.isFinite(value) && value > 0 ? value : null;
+type PrizeReading =
+  /** A USD figure we can use. */
+  | { kind: 'usd'; usd: number }
+  /** Liquipedia's dash: this placement genuinely paid nothing. */
+  | { kind: 'none' }
+  /** Something is there and we cannot read it. Never treat as zero. */
+  | { kind: 'unreadable'; text: string };
+
+/**
+ * Reads the prize cell.
+ *
+ * The first version accepted only "$1,151,000" and returned null otherwise —
+ * which meant a prize in another currency matched nothing, was never recorded
+ * as unreadable, and silently became zero. Team Serenity showed $0 across
+ * eighteen results because of it. Chinese and European events frequently post
+ * in ¥ or €, so an unrecognised amount now announces itself.
+ */
+function readPrize(text: string): PrizeReading {
+  const t = text.trim();
+  if (!t || /^[-–—]$/.test(t)) return { kind: 'none' };
+  const usd = /^\$\s*([\d,]+)/.exec(t);
+  if (usd) {
+    const value = Number(usd[1]!.replace(/,/g, ''));
+    // "$0" is a readable zero, not an unreadable figure. Only a dollar amount
+    // that fails to parse at all falls through to unreadable.
+    if (Number.isFinite(value)) return value > 0 ? { kind: 'usd', usd: value } : { kind: 'none' };
+  }
+  // Any other currency, a range, a footnote — real money we cannot total.
+  if (/[\d]/.test(t)) return { kind: 'unreadable', text: t };
+  return { kind: 'none' };
 }
 
 interface ResultRow {
@@ -93,6 +120,8 @@ interface ResultRow {
   tournament: string | null;
   tournament_url: string | null;
   prize_usd: number | null;
+  /** False when money was listed and could not be read — a gap, not a zero. */
+  prize_readable: boolean;
   prize_displayed: string | null;
 }
 
@@ -134,19 +163,24 @@ function parseResultRows(html: string): ResultRow[] {
       break;
     }
 
-    const prizeCell = [...text].reverse().find((t) => /^\$|^-$|^–$/.test(t.trim())) ?? null;
+    // Prize is the final column. Reading it positionally rather than by
+    // pattern means an unrecognised currency still reaches readPrize and gets
+    // reported, instead of failing to match and disappearing.
+    const prizeCell = text[text.length - 1] ?? null;
     // Ordinal suffix required: a bare "digits - digits" test also matches the
     // ISO date sitting two cells to the left.
     const place = text.find((t) => /^\d+(st|nd|rd|th)\b/i.test(t)) ?? null;
     const tier = text.find((t) => /^(Tier \d|Qualifier|Monthly|Weekly|Showmatch|National)/i.test(t)) ?? null;
 
+    const reading = readPrize(prizeCell ?? '');
     rows.push({
       date,
       place,
       tier,
       tournament,
       tournament_url: tournamentUrl,
-      prize_usd: prizeCell ? parsePrize(prizeCell) : null,
+      prize_usd: reading.kind === 'usd' ? reading.usd : null,
+      prize_readable: reading.kind !== 'unreadable',
       prize_displayed: prizeCell,
     });
   }
@@ -223,12 +257,16 @@ async function main(): Promise<void> {
       .filter((r) => !isTi(r))
       .reduce((sum, r) => sum + (r.prize_usd ?? 0), 0);
     const tiUsd = inWindow.filter(isTi).reduce((sum, r) => sum + (r.prize_usd ?? 0), 0);
-    // A dash means no prize, which is a fact. A figure we could not read is a gap.
-    const unpriced = inWindow.filter(
-      (r) => r.prize_usd == null && r.prize_displayed && !/^[-–]$/.test(r.prize_displayed.trim()),
-    );
+    // A dash means no prize, which is a fact. Money we could not read is a gap.
+    const unpriced = inWindow.filter((r) => !r.prize_readable);
 
     perTeam.push({ team, page, found: true, season_usd: seasonUsd, ti_usd: tiUsd, rows_in_window: inWindow, unpriced });
+    // Zero rows from a page that loaded means the parse failed, not that the
+    // team never played. Say so rather than reporting a confident $0.
+    if (all.length === 0) {
+      console.log(`  0 ROWS PARSED — page loaded but no results table found (${page})`);
+      continue;
+    }
     console.log(
       `  ${String(all.length).padStart(3)} rows, ${String(inWindow.length).padStart(2)} in window` +
         `  season $${seasonUsd.toLocaleString('en-US')}${unpriced.length ? `  ${unpriced.length} UNPRICED` : ''}`,

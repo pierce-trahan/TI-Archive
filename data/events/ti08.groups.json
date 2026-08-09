@@ -1,0 +1,22 @@
+{
+  "_note": "Which group letter is which. The match data shows two groups but never names them, so the letters are a sourced claim rather than an ordering the traversal happened to produce. One anchor team per letter is enough — group membership comes from the matches themselves.",
+  "event": "ti08",
+  "anchors": [
+    {
+      "label": "Group A",
+      "team": "Evil Geniuses",
+      "source_url": "https://www.gosugamers.net/dota2/news/47691-eg-lead-the-group-a-pack-at-end-of-international-2018-day-1",
+      "source_title": "EG lead the Group A pack at end of International 2018 Day 1",
+      "published": "2018-08-16",
+      "corroboration": "https://www.gosugamers.net/dota2/news/47699-liquid-and-eg-tied-for-first-in-group-a-at-ti8-day-3"
+    },
+    {
+      "label": "Group B",
+      "team": "Team Secret",
+      "source_url": "https://www.gosugamers.net/dota2/news/47692-team-secret-struggles-in-group-b-on-day-1-of-the-international-2018",
+      "source_title": "Team Secret struggles in Group B on Day 1 of The International 2018",
+      "published": "2018-08-16",
+      "corroboration": "https://www.gosugamers.net/dota2/news/47701-vgj-storm-secure-top-brackets-in-group-b-at-the-end-of-the-international-8-day-3"
+    }
+  ]
+}

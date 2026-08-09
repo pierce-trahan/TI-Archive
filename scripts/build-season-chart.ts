@@ -25,6 +25,24 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
+/**
+ * With --inline, logos are embedded as data URIs instead of linked by path.
+ * The review artifact is served under a strict CSP that blocks every external
+ * request, so a linked image simply never loads there.
+ */
+const INLINE = process.argv.includes('--inline');
+const inlined = new Map<string, string>();
+
+async function dataUri(relativePath: string): Promise<string> {
+  const cached = inlined.get(relativePath);
+  if (cached) return cached;
+  const absolute = fileURLToPath(new URL(`../${relativePath}`, import.meta.url));
+  const bytes = await readFile(absolute);
+  const uri = `data:image/png;base64,${bytes.toString('base64')}`;
+  inlined.set(relativePath, uri);
+  return uri;
+}
+
 interface TeamRef {
   name: string | null;
   logo_url: string | null;
@@ -55,8 +73,19 @@ interface SeasonData {
 
 interface LogoRecord {
   team: string;
+  file: string;
   local_path: string;
   dark_local_path: string | null;
+}
+
+/**
+ * "…/thumb/a/a7/Team_Liquid_2017_lightmode.png/50px-…" -> "Team_Liquid_2017_lightmode.png"
+ * Mirrors the extraction in fetch-team-logos.ts so the two agree on identity.
+ */
+function fileNameFromUrl(url: string): string | null {
+  const parts = url.split('/').filter(Boolean);
+  const name = url.includes('/thumb/') ? parts.at(-2) : parts.at(-1);
+  return name ? decodeURIComponent(name) : null;
 }
 
 const escapeHtml = (text: string): string =>
@@ -102,12 +131,21 @@ function compactUsd(value: number): string {
   return `$${Math.round(value / 1000)}k`;
 }
 
+/**
+ * Logos keyed by FILE, not by team name.
+ *
+ * A team can have more than one logo across a season — Evil Geniuses changed
+ * theirs mid-2018, and Liquipedia uses the era-appropriate mark per event.
+ * Keying by team name collapses those to whichever was read last, silently
+ * showing the wrong-era logo on some events. The row already names the exact
+ * file it referenced, so resolve on that.
+ */
 async function loadLogos(key: string): Promise<Map<string, LogoRecord>> {
   const path = fileURLToPath(new URL(`../data/research/${key}.logos.json`, import.meta.url));
   const map = new Map<string, LogoRecord>();
   try {
     const parsed = JSON.parse(await readFile(path, 'utf8')) as { logos?: LogoRecord[] };
-    for (const logo of parsed.logos ?? []) map.set(logo.team, logo);
+    for (const logo of parsed.logos ?? []) map.set(logo.file, logo);
   } catch {
     // No manifest yet. Bars fall back to the team's name, which is the
     // honest degradation — a missing logo must not become a wrong logo.
@@ -115,16 +153,35 @@ async function loadLogos(key: string): Promise<Map<string, LogoRecord>> {
   return map;
 }
 
-function bar(row: TournamentRow, maxUsd: number, logos: Map<string, LogoRecord>): string {
+/** The logo a row actually referenced, or undefined when it isn't downloaded. */
+function logoFor(team: TeamRef, logos: Map<string, LogoRecord>): LogoRecord | undefined {
+  if (!team.logo_url) return undefined;
+  const file = fileNameFromUrl(team.logo_url);
+  return file ? logos.get(file) : undefined;
+}
+
+async function bar(row: TournamentRow, maxUsd: number, logos: Map<string, LogoRecord>): Promise<string> {
   const { label, kind } = classify(row);
   const value = row.prizepool_usd;
   const width = value === null ? 0 : Math.max((value / maxUsd) * 100, 1.5);
   const winner = row.winner.name;
-  const logo = winner ? logos.get(winner) : undefined;
+  const logo = logoFor(row.winner, logos);
 
-  const mark = logo
-    ? `<img class="bar-logo" src="${escapeHtml(`../../${logo.local_path}`)}" alt="" width="20" height="20">`
-    : '';
+  // A dark counterpart, where one exists, is swapped at runtime — a lightmode
+  // mark on a dark ground can be invisible.
+  let mark = '';
+  if (logo) {
+    const light = INLINE ? await dataUri(logo.local_path) : `../../${logo.local_path}`;
+    const dark = logo.dark_local_path
+      ? INLINE
+        ? await dataUri(logo.dark_local_path)
+        : `../../${logo.dark_local_path}`
+      : null;
+    mark =
+      `<img class="bar-logo" src="${escapeHtml(light)}"` +
+      `${dark ? ` data-dark="${escapeHtml(dark)}"` : ''}` +
+      ` alt="" width="20" height="20" loading="lazy">`;
+  }
   const winnerCell = winner
     ? `${mark}<span class="bar-winner">${escapeHtml(winner)}</span>`
     : '<span class="bar-winner none">winner not recorded</span>';
@@ -194,7 +251,7 @@ async function main(): Promise<void> {
       bars.push(`      <li class="month-rule"><span>${escapeHtml(month)}</span></li>`);
       lastMonth = month;
     }
-    bars.push(bar(row, seasonMax, logos));
+    bars.push(await bar(row, seasonMax, logos));
   }
 
   const counts = {
@@ -232,7 +289,7 @@ ${bars.join('\n')}
 
   const outDir = fileURLToPath(new URL('../data/computed/', import.meta.url));
   await mkdir(outDir, { recursive: true });
-  const outPath = `${outDir}${key}.season-chart.html`;
+  const outPath = `${outDir}${key}.season-chart${INLINE ? '.inline' : ''}.html`;
   await writeFile(outPath, `${fragment}\n`, 'utf8');
 
   console.log(`${season.length} season event(s) charted`);
@@ -245,10 +302,26 @@ ${bars.join('\n')}
   if (noPool.length) {
     console.log(`  ${noPool.length} event(s) render as "not recorded": ${noPool.map((r) => r.tournament).join(', ')}`);
   }
-  const noLogo = [...new Set(season.map((r) => r.winner.name).filter(Boolean))].filter((n) => !logos.has(n!));
+  const noLogo = season.filter((r) => r.winner.name && !logoFor(r.winner, logos));
   if (noLogo.length) {
-    console.log(`  ${noLogo.length} winner(s) have no local logo (bars use the name): ${noLogo.join(', ')}`);
+    console.log(`  ${noLogo.length} event(s) have no local winner logo (bars use the name):`);
+    for (const row of noLogo) console.log(`      ${row.winner.name} — ${row.tournament}`);
     console.log('  run `npm run fetch:logos -- <event-key>` to download them');
+  }
+  // Worth surfacing: it means the org's mark changed mid-season, and the
+  // chart is now showing each event's own era rather than one for all.
+  const perTeamFiles = new Map<string, Set<string>>();
+  for (const row of season) {
+    const logo = logoFor(row.winner, logos);
+    if (!logo) continue;
+    const set = perTeamFiles.get(logo.team) ?? new Set<string>();
+    set.add(logo.file);
+    perTeamFiles.set(logo.team, set);
+  }
+  for (const [team, files] of perTeamFiles) {
+    if (files.size > 1) {
+      console.log(`  ${team} uses ${files.size} different logos this season: ${[...files].join(', ')}`);
+    }
   }
   console.log(`\nwrote ${outPath}`);
 }

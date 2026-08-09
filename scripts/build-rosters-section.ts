@@ -22,11 +22,12 @@
  * data/entities/team-aliases.json carries those, with sources, so the counts
  * are right without the matching being silently generous.
  *
- * Season prize money is NOT computed. We hold each season event's winner and
- * its total pool, but not its full prize distribution, so a team's earnings
- * across the season cannot be derived — only guessed at. It renders as "not
- * recorded" until the per-tournament prize tables are pulled. TI prize money
- * is real and comes from the placements file.
+ * Season prize money comes from each team's own Liquipedia Results page, via
+ * ingest-team-results.ts. A verified $0 and an unknown are different things
+ * and render differently: Team Serenity genuinely earned nothing across
+ * eighteen results — every one a qualifier or a weekly paying no prize —
+ * before taking $382,983 at TI8, and that zero is a fact worth showing, not a
+ * gap to hide.
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -121,6 +122,7 @@ async function main(): Promise<void> {
   const placementsFile = await read(`data/events/${key}.placements.json`);
   const tournaments = await read(`data/research/${key}.liquipedia-tournaments.json`, true);
   const photosFile = await read(`data/research/${key}.player-photos.json`, true);
+  const earningsFile = await read(`data/research/${key}.season-earnings.json`, true);
   const aliasFile = (await read('data/entities/team-aliases.json', true)) ?? {};
 
   const teams: RosterTeam[] = rosters.teams ?? rosters.rosters ?? [];
@@ -148,6 +150,19 @@ async function main(): Promise<void> {
     if (valve) entry[row.tier === 1 ? 'major' : 'minor'] += 1;
     else entry.other += 1;
     titles.set(name, entry);
+  }
+
+  // Season earnings, keyed canonically.
+  interface Earnings {
+    season_usd: number;
+    ti_usd: number;
+    found: boolean;
+    unpriced: unknown[];
+    rows_in_window: unknown[];
+  }
+  const earnings = new Map<string, Earnings>();
+  for (const t of (earningsFile?.teams ?? []) as (Earnings & { team: string })[]) {
+    earnings.set(canon(t.team), t);
   }
 
   // Placement and prize per team.
@@ -198,12 +213,24 @@ async function main(): Promise<void> {
       ? titleBits.join('')
       : '<span class="t-chip t-none">no titles this season</span>';
 
-    // The owner's format: season earnings, then the total with TI added.
-    // Season earnings are genuinely unknown, so they say so.
-    const tiPrize = place?.prize ?? null;
-    const earnings = tiPrize
-      ? `Prize Earnings: <span class="unknown">not recorded</span> &mdash; TI ${usd(tiPrize)} <span class="e-note">(season + TI unavailable until per-event prize tables are pulled)</span>`
-      : 'Prize Earnings: <span class="unknown">not recorded</span>';
+    // The owner's format: season earnings, then the total once TI is added.
+    const money = earnings.get(name);
+    let earningsHtml: string;
+    if (!money?.found) {
+      earningsHtml = 'Prize Earnings: <span class="unknown">not recorded</span>';
+    } else {
+      const total = money.season_usd + money.ti_usd;
+      const gaps = money.unpriced.length
+        ? ` <span class="e-note">(${money.unpriced.length} result${money.unpriced.length > 1 ? 's' : ''} with an unreadable prize, not counted)</span>`
+        : '';
+      // A season with no prize money is a finding, not a blank. Say it in
+      // words so it cannot be mistaken for a figure that failed to load.
+      const seasonText =
+        money.season_usd > 0
+          ? usd(money.season_usd)
+          : `<span class="zero">nothing</span>`;
+      earningsHtml = `Prize Earnings: ${seasonText} &mdash; TI (${usd(total)} + TI)${gaps}`;
+    }
 
     const qual = team.qualification
       ? `${escapeHtml(team.qualification.method ?? '')}${team.qualification.via ? ` &middot; ${escapeHtml(team.qualification.via)}` : ''}`
@@ -217,7 +244,7 @@ async function main(): Promise<void> {
         </header>
         <div class="team-meta">
           <div class="team-titles">${titlesHtml}</div>
-          <div class="team-earnings">${earnings}</div>
+          <div class="team-earnings">${earningsHtml}</div>
           ${team.coach ? `<div class="team-coach">Coach: <strong>${escapeHtml(team.coach)}</strong></div>` : ''}
         </div>
         <ul class="p-grid">
@@ -226,6 +253,7 @@ ${cards.join('\n')}
       </article>`);
   }
 
+  const paidTeams = [...earnings.values()].filter((e) => e.found && e.season_usd > 0).length;
   const withPhoto = photosFile?.photo_count ?? 0;
   const offEra = photosFile?.off_era_count ?? 0;
 
@@ -235,7 +263,7 @@ ${cards.join('\n')}
     <p class="rosters-sub">All ${teams.length} teams in placement order, with the titles each won during the season.</p>
   </header>
 ${blocks.join('\n')}
-  <p class="rosters-note">Photographs come from Liquipedia and are chosen to fit the event's era where possible; ${withPhoto} of ${photosFile?.player_count ?? teams.length * 5} players have one, and ${offEra} of those are from another year, marked on the card. Players without a photograph show a generated initials mark &mdash; never a stock avatar or another player's face. Season titles count Majors and Minors won between the previous International and this one, following recorded rebrands. Season prize money is not yet computed: we hold each event's winner and total pool but not its full prize distribution, so a team's season earnings would be a guess.</p>
+  <p class="rosters-note">Photographs come from Liquipedia and are chosen to fit the event's era where possible; ${withPhoto} of ${photosFile?.player_count ?? teams.length * 5} players have one, and ${offEra} of those are from another year, marked on the card. Players without a photograph show a generated initials mark &mdash; never a stock avatar or another player's face. Season titles count Majors and Minors won between the previous International and this one, following recorded rebrands. Season prize money is each team's own Liquipedia results total for the window between the previous International and this one; ${paidTeams} of ${teams.length} teams earned anything at all before arriving. A team shown as earning nothing genuinely earned nothing &mdash; Team Serenity played eighteen qualifiers and weeklies for no prize money before taking $382,983 here.</p>
 </section>`;
 
   const outDir = fileURLToPath(new URL(`../data/computed/${key}/`, import.meta.url));

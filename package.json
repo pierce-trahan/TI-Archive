@@ -25,6 +25,7 @@
     "research:gosugamers": "tsx scripts/research-gosugamers.ts",
     "research:liquipedia": "tsx scripts/research-liquipedia-tier1.ts",
     "fetch:logos": "tsx scripts/fetch-team-logos.ts",
+    "build:chart": "tsx scripts/build-season-chart.ts",
     "verify:datdota": "tsx scripts/verify-datdota.ts",
     "apply:datdota": "tsx scripts/apply-datdota.ts",
     "ingest:playerids": "tsx scripts/ingest-player-ids.ts",

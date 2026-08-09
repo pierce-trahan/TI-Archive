@@ -106,6 +106,31 @@ function headingIds(html: string): string[] {
   return ids;
 }
 
+/**
+ * The page's own link to a year's subpage, e.g. "Tier_2_Tournaments/2018".
+ *
+ * A tier index only keeps the most recent years inline and moves the rest to
+ * subpages. Rather than guessing that convention — every wrong guess burns a
+ * 30-second rate-limited request — this reads the link the index itself
+ * provides. Restricted to subpages OF THIS PAGE, so an ordinary tournament
+ * link that happens to contain the year can't be mistaken for one.
+ */
+function findYearPageTitle(html: string, page: string, year: string): string | null {
+  const prefix = `${page}/`;
+  // The trailing group lets an "#anchor" or "?query" follow the page title
+  // without the link being skipped — the title itself is still group 1.
+  for (const match of html.matchAll(/href="\/dota2\/([^"#?]+)(?:[#?][^"]*)?"/gi)) {
+    let title: string;
+    try {
+      title = decodeURIComponent(match[1]!);
+    } catch {
+      continue; // malformed percent-encoding; not a link we can follow
+    }
+    if (title.startsWith(prefix) && title.includes(year)) return title;
+  }
+  return null;
+}
+
 /** Isolates one year's section: from its heading to the next heading of any level. */
 function extractYearSection(html: string, year: string): string | null {
   const headingRe = new RegExp(`<h[1-6][^>]*id="${year}"[^>]*>[\\s\\S]*?</h[1-6]>`, 'i');
@@ -266,6 +291,8 @@ function parsePrizeUsd(display: string | null): number | null {
 interface TierOneRow {
   /** Liquipedia's own tier, from which page the row came off. */
   tier: number;
+  /** The exact Liquipedia page this row was read from. */
+  source_page: string;
   tournament: string | null;
   tournament_url: string | null;
   date: string | null;
@@ -289,7 +316,7 @@ interface TierOneRow {
   runner_up: TeamRef;
 }
 
-function parseRows(sectionHtml: string, tier: number): TierOneRow[] {
+function parseRows(sectionHtml: string, tier: number, sourcePage: string): TierOneRow[] {
   const rows: TierOneRow[] = [];
 
   for (const rowMatch of sectionHtml.matchAll(/<tr([^>]*)>([\s\S]*?)<\/tr>/gi)) {
@@ -317,6 +344,7 @@ function parseRows(sectionHtml: string, tier: number): TierOneRow[] {
 
     rows.push({
       tier,
+      source_page: sourcePage,
       tournament,
       tournament_url: link ? absoluteUrl(link[1]!) : null,
       date,
@@ -359,8 +387,8 @@ async function main(): Promise<void> {
   console.log(`years: ${years.join(', ')}`);
   console.log(`season cutoff: events starting after ${cutoff} are dropped`);
   console.log(
-    `note: action=parse is capped at 1 request / 30s, so an uncached run of ` +
-      `${TIER_PAGES.length} pages takes about ${(TIER_PAGES.length - 1) * 30}s of waiting.\n`,
+    'note: action=parse is capped at 1 request / 30s. A cold run fetches each tier index ' +
+      'plus any year subpage it has to follow, so expect a 30s pause between pages.\n',
   );
 
   const all: TierOneRow[] = [];
@@ -374,14 +402,28 @@ async function main(): Promise<void> {
 
     let anyFound = false;
     for (const year of years) {
-      const section = extractYearSection(html, year);
+      let section = extractYearSection(html, year);
+      let sourcePage = page;
+
+      // Not on the index? The index links to the year's own subpage.
       if (!section) {
-        console.log(`  ${year}: no heading found`);
-        continue;
+        const subTitle = findYearPageTitle(html, page, year);
+        if (!subTitle) {
+          console.log(`  ${year}: not on this page, and it links to no subpage for that year`);
+          continue;
+        }
+        console.log(`  ${year}: not on the index — following its own link to "${subTitle}"`);
+        const subHtml = await fetchRenderedHtml(subTitle, cacheDir);
+        await writeFile(`${liquipediaDir}${subTitle.replace(/\//g, '_')}.html`, subHtml, 'utf8');
+        sourcePage = subTitle;
+        // A year subpage may repeat the year as a heading, or may simply BE
+        // that year — in which case the whole page is the section.
+        section = extractYearSection(subHtml, year) ?? subHtml;
       }
+
       anyFound = true;
-      const parsed = parseRows(section, tier);
-      console.log(`  ${year}: ${parsed.length} row(s)`);
+      const parsed = parseRows(section, tier, sourcePage);
+      console.log(`  ${year}: ${parsed.length} row(s) from ${sourcePage}`);
       all.push(...parsed);
     }
 
@@ -520,8 +562,9 @@ async function main(): Promise<void> {
         _generated_by: 'scripts/research-liquipedia-tier1.ts',
         _generated_at: new Date().toISOString(),
         _attribution: ATTRIBUTION,
-        _sources: TIER_PAGES.map(({ tier, page }) => ({
-          tier,
+        // The pages actually read, including any year subpage followed —
+        // not the pages we intended to read.
+        _sources: [...new Set(rows.map((r) => r.source_page))].sort().map((page) => ({
           type: 'url',
           url: `https://liquipedia.net/dota2/${page}`,
           retrieved_at: new Date().toISOString(),

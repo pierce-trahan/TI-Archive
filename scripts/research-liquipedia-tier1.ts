@@ -118,6 +118,15 @@ interface TierOneRow {
   date: string | null;
   prizepool: string | null;
   location: string | null;
+  /** Team count, Liquipedia's "P#" column. */
+  participants: string | null;
+  /**
+   * Liquipedia highlights Valve-sponsored events (Majors and The
+   * International) with a row class. Kept raw rather than reduced to a
+   * boolean: the exact marker is the evidence, and what counts as "special"
+   * changed across eras — which is the thing the season chart is meant to show.
+   */
+  row_classes: string | null;
   winner: TeamRef;
   runner_up: TeamRef;
 }
@@ -125,28 +134,36 @@ interface TierOneRow {
 function parseRows(sectionHtml: string): TierOneRow[] {
   const rows: TierOneRow[] = [];
 
-  for (const rowMatch of sectionHtml.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
-    const rowHtml = rowMatch[1]!;
+  for (const rowMatch of sectionHtml.matchAll(/<tr([^>]*)>([\s\S]*?)<\/tr>/gi)) {
+    const rowAttrs = rowMatch[1] ?? '';
+    const rowHtml = rowMatch[2]!;
     const cells = [...rowHtml.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((m) => m[1]!);
-    // Header rows and spacer rows don't carry a full complement of columns.
-    if (cells.length < 5) continue;
+    // Header and spacer rows don't carry a full complement of columns.
+    if (cells.length < 7) continue;
     if (/<th[^>]*>/i.test(rowHtml) && !/<td[^>]*>/i.test(rowHtml)) continue;
 
-    const first = cells[0] ?? '';
-    const link = /<a[^>]+href="([^"]+)"[^>]*title="([^"]+)"/i.exec(first);
-    const tournament = link ? link[2]! : stripTags(first) || null;
-    // A real row names a tournament; the leading icon-only cell does not.
+    // Column order, confirmed against real output:
+    //   0 icon | 1 tournament | 2 date | 3 prize pool | 4 location | 5 P# |
+    //   6 winner | 7 runner-up
+    // The icon cell links to the tournament too, so fall back to it for the
+    // name if the name cell somehow parses empty.
+    const nameCell = cells[1] ?? '';
+    const link =
+      /<a[^>]+href="([^"]+)"[^>]*title="([^"]+)"/i.exec(nameCell) ??
+      /<a[^>]+href="([^"]+)"[^>]*title="([^"]+)"/i.exec(cells[0] ?? '');
+    const tournament = stripTags(nameCell) || (link ? link[2]! : null);
     if (!tournament) continue;
 
     rows.push({
       tournament,
       tournament_url: link ? absoluteUrl(link[1]!) : null,
-      date: stripTags(cells[1] ?? '') || null,
-      prizepool: stripTags(cells[2] ?? '') || null,
-      location: stripTags(cells[3] ?? '') || null,
-      // cells[4] is the participant count ("P#") column.
-      winner: extractTeamCell(cells[5] ?? ''),
-      runner_up: extractTeamCell(cells[6] ?? ''),
+      date: stripTags(cells[2] ?? '') || null,
+      prizepool: stripTags(cells[3] ?? '') || null,
+      location: stripTags(cells[4] ?? '') || null,
+      participants: stripTags(cells[5] ?? '') || null,
+      row_classes: /class="([^"]*)"/i.exec(rowAttrs)?.[1] ?? null,
+      winner: extractTeamCell(cells[6] ?? ''),
+      runner_up: extractTeamCell(cells[7] ?? ''),
     });
   }
   return rows;
@@ -180,9 +197,13 @@ async function main(): Promise<void> {
   const rows = parseRows(section);
   console.log(`\nparsed ${rows.length} row(s) for ${year}:\n`);
   for (const row of rows) {
-    console.log(`  ${(row.date ?? '?').padEnd(24)} ${(row.tournament ?? '?').padEnd(34)} ${row.prizepool ?? '?'}`);
+    const marker = row.row_classes ? ` [${row.row_classes}]` : '';
     console.log(
-      `      winner: ${(row.winner.name ?? '(not parsed)').padEnd(22)} logo: ${row.winner.logo_url ?? '(none)'}`,
+      `  ${(row.date ?? '?').padEnd(24)} ${(row.tournament ?? '?').padEnd(34)} ` +
+        `${(row.prizepool ?? '?').padEnd(12)} ${row.participants ?? '?'} teams${marker}`,
+    );
+    console.log(
+      `      winner: ${(row.winner.name ?? '(not parsed)').padEnd(22)} ${row.winner.logo_url ?? '(no logo)'}`,
     );
   }
 

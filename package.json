@@ -35,7 +35,8 @@
     "fetch:photos": "tsx scripts/fetch-player-photos.ts",
     "build:rosters": "tsx scripts/build-rosters-section.ts",
     "ingest:prizes": "tsx scripts/ingest-season-prizes.ts",
-    "ingest:results": "tsx scripts/ingest-team-results.ts"
+    "ingest:results": "tsx scripts/ingest-team-results.ts",
+    "build:bracket": "tsx scripts/build-bracket.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

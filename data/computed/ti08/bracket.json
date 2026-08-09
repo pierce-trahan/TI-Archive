@@ -1,0 +1,355 @@
+{
+  "_note": "Main-event bracket derived from match results, not read from a published bracket. Seeding comes from loss counts: in double elimination a lower-bracket team is out on its first loss and an upper-bracket team survives one. Verified two ways at build time — the derived upper bracket must equal the top four of each group from the standings, and elimination order must agree with final placements. Both are fatal.",
+  "_generated_by": "scripts/build-bracket.ts",
+  "_generated_at": "2026-08-09T22:18:10.936Z",
+  "event": "ti08",
+  "series_count": 22,
+  "seeding": [
+    {
+      "team_id": 2163,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 5026801,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 15,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 1883502,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 5066616,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 350190,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 543897,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 2108395,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 5229127,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 1375614,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 726228,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 5027210,
+      "started_in": "lower",
+      "losses": 1
+    },
+    {
+      "team_id": 2586976,
+      "started_in": "upper",
+      "losses": 0
+    },
+    {
+      "team_id": 5228654,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 39,
+      "started_in": "upper",
+      "losses": 2
+    },
+    {
+      "team_id": 1838315,
+      "started_in": "upper",
+      "losses": 2
+    }
+  ],
+  "series": [
+    {
+      "date": "2018-08-20",
+      "order": 4070356125,
+      "winner_team_id": 2163,
+      "loser_team_id": 5026801,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "upper",
+      "round": 1,
+      "round_label": "Upper Bracket Round 1"
+    },
+    {
+      "date": "2018-08-20",
+      "order": 4070500759,
+      "winner_team_id": 15,
+      "loser_team_id": 1883502,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "upper",
+      "round": 1,
+      "round_label": "Upper Bracket Round 1"
+    },
+    {
+      "date": "2018-08-20",
+      "order": 4070612749,
+      "winner_team_id": 5066616,
+      "loser_team_id": 350190,
+      "winner_score": 1,
+      "loser_score": 0,
+      "games": 1,
+      "bracket": "lower",
+      "round": 1,
+      "round_label": "Lower Bracket Round 1"
+    },
+    {
+      "date": "2018-08-20",
+      "order": 4070674710,
+      "winner_team_id": 543897,
+      "loser_team_id": 2108395,
+      "winner_score": 1,
+      "loser_score": 0,
+      "games": 1,
+      "bracket": "lower",
+      "round": 1,
+      "round_label": "Lower Bracket Round 1"
+    },
+    {
+      "date": "2018-08-20",
+      "order": 4070746269,
+      "winner_team_id": 5229127,
+      "loser_team_id": 1375614,
+      "winner_score": 1,
+      "loser_score": 0,
+      "games": 1,
+      "bracket": "lower",
+      "round": 1,
+      "round_label": "Lower Bracket Round 1"
+    },
+    {
+      "date": "2018-08-20",
+      "order": 4070838238,
+      "winner_team_id": 726228,
+      "loser_team_id": 5027210,
+      "winner_score": 1,
+      "loser_score": 0,
+      "games": 1,
+      "bracket": "lower",
+      "round": 1,
+      "round_label": "Lower Bracket Round 1"
+    },
+    {
+      "date": "2018-08-21",
+      "order": 4072252473,
+      "winner_team_id": 2586976,
+      "loser_team_id": 5228654,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "upper",
+      "round": 1,
+      "round_label": "Upper Bracket Round 1"
+    },
+    {
+      "date": "2018-08-21",
+      "order": 4072441405,
+      "winner_team_id": 39,
+      "loser_team_id": 1838315,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "upper",
+      "round": 1,
+      "round_label": "Upper Bracket Round 1"
+    },
+    {
+      "date": "2018-08-21",
+      "order": 4072586507,
+      "winner_team_id": 5026801,
+      "loser_team_id": 5066616,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 2,
+      "round_label": "Lower Bracket Round 2"
+    },
+    {
+      "date": "2018-08-21",
+      "order": 4072699199,
+      "winner_team_id": 1883502,
+      "loser_team_id": 543897,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 2,
+      "round_label": "Lower Bracket Round 2"
+    },
+    {
+      "date": "2018-08-22",
+      "order": 4074178274,
+      "winner_team_id": 5228654,
+      "loser_team_id": 5229127,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 2,
+      "round_label": "Lower Bracket Round 2"
+    },
+    {
+      "date": "2018-08-22",
+      "order": 4074356696,
+      "winner_team_id": 1838315,
+      "loser_team_id": 726228,
+      "winner_score": 2,
+      "loser_score": 1,
+      "games": 3,
+      "bracket": "lower",
+      "round": 2,
+      "round_label": "Lower Bracket Round 2"
+    },
+    {
+      "date": "2018-08-22",
+      "order": 4074591870,
+      "winner_team_id": 15,
+      "loser_team_id": 2163,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "upper",
+      "round": 2,
+      "round_label": "Upper Bracket Round 2"
+    },
+    {
+      "date": "2018-08-22",
+      "order": 4074694505,
+      "winner_team_id": 2586976,
+      "loser_team_id": 39,
+      "winner_score": 2,
+      "loser_score": 1,
+      "games": 3,
+      "bracket": "upper",
+      "round": 2,
+      "round_label": "Upper Bracket Round 2"
+    },
+    {
+      "date": "2018-08-23",
+      "order": 4076043995,
+      "winner_team_id": 1883502,
+      "loser_team_id": 5026801,
+      "winner_score": 2,
+      "loser_score": 1,
+      "games": 3,
+      "bracket": "lower",
+      "round": 3,
+      "round_label": "Lower Bracket Round 3"
+    },
+    {
+      "date": "2018-08-23",
+      "order": 4076257095,
+      "winner_team_id": 1838315,
+      "loser_team_id": 5228654,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 3,
+      "round_label": "Lower Bracket Round 3"
+    },
+    {
+      "date": "2018-08-23",
+      "order": 4076431752,
+      "winner_team_id": 39,
+      "loser_team_id": 1883502,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 4,
+      "round_label": "Lower Bracket Round 4"
+    },
+    {
+      "date": "2018-08-24",
+      "order": 4078079157,
+      "winner_team_id": 2163,
+      "loser_team_id": 1838315,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 4,
+      "round_label": "Lower Bracket Round 4"
+    },
+    {
+      "date": "2018-08-24",
+      "order": 4078291886,
+      "winner_team_id": 2586976,
+      "loser_team_id": 15,
+      "winner_score": 2,
+      "loser_score": 1,
+      "games": 3,
+      "bracket": "upper",
+      "round": 3,
+      "round_label": "Upper Bracket Final"
+    },
+    {
+      "date": "2018-08-24",
+      "order": 4078478649,
+      "winner_team_id": 39,
+      "loser_team_id": 2163,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 5,
+      "round_label": "Lower Bracket Round 5"
+    },
+    {
+      "date": "2018-08-25",
+      "order": 4080316101,
+      "winner_team_id": 15,
+      "loser_team_id": 39,
+      "winner_score": 2,
+      "loser_score": 0,
+      "games": 2,
+      "bracket": "lower",
+      "round": 6,
+      "round_label": "Lower Bracket Final"
+    },
+    {
+      "date": "2018-08-25",
+      "order": 4080601137,
+      "winner_team_id": 2586976,
+      "loser_team_id": 15,
+      "winner_score": 3,
+      "loser_score": 2,
+      "games": 5,
+      "bracket": "grand-final",
+      "round": 1,
+      "round_label": "Grand Final"
+    }
+  ]
+}

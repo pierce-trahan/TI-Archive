@@ -72,7 +72,7 @@ The prototype gave every TI exactly three paragraphs. That is a summary, not a h
 | **The Season** | What happened in the year leading in. Who was dominant, who collapsed, what the circuit looked like. |
 | **The Shuffle** | Roster mania. Who moved, who got kicked, who betrayed whom, what it meant. |
 | **The Field** | Who made it and who didn't. The snubs. The qualifier runs. |
-| **The Event** | Group stage, main event, the bracket as it unfolded. |
+| **The Event** | Group stage, main event, the bracket as it unfolded. See §3.3. |
 | **The Finals** | The grand final in detail. |
 | **The Aftermath** | Post-TI shuffle, disbands, retirements, what the result meant in hindsight. |
 
@@ -113,6 +113,21 @@ Distinct from narrative prose: a quoted, dated, attributed snapshot of how peopl
 
 Every block requires a URL, a date, and a platform. If those three don't exist, the block doesn't get made.
 
+### 3.3 The Event chapter — standings by day, and the bracket
+
+A final placement table says who finished where. It cannot say how it felt to be there on the second morning. Two views are required, and the first is the one usually missing:
+
+**Group stage standings after each day.** Not just the final group table — a snapshot at the end of every group-stage day, so the arc within the group stage is visible. OG opened TI8 badly and climbed; that recovery is invisible in a single end-state table, and it is exactly the kind of thing a reader who watched it live remembers. The day-over-day movement (position change, series won/lost that day) is the point.
+
+**The bracket, as it resolved.** The full main-event bracket with scores, upper and lower, so a run can be traced end to end rather than inferred from a placement number.
+
+Data notes, so this is scoped honestly:
+
+- Daily standings are **derivable from OpenDota** — group-stage matches carry `start_time`, and the event's venue-local day bucketing already exists in `phaseFor()`/`localDate()`. Standings are a cumulative fold over those results in date order. No new source needed.
+- Bracket structure is **not** cleanly derivable from OpenDota. `series_id` groups the games of one series, but the tree — who advanced to face whom, upper vs lower — is not in the match data. Liquipedia carries it and `ingest:liquipedia` already reads those pages; the bracket needs a parser, and that is the real work here.
+- Formats changed repeatedly across TIs (group sizes, how many advance, whether the bottom is eliminated, single vs double elimination). The renderer must read the format from the event's data rather than assume TI8's shape.
+- Early TIs may not have day-level match data at all. Where they don't, the standings view shows *"not available for this event"* — the §5.2 rule applies unchanged.
+
 ---
 
 ## 4. The Road to TI (tab 2)
@@ -146,7 +161,7 @@ New. The purpose is contextual: reading year-by-year, you should be able to see 
 ### 5.1 Patch & map
 
 - **Patch version** the event was played on, with a link to the official notes.
-- **Map schematic** for that patch era.
+- **Map schematic** for that patch era. This is not optional decoration — the map *is* the patch as far as a reader is concerned, and "7.19" means nothing to someone who wants to know what the game looked like that year.
 - **Structural feature table** — what existed on the map that year:
 
   Outposts · Shrines · Bounty rune count and positions · Wisdom/XP runes · Lotus pools · Tormentors · Twin Gates · Roshan pit location and count · Neutral camp count per side · Neutral items · Tomes of Knowledge · Talent trees · Backdoor protection · Buyback rules · Courier rules
@@ -156,6 +171,8 @@ New. The purpose is contextual: reading year-by-year, you should be able to see 
 - **"What changed since last TI"** — a diff against the previous year's structural row. This is the feature that makes the evolution legible.
 
 **Implementation note.** Map images should be authored as SVG schematics rather than scraped screenshots: they stay legible at any size, they theme with the page, they carry no licensing ambiguity, and they keep the repo offline. One schematic per structural era (roughly: pre-6.82, 6.82–6.88, 7.00–7.22, 7.23–7.32, 7.33+), not one per patch.
+
+**Get the patch number from the data, not from a search.** TI8's patch (7.19) was established during drafting by a live web search, because nothing in the committed dataset recorded it — which is exactly the kind of fact that should never depend on someone remembering to look it up. OpenDota's match detail carries a `patch` field, and `MatchDetail` already declares it; the ingest step should record the patch actually observed across an event's matches and flag any event whose matches disagree. A tournament played across a patch boundary is a real thing and worth surfacing, not averaging away.
 
 ### 5.2 Event statistics
 
@@ -172,6 +189,24 @@ All of the following are derivable from OpenDota match data for the event's leag
 | Highest / lowest win-rate heroes | `picks_bans` + result, min-games threshold |
 | Player GPM / XPM averages and leaders | `players[].gold_per_min`, `xp_per_min` |
 | First-blood timing, average | `objectives[]` |
+
+### 5.2.1 Items that defined the meta
+
+Heroes are only half of what a patch felt like. Some events are remembered for an item as much as a hero — TI11 and Wraith Pact being the obvious case, where a single item shaped how teams fought. Not every year has one that stark, but every year has items that separated the field from the previous one, and the archive should say which.
+
+What goes on the page:
+
+- **Most-purchased items** at the event, excluding the consumables and boots every game buys — those are noise, not meta. The exclusion list is explicit and reviewable, not a hardcoded guess.
+- **Items new to this patch cycle**, and how heavily they were actually taken up. An item introduced and ignored is as informative as one introduced and abused.
+- **Biggest change from the previous TI** — the same diff idea as the map's structural row in §5.1, applied to item usage. This is what makes an item's rise legible as an event rather than a statistic.
+- Where an item genuinely defined the event, a short sourced note saying so, in the same shape as the chart note in §3.3 — a claim like "Wraith Pact defined TI11" is narrative and needs a citation, not a computed number wearing a sentence.
+
+Data notes:
+
+- OpenDota match detail carries `players[].item_0`–`item_5`, `backpack_*`, and `purchase_log` where the replay was parsed. **Our `MatchPlayer` interface does not currently read any of them** — adding the fields is the first step.
+- Item id → name needs OpenDota's item constants, fetched and cached the same way `fetchHeroes()` already handles heroes.
+- Final inventory and purchase history answer different questions. Final inventory undercounts items that were bought and consumed or sold; `purchase_log` catches those but only exists for parsed matches. Pick per stat, and say which is in use.
+- Same thresholds as everything else: an item bought three times is not a meta definer. Sample size travels with the number, and where replays are unparsed the display is *"not available for this event"*.
 
 **Two honesty requirements:**
 

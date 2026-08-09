@@ -2,7 +2,14 @@
  * Collect GosuGamers period reporting for an event.
  *
  *   npm run research:gosugamers -- ti08
+ *   npm run research:gosugamers -- ti08 --from 2017-08-12   # whole season
  *   npm run research:gosugamers -- ti08 --limit 60
+ *
+ * By default the window comes from the event's own phases, widened either
+ * side — enough for the event and its run-up. A competitive season is longer
+ * than that: it starts when the previous International ends. Use `--from` to
+ * cover one, or the narrative for the season's opening months will have no
+ * period reporting behind it.
  *
  * RUN THIS LOCALLY. GosuGamers sits behind bot protection that refuses
  * datacenter IPs, so it cannot be reached from a cloud session. From a normal
@@ -53,6 +60,30 @@ function arg(name: string, fallback: number): number {
   const i = process.argv.indexOf(`--${name}`);
   const value = i > -1 ? Number(process.argv[i + 1]) : NaN;
   return Number.isFinite(value) ? value : fallback;
+}
+
+/**
+ * A YYYY-MM-DD override for one edge of the window.
+ *
+ * The default window is derived from the event's own phases, which covers the
+ * event and its run-up but not a full competitive season. A season runs from
+ * the previous International, so `--from 2017-08-12` is how you get period
+ * reporting for all of it rather than only the closing months.
+ *
+ * Rejects anything unparseable rather than silently falling back — a typo'd
+ * date that quietly reverts to the default would produce a file that looks
+ * complete and isn't.
+ */
+function dateArg(name: string): Date | null {
+  const i = process.argv.indexOf(`--${name}`);
+  if (i === -1) return null;
+  const raw = process.argv[i + 1];
+  if (!raw || !/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    throw new Error(`--${name} needs a YYYY-MM-DD date, got: ${raw ?? '(nothing)'}`);
+  }
+  const parsed = new Date(`${raw}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) throw new Error(`--${name} is not a real date: ${raw}`);
+  return parsed;
 }
 
 async function polite(url: string): Promise<Response> {
@@ -165,23 +196,53 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // High enough that a normal run covers the whole date window rather than exhausting
-  // one quarter's worth of candidates and stopping before reaching the others.
-  const maxArticles = arg('limit', 600);
   const event = await loadEvent(key);
 
   const first = event.phases[0]?.from ?? `${event.year}-01-01`;
   const last = event.phases.at(-1)?.to ?? `${event.year}-12-31`;
-  const windowFrom = new Date(`${first}T00:00:00Z`);
-  windowFrom.setUTCDate(windowFrom.getUTCDate() - 60);
-  const windowTo = new Date(`${last}T23:59:59Z`);
-  windowTo.setUTCDate(windowTo.getUTCDate() + 45);
+
+  const fromOverride = dateArg('from');
+  const toOverride = dateArg('to');
+
+  let windowFrom: Date;
+  if (fromOverride) {
+    windowFrom = fromOverride;
+  } else {
+    windowFrom = new Date(`${first}T00:00:00Z`);
+    windowFrom.setUTCDate(windowFrom.getUTCDate() - 60);
+  }
+
+  let windowTo: Date;
+  if (toOverride) {
+    windowTo = new Date(toOverride);
+    windowTo.setUTCHours(23, 59, 59, 999);
+  } else {
+    windowTo = new Date(`${last}T23:59:59Z`);
+    windowTo.setUTCDate(windowTo.getUTCDate() + 45);
+  }
+
+  if (windowFrom >= windowTo) {
+    throw new Error(
+      `window start (${windowFrom.toISOString().slice(0, 10)}) is not before its end ` +
+        `(${windowTo.toISOString().slice(0, 10)}).`,
+    );
+  }
 
   const quarters = quartersInRange(windowFrom, windowTo);
 
+  // Scaled to the window: the cap exists to bound a run, but a fixed one
+  // silently truncates a long window — the failure that dropped the actual
+  // tournament month from an earlier run. Roughly 200 articles per quarter
+  // clears GosuGamers' real publishing rate with room to spare.
+  const maxArticles = arg('limit', Math.max(600, quarters.length * 200));
+
   console.log(`${event.name}`);
-  console.log(`window: ${windowFrom.toISOString().slice(0, 10)} -> ${windowTo.toISOString().slice(0, 10)}`);
-  console.log(`sitemap quarters: ${quarters.map((q) => `${q.year}Q${q.quarter}`).join(', ')}\n`);
+  console.log(
+    `window: ${windowFrom.toISOString().slice(0, 10)} -> ${windowTo.toISOString().slice(0, 10)}` +
+      `${fromOverride || toOverride ? '  (overridden)' : '  (from event phases)'}`,
+  );
+  console.log(`sitemap quarters: ${quarters.map((q) => `${q.year}Q${q.quarter}`).join(', ')}`);
+  console.log(`article cap: ${maxArticles}\n`);
 
   const robots = await checkRobots(`${ORIGIN}/sitemap.xml`);
   if (!robots.allowed) throw new Error(`robots.txt disallows the sitemap (${robots.rule}). Stopping.`);

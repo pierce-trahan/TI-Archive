@@ -27,6 +27,16 @@ npm run research:gosugamers  -- ti08
 
 Each takes an event key from `data/sources/events.json` and derives its date window from that event's phases, widened 60 days before and 45 days after so the run-up and the aftermath are included.
 
+**That default window is not a season.** It covers the event and the months immediately before it — for TI8 that is April onward. A competitive season starts when the previous International ends, so writing about a season's opening months against the default window means writing with no period reporting behind them. Set `--from` to the day after the previous TI finished:
+
+```bash
+# The whole 2017-18 season, not just its closing months.
+# TI7 ended 2017-08-12.
+npm run research:gosugamers -- ti08 --from 2017-08-12
+```
+
+The article cap scales with the window (about 200 per quarter), so a longer window doesn't silently truncate. `--from` and `--to` reject anything that isn't `YYYY-MM-DD` rather than falling back to the default — a typo'd date that quietly reverted would produce a file that looks complete and isn't.
+
 Useful variations:
 
 ```bash

@@ -30,7 +30,8 @@
     "apply:datdota": "tsx scripts/apply-datdota.ts",
     "ingest:playerids": "tsx scripts/ingest-player-ids.ts",
     "verify:playerids": "tsx scripts/verify-playerids.ts",
-    "build:standings": "tsx scripts/build-group-standings.ts"
+    "build:standings": "tsx scripts/build-group-standings.ts",
+    "verify:names": "tsx scripts/verify-computed-names.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

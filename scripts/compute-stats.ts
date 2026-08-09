@@ -192,7 +192,6 @@ async function main(): Promise<void> {
   const playerRows = [...players.entries()]
     .map(([account_id, row]) => ({
       account_id,
-      handle: handleFor.get(account_id) ?? null,
       games: row.gpm.length,
       avg_gpm: round1(mean(row.gpm)),
       avg_xpm: round1(mean(row.xpm)),
@@ -310,7 +309,9 @@ async function main(): Promise<void> {
 
   console.log('\n  top GPM:');
   for (const p of stats.players.top_gpm.slice(0, 5)) {
-    console.log(`      ${(p.handle ?? `account ${p.account_id}`).padEnd(16)} ${p.avg_gpm} gpm over ${p.games} games`);
+    // Handle is for this report only — the stats file itself carries the id.
+    const shown = handleFor.get(p.account_id) ?? `account ${p.account_id}`;
+    console.log(`      ${shown.padEnd(16)} ${p.avg_gpm} gpm over ${p.games} games`);
   }
 
   console.log(

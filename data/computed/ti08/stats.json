@@ -456,70 +456,60 @@
     "top_gpm": [
       {
         "account_id": 105248644,
-        "handle": "Miracle-",
         "games": 24,
         "avg_gpm": 625.9,
         "avg_xpm": 630
       },
       {
         "account_id": 111620041,
-        "handle": "SumaiL",
         "games": 27,
         "avg_gpm": 619.4,
         "avg_xpm": 610.2
       },
       {
         "account_id": 125581247,
-        "handle": "Ame",
         "games": 30,
         "avg_gpm": 605.5,
         "avg_xpm": 620.1
       },
       {
         "account_id": 106863163,
-        "handle": "Somnus丶M",
         "games": 30,
         "avg_gpm": 605,
         "avg_xpm": 639.3
       },
       {
         "account_id": 86725175,
-        "handle": "Resolut1on",
         "games": 22,
         "avg_gpm": 600.2,
         "avg_xpm": 612.1
       },
       {
         "account_id": 129958758,
-        "handle": "Xxs",
         "games": 18,
         "avg_gpm": 574.2,
         "avg_xpm": 558.7
       },
       {
         "account_id": 113457795,
-        "handle": "Moonn",
         "games": 19,
         "avg_gpm": 568.1,
         "avg_xpm": 557.2
       },
       {
         "account_id": 311360822,
-        "handle": "ana",
         "games": 29,
         "avg_gpm": 565.2,
         "avg_xpm": 563.9
       },
       {
         "account_id": 149486894,
-        "handle": "Sccc",
         "games": 19,
         "avg_gpm": 564.8,
         "avg_xpm": 587.4
       },
       {
         "account_id": 221666230,
-        "handle": "CCnC",
         "games": 24,
         "avg_gpm": 564.2,
         "avg_xpm": 552.1
@@ -528,70 +518,60 @@
     "top_xpm": [
       {
         "account_id": 106863163,
-        "handle": "Somnus丶M",
         "games": 30,
         "avg_gpm": 605,
         "avg_xpm": 639.3
       },
       {
         "account_id": 105248644,
-        "handle": "Miracle-",
         "games": 24,
         "avg_gpm": 625.9,
         "avg_xpm": 630
       },
       {
         "account_id": 125581247,
-        "handle": "Ame",
         "games": 30,
         "avg_gpm": 605.5,
         "avg_xpm": 620.1
       },
       {
         "account_id": 86725175,
-        "handle": "Resolut1on",
         "games": 22,
         "avg_gpm": 600.2,
         "avg_xpm": 612.1
       },
       {
         "account_id": 111620041,
-        "handle": "SumaiL",
         "games": 27,
         "avg_gpm": 619.4,
         "avg_xpm": 610.2
       },
       {
         "account_id": 132851371,
-        "handle": "RAMZES666",
         "games": 25,
         "avg_gpm": 558.4,
         "avg_xpm": 605
       },
       {
         "account_id": 94004717,
-        "handle": "hFn",
         "games": 16,
         "avg_gpm": 546.1,
         "avg_xpm": 601.6
       },
       {
         "account_id": 106573901,
-        "handle": "No[o]ne",
         "games": 25,
         "avg_gpm": 559.6,
         "avg_xpm": 598.6
       },
       {
         "account_id": 117281554,
-        "handle": "Moogy",
         "games": 19,
         "avg_gpm": 539.7,
         "avg_xpm": 592.2
       },
       {
         "account_id": 149486894,
-        "handle": "Sccc",
         "games": 19,
         "avg_gpm": 564.8,
         "avg_xpm": 587.4

@@ -47,6 +47,11 @@ interface RosterTeam {
 
 interface DayRow {
   team_id: number;
+  /**
+   * Present in memory for rendering and reporting only. Stripped before the
+   * JSON is written — computed data carries ids, not names (DESIGN.md §8.1
+   * rule 7). The HTML fragment is render output, so it keeps them.
+   */
   team: string;
   wins: number;
   losses: number;
@@ -260,8 +265,8 @@ async function main(): Promise<void> {
       days: byDay,
       tiebreakers: tiebreakers.map((m) => ({
         date: m.local_date,
-        winner: names.get(m.radiant_win ? m.radiant_team_id! : m.dire_team_id!)!,
-        loser: names.get(m.radiant_win ? m.dire_team_id! : m.radiant_team_id!)!,
+        winner_team_id: m.radiant_win ? m.radiant_team_id! : m.dire_team_id!,
+        loser_team_id: m.radiant_win ? m.dire_team_id! : m.radiant_team_id!,
       })),
     };
   });
@@ -275,7 +280,9 @@ async function main(): Promise<void> {
     }
     if (g.tiebreakers.length) {
       console.log(`     tiebreakers (excluded from the table above):`);
-      for (const t of g.tiebreakers) console.log(`       ${t.date}  ${t.winner} beat ${t.loser}`);
+      for (const t of g.tiebreakers) {
+        console.log(`       ${t.date}  ${names.get(t.winner_team_id)} beat ${names.get(t.loser_team_id)}`);
+      }
     }
   }
   const movers = output
@@ -314,7 +321,15 @@ async function main(): Promise<void> {
         event: key,
         days,
         group_labels_sourced: anchors.length > 0,
-        groups: output,
+        // Names stripped here, not upstream: they are needed to build the HTML
+        // above and to sort ties stably, but must not land in computed data.
+        groups: output.map((g) => ({
+          ...g,
+          days: g.days.map((d) => ({
+            ...d,
+            standings: d.standings.map(({ team, ...rest }) => rest),
+          })),
+        })),
       },
       null,
       2,
@@ -353,7 +368,7 @@ ${rows}
         .join('\n');
       const tb = g.tiebreakers.length
         ? `\n      <p class="tiebreak"><strong>Tiebreakers</strong> — played after the round robin and not counted in the tables above: ${g.tiebreakers
-            .map((t) => `${escapeHtml(t.winner)} beat ${escapeHtml(t.loser)}`)
+            .map((t) => `${escapeHtml(names.get(t.winner_team_id)!)} beat ${escapeHtml(names.get(t.loser_team_id)!)}`)
             .join('; ')}.</p>`
         : '';
       return `    <div class="group-block">

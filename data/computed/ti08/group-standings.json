@@ -1,7 +1,7 @@
 {
   "_note": "Group-stage ROUND-ROBIN standings after each day. Tiebreaker games played after the round robin are listed separately and excluded from the tables, because folding them in changes the records and hides the ties they existed to resolve. Points equal game wins under a one-point-per-game Bo2 format; confirm the format before reusing this for another event. Team names are joined from the event roster by team_id, NEVER from the match index — OpenDota returns a team's current name, which for a past event is wrong.",
   "_generated_by": "scripts/build-group-standings.ts",
-  "_generated_at": "2026-08-09T15:21:33.648Z",
+  "_generated_at": "2026-08-09T15:45:50.220Z",
   "event": "ti08",
   "days": [
     "2018-08-15",
@@ -21,7 +21,6 @@
           "standings": [
             {
               "team_id": 39,
-              "team": "Evil Geniuses",
               "wins": 5,
               "losses": 1,
               "played": 6,
@@ -31,7 +30,6 @@
             },
             {
               "team_id": 2163,
-              "team": "Team Liquid",
               "wins": 4,
               "losses": 2,
               "played": 6,
@@ -41,7 +39,6 @@
             },
             {
               "team_id": 350190,
-              "team": "Fnatic",
               "wins": 3,
               "losses": 1,
               "played": 4,
@@ -51,7 +48,6 @@
             },
             {
               "team_id": 543897,
-              "team": "Mineski",
               "wins": 3,
               "losses": 3,
               "played": 6,
@@ -61,7 +57,6 @@
             },
             {
               "team_id": 15,
-              "team": "PSG.LGD",
               "wins": 3,
               "losses": 3,
               "played": 6,
@@ -71,7 +66,6 @@
             },
             {
               "team_id": 5,
-              "team": "Invictus Gaming",
               "wins": 2,
               "losses": 4,
               "played": 6,
@@ -81,7 +75,6 @@
             },
             {
               "team_id": 5229127,
-              "team": "Winstrike Team",
               "wins": 2,
               "losses": 2,
               "played": 4,
@@ -91,7 +84,6 @@
             },
             {
               "team_id": 2586976,
-              "team": "OG",
               "wins": 1,
               "losses": 3,
               "played": 4,
@@ -101,7 +93,6 @@
             },
             {
               "team_id": 5027210,
-              "team": "VGJ.Thunder",
               "wins": 1,
               "losses": 5,
               "played": 6,
@@ -116,7 +107,6 @@
           "standings": [
             {
               "team_id": 39,
-              "team": "Evil Geniuses",
               "wins": 9,
               "losses": 1,
               "played": 10,
@@ -126,7 +116,6 @@
             },
             {
               "team_id": 350190,
-              "team": "Fnatic",
               "wins": 5,
               "losses": 3,
               "played": 8,
@@ -136,7 +125,6 @@
             },
             {
               "team_id": 15,
-              "team": "PSG.LGD",
               "wins": 5,
               "losses": 5,
               "played": 10,
@@ -146,7 +134,6 @@
             },
             {
               "team_id": 2163,
-              "team": "Team Liquid",
               "wins": 5,
               "losses": 3,
               "played": 8,
@@ -156,7 +143,6 @@
             },
             {
               "team_id": 5,
-              "team": "Invictus Gaming",
               "wins": 4,
               "losses": 6,
               "played": 10,
@@ -166,7 +152,6 @@
             },
             {
               "team_id": 543897,
-              "team": "Mineski",
               "wins": 4,
               "losses": 6,
               "played": 10,
@@ -176,7 +161,6 @@
             },
             {
               "team_id": 2586976,
-              "team": "OG",
               "wins": 3,
               "losses": 5,
               "played": 8,
@@ -186,7 +170,6 @@
             },
             {
               "team_id": 5027210,
-              "team": "VGJ.Thunder",
               "wins": 3,
               "losses": 5,
               "played": 8,
@@ -196,7 +179,6 @@
             },
             {
               "team_id": 5229127,
-              "team": "Winstrike Team",
               "wins": 2,
               "losses": 6,
               "played": 8,
@@ -211,7 +193,6 @@
           "standings": [
             {
               "team_id": 39,
-              "team": "Evil Geniuses",
               "wins": 11,
               "losses": 3,
               "played": 14,
@@ -221,7 +202,6 @@
             },
             {
               "team_id": 2163,
-              "team": "Team Liquid",
               "wins": 11,
               "losses": 3,
               "played": 14,
@@ -231,7 +211,6 @@
             },
             {
               "team_id": 15,
-              "team": "PSG.LGD",
               "wins": 9,
               "losses": 5,
               "played": 14,
@@ -241,7 +220,6 @@
             },
             {
               "team_id": 2586976,
-              "team": "OG",
               "wins": 8,
               "losses": 6,
               "played": 14,
@@ -251,7 +229,6 @@
             },
             {
               "team_id": 350190,
-              "team": "Fnatic",
               "wins": 7,
               "losses": 7,
               "played": 14,
@@ -261,7 +238,6 @@
             },
             {
               "team_id": 5027210,
-              "team": "VGJ.Thunder",
               "wins": 6,
               "losses": 8,
               "played": 14,
@@ -271,7 +247,6 @@
             },
             {
               "team_id": 543897,
-              "team": "Mineski",
               "wins": 5,
               "losses": 9,
               "played": 14,
@@ -281,7 +256,6 @@
             },
             {
               "team_id": 5,
-              "team": "Invictus Gaming",
               "wins": 4,
               "losses": 12,
               "played": 16,
@@ -291,7 +265,6 @@
             },
             {
               "team_id": 5229127,
-              "team": "Winstrike Team",
               "wins": 3,
               "losses": 11,
               "played": 14,
@@ -306,7 +279,6 @@
           "standings": [
             {
               "team_id": 39,
-              "team": "Evil Geniuses",
               "wins": 13,
               "losses": 3,
               "played": 16,
@@ -316,7 +288,6 @@
             },
             {
               "team_id": 2163,
-              "team": "Team Liquid",
               "wins": 13,
               "losses": 3,
               "played": 16,
@@ -326,7 +297,6 @@
             },
             {
               "team_id": 15,
-              "team": "PSG.LGD",
               "wins": 11,
               "losses": 5,
               "played": 16,
@@ -336,7 +306,6 @@
             },
             {
               "team_id": 2586976,
-              "team": "OG",
               "wins": 9,
               "losses": 7,
               "played": 16,
@@ -346,7 +315,6 @@
             },
             {
               "team_id": 350190,
-              "team": "Fnatic",
               "wins": 7,
               "losses": 9,
               "played": 16,
@@ -356,7 +324,6 @@
             },
             {
               "team_id": 5027210,
-              "team": "VGJ.Thunder",
               "wins": 6,
               "losses": 10,
               "played": 16,
@@ -366,7 +333,6 @@
             },
             {
               "team_id": 543897,
-              "team": "Mineski",
               "wins": 5,
               "losses": 11,
               "played": 16,
@@ -376,7 +342,6 @@
             },
             {
               "team_id": 5,
-              "team": "Invictus Gaming",
               "wins": 4,
               "losses": 12,
               "played": 16,
@@ -386,7 +351,6 @@
             },
             {
               "team_id": 5229127,
-              "team": "Winstrike Team",
               "wins": 4,
               "losses": 12,
               "played": 16,
@@ -400,13 +364,13 @@
       "tiebreakers": [
         {
           "date": "2018-08-18",
-          "winner": "Winstrike Team",
-          "loser": "Invictus Gaming"
+          "winner_team_id": 5229127,
+          "loser_team_id": 5
         },
         {
           "date": "2018-08-18",
-          "winner": "Winstrike Team",
-          "loser": "Invictus Gaming"
+          "winner_team_id": 5229127,
+          "loser_team_id": 5
         }
       ]
     },
@@ -420,7 +384,6 @@
           "standings": [
             {
               "team_id": 5228654,
-              "team": "VGJ.Storm",
               "wins": 4,
               "losses": 0,
               "played": 4,
@@ -430,7 +393,6 @@
             },
             {
               "team_id": 1375614,
-              "team": "Newbee",
               "wins": 3,
               "losses": 1,
               "played": 4,
@@ -440,7 +402,6 @@
             },
             {
               "team_id": 1883502,
-              "team": "Virtus.pro",
               "wins": 3,
               "losses": 1,
               "played": 4,
@@ -450,7 +411,6 @@
             },
             {
               "team_id": 5066616,
-              "team": "Team Serenity",
               "wins": 2,
               "losses": 2,
               "played": 4,
@@ -460,7 +420,6 @@
             },
             {
               "team_id": 2108395,
-              "team": "TNC Predator",
               "wins": 2,
               "losses": 2,
               "played": 4,
@@ -470,7 +429,6 @@
             },
             {
               "team_id": 67,
-              "team": "paiN Gaming",
               "wins": 1,
               "losses": 1,
               "played": 2,
@@ -480,7 +438,6 @@
             },
             {
               "team_id": 1838315,
-              "team": "Team Secret",
               "wins": 1,
               "losses": 3,
               "played": 4,
@@ -490,7 +447,6 @@
             },
             {
               "team_id": 5026801,
-              "team": "OpTic Gaming",
               "wins": 0,
               "losses": 2,
               "played": 2,
@@ -500,7 +456,6 @@
             },
             {
               "team_id": 726228,
-              "team": "Vici Gaming",
               "wins": 0,
               "losses": 4,
               "played": 4,
@@ -515,7 +470,6 @@
           "standings": [
             {
               "team_id": 5228654,
-              "team": "VGJ.Storm",
               "wins": 7,
               "losses": 1,
               "played": 8,
@@ -525,7 +479,6 @@
             },
             {
               "team_id": 2108395,
-              "team": "TNC Predator",
               "wins": 6,
               "losses": 4,
               "played": 10,
@@ -535,7 +488,6 @@
             },
             {
               "team_id": 1375614,
-              "team": "Newbee",
               "wins": 5,
               "losses": 5,
               "played": 10,
@@ -545,7 +497,6 @@
             },
             {
               "team_id": 1883502,
-              "team": "Virtus.pro",
               "wins": 5,
               "losses": 3,
               "played": 8,
@@ -555,7 +506,6 @@
             },
             {
               "team_id": 1838315,
-              "team": "Team Secret",
               "wins": 4,
               "losses": 6,
               "played": 10,
@@ -565,7 +515,6 @@
             },
             {
               "team_id": 726228,
-              "team": "Vici Gaming",
               "wins": 4,
               "losses": 6,
               "played": 10,
@@ -575,7 +524,6 @@
             },
             {
               "team_id": 5026801,
-              "team": "OpTic Gaming",
               "wins": 3,
               "losses": 5,
               "played": 8,
@@ -585,7 +533,6 @@
             },
             {
               "team_id": 67,
-              "team": "paiN Gaming",
               "wins": 3,
               "losses": 5,
               "played": 8,
@@ -595,7 +542,6 @@
             },
             {
               "team_id": 5066616,
-              "team": "Team Serenity",
               "wins": 3,
               "losses": 5,
               "played": 8,
@@ -610,7 +556,6 @@
           "standings": [
             {
               "team_id": 5228654,
-              "team": "VGJ.Storm",
               "wins": 10,
               "losses": 2,
               "played": 12,
@@ -620,7 +565,6 @@
             },
             {
               "team_id": 1883502,
-              "team": "Virtus.pro",
               "wins": 8,
               "losses": 4,
               "played": 12,
@@ -630,7 +574,6 @@
             },
             {
               "team_id": 2108395,
-              "team": "TNC Predator",
               "wins": 7,
               "losses": 7,
               "played": 14,
@@ -640,7 +583,6 @@
             },
             {
               "team_id": 1375614,
-              "team": "Newbee",
               "wins": 6,
               "losses": 8,
               "played": 14,
@@ -650,7 +592,6 @@
             },
             {
               "team_id": 1838315,
-              "team": "Team Secret",
               "wins": 6,
               "losses": 6,
               "played": 12,
@@ -660,7 +601,6 @@
             },
             {
               "team_id": 67,
-              "team": "paiN Gaming",
               "wins": 5,
               "losses": 7,
               "played": 12,
@@ -670,7 +610,6 @@
             },
             {
               "team_id": 5066616,
-              "team": "Team Serenity",
               "wins": 5,
               "losses": 7,
               "played": 12,
@@ -680,7 +619,6 @@
             },
             {
               "team_id": 726228,
-              "team": "Vici Gaming",
               "wins": 5,
               "losses": 7,
               "played": 12,
@@ -690,7 +628,6 @@
             },
             {
               "team_id": 5026801,
-              "team": "OpTic Gaming",
               "wins": 4,
               "losses": 8,
               "played": 12,
@@ -705,7 +642,6 @@
           "standings": [
             {
               "team_id": 5228654,
-              "team": "VGJ.Storm",
               "wins": 12,
               "losses": 4,
               "played": 16,
@@ -715,7 +651,6 @@
             },
             {
               "team_id": 1883502,
-              "team": "Virtus.pro",
               "wins": 10,
               "losses": 6,
               "played": 16,
@@ -725,7 +660,6 @@
             },
             {
               "team_id": 1375614,
-              "team": "Newbee",
               "wins": 8,
               "losses": 8,
               "played": 16,
@@ -735,7 +669,6 @@
             },
             {
               "team_id": 5026801,
-              "team": "OpTic Gaming",
               "wins": 8,
               "losses": 8,
               "played": 16,
@@ -745,7 +678,6 @@
             },
             {
               "team_id": 1838315,
-              "team": "Team Secret",
               "wins": 8,
               "losses": 8,
               "played": 16,
@@ -755,7 +687,6 @@
             },
             {
               "team_id": 5066616,
-              "team": "Team Serenity",
               "wins": 7,
               "losses": 9,
               "played": 16,
@@ -765,7 +696,6 @@
             },
             {
               "team_id": 2108395,
-              "team": "TNC Predator",
               "wins": 7,
               "losses": 9,
               "played": 16,
@@ -775,7 +705,6 @@
             },
             {
               "team_id": 726228,
-              "team": "Vici Gaming",
               "wins": 7,
               "losses": 9,
               "played": 16,
@@ -785,7 +714,6 @@
             },
             {
               "team_id": 67,
-              "team": "paiN Gaming",
               "wins": 5,
               "losses": 11,
               "played": 16,
@@ -799,13 +727,13 @@
       "tiebreakers": [
         {
           "date": "2018-08-18",
-          "winner": "OpTic Gaming",
-          "loser": "Newbee"
+          "winner_team_id": 5026801,
+          "loser_team_id": 1375614
         },
         {
           "date": "2018-08-18",
-          "winner": "Team Secret",
-          "loser": "Newbee"
+          "winner_team_id": 1838315,
+          "loser_team_id": 1375614
         }
       ]
     }

@@ -1,0 +1,219 @@
+{
+  "_note": "Team names as OpenDota reports them TODAY, which for a past event is often not what the team was called at the time. NOT authoritative and NOT an entity record: this is raw input for the identity review, kept because for qualifier teams that never reached the main event it is frequently the only name any source provides. Date these against Liquipedia before promoting them (DESIGN.md §8.4.2).",
+  "_generated_by": "scripts/ingest-matches.ts",
+  "_generated_at": "2026-08-09T15:45:49.643125+00:00",
+  "_source": "https://api.opendota.com/api/matches/{match_id}",
+  "_name_as_of": "2026-08-06",
+  "_migration_note": "Extracted from the previously committed matches.index.json when names were removed from it per DESIGN.md §8.1 rule 7, rather than re-running ingest.",
+  "event": "ti08",
+  "teams": [
+    {
+      "team_id": 3,
+      "name_now": "compLexity Gaming"
+    },
+    {
+      "team_id": 5,
+      "name_now": "Invictus Gaming"
+    },
+    {
+      "team_id": 15,
+      "name_now": "LGD Gaming"
+    },
+    {
+      "team_id": 39,
+      "name_now": "Shopify Rebellion"
+    },
+    {
+      "team_id": 46,
+      "name_now": "Team Empire"
+    },
+    {
+      "team_id": 67,
+      "name_now": "paiN Gaming"
+    },
+    {
+      "team_id": 2163,
+      "name_now": "Team Liquid"
+    },
+    {
+      "team_id": 111474,
+      "name_now": "Alliance"
+    },
+    {
+      "team_id": 350190,
+      "name_now": "Ascent Esports"
+    },
+    {
+      "team_id": 543897,
+      "name_now": "Mineski"
+    },
+    {
+      "team_id": 726228,
+      "name_now": "Vici Gaming"
+    },
+    {
+      "team_id": 1375614,
+      "name_now": "Newbee"
+    },
+    {
+      "team_id": 1520578,
+      "name_now": "GGGGGGGG"
+    },
+    {
+      "team_id": 1838315,
+      "name_now": "Team Secret"
+    },
+    {
+      "team_id": 1883502,
+      "name_now": "Virtus.pro"
+    },
+    {
+      "team_id": 2006913,
+      "name_now": "Vega Squadron"
+    },
+    {
+      "team_id": 2108395,
+      "name_now": "TNC Predator"
+    },
+    {
+      "team_id": 2586976,
+      "name_now": "OG"
+    },
+    {
+      "team_id": 2621843,
+      "name_now": "Team. Spirit"
+    },
+    {
+      "team_id": 2626685,
+      "name_now": "KEEN GAMING"
+    },
+    {
+      "team_id": 2640025,
+      "name_now": "iG.Vitality"
+    },
+    {
+      "team_id": 2786652,
+      "name_now": "Kingdra"
+    },
+    {
+      "team_id": 3320810,
+      "name_now": "Torus Gaming"
+    },
+    {
+      "team_id": 3331948,
+      "name_now": "LGD.Forever Young"
+    },
+    {
+      "team_id": 3477208,
+      "name_now": "Midas Club "
+    },
+    {
+      "team_id": 3715574,
+      "name_now": "SG e-sports team"
+    },
+    {
+      "team_id": 3785359,
+      "name_now": "BOOM ID"
+    },
+    {
+      "team_id": 4369633,
+      "name_now": "Entity Gaming"
+    },
+    {
+      "team_id": 4425117,
+      "name_now": "Gambit Esports"
+    },
+    {
+      "team_id": 4541043,
+      "name_now": "Team Singularity"
+    },
+    {
+      "team_id": 5027210,
+      "name_now": "VGJ Thunder"
+    },
+    {
+      "team_id": 5031582,
+      "name_now": "2Be.Dota2"
+    },
+    {
+      "team_id": 5039050,
+      "name_now": "Team Kinguin"
+    },
+    {
+      "team_id": 5051649,
+      "name_now": "Immortals"
+    },
+    {
+      "team_id": 5051765,
+      "name_now": "Team Leviathan"
+    },
+    {
+      "team_id": 5059375,
+      "name_now": "The Final Tribe"
+    },
+    {
+      "team_id": 5065748,
+      "name_now": "Infamous"
+    },
+    {
+      "team_id": 5066616,
+      "name_now": "Team Serenity"
+    },
+    {
+      "team_id": 5228654,
+      "name_now": "VGJ Storm"
+    },
+    {
+      "team_id": 5229127,
+      "name_now": "Winstrike"
+    },
+    {
+      "team_id": 5327206,
+      "name_now": "Thunder Predator"
+    },
+    {
+      "team_id": 5407259,
+      "name_now": "TNC Tigers"
+    },
+    {
+      "team_id": 5465317,
+      "name_now": "TEAM Baidu"
+    },
+    {
+      "team_id": 5466110,
+      "name_now": "jsut a squad"
+    },
+    {
+      "team_id": 5587909,
+      "name_now": "Midas Club"
+    },
+    {
+      "team_id": 5680524,
+      "name_now": "Espada"
+    },
+    {
+      "team_id": 5725202,
+      "name_now": "Wind and Rain"
+    },
+    {
+      "team_id": 5870144,
+      "name_now": "BlinkPool"
+    },
+    {
+      "team_id": 5896332,
+      "name_now": "Sterling Global Dragons"
+    },
+    {
+      "team_id": 5896956,
+      "name_now": "Battle Arena Elites"
+    },
+    {
+      "team_id": 5897750,
+      "name_now": "20 min afk les"
+    },
+    {
+      "team_id": 5921721,
+      "name_now": "Young Dumb"
+    }
+  ]
+}

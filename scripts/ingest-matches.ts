@@ -26,9 +26,7 @@ interface IndexedMatch {
   radiant_score: number;
   dire_score: number;
   radiant_team_id: number | null;
-  radiant_team_name: string | null;
   dire_team_id: number | null;
-  dire_team_name: string | null;
   series_id: number | null;
   series_type: number | null;
   /** False means replay-derived stats (Roshan, objectives) are unavailable. */
@@ -36,11 +34,23 @@ interface IndexedMatch {
   has_picks_bans: boolean;
 }
 
+/**
+ * OpenDota reports a team's CURRENT name, not its name at the time of the
+ * event. Those names must never reach `data/computed/` (DESIGN.md §8.1 rule
+ * 7) — a 2018 group stage rendered "Shopify Rebellion" because they did.
+ *
+ * They are still worth keeping: for qualifier teams that never reached the
+ * main event, this is often the only name any source gives us. So they go to
+ * `data/proposals/` instead, labelled for what they are, where the identity
+ * review can date them properly before they become entities.
+ */
 function teamName(team: MatchDetail['radiant_team'], fallback: string | null): string | null {
   return team?.name ?? fallback ?? null;
 }
 
 async function main(): Promise<void> {
+  /** team_id -> name as OpenDota reports it today. Routed to proposals, not computed. */
+  const observedNames = new Map<number, string>();
   const key = process.argv[2];
   if (!key) {
     console.error('usage: npm run ingest:matches -- <event-key>   (e.g. ti08)');
@@ -65,6 +75,15 @@ async function main(): Promise<void> {
     const { match, cached } = await fetchMatchDetail(summary.match_id, cacheDir);
     cached ? fromCache++ : fetched++;
 
+    // Captured for the identity review; deliberately not written to the index.
+    for (const [id, team, fallback] of [
+      [match.radiant_team_id, match.radiant_team, summary.radiant_team_name],
+      [match.dire_team_id, match.dire_team, summary.dire_team_name],
+    ] as const) {
+      const name = teamName(team, fallback);
+      if (id && name && !observedNames.has(id)) observedNames.set(id, name);
+    }
+
     indexed.push({
       match_id: match.match_id,
       start_time: match.start_time,
@@ -75,10 +94,7 @@ async function main(): Promise<void> {
       radiant_score: match.radiant_score,
       dire_score: match.dire_score,
       radiant_team_id: match.radiant_team_id ?? null,
-      // The list endpoint's team names are frequently null; detail is authoritative.
-      radiant_team_name: teamName(match.radiant_team, summary.radiant_team_name),
       dire_team_id: match.dire_team_id ?? null,
-      dire_team_name: teamName(match.dire_team, summary.dire_team_name),
       series_id: match.series_id ?? null,
       series_type: match.series_type ?? null,
       parsed: isParsed(match),
@@ -93,6 +109,33 @@ async function main(): Promise<void> {
   indexed.sort((a, b) => a.start_time - b.start_time);
 
   await mkdir(outDir, { recursive: true });
+
+  const proposalsDir = fileURLToPath(new URL('../data/proposals', import.meta.url));
+  await mkdir(proposalsDir, { recursive: true });
+  await writeFile(
+    `${proposalsDir}/${key}.teams-from-opendota.json`,
+    `${JSON.stringify(
+      {
+        _note:
+          "Team names as OpenDota reports them TODAY, which for a past event is often not what " +
+          'the team was called at the time. NOT authoritative and NOT an entity record: this is ' +
+          'raw input for the identity review, kept because for qualifier teams that never reached ' +
+          'the main event it is frequently the only name any source provides. Date these against ' +
+          'Liquipedia before promoting them (DESIGN.md §8.4.2).',
+        _generated_by: 'scripts/ingest-matches.ts',
+        _generated_at: new Date().toISOString(),
+        _source: 'https://api.opendota.com/api/matches/{match_id}',
+        _name_as_of: new Date().toISOString().slice(0, 10),
+        event: key,
+        teams: [...observedNames.entries()]
+          .map(([team_id, name]) => ({ team_id, name_now: name }))
+          .sort((a, b) => a.team_id - b.team_id),
+      },
+      null,
+      2,
+    )}\n`,
+    'utf8',
+  );
   await writeFile(
     `${outDir}/matches.index.json`,
     JSON.stringify(
@@ -140,8 +183,8 @@ async function main(): Promise<void> {
     );
   }
 
-  const missingTeams = indexed.filter((m) => !m.radiant_team_name || !m.dire_team_name);
-  console.log(`\nmatches still missing a team name after detail lookup: ${missingTeams.length}`);
+  const missingIds = indexed.filter((m) => !m.radiant_team_id || !m.dire_team_id);
+  console.log(`\nmatches missing a team id: ${missingIds.length}`);
 
   console.log(`\nwrote ${outDir}/matches.index.json`);
 }

@@ -22,6 +22,15 @@
  *      game's own recipe data. The first run showed why this is needed: `qual`
  *      alone let Vitality Booster, Ultimate Orb, Energy Booster, Point Booster
  *      and Shadow Amulet into the purchase list, all of them pure ingredients.
+ *
+ *      THE RECIPES ARE CURRENT, THE EVENT IS NOT. This filter has the same
+ *      hazard as reading a team's name from a live API: OpenDota's constants
+ *      describe today's patch, and recipes change. Aghanim's Scepter was a
+ *      terminal item at TI8 and is consumed into Aghanim's Blessing now, so a
+ *      2026 recipe removes it from a 2018 event where it was held in 153
+ *      games at a 62% win rate. Every item this filter removes is therefore
+ *      reported with its usage, so an anachronistic exclusion is visible
+ *      rather than silent. Until per-patch recipes exist, read that list.
  *   3. A short explicit list for what neither catches — Aegis and Cheese are
  *      picked up off the ground, and a Tome of Knowledge is not a build.
  *
@@ -147,14 +156,35 @@ async function main(): Promise<void> {
   console.log(`${byId.size} items in the constants table\n`);
 
   const counts = new Map<string, ItemCount>();
+  /** Usage of items the filters removed, so their effect can be inspected. */
+  const excludedCounts = new Map<string, { display: string; reason: string; held: number; bought: number }>();
+  const noteExcluded = (k: string, reason: string, field: 'held' | 'bought') => {
+    const entry = excludedCounts.get(k) ?? {
+      display: items[k]?.dname ?? k,
+      reason,
+      held: 0,
+      bought: 0,
+    };
+    entry[field] += 1;
+    excludedCounts.set(k, entry);
+  };
 
   /** Returns the counter for an item, or null if the item is excluded. */
-  const ensure = (k: string): ItemCount | null => {
+  const ensure = (k: string, field: 'held' | 'bought'): ItemCount | null => {
     const constant = items[k];
     if (!constant) return null;
-    if (ALWAYS_EXCLUDE[k]) return null;
-    if (constant.qual === 'component' || constant.qual === 'consumable') return null;
-    if (ingredients.has(k)) return null;
+    if (ALWAYS_EXCLUDE[k]) {
+      noteExcluded(k, ALWAYS_EXCLUDE[k]!, field);
+      return null;
+    }
+    if (constant.qual === 'component' || constant.qual === 'consumable') {
+      noteExcluded(k, `qual=${constant.qual}`, field);
+      return null;
+    }
+    if (ingredients.has(k)) {
+      noteExcluded(k, "ingredient in another item's CURRENT recipe", field);
+      return null;
+    }
     if (!counts.has(k)) {
       counts.set(k, {
         item: k,
@@ -188,7 +218,7 @@ async function main(): Promise<void> {
         if (constant) heldKeys.add(constant.key);
       }
       for (const k of heldKeys) {
-        const entry = ensure(k);
+        const entry = ensure(k, 'held');
         if (entry) { entry.held += 1; if (won) entry.held_wins += 1; }
       }
 
@@ -197,7 +227,7 @@ async function main(): Promise<void> {
         parsedPlayerGames += 1;
         const boughtKeys = new Set(p.purchase_log.map((e) => e.key));
         for (const k of boughtKeys) {
-          const entry = ensure(k);
+          const entry = ensure(k, 'bought');
           if (entry) { entry.bought += 1; if (won) entry.bought_wins += 1; }
         }
       }
@@ -246,6 +276,22 @@ async function main(): Promise<void> {
     console.log('\nno parsed replays: purchase counts unavailable, final inventory only.');
   }
 
+  // The filter's effect, in the open. An item removed as an "ingredient" by a
+  // recipe that postdates the event is a wrong answer that would otherwise
+  // never be seen — this is the check for it.
+  const heavilyUsedButExcluded = [...excludedCounts.entries()]
+    .filter(([, v]) => v.held >= 50)
+    .sort((a, b) => b[1].held - a[1].held);
+  if (heavilyUsedButExcluded.length) {
+    console.log('\nEXCLUDED despite heavy use — check these before trusting the lists above:');
+    for (const [k, v] of heavilyUsedButExcluded.slice(0, 12)) {
+      console.log(`  ${v.display.padEnd(24)} held ${String(v.held).padStart(4)}  (${v.reason})`);
+      void k;
+    }
+    console.log('  Recipes come from the CURRENT patch. An item terminal in this event but');
+    console.log('  consumed into something else today is removed here, wrongly.');
+  }
+
   const outDir = fileURLToPath(new URL(`../data/computed/${key}/`, import.meta.url));
   await mkdir(outDir, { recursive: true });
   await writeFile(
@@ -279,6 +325,13 @@ async function main(): Promise<void> {
         player_games: playerGames,
         parsed_player_games: parsedPlayerGames,
         always_excluded: ALWAYS_EXCLUDE,
+        _recipe_caveat:
+          "Ingredient exclusions use OpenDota's CURRENT item recipes, which may not match the " +
+          'patch this event was played on. excluded_items lists everything removed, with usage, ' +
+          'so an anachronistic exclusion can be spotted and overridden.',
+        excluded_items: [...excludedCounts.entries()]
+          .map(([item, v]) => ({ item, ...v }))
+          .sort((a, b) => b.held - a.held),
         items: byHeld.map((c) => ({
           ...c,
           held_win_rate: rate(c.held_wins, c.held),

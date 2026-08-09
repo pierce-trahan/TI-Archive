@@ -1,0 +1,5 @@
+{
+  "_note": "Liquipedia page titles for teams whose page name differs from the name they competed under. A first entry in the team_id <-> Liquipedia-title mapping DESIGN.md §8.4.5 step 3 calls for.",
+  "_why": "Scripts derive a page title by replacing spaces with underscores, which is right most of the time and wrong often enough to matter. A wrong title 404s loudly rather than fetching the wrong team, so this file only needs entries for the misses a run reports.",
+  "pages": {}
+}

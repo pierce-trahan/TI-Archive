@@ -539,10 +539,13 @@ async function main(): Promise<void> {
   const inWindow = (r: TierOneRow): boolean =>
     !!r.start_date && r.start_date <= cutoff && (!seasonStart || r.start_date > seasonStart);
 
-  const afterCutoff = deduped.filter((r) => r.start_date && r.start_date > cutoff);
-  const beforeSeason = deduped.filter(
-    (r) => r.start_date && seasonStart && r.start_date <= seasonStart,
-  );
+  // Sorted, because these lists get read to check nothing was wrongly dropped,
+  // and an unordered list makes that check harder than it needs to be.
+  const byDate = (a: TierOneRow, b: TierOneRow) => a.start_date!.localeCompare(b.start_date!);
+  const afterCutoff = deduped.filter((r) => r.start_date && r.start_date > cutoff).sort(byDate);
+  const beforeSeason = deduped
+    .filter((r) => r.start_date && seasonStart && r.start_date <= seasonStart)
+    .sort(byDate);
   const rows = deduped.filter(inWindow).sort((a, b) => a.start_date!.localeCompare(b.start_date!));
 
   const t1 = rows.filter((r) => r.tier === 1).length;
@@ -583,7 +586,11 @@ async function main(): Promise<void> {
   const missingPrize = rows.filter((r) => r.prizepool_usd === null);
   if (missingPrize.length) {
     console.log(`\n${missingPrize.length} included row(s) have no parseable USD prize pool:`);
-    for (const row of missingPrize) console.log(`  ${row.tournament} — "${row.prizepool}"`);
+    for (const row of missingPrize) {
+      // Distinguish "the cell was empty" from "the cell held something we
+      // couldn't read" — they need different follow-up.
+      console.log(`  ${row.tournament} — ${row.prizepool === null ? 'cell empty' : `"${row.prizepool}"`}`);
+    }
   }
   const lightOnly = rows.filter((r) => r.winner.logo_variant === 'lightmode');
   if (lightOnly.length) {

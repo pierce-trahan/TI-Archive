@@ -186,6 +186,32 @@ export async function fetchItems(cacheDir: string): Promise<Record<string, ItemC
   return data;
 }
 
+/**
+ * An entry from /api/constants/patch — the game's version history.
+ *
+ * `date` is the patch's release timestamp, which is what makes this usable as
+ * a check rather than a lookup: a match played before its own patch's release
+ * date means the mapping is wrong, and that is worth failing on.
+ *
+ * The relationship between a match's `patch` field and this table is not
+ * documented by OpenDota. It has historically been the array INDEX, and `id`
+ * has historically equalled the index, so both readings agree — but only
+ * historically. compute-patch.ts resolves by both and reports a disagreement
+ * instead of silently preferring one.
+ */
+export interface PatchConstant {
+  id: number;
+  name: string;
+  date: string;
+}
+
+export async function fetchPatches(cacheDir: string): Promise<PatchConstant[]> {
+  const { data } = await fetchJsonCached<PatchConstant[]>(`${BASE}/constants/patch`, {
+    cachePath: `${cacheDir}/constants-patch.json`,
+  });
+  return data;
+}
+
 export async function fetchHeroes(cacheDir: string): Promise<Hero[]> {
   const { data } = await fetchJsonCached<Hero[]>(`${BASE}/heroes`, {
     cachePath: `${cacheDir}/heroes.json`,

@@ -37,7 +37,8 @@
     "ingest:prizes": "tsx scripts/ingest-season-prizes.ts",
     "ingest:results": "tsx scripts/ingest-team-results.ts",
     "build:bracket": "tsx scripts/build-bracket.ts",
-    "compute:items": "tsx scripts/compute-item-meta.ts"
+    "compute:items": "tsx scripts/compute-item-meta.ts",
+    "compute:patch": "tsx scripts/compute-patch.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

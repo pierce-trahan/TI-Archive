@@ -18,6 +18,7 @@ The premise is that this information exists but is scattered: Wikipedia has the 
 3. **Offline-first, no server.** Clone or download, open, read. No API keys, no runtime network calls, no backend. This was the original plan and it should hold.
 4. **The season is part of the event.** A TI page covers the year that led into it, not just the week it happened.
 5. **Additive by year.** Adding TI15 should mean dropping in a data file, not editing a union type in five places.
+6. **Significance is a finding, not a template.** The page structure is the same every year; what fills it is not. A section exists to hold an answer where one exists, never to demand one. If no item defined a meta, no roster move turned a season, no group-stage day changed anything — the page says so and moves on. Writing a paragraph because the layout has a slot for it is the same failure as inventing a statistic: both put confident prose where the evidence is silent. TI8 has no Wraith Pact, and the archive is better for saying that plainly than for nominating a runner-up.
 
 ### Non-goals (explicitly removed)
 
@@ -192,7 +193,9 @@ All of the following are derivable from OpenDota match data for the event's leag
 
 ### 5.2.1 Items that defined the meta
 
-Heroes are only half of what a patch felt like. Some events are remembered for an item as much as a hero — TI11 and Wraith Pact being the obvious case, where a single item shaped how teams fought. Not every year has one that stark, but every year has items that separated the field from the previous one, and the archive should say which.
+Heroes are only half of what a patch felt like. Some events are remembered for an item as much as a hero — TI11 and Wraith Pact being the obvious case, where a single item shaped how teams fought.
+
+**Most years are not TI11, and the section must be willing to say so.** Per principle 6, this exists to hold an answer where one exists. TI8 is the worked example: its most-held items are Power Treads, Black King Bar and Ring of Aquila — ubiquitous in every patch of that era and defining nothing. The honest output for that year is "no item defined this meta", with the numbers shown so a reader can see why, and the interesting material lives in win rates rather than counts. Nominating a runner-up because the section has a heading would be inventing significance, which is the same failure as inventing a fact.
 
 What goes on the page:
 

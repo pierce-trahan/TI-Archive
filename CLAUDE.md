@@ -13,6 +13,8 @@ In practice:
 - Absence is representable and must render as "not recorded" / "not available for this event" — never a placeholder that looks like real data.
 - Win rates and averages carry their sample size. Suppress hero win rates below 5 games.
 - Narrative claims, roster moves, and quotes carry `source_url` and `retrieved_at`.
+- **Do not invent significance.** Every section has a slot; not every year has something to put in it. If the numbers show no meta-defining item, no season-turning roster move, no group-stage day that mattered, write that. Nominating the best available candidate because a heading exists is the same failure as inventing a fact — it just fabricates meaning instead of data. TI8's most-held items are Power Treads and BKB, and "no item defined this meta" is the correct output for that year.
+- **Watch for the current-data-on-a-past-event trap.** It has bitten this project three times: OpenDota returned 2026 team names for a 2018 group stage, Liquipedia's infobox gave a 2026 photo of a 2018 player, and current item recipes deleted Aghanim's Scepter from a year where it was terminal. Any live source describes today. Ask what it looked like *then*, and if the source cannot say, record that rather than accepting today's answer.
 - If you are unsure, say so to the owner rather than resolving it yourself. He watched all of this live and can answer in one line.
 
 ## Current state
